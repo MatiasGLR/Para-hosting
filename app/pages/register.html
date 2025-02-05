@@ -10,17 +10,22 @@
 <body>
     <main>
         <div class="form-container">
-            <h1>Ingresar</h1>
-            <p>Ingresa tus credenciales para acceder</p>
+            <h1>Registro</h1>
+            <p>Ingresa tus credenciales para registrarte</p>
             <form class="form" action="/" method="post">
                 <label for="nombre" class="form_label sr-only">Nombre:</label>
                 <input for="nombre" class="form_input" type="text" name="name" id="nombre" placeholder="Nombre de usuario">
+                <label for="email" class="form_label sr-only">Email:</label>
+                <input for="email" class="form_input" type="email" name="name" id="email" placeholder="Correo electrónico">
                 <label for="contra" class="form_label sr-only">Contraseña:</label>
                 <input for="contra" class="form_input" type="password" name="pass" id="contra" placeholder="Contraseña">
-                <button type="submit" class="button">Ingreso</button>
-                <p class="error escondido">Error al iniciar sesión</p>
+                <label for="vcontra" class="form_label sr-only">Verificar contraseña:</label>
+                <input for="vcontra" class="form_input" type="password" name="pass" id="vcontra" placeholder="Verificar contraseña">
+                <button type="submit" class="button">Registro</button>
+                <p class="error escondido">Error al registrarse</p>
             </form>
-            <p>¿Aun no tienes una cuenta? <a href="/register">Registrarse</a></p>
+            
+            <p>¿Ya tienes una cuenta? <a href="/login">Iniciar sesión</a></p>
         </div>
     </main>
 </body>

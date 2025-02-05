@@ -1,0 +1,86 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+html {
+    --s: 200px; /* control the size*/
+    --c1: #1d1d1d;
+    --c2: #4e4f51;
+    --c3: #3c3c3c;
+    
+    background:
+      repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 50%) 
+       calc(var(--s)/2) calc(var(--s)*tan(30deg)/2),
+      repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 50%);
+    background-size: var(--s) calc(var(--s)*tan(30deg));
+}
+
+body {
+    margin:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh; 
+    font-size: larger;
+}
+
+.form-container {
+    width:500px;
+    color:black;
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+form {
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    margin:15px 0;
+}
+
+form input,button {
+    border-radius: 10px;
+    border: unset;
+    padding: 15px 30px;
+    font-size: large;
+}
+
+form input {
+    border-bottom: 1px solid gray;
+    border-radius: 0;
+}
+
+form button {
+    background-color: #303030;
+    color: white;
+    cursor:pointer;
+    transition: 0.2s;
+}
+
+form button:hover {
+    background-color: #1d1d1d;
+    transition: 0.2s;
+}
+
+form+p, form p{
+    text-align: center;
+}
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top:auto;
+    width: 1px;
+    height: 1px;
+    overflow:hidden;
+}
+
+.error {
+    color:rgb(197, 22, 22);
+}
+
+.escondido {display:none}
