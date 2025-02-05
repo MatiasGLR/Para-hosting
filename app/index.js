@@ -29,6 +29,7 @@ const db = new sqlite.Database(
 );
 
 app.get('/', (req, res) => res.status(200).sendFile(__dirname + '/pages/index.html'))
+app.get('/staff', (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/admin.html'))
 app.get('/login', (req, res) => res.status(200).sendFile(__dirname + '/pages/login.html'))
 app.get('/register', (req, res) => res.status(200).sendFile(__dirname + '/pages/register.html'))
 

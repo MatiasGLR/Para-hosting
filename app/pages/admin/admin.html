@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="login.js" defer></script>
+</head>
+<body>
+    <main>
+        <div class="form-container">
+            <h1>Administración</h1>
+            <p>Ingresa tus credenciales de administrador para acceder</p>
+            <form class="form" action="/" method="post">
+                <label for="nombre" class="form_label sr-only">Nombre:</label>
+                <input for="nombre" class="form_input" type="text" name="name" id="nombre" placeholder="Nombre de usuario">
+                <label for="contra" class="form_label sr-only">Contraseña:</label>
+                <input for="contra" class="form_input" type="password" name="pass" id="contra" placeholder="Contraseña">
+                <button type="submit" class="button">Ingresar como administrador</button>
+                <p class="error escondido">Error al iniciar sesión</p>
+            </form>
+            <button>Cerrar sesión</button>
+        </div>
+    </main>
+</body>
+</html>

@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="login.js" defer></script>
+    <script src="register.js" defer></script>
 </head>
 <body>
     <main>
         <div class="form-container">
             <h1>Registro</h1>
             <p>Ingresa tus credenciales para registrarte</p>
-            <form class="form" action="/" method="post">
+            <form id="register-form" class="form">
                 <label for="nombre" class="form_label sr-only">Nombre:</label>
                 <input for="nombre" class="form_input" type="text" name="name" id="nombre" placeholder="Nombre de usuario">
                 <label for="email" class="form_label sr-only">Email:</label>
-                <input for="email" class="form_input" type="email" name="name" id="email" placeholder="Correo electrónico">
+                <input for="email" class="form_input" type="text" name="name" id="email" placeholder="Correo electrónico">
                 <label for="contra" class="form_label sr-only">Contraseña:</label>
                 <input for="contra" class="form_input" type="password" name="pass" id="contra" placeholder="Contraseña">
                 <label for="vcontra" class="form_label sr-only">Verificar contraseña:</label>

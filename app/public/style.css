@@ -54,14 +54,14 @@ form input {
     border-radius: 0;
 }
 
-form button {
+.form-container button {
     background-color: #303030;
     color: white;
     cursor:pointer;
     transition: 0.2s;
 }
 
-form button:hover {
+.form-container button:hover {
     background-color: #1d1d1d;
     transition: 0.2s;
 }
