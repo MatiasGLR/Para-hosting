@@ -79,6 +79,12 @@ form+p, form p{
     overflow:hidden;
 }
 
+.accesorios {
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
+
 .error {
     color:rgb(197, 22, 22);
 }
