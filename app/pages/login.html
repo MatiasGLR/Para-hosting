@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Logueo</title>
     <link rel="stylesheet" href="style.css">
     <script src="login.js" defer></script>
 </head>
@@ -12,17 +12,18 @@
         <div class="form-container">
             <h1>Ingresar</h1>
             <p>Ingresa tus credenciales para acceder</p>
-            <form class="form" action="/" method="post">
+            <form id="register-form" class="form" action="/" method="post">
                 <label for="nombre" class="form_label sr-only">Nombre:</label>
                 <input for="nombre" class="form_input" type="text" name="name" id="nombre" placeholder="Nombre de usuario">
                 <label for="contra" class="form_label sr-only">Contraseña:</label>
                 <input for="contra" class="form_input" type="password" name="pass" id="contra" placeholder="Contraseña">
                 <button type="submit" class="button">Ingreso</button>
-                <p class="error escondido">Error al iniciar sesión</p>
+                <p  id="error" class="escondido">Error al iniciar sesión</p>
             </form>
             <p class="accesorios">
                 <span>¿Aun no tienes una cuenta? <a href="/register">Registrarse</a></span>
                 <span><a href="/register">¿Has olvidado tu contraseña?</a></span>
+                <span><a href="/">Volver al inicio</a></span>
             </p>
         </div>
     </main>

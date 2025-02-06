@@ -1,0 +1,80 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.menuopciones {
+    position: fixed;
+    height:100svh;
+    background-color: lightcoral;
+    width: 200px;
+    border: 1px solid black;
+    border-right: 10px solid black;
+}
+
+.flecha {
+    position: fixed;
+    left:200px;
+    top:0;
+    font-size: 50px;
+    padding:2px 10px;
+    font-family: 'Courier New', Courier, monospace;
+    color:white;
+    background-color: black;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+}
+
+.menu nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin:5px 0;
+    gap:5px;
+    font-size: large;
+}
+
+.menu nav a {
+    border-radius: 10px;
+    width:90%;
+    padding:15px 0;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    color:black;
+    margin:auto;
+    transition: 0.3s;
+}
+
+.menu nav a:hover {
+    width:100%;
+    border-radius: 0;
+    transition: 0.3s;
+}
+
+.menu nav button {
+    padding:15px;
+    border-radius: 0;
+    border:unset;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+    transition:0.3s;
+}
+.menu nav button:hover {
+   background-color: black;
+   transition: 0.3s;
+   color:white;
+   cursor:pointer;
+}
+
+.upper {
+    display:absolute;
+    top:0;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+}

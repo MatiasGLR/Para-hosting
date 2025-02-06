@@ -4,15 +4,18 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 import express from 'express';
+import cookieParser from 'cookie-parser';
 import sqlite from 'sqlite3';
 var app = express();
 var port = process.env.PORT || 3999;
 app.listen(port, () => {console.log("El servidor esta corriendo correctamente en el puerto "+port);});
 import {methods as authentication} from "./controllers/authentication.controller.js";
+import {methods as authorization} from "./middlewares/authorization.js";
 
 //Configuración
 app.use(express.static(__dirname + '/public'));
 app.use(express.json());
+app.use(cookieParser());
 
 // Base de datos
 const db = new sqlite.Database(
@@ -33,7 +36,10 @@ const db = new sqlite.Database(
 );
 
 app.get('/', (req, res) => res.status(200).sendFile(__dirname + '/pages/index.html'))
-app.get('/staff', (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/admin.html'))
-app.get('/login', (req, res) => res.status(200).sendFile(__dirname + '/pages/login.html'))
-app.get('/register', (req, res) => res.status(200).sendFile(__dirname + '/pages/register.html'))
+app.get('/staff', authorization.onlyAdmin, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/admin.html'))
+app.get('/login', authorization.onlyUnlogged, (req, res) => res.status(200).sendFile(__dirname + '/pages/login.html'))
+app.get('/register', authorization.onlyUnlogged, (req, res) => res.status(200).sendFile(__dirname + '/pages/register.html'))
+app.get('/account', authorization.onlyLogged, (req, res) => res.status(200).sendFile(__dirname + '/pages/usuario.html'))
 app.post('/api/register', authentication.register);
+app.post('/api/login', authentication.login);
+app.get('*', (req, res) => {res.status(404).send('Esta página no existe o no tienes acceso a ella, vuelve al <a href="/">inicio</a>');});
