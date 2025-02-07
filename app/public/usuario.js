@@ -1,6 +1,5 @@
-function barra_lateral() {
-    const barra_lateral = document.querySelector("#menuopciones");
-    const flecha = document.querySelector("#flecha");
-    barra_lateral.classList.toggle("hide");
-    flecha.classList.toggle("hide");
+function cargarpestaña(src) {
+    $.get(src, function (html_text) {
+        document.querySelector("#main").innerHTML = html_text;
+    });
 }

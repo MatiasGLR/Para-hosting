@@ -21,16 +21,21 @@
     transform: translateX(-199px);
 }
 
+.invisible {
+    display: none;
+}
+
 .flecha {
     position: absolute;
+    display:block;
     top: 15px;
     left:198px;
     padding:0px 10px 0px 10px;
     text-align: center;
     font-size: 50px;
     color:black;
-    border:1px solid lightgray;
-    border-left:unset;
+    width:80px;
+    height:76px;
     border-bottom: unset;
     background-color: gray;
     color:lightgray;
@@ -41,6 +46,7 @@
 
 #flecha span i {
     display: block;
+    position: absolute;
     transform: translateY(4px) !important;
 }
 
