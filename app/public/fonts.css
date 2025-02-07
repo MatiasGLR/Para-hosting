@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Kings';
+    src: url('./files/fonts/Kings/Kings-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('./files/fonts/Rajdhani/Rajdhani-Regular.ttf');
+}
+
+* {
+    font-family: Rajdhani;
+}

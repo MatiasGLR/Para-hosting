@@ -14,6 +14,8 @@ import {methods as authorization} from "./middlewares/authorization.js";
 
 //Configuración
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public/files/fonts/Kings'));
+app.use(express.static(__dirname + '/public/files/fonts/Rajdhani'));
 app.use(express.json());
 app.use(cookieParser());
 

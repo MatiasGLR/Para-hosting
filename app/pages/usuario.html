@@ -5,22 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuario</title>
     <link rel="stylesheet" href="usuario.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="unlog.js" defer></script>
+    <script src="usuario.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="menuopciones">
+    <div id="menuopciones" class="menuopciones">
         <div class="menu">
             <nav class="upper">
-                <a href="/">Inicio</a>
-                <a href="/">Ficha</a>
+                <h4><i class="bi bi-person"></i> Cuenta</h4>
+            </nav>
+            <nav class="medium">
+                <a href="/"><span><i class="bi bi-house-door"></i> Inicio</span></a>
+                <a href="/"><span><i class="bi bi-journal-bookmark-fill"></i> Ficha</span></a>
             </nav>
             <nav class="bottom">
-                <button id="unlog">Cerrar sesión</button>
+                <button id="unlog"><i class="bi bi-power"></i> Cerrar sesión</button>
             </nav>
         </div>
-        <div class="flecha">
-            <span>></span>
-        </div>
+    </div>
+    <div id="flecha" class="flecha">
+        <span onclick="barra_lateral()">
+            <i class="bi bi-arrow-left-circle"></i>
+        </span>
     </div>
 </body>
 </html>
