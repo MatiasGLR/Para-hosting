@@ -31,6 +31,7 @@ const db = new sqlite.Database(
             CREATE TABLE IF NOT EXISTS Jugadores (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 name VARCHAR(30) NOT NULL,
+                email TEXT NOT NULL,
                 pass TEXT NOT NULL
             )
         `, (error) => {if(error) return console.error(error)})
@@ -41,7 +42,7 @@ app.get('/', (req, res) => res.status(200).sendFile(__dirname + '/pages/index.ht
 app.get('/staff', authorization.onlyAdmin, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/admin.html'))
 app.get('/login', authorization.onlyUnlogged, (req, res) => res.status(200).sendFile(__dirname + '/pages/login.html'))
 app.get('/register', authorization.onlyUnlogged, (req, res) => res.status(200).sendFile(__dirname + '/pages/register.html'))
-app.get('/account', authorization.onlyLogged, (req, res) => res.status(200).sendFile(__dirname + '/pages/usuario.html'))
+app.get('/account', authorization.onlyLogged, (req, res) => { res.status(404).sendFile(__dirname + '/pages/usuario.html') })
 app.post('/api/register', authentication.register);
 app.post('/api/login', authentication.login);
-app.get('*', (req, res) => {res.status(404).send('Esta página no existe o no tienes acceso a ella, vuelve al <a href="/">inicio</a>');});
+app.get('*', (req, res) => res.status(404).sendFile(__dirname + '/pages/'));

@@ -1,8 +1,22 @@
 import bcrypt from 'bcryptjs';
 import jsonwebtoken from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import sqlite from 'sqlite3';
+
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 dotenv.config();
+
+const db = new sqlite.Database(
+    path.resolve(__dirname, '../files/db/enforth.db'),
+    (error) => {
+        if(error) {
+            return console.error(error);
+        }
+    }
+);
 
 export const usuarios = [
     {
@@ -49,18 +63,43 @@ async function register (req,res) {
     if(!user || !pass || !vpass || !email){
         return res.status(400).send({status:"Error",message:"Los campos están incompletos"});
     }
-    const usuario_a_revisar = usuarios.find(usuario => usuario.user === user);
-    if(usuario_a_revisar){
-        return res.status(400).send({status:"Error",message:"El usuario ya existe"});
-    }
-    const salt = await bcrypt.genSalt(12);
-    const hash = await bcrypt.hash(pass,salt);
-    const nuevo_usuario = {
-        user, email, pass: hash
-    }
-    console.log(nuevo_usuario);
-    usuarios.push(nuevo_usuario);
-    return res.status(201).send({status:"ok", message:"Usuario "+nuevo_usuario.user+" agregado", redirect:"/login"});
+    if(pass != vpass) return res.status(400).send({status:"Error",message:"Las contraseñas no coinciden"});
+    //Ver si usuario existe
+    const usuario = await db.get("SELECT * FROM `Jugadores` WHERE `name` = ? OR `email` = ?", [user], [email], (err, row) => {
+        if(err) return console.error(err);
+        else if(row === undefined)  {
+            (async () => {
+                try {
+                    console.log("Contraseña 1");
+                    const salt = await bcrypt.genSalt(10);
+                    console.log("Contraseña 2");
+                    const hash = await bcrypt.hash(pass,salt);
+                    console.log("Contraseña 3");
+
+                    db.run("INSERT INTO `Jugadores` (name,email,pass) VALUES (?,?,?)", [user, email, hash], (err) => {
+                        if(err) {
+                            console.error('Error al insertar el usuario:', err);
+                            return res.status(500).send({ status: "Error", message: "Error al agregar el usuario" });
+                        }
+                        return res.status(201).send({status:"ok", message:"Usuario "+user+" agregado", redirect:"/login"});
+                    }
+                        
+                    );
+                }
+                catch (err) {
+                    console.error(err);
+                    return res.status(500).send({ status: "Error", message: "Error al procesar la contraseña" });
+                }
+            })();
+        }
+        else return res.status(400).send({status:"Error",message:"El usuario o email ya existe"});
+        
+    });
+    
+
+    //Agregar usuario
+
+    //return res.status(201).send({status:"ok", message:"Usuario "+nuevo_usuario.user+" agregado", redirect:"/login"});
 }
 
 export const methods = {
