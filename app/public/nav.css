@@ -26,7 +26,7 @@
 }
 
 .flecha {
-    position: absolute;
+    position: fixed;
     display:block;
     top: 15px;
     left:198px;
@@ -34,8 +34,8 @@
     text-align: center;
     font-size: 50px;
     color:black;
-    width:80px;
-    height:76px;
+    width:calc(40px + 20svh/10);
+    height:calc(40px + 20svh/10);
     border-bottom: unset;
     background-color: gray;
     color:lightgray;
@@ -46,8 +46,10 @@
 
 #flecha span i {
     display: block;
-    position: absolute;
-    transform: translateY(4px) !important;
+    position: fixed;
+    transform: translate(-8px, -2px) !important;
+    font-size: calc(35px + 30svh/20);
+    color:white;
 }
 
 .menu nav {
@@ -95,10 +97,10 @@
 }
 
 .upper {
-    display:absolute;
+    display:block;
     top:0;
     text-align: center;
-    height:76px;
+    height:calc(40px + 20svh/10);
     margin-top:14px;
     background-color: gray;
     color:lightgray;
@@ -113,12 +115,19 @@
     transition: 0.5s;
 }
 
+a {
+    color:white;
+}
+
+a:hover {
+    color:black;
+}
+
 .medium {
     margin-top:5px;
 }
 
 .bottom {
-    position: absolute;
-    bottom: 0;
+    margin-top:5px;
     margin-bottom: 5px;
 }

@@ -4,23 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administración</title>
+    <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="admin.css">
-    <script src="admin.js" defer></script>
-    <script src="nav.js" defer></script>
-    <script src="unlog.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="unlog.js" defer></script>
+    <script src="nav.js" defer></script>
+    <script src="admin.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body class="bg-dark">
-    <header>
-        <h2>Administración</h2>
-        <button id="unlog">Cerrar sesión</button>
-    </header>
-    <main>
-        
+    <div id="menuopciones" class="menuopciones hide">
+        <div class="menu">
+            <nav class="upper">
+                <h4><i class="bi bi-person"></i> Administración</h4>
+            </nav>
+            <nav class="medium">
+                <a href="/"><span><i class="bi bi-house-door"></i> Inicio</span></a>
+                <a href="/staff/objetos""><span><i class="bi bi-backpack"></i> Objetos</span></a>
+                <a href="/staff/habilidades"><span><i class="bi bi-fire"></i> Habilidades</span></a>
+                <a href="/staff/npc"><span><i class="bi bi-person-arms-up"></i> NPC</span></a>
+                <a href="/staff/bestiario"><span><i class="bi bi-gitlab"></i> Bestiario</span></a>
+                <a href="/staff/jugadores""><span><i class="bi bi-people"></i> Jugadores</span></a>
+                <a href="/staff/lore""><span><i class="bi bi-book"></i> Lore</span></a>
+            </nav>
+            <nav class="bottom">
+                <button id="unlog"><i class="bi bi-power"></i> Cerrar sesión</button>
+            </nav>
+        </div>
+    </div>
+    <div id="flecha" class="flecha hide">
+        <span onclick="barra_lateral()">
+            <i id="abierto" class="bi bi-arrow-left-circle invisible"></i>
+            <i id="cerrado" class="bi bi-arrow-right-circle"></i>
+        </span>
+    </div>
+    <main id="main" style="min-height: 100vsh;">
+
     </main>
 </body>
 </html>

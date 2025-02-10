@@ -2,10 +2,6 @@ import bcrypt from 'bcryptjs';
 import jsonwebtoken from 'jsonwebtoken';
 import dotenv from 'dotenv';
 
-import path from 'path';
-import { fileURLToPath } from 'url';
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
 import db from './database.js';
 
 dotenv.config();
@@ -100,6 +96,5 @@ async function register (req,res) {
 
 export const methods = {
     login,
-    register,
-    db
+    register
 }
