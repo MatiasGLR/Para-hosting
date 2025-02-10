@@ -70,11 +70,8 @@ async function register (req,res) {
         else if(row === undefined)  {
             (async () => {
                 try {
-                    console.log("Contraseña 1");
                     const salt = await bcrypt.genSalt(10);
-                    console.log("Contraseña 2");
                     const hash = await bcrypt.hash(pass,salt);
-                    console.log("Contraseña 3");
 
                     db.run("INSERT INTO `Jugadores` (name,email,pass) VALUES (?,?,?)", [user, email, hash], (err) => {
                         if(err) {
