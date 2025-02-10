@@ -1,6 +1,6 @@
 import jsonwebtoken from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import {usuarios} from './../controllers/authentication.controller.js'
+import db from './../controllers/database.js'
 
 dotenv.config();
 
@@ -26,8 +26,9 @@ function revisarCookie(req){
     try {
         const cookie_kye = req.headers.cookie.split("; ").find(cookie => cookie.startsWith("kye=")).slice(4);
         const decodify = jsonwebtoken.verify(cookie_kye, process.env.KYE);
-        const usuario_a_revisar = usuarios.find(usuario => usuario.user === decodify.user);
-        if(!usuario_a_revisar) return false
+        const usuario_a_revisar = db.get("SELECT * FROM `Jugadores` WHERE `name`=?", decodify.user);
+        //const usuario_a_revisar = usuarios.find(usuario => usuario.user === decodify.user);
+        if(usuario_a_revisar === undefined) return false
         else return true
     } catch {
         return false

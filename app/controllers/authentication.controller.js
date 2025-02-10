@@ -1,30 +1,14 @@
 import bcrypt from 'bcryptjs';
 import jsonwebtoken from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import sqlite from 'sqlite3';
 
 import path from 'path';
 import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+import db from './database.js';
+
 dotenv.config();
-
-const db = new sqlite.Database(
-    path.resolve(__dirname, '../files/db/enforth.db'),
-    (error) => {
-        if(error) {
-            return console.error(error);
-        }
-    }
-);
-
-export const usuarios = [
-    {
-        user: "matias", 
-        email: "a@a.a", 
-        pass: "$2a$12$RhPiZvzwlsASsnixjv9NFeMvswe2RPDI//SowD2o0EgNNo0Xx.R4K"
-    }
-]
 
 async function login (req,res) {
     const user = req.body.user;
@@ -32,26 +16,41 @@ async function login (req,res) {
     if(!user || !pass){
         return res.status(400).send({status:"Error",message:"Los campos están incompletos"});
     }
-    const usuario_a_revisar = usuarios.find(usuario => usuario.user === user);
-    if(!usuario_a_revisar){
-        return res.status(400).send({status:"Error",message:"Datos incorrectos"});
-    }
-    const login_correcto = await bcrypt.compare(pass, usuario_a_revisar.pass)
-    if(!login_correcto) {
-        return res.status(400).send({status:"Error",message:"Datos incorrectos"});
-    }
-    const token = jsonwebtoken.sign(
-        {user:usuario_a_revisar.user}, 
-        process.env.KYE, 
-        {expiresIn:process.env.KYE_EXPIRE})
+    const usuario = db.get("SELECT * FROM `Jugadores` WHERE `name`=?", [user], (err,row) => {
+        if(err) return console.error(err);
+        else if(row != undefined) {
+            try {
+                (async () => {
 
-    const cookieOption = {
-        expires: new Date(Date.now() + process.env.KYE_COOKIE_EXPIRES * 24 * 60 * 60 * 1000),
-        path: "/"
-    }
+                    const login_correcto = await bcrypt.compare(pass, row.pass);
 
-    res.cookie("kye", token, cookieOption);
-    res.send({status:"ok", message:"Usuario logueado", redirect:"/account"})
+                    if(login_correcto) {
+
+                        const token = jsonwebtoken.sign(
+                            {user:row.user}, 
+                            process.env.KYE, 
+                            {expiresIn:process.env.KYE_EXPIRE})
+                    
+                        const cookieOption = {
+                            expires: new Date(Date.now() + process.env.KYE_COOKIE_EXPIRES * 24 * 60 * 60 * 1000),
+                            path: "/"
+                        }
+                    
+                        res.cookie("kye", token, cookieOption);
+
+                        res.send({status:"ok", message:"Usuario logueado", redirect:"/account"})
+                        
+                    } else return res.status(400).send({status:"Error", message:"Datos incorrectos"});
+                })();
+            }
+            catch(err) {
+                console.error(err);
+                return res.status(500).send({ status: "Error", message: "Error al procesar la contraseña" });
+            }
+            
+        } else return res.status(400).send({status:"Error", message:"Datos incorrectos"});
+    });
+    
 }
 
 async function register (req,res) {
@@ -101,5 +100,6 @@ async function register (req,res) {
 
 export const methods = {
     login,
-    register
+    register,
+    db
 }
