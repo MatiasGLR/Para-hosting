@@ -3,7 +3,7 @@ const caracteres_prohibidos = ["'","/","=",",",".","`","´","_","-"];
 document.querySelector("#personaje-form").addEventListener("submit", async (e) => {
     e.preventDefault();
     const name = e.target.querySelector("#data_nombre").value,
-          edad = e.target.querySelector("#data_edad").value,;
+          edad = e.target.querySelector("#data_edad").value;
     console.log(name + edad);
     /*const res = await fetch("http://localhost:3999/api/crearpersonaje", {
         method: "POST",
