@@ -1,4 +1,5 @@
-const razas_no_maldicion = ["Demonio", "Naturis", "Automata", "Benirie", "Draieach"];
+const razas_no_maldicion = ["Demonio", "Naturis", "Automata"];
+const raza_no_hibridable = ["Naturis", "Automata", "Benirie", "Draieach"];
 const razas_data = {
     Humano: {
         stats:"Inteligencia +1",
@@ -87,7 +88,12 @@ function razaExtra ()  {
     const raza = document.querySelector("#data_raza");
     const options = document.querySelectorAll("#data_hibrido option");
     options.forEach(option => {
-        option.disabled = false;
+        if(raza_no_hibridable.includes(raza.value)) {
+            option.disabled = true;
+            document.querySelector("#data_hibrido").value = "!";
+            document.querySelector("#data_hibrido_extra").innerHTML = "";
+        }
+        else option.disabled = false;
     })
     if(raza.value != ""){
         document.querySelector("#data_raza_extra").innerHTML = razas_data[raza.value].stats + '. Armadura natural: ' + razas_data[raza.value].natural;
@@ -96,14 +102,23 @@ function razaExtra ()  {
             if(option.value == "") option.disabled = false;
             option.disabled = true;
         }
-    } else raza.value = "";
+    } else {
+        raza.value = "";
+        document.querySelector("#data_raza_extra").innerHTML = "";
+    }
+    if(raza.value == "!") document.querySelector("#data_raza_extra").innerHTML = "";
 };
 
 function hibridoExtra () {
     const raza = document.querySelector("#data_hibrido");
     const options = document.querySelectorAll("#data_raza option");
     options.forEach(option => {
-        option.disabled = false;
+        if(raza_no_hibridable.includes(raza.value)) {
+            option.disabled = true;
+            document.querySelector("#data_raza").value = "!";
+            document.querySelector("#data_raza_extra").innerHTML = "";
+        }
+        else option.disabled = false;
     });
     if(raza.value != ""){
         let str = `
@@ -116,8 +131,12 @@ function hibridoExtra () {
             if(option.value == "") option.disabled = false;
             else option.disabled = true;
         }
-    } else raza.value = "";
-};
+    } else {
+        raza.value = "";
+        document.querySelector("#data_hibrido_extra").innerHTML = "";
+    }
+    if(raza.value == "!") document.querySelector("#data_hibrido_extra").innerHTML = "";
+}
 
 function cargarpestaña(src) {
     $.get(src, function (html_text) {
@@ -127,24 +146,28 @@ function cargarpestaña(src) {
 
 function desactivarDios(){
     const maldicion = document.querySelector("#data_maldicion");
-    const inputDios = document.getElementById("data_dios");
+    const inputDios = document.querySelector("#data_dios");
     const raza = document.querySelector("#data_raza");
     const hibrido = document.querySelector("#data_hibrido");
+    if(raza.value == "Naturis" || hibrido.value == "Naturis") {
+        inputDios.value = "Naturaleza";
+        inputDios.disabled = true; // Desactiva el input
+    } else if (inputDios.value == "Naturaleza") {
+        inputDios.value = "";
+        inputDios.disabled = false; // Activa el input
+    }
     if(razas_no_maldicion.includes(raza.value) || razas_no_maldicion.includes(hibrido.value)) {
-        maldicion.disabled = true;
         maldicion.value = "!";
+        maldicion.disabled = true;
     } else {
         maldicion.disabled = false;
-    }
-    if(raza.value === "Naturis" || hibrido.value === "Naturis") {
-        inputDios.disabled = true; // Desactiva el input
-        inputDios.value = "Naturaleza";
+        if(maldicion.value == "!") maldicion.value = "";
     }
     if (maldicion.value === "Sin alma") {
-        inputDios.disabled = true; // Desactiva el input
         inputDios.value = "!"; // Borra el valor si estaba escrito
-    } else {
-        inputDios.disabled = false; // Reactiva el input
+        inputDios.disabled = true; // Desactiva el input
+    } else if(inputDios.value == "!") {
         inputDios.value = "";
+        inputDios.disabled = false; // Reactiva el input
     }
 }

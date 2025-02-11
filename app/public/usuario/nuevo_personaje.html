@@ -27,6 +27,17 @@
         background-color: gainsboro;
         text-indent: 10px;
     }
+
+    td input {
+        text-align: center;
+        background-color: transparent;
+        border: unset;
+        font-size: larger;
+    }
+
+    td div {
+        max-width: 100px;
+    }
 </style>
 
 <div class="main bg-dark text-white">
@@ -83,6 +94,7 @@
                     <option value="Draieach">Draieach</option>
                     <option value="Benirie">Benirie</option>
                     <option value="Naturis">Naturis</option>
+                    <option value="!" disabled hidden>Tu otra raza no es hibridable</option>
                 </select>
                 <span id="data_raza_extra"></span>
             </div>
@@ -102,6 +114,7 @@
                     <option value="Draieach">Draieach</option>
                     <option value="Benirie">Benirie</option>
                     <option value="Naturis">Naturis</option>
+                    <option value="!" disabled hidden>Tu otra raza no es hibridable</option>
                 </select>
                 <span id="data_hibrido_extra"></span>
             </div>
@@ -127,9 +140,34 @@
                     <option value="Combate">Combate (Maldad)</option>
                     <option value="Miseria">Miseria (Maldad)</option>
                     <option value="Muerte">Muerte (Neutral)</option>
+                    <option value="Justicia" disabled>Justicia (Neutral)</option>
                     <option value="Naturaleza" disabled>Naturaleza (Neutral)</option>
                     <option value="!" disabled hidden>Los sin alma no pueden tener un dios</option>
                 </select>
+            </div>
+            <hr>
+            <h4 class="pt-2 text-center">Estadísticas</h4>
+            <hr>
+            <div class="data_stats">
+                <table class="table table-light text-center align-middle">
+                    <thead>
+                        <tr>
+                            <td><b>Estadística</b></td>
+                            <td><b>Puntos</b></td>
+                            <td><b>Distribuidos: </b>0 de 15</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="m-auto"> <td>Agilidad</td> <td><input type="text" value=0 disabled></td> <td><div class="btn btn-dark w-50">+</div><div class="btn btn-secondary w-50">-</div></td> </tr>
+                        <tr class="m-auto"> <td>Carisma</td> <td><input type="text" value=0 disabled></td> <td><div class="btn btn-dark w-50">+</div><div class="btn btn-secondary w-50">-</div></td> </tr>
+                        <tr class="m-auto"> <td>Puntería</td> <td><input type="text" value=0 disabled></td> <td><div class="btn btn-dark w-50">+</div><div class="btn btn-secondary w-50">-</div></td> </tr>
+                        <tr class="m-auto"> <td>Fuerza</td> <td><input type="text" value=0 disabled></td> <td><div class="btn btn-dark w-50">+</div><div class="btn btn-secondary w-50">-</div></td> </tr>
+                        <tr class="m-auto"> <td>Inteligencia</td> <td><input type="text" value=0 disabled></td> <td><div class="btn btn-dark w-50">+</div><div class="btn btn-secondary w-50">-</div></td> </tr>
+                        <tr class="m-auto"> <td>Percepción</td> <td><input type="text" value=0 disabled></td> <td><div class="btn btn-dark w-50">+</div><div class="btn btn-secondary w-50">-</div></td> </tr>
+                        <tr class="m-auto"> <td>Resistencia</td> <td><input type="text" value=0 disabled></td> <td><div class="btn btn-dark w-50">+</div><div class="btn btn-secondary w-50">-</div></td> </tr>
+                        <tr class="m-auto"> <td>Suerte</td> <td><input type="text" value=0 disabled></td> <td></td> </tr>
+                    </tbody>
+                </table>
             </div>
         </form>
         <div class="col-1"></div>
