@@ -55,10 +55,10 @@ function readURL(input) {
     if (input.files && input.files[0]) {
         const reader = new FileReader();
 
-        const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/gif"];
+        const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/gif", "image/webp"];
 
         if (!validTypes.includes(input.files[0].type)) {
-            document.querySelector('#data_imagen_mostrar').innerHTML = "⚠️ Solo se permiten imágenes PNG, JPG, JPEG o GIF.";
+            document.querySelector('#data_imagen_mostrar').innerHTML = "⚠️ Solo se permiten imágenes PNG, JPG, JPEG, WEBP o GIF.";
             input.value = ""; // Limpia el input
             return;
         }
