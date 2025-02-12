@@ -1,5 +1,21 @@
 const caracteres_prohibidos = ["'","/","=",",",".","`","´","_","-"];
 
+const razatdinput = document.querySelectorAll(".raza_td");
+
+razatdinput.forEach(inp => {
+    inp.style.visibility = "hidden";
+    document.querySelector("#"+inp.id+"_show").style.visibility = "hidden";
+    inp.addEventListener("change", (x) => {
+        const id = x.target.id;
+        const e = document.querySelector("#"+id+"_show");
+        if(x.target.value === "0") e.style.visibility = "hidden";
+        else {
+            e.style.visibility = "visible";
+            e.value = "+" + x.target.value;
+        }
+    });
+})
+
 document.querySelector("#personaje-form").addEventListener("submit", async (e) => {
     e.preventDefault();
     /*const imagen = e.target.querySelector("#imagen_mostrada").value,
@@ -51,7 +67,7 @@ document.querySelector("#personaje-form").addEventListener("submit", async (e) =
             maldicion: e.target.querySelector("#data_maldicion").value,
             dios: e.target.querySelector("#data_dios").value,
             profesion: e.target.querySelector("#data_profesion").value,
-            dones: e.target.querySelector("#data_dones").value,
+            dones: document.querySelector("#data_dones").getAttribute("name"),
             stat_mejorada: e.target.querySelector("#data_stat_mejorada").value,
             in_agilidad: e.target.querySelector("#in_agilidad").value,
             ra_agilidad: e.target.querySelector("#ra_agilidad").value,
@@ -72,16 +88,16 @@ document.querySelector("#personaje-form").addEventListener("submit", async (e) =
             medicina: e.target.querySelector("#data_medicina").value,
             dinero: e.target.querySelector("#data_dinero").value
         })
-    }) 
-    if(!res.ok) {
-        const resJson = await res.json();
-        if(resJson.message) {
-            window.location.href = "#"+resJson.message;
-            $("#"+resJson.message).css("background-color", "#fda3a3");
-        }
-        return 
+    })
+    const resJson = await res.json();
+    if(resJson.message) {
+        if(resJson.message == "Completado") return alert("Completado");
+        window.location.href = "#"+resJson.message;
+        $("select").css("background-color", "gainsboro");
+        $("input").css("background-color", "gainsboro");
+        $("#"+resJson.message).css("background-color", "#fda3a3");
+        document.querySelector("#error_box_text").innerHTML = "⚠️ " + resJson.error;
+        $("#error").css("display", "flex");
     }
-    if(resJson.redirect) {
-        window.location.href = resJson.redirect;
-    }
+    return 
 });

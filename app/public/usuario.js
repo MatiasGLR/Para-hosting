@@ -124,6 +124,10 @@ function razaExtra ()  {
         cerarstats();
         const estadistica = razas_data[raza.value].stats.replace(" +1", "").toLowerCase();
         document.querySelector("#ra_"+estadistica).value = 1;
+        const lista_stats = document.querySelectorAll(".raza_td");
+        lista_stats.forEach(inp => {
+            inp.dispatchEvent(new Event('change'));
+        })
         const stat_val_def = document.querySelector("#in_"+estadistica).value;
         if(stat_val_def >= 5) {
             document.querySelector("#in_"+estadistica).value = stat_val_def-1;
@@ -276,6 +280,7 @@ async function cargardones() {
                 const option = document.createElement("option");
                 option.textContent = don.name;  // El texto de la opción
                 option.value = index;        // El valor de la opción (puede ser diferente si quieres)
+                option.name = don.name;        // El valor de la opción (puede ser diferente si quieres)
                 dones_lista_existe.appendChild(option);
             })
         }
@@ -345,9 +350,12 @@ function informaciondon() {
     const don_list = document.querySelector("#data_dones");
     if(don_list.value != ""){
         document.querySelector("#data_dones_extra").innerHTML = "<b>Descripción del Don.</b> "+dones[don_list.value].desc;
+        document.querySelector("#data_dones").setAttribute("name", dones[don_list.value].name);
     } else {
         document.querySelector("#data_dones_extra").innerHTML = "";
+        document.querySelector("#data_dones").setAttribute("name", "");
     }
+    console.log(document.querySelector("#data_dones").getAttribute("name"));
 }
 
 function informaciondmedicina() {
