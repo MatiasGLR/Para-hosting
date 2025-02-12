@@ -111,6 +111,7 @@
             td input {
                 width:20px;
                 text-indent: 0;
+                background-color: transparent;
             }
         </style>
         <div id="error">
@@ -303,14 +304,14 @@
                     <hr>
                     <div class="data_arma">
                         <label for="data_arma" class="data_arma"></label>
-                        <select name="data_arma" id="data_arma">
+                        <select name="data_arma" id="data_arma" onchange="informacionarma()">
                             <option value="">Elige un arma inicial...</option>
                         </select>
                         <span>El arma inicial será de hierro, y en caso de ser un canalizador, será de madera</span>
                     </div>
                     <div class="data_medicina">
                         <label for="data_medicina" class="data_medicina"></label>
-                        <select name="data_medicina" id="data_medicina" onchange="informaciondmedicina()">
+                        <select name="data_medicina" id="data_medicina" onchange="informacionmedicina()">
                             <option value="">Elige un medicamento inicial...</option>
                         </select>
                         <span id="data_medicina_extra">Puede ser utilizado cualquier objeto de la categorìa "Medicamento" de objetos, en caso de no haber uno, contacta a un administrador</span>

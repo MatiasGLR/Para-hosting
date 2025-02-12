@@ -309,6 +309,7 @@ async function cargararmas() {
                 const option = document.createElement("option");
                 option.textContent = arma.name;  // El texto de la opción
                 option.value = index;        // El valor de la opción (puede ser diferente si quieres)
+                option.name = arma.name;
                 armas_lista_existe.appendChild(option);
             })
         }
@@ -338,6 +339,7 @@ async function cargarmedicinas() {
                 const option = document.createElement("option");
                 option.textContent = medic.name;  // El texto de la opción
                 option.value = index;        // El valor de la opción (puede ser diferente si quieres)
+                option.name = medic.name;
                 medicina_lista_existe.appendChild(option);
             })
         }
@@ -358,12 +360,23 @@ function informaciondon() {
     console.log(document.querySelector("#data_dones").getAttribute("name"));
 }
 
-function informaciondmedicina() {
+function informacionmedicina() {
     const medicina_list = document.querySelector("#data_medicina");
     if(medicina_list.value != ""){
         document.querySelector("#data_medicina_extra").innerHTML = "<b>Descripción del objeto.</b> "+medicinas[medicina_list.value].descripcion;
+        document.querySelector("#data_medicina").setAttribute("name", medicinas[medicina_list.value].name);
     } else {
         document.querySelector("#data_medicina_extra").innerHTML = 'Puede ser utilizado cualquier objeto de la categorìa "Medicamento" de objetos, en caso de no haber uno, contacta a un administrador';
+        document.querySelector("#data_medicina").setAttribute("name", "");
+    }
+}
+
+function informacionarma() {
+    const arma_list = document.querySelector("#data_arma");
+    if(arma_list.value != ""){
+        document.querySelector("#data_arma").setAttribute("name", armas[arma_list.value].name);
+    } else {
+        document.querySelector("#data_arma").setAttribute("name", "");
     }
 }
 
