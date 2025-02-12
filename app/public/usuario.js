@@ -237,7 +237,7 @@ function resetdistribuibles(){
     const distribuibles = document.querySelector("#distribuibles");
     distribuibles.value = distribuidos+' de 15';
     if(distribuibles.value == "15 de 15") {
-        $("#distribuibles").css("color", "red");
+        $("#distribuibles").css("color", "green");
         $("#distribuibles").css("font-weight", "bold");
     } else {
         $("#distribuibles").css("color", "black");
