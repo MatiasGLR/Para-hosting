@@ -8,7 +8,9 @@ dotenv.config();
 
 async function login (req,res) {
     const user = req.body.user;
+    if(user.length > 15) return res.status(400).send({status:"Error",message:"El nombre solo puede tener hasta 15 digitos"});
     const pass = req.body.contra;
+    if(pass.length > 25) return res.status(400).send({status:"Error",message:"La contraseña solo puede tener hasta 25 digitos"});
     if(!user || !pass){
         return res.status(400).send({status:"Error",message:"Los campos están incompletos"});
     }

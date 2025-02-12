@@ -51,7 +51,7 @@ const razas_data = {
         natural: 4
     }
 }
-
+/*
 function readURL(input) {
     if (input.files && input.files[0]) {
         const reader = new FileReader();
@@ -76,13 +76,35 @@ function readURL(input) {
                     document.querySelector('#data_imagen_mostrar').innerHTML = '⚠️ La imagen ha excedido el tamaño';
                     input.value = ""; // Limpia el input
                 } else {
-                    document.querySelector('#data_imagen_mostrar').innerHTML = '<img src='+e.target.result+' style="width:100%; height:100%"></img>';
+                    document.querySelector('#data_imagen_mostrar').innerHTML = '<img id="imagen_mostrada" src='+e.target.result+' style="width:100%; height:100%"></img>';
                 }
             }
         };
 
         reader.readAsDataURL(input.files[0]);
     }
+}*/
+
+function esImagen(url) {
+    return new Promise((resolve) => {
+        const img = new Image();
+        img.src = url;
+
+        img.onload = () => resolve(true); // Si carga, es una imagen
+        img.onerror = () => resolve(false); // Si falla, no es una imagen
+    });
+}
+
+const imagenes_permitidas = ["jpg","jpeg","webp","png","gif"];
+
+function readURL(input) {
+    const imagen = document.querySelector("#data_imagen").value;
+    return document.querySelector('#data_imagen_mostrar').innerHTML = '<img id="imagen_mostrada" src='+imagen+' style="width:100%; height:100%"></img>';
+    /*imagenes_permitidas.forEach(tipo => {
+        if(imagen.includes(tipo)) return document.querySelector('#data_imagen_mostrar').innerHTML = '<img id="imagen_mostrada" src='+imagen+' style="width:100%; height:100%"></img>';
+    });
+    alert("Este enlace no continene una imagen");
+    document.querySelector("#data_imagen").value = "";*/
 }
 
 function razaExtra ()  {

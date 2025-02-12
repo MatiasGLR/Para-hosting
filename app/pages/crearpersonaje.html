@@ -90,9 +90,7 @@
                         <div id="data_imagen_mostrar" class="mb-2" style="width:200px; height:200px; border:1px solid black;">
                             <div class="d-flex justify-content-center align-items-center text-center" style="height:200px">Sube una imagen de máximo 300x300 en formato png, gif, jpg o jpeg</div>
                         </div>
-                        <div class="d-flex justify-content-center">
-                            <input type="file" style="width: 100%; background: unset;" id="data_imagen" accept="image/png, image/gif, image/jpeg, image/jpg, image/webp" onchange="readURL(this);">
-                        </div>
+                        <input type="text" id="data_imagen" name="data_imagen" placeholder="Pon el enlace de la imagen" onchange="readURL();">
                     </div>
                     <div class="data_nombre">
                         <label class="sr-only" for="data_nombre"></label>
