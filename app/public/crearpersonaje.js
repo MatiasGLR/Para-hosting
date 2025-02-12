@@ -11,7 +11,7 @@ razatdinput.forEach(inp => {
         if(x.target.value === "0") e.style.visibility = "hidden";
         else {
             e.style.visibility = "visible";
-            e.value = "+" + x.target.value;
+            e.value = "+" + x.target.value + "";
         }
     });
 })

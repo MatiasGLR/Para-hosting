@@ -155,8 +155,8 @@ async function crearpersonaje(req, res){
         if (!isNaN(ra_suerte)) {
             if(Number(ra_suerte) > 1) throw ({status:"Error",message:"ra_suerte",error:"La estadística no debe superar el 1 total"});
         } else throw ({status:"Error",message:"ra_suerte",error:"Datos ingresados no válidos"});
-        if((in_agilidad + in_carisma + in_fuerza + in_inteligencia + in_percepción + in_puntería + in_resistencia) > 15) {
-            throw ({status:"Error",message:"ra_suerte",error:"Has distribuido mas de 15 puntos, intentalo de nuevo"});
+        if((in_agilidad + in_carisma + in_fuerza + in_inteligencia + in_percepción + in_puntería + in_resistencia) != 15) {
+            throw ({status:"Error",message:"ra_suerte",error:"Debes distribuir tus 15 puntos en estadística"});
         }
         if((ra_agilidad + ra_carisma + ra_fuerza + ra_inteligencia + ra_percepción + ra_puntería + ra_resistencia + ra_suerte) > 1) {
             throw ({status:"Error",message:"ra_suerte",error:"Puntos de raza establecidos de forma incorrecta, reinicia, y, si el problema persiste, contacta a un administrador"});
