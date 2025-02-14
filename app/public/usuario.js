@@ -299,18 +299,21 @@ async function cargararmas() {
                 "Content-Type" : "application/json"
             },
             body: JSON.stringify({
-                tabla: "ArmasIniciales"
+                tabla: "Objetos",
+                categoria: "Armas"
             })
         });
         const data = await res.json();
         if(data.length > 0) {
             armas = data;
             armas.forEach((arma, index) => {
-                const option = document.createElement("option");
-                option.textContent = arma.name;  // El texto de la opción
-                option.value = index;        // El valor de la opción (puede ser diferente si quieres)
-                option.name = arma.name;
-                armas_lista_existe.appendChild(option);
+                if(arma.name.includes("de hierro")) {
+                    const option = document.createElement("option");
+                    option.textContent = arma.name;  // El texto de la opción
+                    option.value = index;        // El valor de la opción (puede ser diferente si quieres)
+                    option.name = arma.name;
+                    armas_lista_existe.appendChild(option);
+                }
             })
         }
     } catch (e) {
@@ -348,6 +351,36 @@ async function cargarmedicinas() {
     }
 }
 
+async function cargarpociones() {
+    const pocion_lista_existe = document.querySelector("#data_pocion");
+    if(!pocion_lista_existe) return;
+    try {
+        const res = await fetch("http://localhost:3999/api/datos", {
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify({
+                tabla: "Objetos",
+                categoria: "Pociones"
+            })
+        });
+        const data = await res.json();
+        if(data.length > 0) {
+            pociones = data;
+            pociones.forEach((pocion, index) => {
+                const option = document.createElement("option");
+                option.textContent = pocion.name;  // El texto de la opción
+                option.value = index;        // El valor de la opción (puede ser diferente si quieres)
+                option.name = pocion.name;
+                pocion_lista_existe.appendChild(option);
+            })
+        }
+    } catch (e) {
+        console.error(e);
+    }
+}
+
 function informaciondon() {
     const don_list = document.querySelector("#data_dones");
     if(don_list.value != ""){
@@ -371,6 +404,17 @@ function informacionmedicina() {
     }
 }
 
+function informacionpocion() {
+    const pocion_list = document.querySelector("#data_pocion");
+    if(pocion_list.value != ""){
+        document.querySelector("#data_pocion_extra").innerHTML = "<b>Descripción del objeto.</b> "+pociones[pocion_list.value].descripcion;
+        document.querySelector("#data_pocion").setAttribute("name", pociones[pocion_list.value].name);
+    } else {
+        document.querySelector("#data_pocion_extra").innerHTML = '';
+        document.querySelector("#data_pocion").setAttribute("name", "");
+    }
+}
+
 function informacionarma() {
     const arma_list = document.querySelector("#data_arma");
     if(arma_list.value != ""){
@@ -383,3 +427,4 @@ function informacionarma() {
 cargardones();
 cargararmas();
 cargarmedicinas();
+cargarpociones();

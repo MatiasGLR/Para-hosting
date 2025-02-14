@@ -329,6 +329,14 @@
                         </select>
                         <span>El arma inicial será de hierro, y en caso de ser un canalizador, será de madera</span>
                     </div>
+                    <div class="data_pocion">
+                        <label for="data_pocion" class="data_pocion"></label>
+                        <select name="data_pocion" id="data_pocion" onchange="informacionpocion()">
+                            <option value="">Elige una poción inicial...</option>
+                        </select>
+                        <span>La poción inicial será de Nivel 1</span>
+                        <span id="data_pocion_extra">Puede ser utilizado cualquier objeto de la categorìa "Medicamento" de objetos, en caso de no haber uno, contacta a un administrador</span>
+                    </div>
                     <div class="data_medicina">
                         <label for="data_medicina" class="data_medicina"></label>
                         <select name="data_medicina" id="data_medicina" onchange="informacionmedicina()">

@@ -84,6 +84,7 @@ document.querySelector("#personaje-form").addEventListener("submit", async (e) =
             in_resistencia: e.target.querySelector("#in_resistencia").value,
             ra_resistencia: e.target.querySelector("#ra_resistencia").value,
             ra_suerte: e.target.querySelector("#ra_suerte").value,
+            pocion: document.querySelector("#data_pocion").getAttribute("name"),
             arma: document.querySelector("#data_arma").getAttribute("name"),
             medicina: document.querySelector("#data_medicina").getAttribute("name"),
             dinero: e.target.querySelector("#data_dinero").value

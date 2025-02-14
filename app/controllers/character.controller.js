@@ -1,6 +1,6 @@
 import db from './database.js';
 
-const tablas = ["ArmasIniciales", "Dones", "Objetos", "Habilidades", "Jugadores", "NPCs", "Bestiario"];
+const tablas = ["Dones", "Objetos", "Habilidades", "Jugadores", "NPCs", "Bestiario"];
 const razas = ["Humano","Orco","Shira","Fjereo","Lhanie","Turbe","Sarka","Demonio","Automata","Draieach","Benirie","Naturis"];
 const categorias = ["Medicinas"];
 const maldiciones = ["","Bestia","Vampiro","Sin alma"];
@@ -8,7 +8,8 @@ const dioses = ["","Sol","Luna","Combate","Miseria","Muerte","Barlghon","Justici
 const profesiones = ["Alquimista", "Armero", "Bardo", "Cantinero", "Carpintero", "Cazador", "Domador", "Explorador", "Granjero", "Guardia", "Herrero", "Ingeniero", "Joyero", "Ladrón", "Médico", "Mercader", "Mercenario", "Minero", "Talabartero"];
 const estadisticas = ["Agilidad","Carisma","Puntería","Fuerza","Inteligencia","Percepción","Resistencia","Suerte"];
 const divisas = ["Qurs","Kalis","Sarix"];
-
+const lista_idiomas = ["Emión","Esder","Koi","Ledusval","Liven","Naturio","Revent","Selga","Terak","Prix"];
+							
 const caracteres_prohibidos = ["'","/","=",",",".","`","´","_","-"];
 
 async function datos(req, res){
@@ -41,7 +42,7 @@ const verificarDon = (dones) => {
 
 const verificarArma = (arma) => {
     return new Promise((resolve, reject) => {
-        db.get("SELECT * FROM ArmasIniciales WHERE `name`=?", [arma], (err, row) => {
+        db.get("SELECT * FROM Objetos WHERE `name`=?", [arma], (err, row) => {
             if (err || row == undefined) {
                 reject({status:"Error",message:"data_arma",error:"Debes elegir un arma inicial válida"});
             } else {
@@ -56,6 +57,18 @@ const verificarMedicina = (medicina) => {
         db.get("SELECT * FROM `Objetos` WHERE `name`=?", [medicina], (err, row) => {
             if (err || row == undefined) {
                 reject({status:"Error",message:"data_medicina",error:"Debes elegir una medicina inicial válida"});
+            } else {
+                resolve(row);
+            }
+        });
+    });
+}
+
+const verificarPocion = (pocion) => {
+    return new Promise((resolve, reject) => {
+        db.get("SELECT * FROM `Objetos` WHERE `name`=?", [pocion], (err, row) => {
+            if (err || row == undefined) {
+                reject({status:"Error",message:"data_pocion",error:"Debes elegir una poción inicial válida"});
             } else {
                 resolve(row);
             }
@@ -176,7 +189,17 @@ async function crearpersonaje(req, res){
             if (medicina != "") {
                 await verificarMedicina(medicina);
             } else {
-                throw ({status:"Error",message:"data_medicina",error:"Debes elegir una medicina inicial válida"});
+                throw ({status:"Error",message:"data_medicina",error:"Debes elegir una medicina inicial"});
+            }
+        } catch (error) {
+            throw ({status:"Error",message:"data_medicina",error:"Debes elegir una medicina inicial"});
+        }
+        const pocion = req.body.pocion;
+        try {
+            if (pocion != "") {
+                await verificarPocion(pocion);
+            } else {
+                throw ({status:"Error",message:"data_pocion",error:"Debes elegir una pocion inicial"});
             }
         } catch (error) {
             throw ({status:"Error",message:"data_medicina",error:"Debes elegir una medicina inicial"});
@@ -184,6 +207,86 @@ async function crearpersonaje(req, res){
         const dinero = req.body.dinero;
         if(!divisas.includes(dinero) || dinero == "") throw ({status:"Error",message:"data_dinero",error:"Debes elegir una divisa inicial"});  
         res.status(200).send({status:"ok",message:"Completado"});
+
+        let datos = {
+            "edad": edad,
+            "genero": genero,
+            "estatura": estatura,
+            "peso": peso,
+            "raza": raza,
+            "hibrido": hibrido,
+            "maldicion": maldicion,
+            "dios": dios,
+            "karmapos": 0,
+            "karmaneg": 0,
+            "profesion": profesion,
+            "dones": dones,
+            "dobleherencia": false,
+            "enexploracion": false,
+            "stats": {
+                "ag": (stat_mejorada == "Agilidad") ? (in_agilidad + 1) : in_agilidad,
+                "ca": (stat_mejorada == "Carisma") ? (in_carisma + 1) : in_carisma,
+                "fu": (stat_mejorada == "Fuerza") ? (in_fuerza + 1) : in_fuerza,
+                "in": (stat_mejorada == "Inteligencia") ? (in_inteligencia + 1) : in_inteligencia,
+                "pe": (stat_mejorada == "Percepción") ? (in_percepción + 1) : in_percepción,
+                "pu": (stat_mejorada == "Puntería") ? (in_puntería + 1) : in_puntería,
+                "re": (stat_mejorada == "Resistencia") ? (in_resistencia + 1) : in_resistencia,
+                "su": 0,
+                "r_ag": ra_agilidad,
+                "r_ca": ra_carisma,
+                "r_fu": ra_fuerza,
+                "r_in": ra_inteligencia,
+                "r_pe": ra_percepción,
+                "r_pu": ra_puntería,
+                "r_re": ra_resistencia,
+                "r_su": ra_suerte,
+                "t_ag": 0,
+                "t_ca": 0,
+                "t_fu": 0,
+                "t_in": 0,
+                "t_pe": 0,
+                "t_pu": 0,
+                "t_re": 0,
+                "t_su": 0,
+                "p_ag": 0,
+                "p_ca": 0,
+                "p_fu": 0,
+                "p_in": 0,
+                "p_pe": 0,
+                "p_pu": 0,
+                "p_re": 0,
+                "p_su": 0
+            },
+            "inventario": {
+                "mochila_tamaño": 1,
+                "tiene_riñonera": false,
+                "tiene_cinturon": false,
+                "fe_6": {objeto:dinero,categoría:"Dinero",cantidad:1000,funcion:""},
+                "fe_7": {objeto:pocion,categoría:"Pociones",cantidad:1,funcion:""},
+                "fe_8": {objeto:medicina,categoría:"Medicinas",cantidad:1,funcion:""},
+                "arma_izq": {objeto:arma,categoría:"Armas",cantidad:1,funcion:"{valor:1d6,efecto:'Quemadura',efecto_prob:'5%'}"} //Respetar espacios > split ' de ' (Espada larga|hierro) si tiene "con" split ' con ' (Espada larga|hierro|turmalina), 
+            },
+            "idiomas": {
+
+            }
+        }
+
+        const limite_inventario = 14, 
+        limite_riñonera = 4, 
+        limite_cinturón = 3, 
+        limite_fundaextra = 5;
+
+        lista_idiomas.forEach(idioma => {
+            datos.idiomas[idioma] = (idioma == "Revent") || (raza == "Naturis" && idioma == "Naturio") || (raza == "Demonio" && idioma == "Selga") || (dones == "Don del Traductor") ? true : false;
+        })
+
+        for(let i=0;i<limite_inventario;i++){
+            const slot = i+1;
+            datos.inventario["inv_"+slot] = {objeto:"",categoría:"",cantidad:0,funcion:""};
+            if(i < limite_riñonera) datos.inventario["ri_"+slot] = {objeto:"",categoría:"",cantidad:0,funcion:""};
+            if(i < limite_cinturón) datos.inventario["ci_"+slot] = {objeto:"",categoría:"",cantidad:0,funcion:""};
+            if(i < limite_fundaextra) datos.inventario["fe_"+slot] = {objeto:"",categoría:"",cantidad:0,funcion:""};
+        }
     } catch(error) {
         if(error.status && error.message && error.error) res.status(200).send({status:error.status,message:error.message,error:error.error});
         else {
