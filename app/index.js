@@ -75,7 +75,7 @@ const db = new sqlite.Database(
 
         db.run(`
             CREATE TABLE IF NOT EXISTS Personajes (
-                id NUMERIC PRIMARY KEY AUTOINCREMENT,
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
                 jugador TEXT,
                 name TEXT,
                 datos TEXT,
