@@ -14,7 +14,7 @@ async function login (req,res) {
     if(!user || !pass){
         return res.status(400).send({status:"Error",message:"Los campos están incompletos"});
     }
-    const usuario = db.get("SELECT * FROM `Jugadores` WHERE `name`=?", [user], (err,row) => {
+    const usuario = db.get("SELECT * FROM Jugadores WHERE `name`=?", [user], (err,row) => {
         if(err) return console.error(err);
         else if(row != undefined) {
             try {
@@ -25,7 +25,7 @@ async function login (req,res) {
                     if(login_correcto) {
 
                         const token = jsonwebtoken.sign(
-                            {user:row.user}, 
+                            {user:row.name}, 
                             process.env.KYE, 
                             {expiresIn:process.env.KYE_EXPIRE})
                     

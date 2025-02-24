@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+}
+.main {
+    min-height: 100vsh;
+}
+.personajes_titulo {
+    background-color: lightgray;
+    text-align: right;
+    padding: 40px 50px;
+}
+.personajes_filtro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: gray;
+    color:white;
+    font-size: large;
+    vertical-align: middle;
+}
+.personajes_filtro button {
+    padding: 0 20px;
+}
+.cards .character {
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+.cards .character img {
+    margin:10px;
+}

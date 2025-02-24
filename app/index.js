@@ -55,7 +55,7 @@ const db = new sqlite.Database(
                 categoria TEXT,
                 desc TEXT
             )    
-        `)
+        `, (error) => {if(error) return console.error(error)})
 
         db.run(`
             CREATE TABLE IF NOT EXISTS Objetos (
@@ -71,11 +71,12 @@ const db = new sqlite.Database(
                 funcionalidad TEXT,
                 imagen TEXT
             )    
-        `)
+        `, (error) => {if(error) return console.error(error)})
 
         db.run(`
             CREATE TABLE IF NOT EXISTS Personajes (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
+                imagen TEXT,
                 jugador TEXT,
                 name TEXT,
                 datos TEXT,
@@ -86,52 +87,13 @@ const db = new sqlite.Database(
                 cofrerro TEXT,
                 carreta TEXT,
                 casas TEXT,
-                bancos TEXT,
                 reputacion TEXT,
                 mascotas TEXT,
                 recetas TEXT,
                 habilidades TEXT,
                 hechizos TEXT
             )
-        `)
-
-        /*
-                jugador TEXT,
-                imagen TEXT,
-                edad NUMERIC,
-                genero TEXT,
-                estatura NUMERIC,
-                peso NUMERIC,
-                raza TEXT,
-                hibrido TEXT,
-                maldicion TEXT,
-                dios TEXT,
-                karmapos NUMERIC,
-                karmaneg NUMERIC,
-                profesion TEXT,
-                dones TEXT,
-                stat_mejorada TEXT,
-                in_agilidad NUMERIC,
-                ra_agilidad NUMERIC,
-                in_carisma NUMERIC,
-                ra_carisma NUMERIC,
-                in_punteria NUMERIC,
-                ra_punteria NUMERIC,
-                in_fuerza NUMERIC,
-                ra_fuerza NUMERIC,
-                in_inteligencia NUMERIC,
-                ra_inteligencia NUMERIC,
-                in_percepcion NUMERIC,
-                ra_percepcion NUMERIC,
-                in_resistencia NUMERIC,
-                ra_resistencia NUMERIC,
-                ra_suerte NUMERIC,
-                exp NUMERIC
-            arma: document.querySelector("#data_arma").getAttribute("name"),
-            medicina: document.querySelector("#data_medicina").getAttribute("name"),
-            dinero: e.target.querySelector("#data_dinero").value
-            )    
-        `)*/
+        `, (error) => {if(error) return console.error(error)})
     }
 );
 
@@ -147,9 +109,11 @@ app.get('/login', authorization.onlyUnlogged, (req, res) => res.status(200).send
 app.get('/register', authorization.onlyUnlogged, (req, res) => res.status(200).sendFile(__dirname + '/pages/register.html'))
 app.get('/account', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/usuario.html') })
 app.get('/account/crearpersonaje', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/crearpersonaje.html') })
+app.get('/account/mis_personajes', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/mis_personajes.html') })
 app.post('/api/register', authentication.register);
 app.post('/api/login', authentication.login);
 app.post('/api/upload', upload.single('file'), (req, res) => res.send("Successfully uploaded"));
 app.post('/api/datos', personajes.datos);
-app.post('/api/crearpersonaje', personajes.crearpersonaje);
+app.post('/api/crearpersonaje', async (req, res) => { await personajes.crearpersonaje(req,res) } );
+app.post('/api/cargarpersonajes', async (req, res) => { await personajes.cargarpersonajes(req,res) } );
 app.get('*', (req, res) => res.status(404).sendFile(__dirname + '/pages/'));

@@ -55,6 +55,7 @@ document.querySelector("#personaje-form").addEventListener("submit", async (e) =
         headers: {
             "Content-Type" : "application/json"
         },
+        credentials: "include",
         body: JSON.stringify({
             imagen: e.target.querySelector("#data_imagen").value,
             name: e.target.querySelector("#data_nombre").value,
@@ -91,14 +92,20 @@ document.querySelector("#personaje-form").addEventListener("submit", async (e) =
         })
     })
     const resJson = await res.json();
-    if(resJson.message) {
-        if(resJson.message == "Completado") return alert("Completado");
-        window.location.href = "#"+resJson.message;
-        $("select").css("background-color", "gainsboro");
-        $("input").css("background-color", "gainsboro");
-        $("#"+resJson.message).css("background-color", "#fda3a3");
-        document.querySelector("#error_box_text").innerHTML = "⚠️ " + resJson.error;
-        $("#error").css("display", "flex");
+    console.log(resJson);
+    if(resJson.redirect) {
+        alert(resJson.message);
+        window.location.href = resJson.redirect;
+        return
+    } else {
+        if(resJson.message) {
+            window.location.href = "#"+resJson.message;
+            $("select").css("background-color", "gainsboro");
+            $("input").css("background-color", "gainsboro");
+            $("#"+resJson.message).css("background-color", "#fda3a3");
+            document.querySelector("#error_box_text").innerHTML = "⚠️ " + resJson.error;
+            $("#error").css("display", "flex");
+        }
     }
     return 
 });

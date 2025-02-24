@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-dark">
     <div id="menuopciones" class="menuopciones hide">
         <div class="menu">
@@ -25,6 +27,7 @@
             <nav class="medium">
                 <a href="/"><span><i class="bi bi-house-door"></i> Inicio</span></a>
                 <a href="/account"><span><i class="bi bi-people"></i> Mi cuenta</span></a>
+                <a href="/account/mis_personajes"><span><i class="bi bi-people"></i> Mis personajes</span></a>
                 <a href="/staff"><span><i class="bi bi-award"></i> Staff</span></a>
             </nav>
             <nav class="bottom">
@@ -39,85 +42,11 @@
         </span>
     </div>
     <main id="main" style="min-height: 100vsh;">
-        <style>
-            *{
-                box-sizing: border-box;
-                margin:0;
-                padding:0;
-            }
-            main {
-                overflow:hidden;
-            }
-            .sr-only {
-                position: absolute;
-                left: -10000px;
-                top:auto;
-                width: 1px;
-                height: 1px;
-                overflow:hidden;
-            }
-            input,select {
-                height:30px;
-                width:100%;
-            }
-            .flex-column {
-                gap:10px;
-            }
-        
-            input, select {
-                background-color: gainsboro;
-                text-indent: 10px;
-            }
-        
-            td input {
-                text-align: center;
-                background-color: transparent;
-                border: unset;
-                font-size: larger;
-            }
-        
-            td div {
-                max-width: 100px;
-            }
-
-            #error {
-                display:none;
-                align-items: center;
-                justify-content: center;
-                position:fixed;
-                background-color: rgba(0,0,0,0.5);
-                width: 100%;
-                height:100svh;
-            }
-
-            #error_box {
-                background-color: white;
-                width:80%;
-                max-width:600px;
-                min-height:100px;
-                border-radius: 20px;
-                font-size: 25px;
-                display:flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap:10px;
-                margin-bottom:10px;
-                padding:50px;
-            }
-            thead tr td input {
-                width:100px;
-            }
-            td input {
-                width:20px;
-                text-indent: 0;
-                background-color: transparent !important;
-            }
-        </style>
         <div id="error">
             <div id="error_box">
                 <span id="error_box_text"></span>
-                <button id="error_box_button" class="btn btn-danger" onclick='$("#error").css("display", "none")'>Cerrar</button>
+                <button id="error_box_button" class="btn btn-danger"
+                    onclick='$("#error").css("display", "none")'>Cerrar</button>
             </div>
         </div>
         <div class="main bg-dark text-white">
@@ -127,10 +56,14 @@
                     <h4 class="pt-4 mt-4 text-center">Apariencia del personaje</h4>
                     <hr>
                     <div class="w-100 d-flex align-items-center flex-column justify-content-center">
-                        <div id="data_imagen_mostrar" class="mb-2" style="width:200px; height:200px; border:1px solid black;">
-                            <div class="d-flex justify-content-center align-items-center text-center" style="height:200px">Sube una imagen de máximo 300x300 en formato png, gif, jpg o jpeg</div>
+                        <div id="data_imagen_mostrar" class="mb-2"
+                            style="width:200px; height:200px; border:1px solid black;">
+                            <div class="d-flex justify-content-center align-items-center text-center"
+                                style="height:200px">Sube una imagen de máximo 300x300 en formato png, gif, jpg o jpeg
+                            </div>
                         </div>
-                        <input type="text" id="data_imagen" name="data_imagen" placeholder="Pon el enlace de la imagen" onchange="readURL();">
+                        <input type="text" id="data_imagen" name="data_imagen" placeholder="Pon el enlace de la imagen"
+                            onchange="readURL();">
                     </div>
                     <div class="data_nombre">
                         <label class="sr-only" for="data_nombre"></label>
@@ -275,7 +208,8 @@
                             <option value="Resistencia">Resistencia</option>
                             <option value="Suerte">Suerte</option>
                         </select>
-                        <span>Esto le agregará +1 a esa estadística, superando el límite, y permitirá a la estadística, llegar hasta 10 mediante fuentes externas, como pociones, bufos y joyas</span>
+                        <span>Esto le agregará +1 a esa estadística, superando el límite, y permitirá a la estadística,
+                            llegar hasta 10 mediante fuentes externas, como pociones, bufos y joyas</span>
                     </div>
                     <div class="data_stats">
                         <table class="table table-light text-center align-middle">
@@ -288,34 +222,103 @@
                                 </tr>
                             </thead>
                             <tbody id="body_stats">
-                                <tr class="m-auto"> 
-                                    <td>Agilidad</td> 
+                                <tr class="m-auto">
+                                    <td>Agilidad</td>
                                     <td><input id="in_agilidad" type="text" value=0 readonly></td>
                                     <td>
                                         <input type="text" id="ra_agilidad" class="raza_td" value=0 readonly hidden>
-                                        <input type="text" id="ra_agilidad_show" value=0 disable></td>
+                                        <input type="text" id="ra_agilidad_show" value=0 disable>
+                                    </td>
                                     <td>
-                                        <div class="btn btn-dark w-50" onclick="cambiarstat('agilidad',1)">+</div>
-                                        <div class="btn btn-secondary w-50" onclick="cambiarstat('agilidad',-1)">-</div>
-                                    </td> 
+                                        <div class="btn-container">
+                                            <div class="btn btn-dark w-50" onclick="cambiarstat('agilidad',1)">+</div>
+                                            <div class="btn btn-secondary w-50" onclick="cambiarstat('agilidad',-1)">-</div>
+                                        </div>
+                                    </td>
                                 </tr>
-                                <tr class="m-auto"> 
-                                    <td>Carisma</td> 
+                                <tr class="m-auto">
+                                    <td>Carisma</td>
                                     <td><input type="text" id="in_carisma" value=0 readonly></td>
                                     <td>
                                         <input type="text" id="ra_carisma" class="raza_td" value=0 readonly hidden>
-                                        <input type="text" id="ra_carisma_show" value=0 disable></td> 
+                                        <input type="text" id="ra_carisma_show" value=0 disable>
+                                    </td>
                                     <td>
-                                        <div class="btn btn-dark w-50" onclick="cambiarstat('carisma',1)">+</div>
-                                        <div class="btn btn-secondary w-50" onclick="cambiarstat('carisma',-1)">-</div>
-                                    </td> 
+                                        <div class="btn-container">
+                                            <div class="btn btn-dark w-50" onclick="cambiarstat('carisma',1)">+</div>
+                                            <div class="btn btn-secondary w-50" onclick="cambiarstat('carisma',-1)">-</div>
+                                        </div>
+                                    </td>
                                 </tr>
-                                <tr class="m-auto"> <td>Puntería</td> <td><input type="text"id="in_puntería"  value=0 readonly></td><td><input type="text" id="ra_puntería" class="raza_td" value=0 readonly hidden><input type="text" id="ra_puntería_show" value=0 disable></td> <td><div class="btn btn-dark w-50" onclick="cambiarstat('puntería',1)">+</div><div class="btn btn-secondary w-50" onclick="cambiarstat('puntería',-1)">-</div></td> </tr>
-                                <tr class="m-auto"> <td>Fuerza</td> <td><input type="text"id="in_fuerza"  value=0 readonly></td><td><input type="text" id="ra_fuerza" class="raza_td" value=0 readonly hidden><input type="text" id="ra_fuerza_show" value=0 disable></td> <td><div class="btn btn-dark w-50" onclick="cambiarstat('fuerza',1)">+</div><div class="btn btn-secondary w-50" onclick="cambiarstat('fuerza',-1)">-</div></td> </tr>
-                                <tr class="m-auto"> <td>Inteligencia</td> <td><input type="text"id="in_inteligencia"  value=0 readonly></td><td><input type="text" id="ra_inteligencia" class="raza_td" value=0 readonly hidden><input type="text" id="ra_inteligencia_show" value=0 disable></td> <td><div class="btn btn-dark w-50" onclick="cambiarstat('inteligencia',1)">+</div><div class="btn btn-secondary w-50" onclick="cambiarstat('inteligencia',-1)">-</div></td> </tr>
-                                <tr class="m-auto"> <td>Percepción</td> <td><input type="text" id="in_percepción" value=0 readonly></td><td><input type="text" id="ra_percepción" class="raza_td" value=0 readonly hidden><input type="text" id="ra_percepción_show" value=0 disable></td> <td><div class="btn btn-dark w-50" onclick="cambiarstat('percepción',1)">+</div><div class="btn btn-secondary w-50" onclick="cambiarstat('percepción',-1)">-</div></td> </tr>
-                                <tr class="m-auto"> <td>Resistencia</td> <td><input type="text" id="in_resistencia" value=0 readonly></td><td><input type="text" id="ra_resistencia" class="raza_td" value=0 readonly hidden><input type="text" id="ra_resistencia_show" value=0 disable></td> <td><div class="btn btn-dark w-50" onclick="cambiarstat('resistencia',1)">+</div><div class="btn btn-secondary w-50" onclick="cambiarstat('resistencia',-1)">-</div></td> </tr>
-                                <tr class="m-auto"> <td>Suerte</td> <td></td><td><input type="text" id="ra_suerte" class="raza_td" value=0 readonly hidden><input type="text" id="ra_suerte_show" value=0 disable></td><td><div class="btn btn-danger w-100" onclick="cerarstats_in()">Restablecer</div></td> </tr>
+                                <tr class="m-auto">
+                                    <td>Puntería</td>
+                                    <td><input type="text" id="in_puntería" value=0 readonly></td>
+                                    <td><input type="text" id="ra_puntería" class="raza_td" value=0 readonly
+                                            hidden><input type="text" id="ra_puntería_show" value=0 disable></td>
+                                    <td>
+                                        <div class="btn-container">
+                                            <div class="btn btn-dark w-50" onclick="cambiarstat('puntería',1)">+</div>
+                                            <div class="btn btn-secondary w-50" onclick="cambiarstat('puntería',-1)">-</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="m-auto">
+                                    <td>Fuerza</td>
+                                    <td><input type="text" id="in_fuerza" value=0 readonly></td>
+                                    <td><input type="text" id="ra_fuerza" class="raza_td" value=0 readonly hidden><input
+                                            type="text" id="ra_fuerza_show" value=0 disable></td>
+                                    <td>
+                                        <div class="btn-container">
+                                            <div class="btn btn-dark w-50" onclick="cambiarstat('fuerza',1)">+</div>
+                                            <div class="btn btn-secondary w-50" onclick="cambiarstat('fuerza',-1)">-</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="m-auto">
+                                    <td>Inteligencia</td>
+                                    <td><input type="text" id="in_inteligencia" value=0 readonly></td>
+                                    <td><input type="text" id="ra_inteligencia" class="raza_td" value=0 readonly
+                                            hidden><input type="text" id="ra_inteligencia_show" value=0 disable></td>
+                                    <td>
+                                        <div class="btn-container">
+                                            <div class="btn btn-dark w-50" onclick="cambiarstat('inteligencia',1)">+</div>
+                                            <div class="btn btn-secondary w-50" onclick="cambiarstat('inteligencia',-1)">-</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="m-auto">
+                                    <td>Percepción</td>
+                                    <td><input type="text" id="in_percepción" value=0 readonly></td>
+                                    <td><input type="text" id="ra_percepción" class="raza_td" value=0 readonly
+                                            hidden><input type="text" id="ra_percepción_show" value=0 disable></td>
+                                    <td>
+                                        <div class="btn-container">
+                                            <div class="btn btn-dark w-50" onclick="cambiarstat('percepción',1)">+</div>
+                                            <div class="btn btn-secondary w-50" onclick="cambiarstat('percepción',-1)">-</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="m-auto">
+                                    <td>Resistencia</td>
+                                    <td><input type="text" id="in_resistencia" value=0 readonly></td>
+                                    <td><input type="text" id="ra_resistencia" class="raza_td" value=0 readonly
+                                            hidden><input type="text" id="ra_resistencia_show" value=0 disable></td>
+                                    <td>
+                                        <div class="btn-container">
+                                            <div class="btn btn-dark w-50" onclick="cambiarstat('resistencia',1)">+</div>
+                                            <div class="btn btn-secondary w-50" onclick="cambiarstat('resistencia',-1)">-</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="m-auto">
+                                    <td>Suerte</td>
+                                    <td></td>
+                                    <td><input type="text" id="ra_suerte" class="raza_td" value=0 readonly hidden><input
+                                            type="text" id="ra_suerte_show" value=0 disable></td>
+                                    <td>
+                                        <div class="btn btn-danger w-100" onclick="cerarstats_in()">Restablecer</div>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -335,14 +338,16 @@
                             <option value="">Elige una poción inicial...</option>
                         </select>
                         <span>La poción inicial será de Nivel 1</span>
-                        <span id="data_pocion_extra">Puede ser utilizado cualquier objeto de la categorìa "Medicamento" de objetos, en caso de no haber uno, contacta a un administrador</span>
+                        <span id="data_pocion_extra">Puede ser utilizado cualquier objeto de la categorìa "Medicamento"
+                            de objetos, en caso de no haber uno, contacta a un administrador</span>
                     </div>
                     <div class="data_medicina">
                         <label for="data_medicina" class="data_medicina"></label>
                         <select name="data_medicina" id="data_medicina" onchange="informacionmedicina()">
                             <option value="">Elige un medicamento inicial...</option>
                         </select>
-                        <span id="data_medicina_extra">Puede ser utilizado cualquier objeto de la categorìa "Medicamento" de objetos, en caso de no haber uno, contacta a un administrador</span>
+                        <span id="data_medicina_extra">Puede ser utilizado cualquier objeto de la categorìa
+                            "Medicamento" de objetos, en caso de no haber uno, contacta a un administrador</span>
                     </div>
                     <div class="data_dinero">
                         <label for="data_dinero" class="data_dinero"></label>
@@ -363,4 +368,5 @@
         </div>
     </main>
 </body>
+
 </html>
