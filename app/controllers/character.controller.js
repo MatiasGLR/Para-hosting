@@ -284,15 +284,34 @@ async function crearpersonaje(req, res) {
                 "peso": peso,
                 "raza": raza,
                 "hibrido": hibrido,
-                "maldicion": maldicion,
+                "raza_lv": 1,
+                "maldicion": {
+                    "nombre": maldicion,
+                    "nivel": 0
+                },
                 "dios": dios,
                 "karmapos": 0,
                 "karmaneg": 0,
                 "profesion": profesion,
-                "dones": dones,
+                "dones": {
+                    "uno": dones,
+                    "dos": ""
+                },
                 "dobleherencia": false,
                 "enexploracion": false,
                 "stat_mejorada": stat_mejorada,
+                "clase_1": {
+                    "nombre": "",
+                    "nivel": 0
+                },
+                "clase_2": {
+                    "nombre": "",
+                    "nivel": 0
+                },
+                "clase_3": {
+                    "nombre": "",
+                    "nivel": 0
+                }
             },
             "stats": {
                 "ag": (stat_mejorada == "Agilidad") ? (in_agilidad + 1) : in_agilidad,
@@ -440,22 +459,52 @@ async function crearpersonaje(req, res) {
     //return res.json({status:"Error", message:"Completado"});
 }
 
+async function cargarpersonaje(req, res) {
+    try {
+        const cookies = authorization.transformarCookies(req.cookies);
+        if(!cookies.split("; ").find(c => c.startsWith("kye="))) throw ({ status: "Error", message: "#", error: "Tu cuenta tiene un problema, vuelve a intentarlo mas tarde" });
+        
+        const jugador = await authorization.revisarCookie(cookies);
+        const personaje = req.body.personaje;
+        
+        const rows = await new Promise((resolve, reject) => {
+            db.all("SELECT * FROM Personajes WHERE `jugador`=? AND `name`=?", [jugador, personaje], (err, rows) => {
+                if (err) reject({status: "Error"});
+                else resolve({status: "Ok", rows: rows});
+            });
+        });
+
+        return res.status(200).send({ status: rows.status, rows: rows.rows });
+    } catch(error) {
+        if (error.status === "Ok") return res.status(200).send({ status: error.status, rows:error.rows });
+        else if (error.status === "Error" && error.message && error.error && !error.redirect) return res.status(200).send({ status: error.status, message: error.message, error: error.error });
+        else {
+            console.log("Error no manejado:", error);
+            return res.status(500).send({ status: "Error", message: "Error inesperado", error: "Ha ocurrido un error inesperado" });
+        }
+    }
+}
+
 async function cargarpersonajes(req, res) {
     try {
         const cookies = await authorization.transformarCookies(req.cookies);
-        if(!cookies.split("; ").find(c => c.startsWith("kye="))) throw ({ status: "Error", message: "data_imagen", error: "Tu cuenta tiene un problema, vuelve a intentarlo mas tarde" });
+        if(!cookies.split("; ").find(c => c.startsWith("kye="))) throw ({ status: "Error", message: "#", error: "Tu cuenta tiene un problema, vuelve a intentarlo mas tarde" });
         const jugador = await authorization.revisarCookie(cookies);
-        db.all("SELECT * FROM Personajes WHERE `jugador`=?", [jugador], (err, rows) => {
-            if(err) console.error(err);
-            if(rows) throw({status:"Ok", rows:rows});
-        })
+
+        const rows = await new Promise((resolve, reject) => {
+            db.all("SELECT * FROM Personajes WHERE `jugador`=?", [jugador], (err, rows) => {
+                if (err) reject({ status: "Error" });
+                else resolve({status: "Ok", rows: rows});
+            });
+        });
+
+       throw (rows);
     } catch(error) {
-        console.error(error)
-        if (error.status === "Ok") res.status(200).send({ status: error.status, rows:error.rows });
-        else if (error.status === "Error" && error.message && error.error && !error.redirect) res.status(200).send({ status: error.status, message: error.message, error: error.error });
+        if (error.status === "Ok") return res.status(200).send({ status: error.status, rows:error.rows });
+        else if (error.status === "Error" && error.message && error.error && !error.redirect) return res.status(200).send({ status: error.status, message: error.message, error: error.error });
         else {
             console.log("Error no manejado:", error); // Esto te ayudará a detectar cualquier otro error no esperado
-            res.status(500).send({ status: "Error", message: "Error inesperado", error: "Ha ocurrido un error inesperado" });
+            return res.status(500).send({ status: "Error", message: "Error inesperado", error: "Ha ocurrido un error inesperado" });
         }
     }
 }
@@ -463,5 +512,6 @@ async function cargarpersonajes(req, res) {
 export const methods = {
     datos,
     crearpersonaje,
-    cargarpersonajes
+    cargarpersonajes,
+    cargarpersonaje
 }

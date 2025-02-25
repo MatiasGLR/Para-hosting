@@ -29,3 +29,10 @@
 .cards .character img {
     margin:10px;
 }
+
+#personajes {
+    text-align: center;        /* Alineación horizontal */
+    vertical-align: middle;    /* Alineación vertical */
+    padding: 1px;
+    cursor:pointer;
+}

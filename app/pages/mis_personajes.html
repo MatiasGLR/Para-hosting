@@ -24,7 +24,7 @@
             </nav>
             <nav class="medium">
                 <a href="/"><span><i class="bi bi-house-door"></i> Inicio</span></a>
-                <a href="#" onclick="cargarpestaña('/usuario/personajes.html')"><span><i class="bi bi-people"></i> Personajes</span></a>
+                <a href="/account/mis_personajes"><span><i class="bi bi-people"></i> Personajes</span></a>
                 <a href="#"><span><i class="bi bi-journal-bookmark-fill"></i> Ficha</span></a>
                 <a href="#"><span><i class="bi bi-dice-6"></i> Dados</span></a>
                 <a href="/staff"><span><i class="bi bi-award"></i> Staff</span></a>
@@ -47,9 +47,9 @@
             </div>
             <div class="personajes_filtro justify-content-center">
                 <span>Nombre.</span>
-                <input type="text">
-                <span>Clase principal.</span>
-                <input type="text">
+                <input id="filtro_nombre" type="text">
+                <span>Raza.</span>
+                <input id="filtro_raza" type="text">
                 <a href="/account/crearpersonaje">
                     <button class="btn btn-secondary">
                         <i class="bi bi-file-earmark-plus"></i> Nuevo personaje
@@ -60,7 +60,7 @@
                 <table class="table text-center table-dark table-striped">
                     <thead>
                         <tr>
-                            <td><b>Imagen</b></td><td><b>Nombre</b></td><td><b>Clase principal</b></td>
+                            <td><b>Imagen</b></td><td><b>Nombre</b></td><td><b>Raza</b></td>
                         </tr>
                     </thead>
                     <tbody id="mispersonajes">
