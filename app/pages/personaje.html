@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/nav.css">
     <link rel="stylesheet" href="/personaje.css">
     <link rel="stylesheet" href="/fonts.css">
+    <link rel="stylesheet" href="/files/fonts/Rpg-Awesome-master/Rpg-Awesome-master/css/rpg-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="/unlog.js" defer></script>
     <script src="/nav.js" defer></script>
@@ -16,7 +17,7 @@
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-danger">
+<body class="bg-dark">
     <div id="menuopciones" class="menuopciones hide">
         <div class="menu">
             <nav class="upper">
@@ -41,7 +42,266 @@
         </span>
     </div>
     <main id="main" style="min-height: 100vsh;">
-        <div class="main-center bg-secondary">
+        <div class="background"></div>
+        <div class="main-center d-flex flex-wrap justify-content-center">
+            <div class="personaje_datos-main">
+                <h4 id="personaje_datos-nombre"></h4>
+                <div class="personaje_datos-imagen">
+                    <h4 id="personaje_datos-genero"></h4>
+                    <div id="personaje_datos-imagen">
+                        
+                    </div>
+                </div>
+                <span id="personaje-datos-infoscroll">Desplaza lateralmente para mas opciones</span>
+                <div class="personaje_datos-main-basicos">
+                    <div class="iconos">
+                        <div class="block"><i class="bi bi-house"></i></div>
+                        <div class="block"><i class="bi bi-backpack"></i></div>
+                        <div class="block"><i class="bi bi-people-fill"></i></div>
+                        <div class="block"><i class="bi bi-journal-bookmark-fill"></i></div>
+                        <div class="block"><i class="bi bi-suitcase-lg-fill"></i></div>
+                        <div class="block"><i class="ra ra-crossed-swords"></i></div>
+                        <div class="block"><i class="ra ra-rabbit"></i></div>
+                    </div>
+                    <div class="bloques_inventario row">
+                        <div class="inventario col-md-6 pt-2 pb-2">
+                            <h3>Inventario</h3>
+                            <div class="inv_1">
+                                <input placeholder="Nombre del objeto" type="text" id="inv_1" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="inv_1_q" class="cantidad">
+                            </div>
+                            <div class="inv_2">
+                                <input placeholder="Nombre del objeto" type="text" id="inv_2" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="inv_2_q" class="cantidad">
+                            </div>
+                            <div class="inv_3">
+                                <input placeholder="Nombre del objeto" type="text" id="inv_3" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="inv_3_q" class="cantidad">
+                            </div>
+                            <div class="inv_4">
+                                <input placeholder="Nombre del objeto" type="text" id="inv_4" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="inv_4_q" class="cantidad">
+                            </div>
+                            <div class="inv_5">
+                                <input placeholder="Nombre del objeto" type="text" id="inv_5" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="inv_5_q" class="cantidad">
+                            </div>
+                            <div class="inv_6">
+                                <input placeholder="Nombre del objeto" type="text" id="inv_6" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="inv_6_q" class="cantidad">
+                            </div>
+                            <div class="inv_7">
+                                <input placeholder="Nombre del objeto" type="text" id="inv_7" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="inv_7_q" class="cantidad">
+                            </div>
+                            <div class="inv_8">
+                                <input placeholder="Nombre del objeto" type="text" id="inv_8" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="inv_8_q" class="cantidad">
+                            </div>
+                            <div class="inv_9">
+                                <input placeholder="Nombre del objeto" type="text" id="inv_9" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="inv_9_q" class="cantidad">
+                            </div>
+                            <div class="inv_10">
+                                <input placeholder="Nombre del objeto" type="text" id="inv_10" class="objeto" disabled>
+                                <input placeholder="Cantidad" type="number" id="inv_10_q" class="cantidad" disabled>
+                            </div>
+                            <div class="inv_11">
+                                <input placeholder="Nombre del objeto" type="text" id="inv_11" class="objeto" disabled>
+                                <input placeholder="Cantidad" type="number" id="inv_11_q" class="cantidad" disabled>
+                            </div>
+                            <div class="inv_12">
+                                <input placeholder="Nombre del objeto" type="text" id="inv_12" class="objeto" disabled>
+                                <input placeholder="Cantidad" type="number" id="inv_12_q" class="cantidad" disabled>
+                            </div>
+                            <div class="inv_13">
+                                <input placeholder="Nombre del objeto" type="text" id="inv_13" class="objeto" disabled>
+                                <input placeholder="Cantidad" type="number" id="inv_13_q" class="cantidad" disabled>
+                            </div>
+                            <div class="inv_14">
+                                <input placeholder="Nombre del objeto" type="text" id="inv_14" class="objeto" disabled>
+                                <input placeholder="Cantidad" type="number" id="inv_14_q" class="cantidad" disabled>
+                            </div>
+                        </div>
+                        <div class="riñonera col-md-6 pb-4 pt-2">
+                            <h3>Riñonera</h3>
+                            <div class="ri_1">
+                                <input placeholder="Nombre del objeto" type="text" id="ri_1" class="objeto" disabled>
+                                <input placeholder="Cantidad" type="number" id="ri_1_q" class="cantidad" disabled>
+                            </div>
+                            <div class="ri_2">
+                                <input placeholder="Nombre del objeto" type="text" id="ri_2" class="objeto" disabled>
+                                <input placeholder="Cantidad" type="number" id="ri_2_q" class="cantidad" disabled>
+                            </div>
+                            <div class="ri_3">
+                                <input placeholder="Nombre del objeto" type="text" id="ri_3" class="objeto" disabled>
+                                <input placeholder="Cantidad" type="number" id="ri_3_q" class="cantidad" disabled>
+                            </div>
+                            <div class="ri_4">
+                                <input placeholder="Nombre del objeto" type="text" id="ri_4" class="objeto" disabled>
+                                <input placeholder="Cantidad" type="number" id="ri_4_q" class="cantidad" disabled>
+                            </div>
+                            <h3>Cinturón</h3>
+                            <div class="ci_1">
+                                <input placeholder="Nombre del objeto" type="text" id="ci_1" class="objeto" disabled>
+                                <input placeholder="Cantidad" type="number" id="ci_1_q" class="cantidad" disabled>
+                            </div>
+                            <div class="ci_2">
+                                <input placeholder="Nombre del objeto" type="text" id="ci_2" class="objeto" disabled>
+                                <input placeholder="Cantidad" type="number" id="ci_1_q" class="cantidad" disabled>
+                            </div>
+                            <div class="ci_3">
+                                <input placeholder="Nombre del objeto" type="text" id="ci_3" class="objeto" disabled>
+                                <input placeholder="Cantidad" type="number" id="ci_1_q" class="cantidad" disabled>
+                            </div>
+                            <h3>Fundas extras</h3>
+                            <div class="fue_medicina">
+                                <input placeholder="Nombre del objeto" type="text" id="fue_medicina" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="fue_dinero_q" class="cantidad">
+                            </div>
+                            <div class="fue_pocion">
+                                <input placeholder="Nombre del objeto" type="text" id="fue_pocion" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="fue_pocion_q" class="cantidad">
+                            </div>
+                            <div class="fue_dinero">
+                                <input placeholder="Nombre del objeto" type="text" id="fue_dinero" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="fue_dinero_q" class="cantidad">
+                            </div>
+                            <div class="fue_1">
+                                <input placeholder="Nombre del objeto" type="text" id="fue_1" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="fue_1_q" class="cantidad">
+                            </div>
+                            <div class="fue_2">
+                                <input placeholder="Nombre del objeto" type="text" id="fue_2" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="fue_2_q" class="cantidad">
+                            </div>
+                            <div class="fue_3">
+                                <input placeholder="Nombre del objeto" type="text" id="fue_3" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="fue_3_q" class="cantidad">
+                            </div>
+                            <div class="fue_4">
+                                <input placeholder="Nombre del objeto" type="text" id="fue_4" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="fue_4_q" class="cantidad">
+                            </div>
+                            <div class="fue_5">
+                                <input placeholder="Nombre del objeto" type="text" id="fue_5" class="objeto">
+                                <input placeholder="Cantidad" type="number" id="fue_5_q" class="cantidad">
+                            </div>
+                        </div>
+                        <div class="armamento row pb-4">
+                            <h3>Armamento</h3>
+                            <div class="arma-izquierda">
+                                <x><span>Arma izquierda</span> <input id="arma-izquierda" type="text" readonly></x>
+                                <x>Efecto (%) <input id="efecto-arma-izquierda" type="number"></x>
+                                <x>Dado de efecto <input id="dado-efecto-arma-izquierda" type="number"></x>
+                                <x>Daño <input id="daño-arma-izquierda" type="text"></x>
+                            </div>
+                            <div class="arma-derecha">
+                                <x><span>Arma derecha</span> <input id="arma-derecha" type="text" readonly></x>
+                                <x>Efecto (%) <input id="efecto-arma-derecha" type="number"></x>
+                                <x>Dado de efecto <input id="dado-efecto-arma-derecha" type="number"></x>
+                                <x>Daño <input id="daño-arma-derecha" type="text"></x>
+                            </div>
+                            <div class="armas">
+                                <x><span>Daño total</span> <input id="armas" type="text" readonly></x>
+                                <x>Efecto (%) <input id="efecto-armas" type="number"></x>
+                                <x>Dado de efecto <input id="dado-efecto-armas" type="number"></x>
+                                <x>Daño <input id="daño-armas" type="text"></x>
+                            </div>
+                        </div>
+                        <div class="equipamiento row">
+                            <h3>Equipamiento</h3>
+                            <div class="yelmo">
+                                <x><span>Yelmo</span> <input id="yelmo" type="text" class="descripcion" readonly></x>
+                                <x>Protección<input id="daño-arma-izquierda" type="text"></x>
+                            </div>
+                            <div class="peto">
+                                <x><span>Peto</span> <input id="peto" type="text" class="descripcion" readonly></x>
+                                <x>Protección<input id="daño-arma-derecha" type="text"></x>
+                            </div>
+                            <div class="guantes">
+                                <x><span>Guantes</span> <input id="guantes" type="text" class="descripcion" readonly></x>
+                                <x>Protección<input id="daño-arma-derecha" type="text"></x>
+                            </div>
+                            <div class="pantalones">
+                                <x><span>Pantalones</span> <input id="pantalones" type="text" class="descripcion" readonly></x>
+                                <x>Protección<input id="daño-armas" type="text"></x>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bloques_inicio" style="display:none">
+                        <div class="block">
+                            <label for="personaje_datos-nivel"><b>Nivel</b></label>
+                            <input type="number" value="0" id="personaje_datos-nivel">
+                        </div>
+                        <div class="block">
+                            <label for="personaje_datos-exp"><b>Experiencia</b></label>
+                            <input type="number" value="13" id="personaje_datos-exp">
+                        </div>
+                        <div class="block">
+                            <label for="personaje_datos-prox"><b>Próxima subida</b></label>
+                            <input type="number" value="2" id="personaje_datos-prox">
+                        </div>
+                        <div class="block">
+                            <label for="personaje_datos-edad"><b>Edad</b></label>
+                            <input type="number" id="personaje_datos-edad">
+                        </div>
+                        <div class="block">
+                            <label for="personaje_datos-estatura"><b>Estatura (cm)</b></label>
+                            <input type="number" id="personaje_datos-estatura">
+                        </div>
+                        <div class="block">
+                            <label for="personaje_datos-peso"><b>Peso (kg)</b></label>
+                            <input type="number" id="personaje_datos-peso">
+                        </div>
+                        <div class="block">
+                            <label for="personaje_datos-raza"><b>Raza</b></label>
+                            <select name="personaje_datos-raza" id="personaje_datos-raza" disabled>
+                                <option value="Humano">Humano</option>
+                                <option value="Orco">Orco</option>
+                                <option value="Shira">Shira</option>
+                                <option value="Fjereo">Fjereo</option>
+                                <option value="Lhanie">Lhanie</option>
+                                <option value="Turbe">Turbe</option>
+                                <option value="Sarka">Sarka</option>
+                                <option value="Demonio">Demonio</option>
+                                <option value="Automata">Automata</option>
+                                <option value="Draieach">Draieach</option>
+                                <option value="Benirie">Benirie</option>
+                                <option value="Naturis">Naturis</option>
+                            </select>
+                        </div>
+                        <div class="block">
+                            <label for="personaje_datos-hibrido"><b>Hibrido</b></label>
+                            <select name="personaje_datos-hibrido" id="personaje_datos-hibrido" disabled>
+                                <option value="Humano">Humano</option>
+                                <option value="Orco">Orco</option>
+                                <option value="Shira">Shira</option>
+                                <option value="Fjereo">Fjereo</option>
+                                <option value="Lhanie">Lhanie</option>
+                                <option value="Turbe">Turbe</option>
+                                <option value="Sarka">Sarka</option>
+                                <option value="Demonio">Demonio</option>
+                                <option value="Automata">Automata</option>
+                                <option value="Draieach">Draieach</option>
+                                <option value="Benirie">Benirie</option>
+                                <option value="Naturis">Naturis</option>
+                            </select>
+                        </div>
+                        <div class="block">
+                            <label for="personaje_datos-maldicion"><b>Maldicion</b></label>
+                            <select name="personaje_datos-maldicion" id="personaje_datos-maldicion">
+                                <option value="">Sin maldición</option>
+                                <option value="Vampiro">Vampiro</option>
+                                <option value="Bestia">Bestia</option>
+                                <option value="Sin alma">Sin alma</option>
+                                <option value="!" disabled hidden>Esta raza no puede tener maldiciones</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--
             <div class="personaje_datos-principales row d-flex pt-4">
                 <div id="personaje_datos-imagen" class="d-flex bg-dark flex-column gap-2 justify-content-center">
                     
@@ -67,25 +327,13 @@
                 </div>
                 <div class="d-flex bg-dark flex-column gap-2 justify-content-center">
                     <div class="block">
-                        <label for="personaje_datos-raza"><b>Raza.</b></label>
-                        <select name="personaje_datos-raza" id="personaje_datos-raza">
-                            <option value="Humano">Humano</option>
-                            <option value="Orco">Orco</option>
-                            <option value="Shira">Shira</option>
-                            <option value="Fjereo">Fjereo</option>
-                            <option value="Lhanie">Lhanie</option>
-                            <option value="Turbe">Turbe</option>
-                            <option value="Sarka">Sarka</option>
-                            <option value="Demonio">Demonio</option>
-                            <option value="Automata">Automata</option>
-                            <option value="Draieach">Draieach</option>
-                            <option value="Benirie">Benirie</option>
-                            <option value="Naturis">Naturis</option>
-                        </select>
+                        <label for="personaje_datos-genero"><b>Género.</b></label>
+                        <input type="text" id="personaje_datos-genero">
                     </div>
+                    
                     <div class="block">
                         <label for="personaje_datos-hibrido"><b>Hibrido.</b></label>
-                        <select name="personaje_datos-hibrido" id="personaje_datos-hibrido">
+                        <select name="personaje_datos-hibrido" id="personaje_datos-hibrido" disabled>
                             <option value="Humano">Humano</option>
                             <option value="Orco">Orco</option>
                             <option value="Shira">Shira</option>
@@ -100,36 +348,47 @@
                             <option value="Naturis">Naturis</option>
                         </select>
                     </div>
-                    <div class="block">
-                        <label for="personaje_datos-maldicion"><b>Maldicion.</b></label>
-                        <input type="text" id="personaje_datos-maldicion">
-                    </div>
-                    <div class="block">
-                        <label for="personaje_datos-dios"><b>.</b></label>
-                        <input type="text" id="personaje_datos-">
-                    </div>
+                    
                     <button class="btn btn-outline-danger m-auto mt-4">Guardar datos <i class="bi bi-music-player-fill"></i></button>
                 </div>
                 <div class="d-flex bg-dark flex-column gap-2 justify-content-center">
                     <div class="block">
                         <label for="personaje_datos-dios"><b>Dios.</b></label>
-                        <input type="text" id="personaje_datos-dios">
+                        <select name="personaje_datos-dios" id="personaje_datos-dios" disabled readonly>
+                            <option value=""></option>
+                            <option value="Sol">Sol</option>
+                            <option value="Luna">Luna</option>
+                            <option value="Combate">Combate</option>
+                            <option value="Miseria">Miseria</option>
+                            <option value="Muerte">Muerte</option>
+                            <option value="Barlghon" disabled>Barlghon, el Dragón Ancestral</option>
+                            <option value="Justicia" disabled>Justicia</option>
+                            <option value="Naturaleza" disabled>Naturaleza</option>
+                            <option value="!" disabled hidden>Los sin alma no pueden tener un dios</option>
+                        </select>
                     </div>
                     <div class="block">
-                        <label for="personaje_datos-dios"><b>Karma positivo</b></label>
-                        <input type="number" id="personaje_datos-karmapos">
+                        <label for="personaje_datos-karmapos"><b>Karma positivo</b></label>
+                        <input type="number" id="personaje_datos-karmapos" oninput="karmatotal()">
                     </div>
                     <div class="block">
-                        <label for="personaje_datos-dios"><b>Karma negativo</b></label>
-                        <input type="number" id="personaje_datos-karmaneg">
+                        <label for="personaje_datos-karmaneg"><b>Karma negativo</b></label>
+                        <input type="number" id="personaje_datos-karmaneg" oninput="karmatotal()">
                     </div>
                     <div class="block">
-                        <label for="personaje_datos-dios"><b>Total.</b></label>
-                        <input type="number" id="personaje_datos-karmatotal">
+                        <label for="personaje_datos-karmatotal"><b>Total.</b></label>
+                        <input type="number" id="personaje_datos-karmatotal" readonly>
                     </div>
                     <button class="btn btn-outline-danger m-auto mt-4">Guardar datos <i class="bi bi-music-player-fill"></i></button>
                 </div>
             </div>
+            <div class="personaje_datos-principales row d-flex pt-4">
+                <select class="btn btn-danger" name="opciones_ficha" id="opciones_ficha">
+                    <option value="opcion_Inventario">Elegir categoría de la ficha</option>
+                    <option value="opcion_Inventario">Inventario</option>
+                </select>
+            </div>
+        -->
         </div>
     </main>
 </body>

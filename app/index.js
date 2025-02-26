@@ -110,7 +110,7 @@ app.get('/register', authorization.onlyUnlogged, (req, res) => res.status(200).s
 app.get('/account', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/usuario.html') })
 app.get('/account/crearpersonaje', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/crearpersonaje.html') })
 app.get('/account/mis_personajes', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/mis_personajes.html') })
-app.get("/account/personaje", (req, res) => {
+app.get("/account/personaje", authorization.onlyLogged, (req, res) => {
     const nombrePersonaje = decodeURIComponent(req.query.nombre || ""); // Capturar el nombre del personaje desde la URL
 
     if (!nombrePersonaje) {
@@ -123,7 +123,7 @@ app.post('/api/register', authentication.register);
 app.post('/api/login', authentication.login);
 app.post('/api/upload', upload.single('file'), (req, res) => res.send("Successfully uploaded"));
 app.post('/api/datos', personajes.datos);
-app.post('/api/crearpersonaje', async (req, res) => { await personajes.crearpersonaje(req,res) } );
-app.post('/api/cargarpersonaje', async (req, res) => { await personajes.cargarpersonaje(req,res) } );
-app.post('/api/cargarpersonajes', async (req, res) => { await personajes.cargarpersonajes(req,res) } );
+app.post('/api/crearpersonaje', authorization.onlyLogged, async (req, res) => { await personajes.crearpersonaje(req,res) } );
+app.post('/api/cargarpersonaje', authorization.onlyLogged, async (req, res) => { await personajes.cargarpersonaje(req,res) } );
+app.post('/api/cargarpersonajes', authorization.onlyLogged, async (req, res) => { await personajes.cargarpersonajes(req,res) } );
 app.get('*', (req, res) => res.status(404).sendFile(__dirname + '/pages/'));

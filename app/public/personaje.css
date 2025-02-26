@@ -4,61 +4,253 @@
     padding: 0;
 }
 
-.main-center {
-    width: 100%;
-    min-height: 100vh;
+.bi::before, .ra {
+    margin: 0 !important;
+    vertical-align: middle !important;
+    padding: 15px;
+}
+
+
+select {
+    -webkit-appearance: none;
+}
+
+select::-ms-expand {
+    display: none; /* Para IE */
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: -2;
+    height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/files/img/bg.jpg");
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+.personaje_datos-main {
+    border: 2px solid red;
+    width:100%;
+    max-width: 1000px;
+    margin-top: 1%;
+    border-radius: 30px;
+    background-color: rgba(55,55,55);
+    overflow: hidden;
+    text-align:center;
+}
+
+.personaje_datos-main img {
+    width:100%;
+    height:200px;
+    object-fit: cover;
+}
+
+.iconos {
+    display: flex;
+    align-items: center;
+    overflow-x: auto; /* Habilita el desplazamiento horizontal */
+    white-space: nowrap; /* Evita que los iconos se dividan en líneas */
+}
+
+.iconos .block {
+    color: white;
+    display: flex;
+    background-color: rgba(128, 128, 128, 0.5);
+    width: 19%;
+    font-size: 200%;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconos .block[selected]{
+    background-color: rgb(55,55,55);
+}
+
+.iconos .block:hover {
+    background-color: rgba(255,100,100,0.8);
+    font-size: 200%;
+}
+
+.personaje_datos-imagen {
+    position: relative;
+    height:200px;
+}
+
+#personaje-datos-infoscroll {
+    display: none;
+}
+
+.personaje_datos-imagen #personaje_datos-genero {
+    display: flex;
+    position:absolute;
+    bottom:0;
+    right: 50%;
+    transform: translateX(50%);
+    background-color: red;
+    color:white;
+    font-size: 140%;
+    width:40px;
+    height: 40px;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.personaje_datos-imagen #personaje_datos-genero i::before {
+    transform: translateY(1px);
+}
+
+#personaje_datos-nombre {
     color:white;
     text-align: center;
-    overflow: hidden;
-}
-
-input,select {
-    background-color: unset;
-    border: unset;
-    border-bottom: 2px solid azure;
-    color:azure;
-    text-align: center;
     width: 100%;
+    font-weight: bolder;
+    background-color: rgba(255,0,0,0.7);
+    margin:0;
+    padding:5px 0;
 }
 
-option {
-    color:black;
-}
-
-.personaje_datos-principales {
+.bloques_inicio .block {
+    position: relative;
     display: flex;
-    justify-content: center;
-    gap:1px;
-    align-items: stretch;
-}
-
-.personaje_datos-principales > div {
-    box-sizing: border-box;
-    max-width: calc(25% - 40px);
-    padding: 20px;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(100,100,100,0.5);
 }
 
 .block label {
-    width:100%;
-    margin-right:10px;
+    position: absolute;
+    left:20px;
+    color: white;
+    font-weight: bolder;
+    margin-left: 10px;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+.block input,select {
+    background-color: unset;
+    border: unset;
+    width: 100%;
+    height:30px;
+    color: white;
+    text-align: right;
+    padding-right: 20px;
+    text-align-last: right;
+}
+
+option {
+    background-color: whitesmoke;
+    color:black;
+    text-align: center;
+    text-align-last: center;
+}
+
+.bloques_inventario {
+    color:whitesmoke;
+}
+
+.bloques_inventario h3 {
+    text-align: center;
+    padding:10px;
+}
+
+.bloques_inventario span {
+    color:white;
+    font-weight: bolder;
+    color:rgb(255, 116, 116);
+}
+
+.objeto {
+    width:70%;
+}
+
+.cantidad {
+    width:20%;
+}
+
+.descripcion {
+    width:100%
+}
+
+.armamento,
+.equipamiento {
+    display: flex;
+    flex-direction: column; /* Organiza en columna */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Centra el texto */
+    width: 100%;
+}
+
+.armamento > div,
+.equipamiento > div {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 20px; /* Espaciado entre elementos */
+}
+
+.yelmo,
+.peto,
+.guantes,
+.pantalones,
+.arma-izquierda,
+.arma-derecha,
+.armas {
+    display: flex;
+    align-items: center; /* Centra dentro de cada bloque */
+    text-align: center;
+}
+
+.arma-izquierda, .arma-derecha, .armas, .yelmo, .peto, .pantalones, .guantes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arma-izquierda x, .arma-derecha x, .armas x, .yelmo x, .peto x, .pantalones x, .guantes x {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 @media (max-width: 1023px) {
-    .personaje_datos-principales {
+    .personaje_datos-main {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 0;
+        margin:0
+    }
+
+    .iconos .block {
+        flex-shrink: 0;
+    }
+
+    #personaje-datos-infoscroll {
         display: flex;
-        flex-direction: column;
-        margin: auto;
-        align-items: center;
+        justify-content: center;
+        bottom: 0;
+        width: 100%;
+        color:black;
+        background-color: rgba(255,255,255,0.5);
+        left:0;
     }
 
-    .personaje_datos-principales > div {
-        max-width: 80%;
-        width: 80%;
-        margin: 10px 0;
-    }
-
-    .block {
-        display:flex;
+    .arma-izquierda, .arma-derecha, .armas {
         flex-direction: column;
     }
 }

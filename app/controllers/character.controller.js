@@ -178,7 +178,7 @@ async function crearpersonaje(req, res) {
         if (hibrido.includes("!")) hibrido = "";
         if (!razas.includes(hibrido) && hibrido != "") throw ({ status: "Error", message: "data_hibrido", error: "Hibrido no válido" });
         var maldicion = req.body.maldicion;
-        if (maldicion == "!") maldicion = "";
+        if (maldicion == "!") maldicion = "No tienes un dios";
         if (!maldiciones.includes(maldicion)) throw ({ status: "Error", message: "data_maldicion", error: "Maldición no válida" });
         const dios = req.body.dios;
         if (dios == "!") dios = "";
@@ -466,7 +466,7 @@ async function cargarpersonaje(req, res) {
         
         const jugador = await authorization.revisarCookie(cookies);
         const personaje = req.body.personaje;
-        
+
         const rows = await new Promise((resolve, reject) => {
             db.all("SELECT * FROM Personajes WHERE `jugador`=? AND `name`=?", [jugador, personaje], (err, rows) => {
                 if (err) reject({status: "Error"});
