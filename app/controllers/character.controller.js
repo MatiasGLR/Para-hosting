@@ -354,7 +354,20 @@ async function crearpersonaje(req, res) {
                 "fe_6": { objeto: dinero, categoría: "Dinero", cantidad: 1000, funcion: "" },
                 "fe_7": { objeto: pocion, categoría: "Pociones", cantidad: 1, funcion: "" },
                 "fe_8": { objeto: medicina, categoría: "Medicinas", cantidad: 1, funcion: "" },
-                "arma_izq": { objeto: arma, categoría: "Armas", cantidad: 1, funcion: "{valor:1d6,efecto:'Quemadura',efecto_prob:'5%'}" } //Respetar espacios > split ' de ' (Espada larga|hierro) si tiene "con" split ' con ' (Espada larga|hierro|turmalina), 
+                "arma_izq": { objeto: "", categoría: "", cantidad: 0, funcion: "{valor:1d6,efecto:'Quemadura',efecto_prob:'5%'}" }, //Respetar espacios > split ' de ' (Espada larga|hierro) si tiene "con" split ' con ' (Espada larga|hierro|turmalina), 
+                "arma_der": { objeto: arma, categoría: "Armas", cantidad: 1, funcion: "" }, //Respetar espacios > split ' de ' (Espada larga|hierro) si tiene "con" split ' con ' (Espada larga|hierro|turmalina), 
+                "yelmo": { objeto: "", categoría: "", cantidad: 0, funcion: "" }, //Respetar espacios > split ' de ' (Espada larga|hierro) si tiene "con" split ' con ' (Espada larga|hierro|turmalina), 
+                "peto": { objeto: "", categoría: "", cantidad: 0, funcion: "" }, //Respetar espacios > split ' de ' (Espada larga|hierro) si tiene "con" split ' con ' (Espada larga|hierro|turmalina), 
+                "pantalones": { objeto: "", categoría: "", cantidad: 0, funcion: "" }, //Respetar espacios > split ' de ' (Espada larga|hierro) si tiene "con" split ' con ' (Espada larga|hierro|turmalina), 
+                "guantes": { objeto: "", categoría: "", cantidad: 0, funcion: "" }, //Respetar espacios > split ' de ' (Espada larga|hierro) si tiene "con" split ' con ' (Espada larga|hierro|turmalina), 
+                "extra_armadura": { objeto: "", categoría: "", cantidad: 0, funcion: "" }, //Respetar espacios > split ' de ' (Espada larga|hierro) si tiene "con" split ' con ' (Espada larga|hierro|turmalina), 
+                "extra_vestimenta": { objeto: "", categoría: "", cantidad: 0, funcion: "" }, //Respetar espacios > split ' de ' (Espada larga|hierro) si tiene "con" split ' con ' (Espada larga|hierro|turmalina), 
+                "joya": { objeto: "", categoría: "", cantidad: 0, funcion: "" }, //Respetar espacios > split ' de ' (Espada larga|hierro) si tiene "con" split ' con ' (Espada larga|hierro|turmalina), 
+                "anillo1": { objeto: "", categoría: "", cantidad: 0, funcion: "" }, //Respetar espacios > split ' de ' (Espada larga|hierro) si tiene "con" split ' con ' (Espada larga|hierro|turmalina), 
+                "anillo2": { objeto: "", categoría: "", cantidad: 0, funcion: "" }, //Respetar espacios > split ' de ' (Espada larga|hierro) si tiene "con" split ' con ' (Espada larga|hierro|turmalina), 
+                "anillo3": { objeto: "", categoría: "", cantidad: 0, funcion: "" }, //Respetar espacios > split ' de ' (Espada larga|hierro) si tiene "con" split ' con ' (Espada larga|hierro|turmalina), 
+                "anillo4": { objeto: "", categoría: "", cantidad: 0, funcion: "" }, //Respetar espacios > split ' de ' (Espada larga|hierro) si tiene "con" split ' con ' (Espada larga|hierro|turmalina), 
+                "collar": { objeto: "", categoría: "", cantidad: 0, funcion: "" }, //Respetar espacios > split ' de ' (Espada larga|hierro) si tiene "con" split ' con ' (Espada larga|hierro|turmalina), 
             },
             "idiomas": {},
             "conocimientos": {},
@@ -400,18 +413,21 @@ async function crearpersonaje(req, res) {
         conocimientos_generales.forEach(con => {
             datos.conocimientos[con] = false;
         })
+        
         conocimientos_basicos.forEach(con => {
             datos.conocimientos[con] = false;
         })
+
         conocimientos_semiavanzados.forEach(con => {
             datos.conocimientos[con] = false;
         })
+
         conocimientos_avanzados.forEach(con => {
             datos.conocimientos[con] = false;
         })
 
         profesiones.forEach(prof => {
-            datos.profesiones[prof] = prof == profesion ? 60 : 0;
+            datos.profesiones[prof] = prof == profesion ? {nombre: prof, experiencia:60} : {nombre: prof, experiencia:0};
         })
 
         

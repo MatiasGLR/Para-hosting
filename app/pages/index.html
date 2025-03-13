@@ -4,27 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="login.js" defer></script>
+    <link rel="stylesheet" href="/nav.css">
+    <link rel="stylesheet" href="/fonts.css">
+    <link rel="stylesheet" href="/index.css">
+    <script src="/nav.js" defer></script>
+    <script src="/index.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-    <link rel="stylesheet" href="fonts.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
-<style>
-    body{
-        display: flex;
-        flex-direction: column;
-        font-size: larger;
-        gap:20px;
-    }
-</style>
 <body class="bg-dark">
-    <h1>Inicio</h1>
-    <a href="/login">Login</a>
-    <a href="/register">Register</a>
-    <a href="/account">Cuenta</a>
-    <a href="/staff">Admin</a>
+    <div id="menuopciones" class="menuopciones hide">
+        <div class="menu">
+            <nav class="upper">
+                <h4><i class="bi bi-person"></i> Cuenta</h4>
+            </nav>
+            <nav class="medium">
+                <a href="/login"><span><i class="bi bi-house-door"></i> Logueo</span></a>
+                <a href="/staff"><span><i class="bi bi-award"></i> Staff</span></a>
+                <a href="#indice"><span><i class="bi bi-award"></i> Indice</span></a>
+                <a href="/bestiario"><span><i class="bi bi-award"></i> Bestiario</span></a>
+                <a href="/objetos"><span><i class="bi bi-award"></i> Objetos</span></a>
+                <a href="/lore"><span><i class="bi bi-award"></i> Lore</span></a>
+            </nav>
+        </div>
+    </div>
+    <div id="flecha" class="flecha hide">
+        <span onclick="barra_lateral()">
+            <i id="abierto" class="bi bi-arrow-left-circle invisible"></i>
+            <i id="cerrado" class="bi bi-arrow-right-circle"></i>
+        </span>
+    </div>
+    <div class="contenido">
+        <div id="main">
+            
+        </div>
+    </div>
 </body>
 </html>

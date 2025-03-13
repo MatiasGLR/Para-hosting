@@ -196,36 +196,65 @@ option {
     width: 100%;
 }
 
-.armamento > div,
-.equipamiento > div {
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
-    justify-content: center; /* Centra horizontalmente */
-    gap: 20px; /* Espaciado entre elementos */
-}
-
-.yelmo,
-.peto,
-.guantes,
-.pantalones,
-.arma-izquierda,
-.arma-derecha,
-.armas {
-    display: flex;
-    align-items: center; /* Centra dentro de cada bloque */
-    text-align: center;
-}
-
-.arma-izquierda, .arma-derecha, .armas, .yelmo, .peto, .pantalones, .guantes {
+.bottom {
     display: flex;
     align-items: center;
-    justify-content: center;
+    margin:0;
+    padding:0;
 }
 
-.arma-izquierda x, .arma-derecha x, .armas x, .yelmo x, .peto x, .pantalones x, .guantes x {
+.top {
+    width: 100%;
+}
+
+.top input {
+    width:100%;
+}
+
+.bottom input {
+    width:100%;
+}
+
+.efecto {
+    width: 25%;
+}
+
+.daño {
+    width:50%;
+}
+
+.equipamiento div {
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+}
+
+.datos {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    width:25%;
+}
+
+.equip {
+    display: flex;
+    flex-direction: column;
+    width:75%;
+}
+
+.arma-derecha, .armas {
+    margin-top:10px;
+}
+
+.arma-izquierda, .arma-derecha, .armas {
+    width: 90%;
+}
+.arma-izquierda x, .arma-derecha x, .armas x {
+    display: flex;
+    flex-direction: column;
+}
+
+.equipado {
+    width: 90%;
 }
 
 @media (max-width: 1023px) {

@@ -188,44 +188,82 @@
                                 <input placeholder="Cantidad" type="number" id="fue_5_q" class="cantidad">
                             </div>
                         </div>
-                        <div class="armamento row pb-4">
+                        <div class="armamento pb-4">
                             <h3>Armamento</h3>
                             <div class="arma-izquierda">
-                                <x><span>Arma izquierda</span> <input id="arma-izquierda" type="text" readonly></x>
-                                <x>Efecto (%) <input id="efecto-arma-izquierda" type="number"></x>
-                                <x>Dado de efecto <input id="dado-efecto-arma-izquierda" type="number"></x>
-                                <x>Daño <input id="daño-arma-izquierda" type="text"></x>
+                                <div class="top"><x><span>Arma izquierda</span> <input type="text" id="arma-izquierda" readonly></x></div>
+                                <div class="bottom">
+                                    <x class="efecto">Efecto (%) <input id="efecto-arma-izquierda" type="number"></x>
+                                    <x class="efecto">Dado<input id="dado-efecto-arma-izquierda" type="number"></x>
+                                    <x class="daño">Daño <input id="daño-arma-izquierda" type="text"></x>
+                                </div>
                             </div>
                             <div class="arma-derecha">
-                                <x><span>Arma derecha</span> <input id="arma-derecha" type="text" readonly></x>
-                                <x>Efecto (%) <input id="efecto-arma-derecha" type="number"></x>
-                                <x>Dado de efecto <input id="dado-efecto-arma-derecha" type="number"></x>
-                                <x>Daño <input id="daño-arma-derecha" type="text"></x>
+                                <div class="top"><x><span>Arma derecha</span> <input id="arma-derecha" type="text" readonly></x></div>
+                                <div class="bottom">
+                                    <x class="efecto">Efecto (%) <input id="efecto-arma-derecha" type="number"></x>
+                                    <x class="efecto">Dado<input id="dado-efecto-arma-derecha" type="number"></x>
+                                    <x class="daño">Daño <input id="daño-arma-derecha" type="text"></x>
+                                </div>
                             </div>
                             <div class="armas">
-                                <x><span>Daño total</span> <input id="armas" type="text" readonly></x>
-                                <x>Efecto (%) <input id="efecto-armas" type="number"></x>
-                                <x>Dado de efecto <input id="dado-efecto-armas" type="number"></x>
-                                <x>Daño <input id="daño-armas" type="text"></x>
+                                <div class="top"><x><span>Daño total</span> <input id="armas" type="text" readonly></x></div>
+                                <div class="bottom">
+                                    <x class="efecto">Efecto (%) <input id="efecto-armas" type="number"></x>
+                                    <x class="efecto">Dado<input id="dado-efecto-armas" type="number"></x>
+                                    <x class="daño">Daño <input id="daño-armas" type="text"></x>
+                                </div>
                             </div>
                         </div>
-                        <div class="equipamiento row">
+                        <div class="equipamiento pb-4">
                             <h3>Equipamiento</h3>
-                            <div class="yelmo">
-                                <x><span>Yelmo</span> <input id="yelmo" type="text" class="descripcion" readonly></x>
-                                <x>Protección<input id="daño-arma-izquierda" type="text"></x>
+                            <div class="yelmo equipado">
+                                <x class="equip"><span>Yelmo</span> <input id="yelmo" type="text" class="descripcion" readonly></x>
+                                <x class="datos">Datos<input id="daño-arma-izquierda" type="text"></x>
                             </div>
-                            <div class="peto">
-                                <x><span>Peto</span> <input id="peto" type="text" class="descripcion" readonly></x>
-                                <x>Protección<input id="daño-arma-derecha" type="text"></x>
+                            <div class="peto equipado">
+                                <x class="equip"><span>Peto</span> <input id="peto" type="text" class="descripcion" readonly></x>
+                                <x class="datos">Datos<input id="daño-arma-derecha" type="text"></x>
                             </div>
-                            <div class="guantes">
-                                <x><span>Guantes</span> <input id="guantes" type="text" class="descripcion" readonly></x>
-                                <x>Protección<input id="daño-arma-derecha" type="text"></x>
+                            <div class="guantes equipado">
+                                <x class="equip"><span>Guantes</span> <input id="guantes" type="text" class="descripcion" readonly></x>
+                                <x class="datos">Datos<input id="daño-arma-derecha" type="text"></x>
                             </div>
-                            <div class="pantalones">
-                                <x><span>Pantalones</span> <input id="pantalones" type="text" class="descripcion" readonly></x>
-                                <x>Protección<input id="daño-armas" type="text"></x>
+                            <div class="pantalones equipado">
+                                <x class="equip"><span>Pantalones</span> <input id="pantalones" type="text" class="descripcion" readonly></x>
+                                <x class="datos">Datos<input id="daño-armas" type="text"></x>
+                            </div>
+                            <div class="extra_cota equipado">
+                                <x class="equip"><span>Extra de armadura</span> <input id="extra_armadura" type="text" class="descripcion" readonly></x>
+                                <x class="datos">Datos<input id="daño-armas" type="text"></x>
+                            </div>
+                            <div class="extra_cota equipado">
+                                <x class="equip"><span>Extra de vestimenta</span> <input id="extra_vestimenta" type="text" class="descripcion" readonly></x>
+                                <x class="datos">Datos<input id="daño-armas" type="text"></x>
+                            </div>
+                            <div class="joya_general equipado">
+                                <x class="equip"><span>Joya</span> <input id="joya_general" type="text" class="descripcion" readonly></x>
+                                <x class="datos">Datos<input id="daño-armas" type="text"></x>
+                            </div>
+                            <div class="joya_anillo equipado">
+                                <x class="equip"><span>Joya</span> <input id="joya_anillo_1" type="text" class="descripcion" readonly></x>
+                                <x class="datos">Datos<input id="daño-armas" type="text"></x>
+                            </div>
+                            <div class="joya_anillo equipado">
+                                <x class="equip"><span>Joya</span> <input id="joya_anillo_2" type="text" class="descripcion" readonly></x>
+                                <x class="datos">Datos<input id="daño-armas" type="text"></x>
+                            </div>
+                            <div class="joya_anillo equipado">
+                                <x class="equip"><span>Joya</span> <input id="joya_anillo_3" type="text" class="descripcion" readonly></x>
+                                <x class="datos">Datos<input id="daño-armas" type="text"></x>
+                            </div>
+                            <div class="joya_anillo equipado">
+                                <x class="equip"><span>Joya</span> <input id="joya_anillo_4" type="text" class="descripcion" readonly></x>
+                                <x class="datos">Datos<input id="daño-armas" type="text"></x>
+                            </div>
+                            <div class="joya_collar equipado">
+                                <x class="equip"><span>Joya</span> <input id="joya_collar_1" type="text" class="descripcion" readonly></x>
+                                <x class="datos">Datos<input id="daño-armas" type="text"></x>
                             </div>
                         </div>
                     </div>

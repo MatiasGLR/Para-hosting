@@ -1,0 +1,13 @@
+#main {
+    font-size: 110%;
+    width:90vw;
+    margin: auto;
+    text-align: justify;
+    min-width: 300px;
+    background-color: rgb(243, 243, 243);
+}
+
+.parrafo {
+    display:flex;
+    flex-direction: column;
+}

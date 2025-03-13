@@ -1,0 +1,479 @@
+<style>
+    h1,
+    h5 {
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        padding-top: 30px;
+    }
+
+    h5 {
+        padding-bottom: 30px;
+    }
+
+    main {
+        font-family: sans-serif;
+        padding: 10px;
+        width: 80vw;
+        min-width: 300px;
+        margin: auto;
+    }
+
+    main h4 {
+        text-align: center;
+    }
+
+    .search li {
+        margin: 10px;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    .search li:hover {
+        text-decoration: underline;
+    }
+
+    h6 {
+        font-size: 200%;
+    }
+</style>
+<main>
+    <div class="header">
+        <h1 class="text-center p-4 pb-0">Cuentos de Enforth</h1>
+        <h5 class="text-center">Manual de rol</h5>
+    </div>
+    <div class="indice" id="indice">
+        <h1>Indice</h1>
+        <h5>Versión 5.2.1 del 10/03/2025</h5>
+        <h4><b>Bienvenidos a Enforth</b></h4>
+        <ul class="search">
+            <li onclick="window.location.href='#w_disclaimer'">Disclaimer de contenido</a></li>
+            <li onclick="window.location.href='#w_agradecimientos'">Agradecimientos previos</li>
+            <li onclick="window.location.href='#w_modalidad'">Modalidad de juego</li>
+            <li onclick="window.location.href='#w_progreso'">Progresos de historia</li>
+        </ul>
+        <h4><b>Personaje</b></h4>
+        <ul class="search">
+            <li onclick="window.location.href='#p_guia'">Guía de creación de personaje</li>
+            <li onclick="window.location.href='#p_stats'">Estadísticas</li>
+            <li onclick="window.location.href='#p_conocimientos'">Conocimientos</li>
+            <ul>
+                <li onclick="window.location.href='#p_conocimientos'">Comúnes</li>
+                <li onclick="window.location.href='#p_magicos'">Mágicos</li>
+            </ul>
+            <li onclick="window.location.href='#p_profesiones'">Profesiones</li>
+            <li>Razas</li>
+            <li>Clases</li>
+            <li>Dones</li>
+            <li>Explicación de puntos de mejora</li>
+            <li>Inventario de jugador</li>
+            <li>Maldiciones</li>
+            <li>Reputación</li>
+            <li>Idiomas</li>
+        </ul>
+        <h4><b>Divinidades</b></h4>
+        <ul class="search">
+            <li>Dios del Sol</li>
+            <li>Diosa de la Luna</li>
+            <li>Diosa de la Batalla</li>
+            <li>Dios de la Miseria</li>
+            <li>Dios de la Muerte</li>
+            <li>Diosa de la Naturaleza</li>
+            <li>Dios de la Justicia</li>
+            <li>Barlghon, el Dragòn Ancestral</li>
+        </ul>
+        <h4><b>Sistema de combate</b></h4>
+        <ul class="search">
+            <li>¿Que es el combate?</li>
+            <li>Funcionamiento del combate</li>
+            <li>Declaración, acción y reacción</li>
+            <li>Funcionamiento del daño</li>
+            <li>Tipos de daño</li>
+            <li>Funcionamiento de los efectos</li>
+            <li>Listado de efectos</li>
+            <li>Tipos de armas cuerpo a cuerpo</li>
+            <li>Tipos de armas a distancia</li>
+            <li>Proyectiles de armas a distancia</li>
+            <li>Tipos de armas de fuego</li>
+            <li>Proyectiles de armas de fuego</li>
+            <li>Armas arrojadizas</li>
+            <li>Daño fijo otorgado por el material del proyectil o del arma</li>
+            <li>Efecto otorgado por material</li>
+            <li>Protección y peso por material</li>
+            <li>Bono por set completo de armadura</li>
+            <ol>
+                <li>Bono completa a +5</li>
+                <li>Bono platinada</li>
+            </ol>
+        </ul>
+        <h4><b>Creación, ventas y otros</b></h4>
+        <ul class="search">
+            <li>Recetas y pergaminos de aprendizaje</li>
+            <li>Materiales trabajados en forja</li>
+            <li>Herrería</li>
+            <li>Creación de medicamentos</li>
+            <li>Talabartería</li>
+            <li>Alquimia</li>
+            <li>Negocio propio</li>
+            <li>Vendedores</li>
+        </ul>
+        <h4><b>Hechizos y técnicas</b></h4>
+        <ul class="search">
+            <li>Funcionamiento de la magia</li>
+            <li>Tipos de magia</li> <!--Innata, con gema, maldita, etc-->
+            <li>Costos de hechizos</li>
+            <li>Uso de hechizos</li> <!--En turno y fuera de turno-->
+        </ul>
+        <hr>
+    </div>
+    <div id="datos">
+        <h1>Bienvenidos a Enforth</h1>
+        <h3 class="p-4" id="w_disclaimer">Disclaimer</h3>
+        &emsp;Sean bienvenidos todos al manual de Cuentos de Enforth, antes de comenzar, se deja en claro que hay
+        probabilidades de que el tono del humor, violencia, uso de drogas, alcohol, y sexualidad sea explicita, el
+        consumo de este material y la utilización del mismo, debe ser hecha bajo su propia responsabilidad, tratamos
+        de mantener el contenido lo mas posible para todo público de todos modos. Agradecemos la discreción.
+        <h3 class="p-4" id="w_agradecimientos">Agradecimientos previos</h3>
+        &emsp;Yo, Matias, creador del manual de Cuentos de Enforth, quiero agradecer a todos los jugadores que han
+        acompañado desde nuestros inicios, hace ya 3 años, en todas nuestras versiones anteriores antes de llegar a lo
+        que sería nuestra mejor versión hasta el momento, no tengo palabras para describir todo el soporte que han
+        brindado, todos los dias de enfado, de alegría, y las horas de discusión en sistemas que podriamos implementar,
+        a todos ustedes, muchas gracias.
+        <h3 class="p-4" id="w_modalidad">Modalidad de juego</h3>
+        El manual esta preparado para ser jugado como un RPG, basado en el farmeo, aunque las reglas son facilmente
+        modificables para poder jugarse como cualquier otro sistema de rol. Recomendamos no mover los nùmeros ni agregar
+        mas aumentos de dados.
+        <h3 class="p-4" id="w_progreso">Progreso de historia</h3>
+        Habràn publicadas distintas campañas jugables en este sistema, y se proveera en esta misma página, una sección
+        para
+        realizar diarios de campaña para la historia oficial, jugada por el grupo principal de Cuentos de Enforth
+
+        <h1>Personaje</h1>
+        <h3 class="p-4" id="p_guia">Guía de creación de personaje</h3>
+        <p class="parrafo">
+            <b>Ficha</b>
+            Esta debe ser pedido al administrador. Para las fichas utilizamos Google Spreadsheets (Hojas de cálculo de
+            Google),
+            para que puedan guardarse y verse desde cualquier parte facilmente.
+        </p>
+        <p class="parrafo">
+            <b>Hojas de la ficha</b>
+            <x><b class="text-primary">Conocimientos.</b> Se enlistan los conocimientos, para desbloquearlos, se pintan
+                en verde.
+                Los conocimientos son las habilidades que tu personaje sabe hacer, como la base de los mismos.</x>
+            <x><b class="text-primary">Inventario, equipo y otros.</b> Todo lo que se consideran objetos que tiene el
+                personaje.</x>
+            <x><b class="text-primary">Mascotas.</b> Listado de mascotas, habilidades y nivel de la misma.</x>
+            <x><b class="text-primary">Estado actual.</b> Diario personal del personaje para hacer anotaciones.</x>
+            <x><b class="text-primary">Recetas.</b> Objetos desbloqueadas mediante receta.</x>
+            <x><b class="text-primary">Habilidades.</b> Desbloqueadas por raza, maldicion, clases, etc.</x>
+            <x><b class="text-primary">Hechizos y tácticas.</b> Aprendidas por instructores o pergaminos.</x>
+            <x><b class="text-primary">Profesión.</b> Niveles y experiencia en profesiones.</x>
+            <x><b class="text-primary">Bancos.</b> Dinero y objetos guardados en bancos.</x>
+            <x><b class="text-primary">Reputación.</b> El nivel de reputación que tienes con los distintos NPC
+                principales o grupos de NPC de este mundo.</x>
+        </p>
+        <h3 class="p-4" id="p_stats">Estadísticas</h3>
+        <p>Las estadísticas son las que aumentan tus capacidades en ciertos atributos especificos, los cuales se
+            enlistan como <b>estadísticas</b>.</p>
+        <p class="parrafo">Al momento de crear un personaje, se tienen dos opciones para establecer las estadísticas.
+        <ol>
+            <li>Realizar una tirada de 7d4d2 (7 dados de 4 con ventaja en 2 de ellos), mínimo 5, máximo 20, y distribuir
+                el valor, excepto en suerte.</li>
+            <li>Distribuir 15 puntos entre todas las estadísticas, excepto suerte.</li>
+        </ol>
+        </p>
+        <p>El máximo valor que una estadística puede tener es 5, con todas las sumatorias que este tenga (Incluida
+            raza).</p>
+        <p>Tras la distribución de puntos, debes elegir una estadística la cuál <b>destacar</b>, al hacerlo, esta
+            obtendrá 1 punto, y el máximo en la estadística, pasará a ser 10; además, obtendrás la <b
+                class="text-danger">habilidad destacada</b>
+            de la estadística, la cuál se enlistará a continuación.</p>
+        <h5>Listado de estadísticas</h5>
+        <p class="parrafo">
+            <b class="text-primary">Agilidad</b>
+            Representa la destreza, reflejos y equilibrio del personaje. Un alto valor en agilidad mejora las
+            probabilidades de esquivar ataques, realizar acciones que requieren precisión física, y afecta el orden de
+            actuación en combate. También puede influir en habilidades como el sigilo y la acrobacia.
+            Aumenta la cantidad de acciones en utilidad en 1 por cada 2 puntos en esta estadística. <b>Tu esquive será
+                tu Agilidad x3, con máximo de 15.</b>
+            <b class="text-danger">Puedes esquivar dos casillas en lugar de una, y tu esquive obtiene +3 (Que supera el
+                límite de 15).</b>
+        </p>
+        <p class="parrafo">
+            <b class="text-primary">Carisma</b>
+            Mide la habilidad de un personaje para interactuar eficazmente con otros. Afecta la capacidad de persuasión,
+            intimidación, liderazgo y encanto. Un alto carisma puede abrir puertas, influir en personas y desviar
+            situaciones potencialmente hostiles.
+            <b class="text-danger">A tus tiradas de daño con magia se les suma tu carisma, sumando uno de daño por nivel
+                en la profesión de Bardo. Los aumentos de reputación se ven duplicados.</b>
+        </p>
+        <p class="parrafo">
+            <b class="text-primary">Fuerza</b>
+            Es la medida de la capacidad física bruta de un personaje. Afecta directamente al daño realizado en combate
+            cuerpo a cuerpo, la capacidad para levantar, arrastrar o empujar objetos pesados, y realizar hazañas de
+            fuerza. También puede influir en la habilidad de un personaje para romper estructuras o ataduras. Un jugador
+            puede realizar tiradas de Fuerza para levantar peso, pudiendo levantar 5kg multiplicado al valor sacado en
+            la tirada.
+            <b class="text-danger">Podrás abrir cofres a golpes (Madera y hierro), superando un 15 en una tirada, en
+                caso de fallar, recibes 1d6 de daño. El peso de las armas que estés usando se disminuye en 1.</b>
+        </p>
+        <p class="parrafo">
+            <b class="text-primary">Inteligencia</b>
+            Es crucial para la comprensión de hechizos, idiomas y conocimientos en general. Afecta la cantidad de maná o
+            energía mágica disponible, la capacidad para aprender y lanzar hechizos complicados, y puede influir en
+            habilidades que requieran razonamiento o conocimiento.
+            <b class="text-danger">Tendrás ventaja en aprender conocimientos e idiomas. Obtienes +1 de daño fijo en
+                ataques por cada nivel en mago o clérigo (El mas alto de ambos).</b>
+        </p>
+        <p class="parrafo">
+            <b class="text-primary">Percepción</b>
+            Representa la sensibilidad sensorial y la consciencia situacional del personaje. Afecta la capacidad para
+            detectar trampas, emboscadas, o hallar detalles ocultos en el entorno.
+            <b class="text-danger">Podrás realizar tiradas de percepción para detectar trampas, superando un 10 en una
+                tirada. No pueden atacarte en sigilo ni por la espalda.</b>
+        </p>
+        <p class="parrafo">
+            <b class="text-primary">Puntería</b>
+            Mide la habilidad del personaje para acertar golpes en combate, ya sea con armas de melee o a distancia. Una
+            alta puntuación indica una mayor probabilidad de impactar al objetivo y potencialmente infligir más daño.
+            <b class="text-danger">Aplicarás efecto en tu ataque, incluso si este es esquivado. Al aplicar critico,
+                puedes cambiarlo, para que, en lugar de agregar dados adicionales, sume tu puntería como daño fijo.</b>
+        </p>
+        <p class="parrafo">
+            <b class="text-primary">Resistencia</b>
+            Determina la capacidad del personaje para soportar daño físico, enfermedades o venenos. Una alta resistencia
+            puede resultar en una mayor cantidad de puntos de vida y una mejor capacidad para resistir estados alterados
+            o daños por condiciones extremas.
+            <b>Aumenta tu vida en 3 puntos por cada punto en esta estadística.</b>
+            <b class="text-danger">No recibirás el punto de daño obligatorio al recibir un ataque El peso de las
+                armaduras que estés usando se disminuye en 1.</b>
+        </p>
+        <p class="parrafo">
+            <b class="text-primary">Suerte</b>
+            Influye en una variedad de factores, desde encontrar objetos raros hasta la probabilidad de evitar un golpe
+            crítico. La suerte puede ser el factor decisivo en momentos de incertidumbre, añadiendo un elemento de azar
+            favorable para el personaje.
+            <b class="text-danger">Todos los cofres que abras tú al explorar, tendrán al menos un objeto poco común, o
+                superior. Una vez por día, puedes repetir una tirada, y elegir el valor que quieras entre los dos.</b>
+        </p>
+        <p class="parrafo">
+            <b class="text-primary">Acciones de ataque</b>
+            Es la cantidad de veces que puedes realizar acciones ofensivas en un combate. Solo puedes realizar acciones
+            que requieran acciones de ataque, dentro de tu turno.
+        </p>
+        <p class="parrafo">
+            <b class="text-primary">Acciones de utilidad</b>
+            Son utilizadas para interactuar con objetos y el entorno. Puedes además, realizar acciones narrativas con
+            estas acciones, siempre y cuando el master te lo permita, y haya alguna forma de cuantificar logicamente en
+            base a tu personaje la acción que se busca realizar.
+        </p>
+        <p class="parrafo">
+            <b class="text-primary">Vida</b>
+            Es la cantidad de puntos que tienes durante un combate para mantenerte en la lucha, en caso de que estos
+            lleguen a 0, tu personaje quedará fuera de combate. Si tu personaje es atacado estando abatido, o su vida
+            llega a
+            -5, este morirá, solo pudiendo ser rescatado por otro jugador con algun objeto o habilidad especial. El
+            máximo de
+            vida que un jugador puede tener, son 50 puntos. Los puntos de vida iniciales son 20 puntos.
+        </p>
+        <h3 class="p-4" id="p_conocimientos">Conocimientos</h3>
+        <p>Son las bases de conocimientos que tiene un personaje para realizar acciones y usar profesiones
+            correspondientes al conocimiento requerido.</p>
+        <p class="parrafo">
+            <b class="text-success">Agricultura</b>
+            Esta disciplina abarca el arte y la ciencia de cultivar la tierra. Los conocedores de la agricultura están
+            versados en técnicas para preparar el suelo, seleccionar semillas, plantar, regar y cosechar. También tienen
+            conocimientos sobre la rotación de cultivos para mantener el suelo saludable, el manejo ecológico de plagas,
+            y el cultivo de plantas tanto para alimentación como para usos mágicos o medicinales. La agricultura puede
+            incluir la cría de ciertos animales pequeños necesarios para la polinización o para mantener un ecosistema
+            equilibrado.
+        </p>
+        <p class="parrafo">
+            <b class="text-success">Alquimia</b>
+            Este conocimiento permite a los personajes combinar ingredientes para crear pociones, ungüentos y polvos con
+            diversos efectos, desde curar heridas y enfermedades hasta otorgar habilidades mágicas temporales o
+            permanentes. La alquimia requiere no solo una vasta comprensión de las propiedades de innumerables
+            sustancias, sino también precisión en las medidas y tiempos de cocción. Los alquimistas a menudo buscan
+            ingredientes raros o peligrosos para sus creaciones, aventurándose en lugares remotos o tratando con
+            criaturas místicas.
+        </p>
+        <p class="parrafo">
+            <b class="text-success">Armamentística</b>
+            Este conocimiento especializado en el diseño, fabricación y reparación de armas de fuego y artefactos
+            mecánicos avanzados. Incluye desde la forja y el ensamblaje de las partes metálicas hasta el conocimiento de
+            la pólvora, los explosivos y los principios de aerodinámica para proyectiles. La armamentística también
+            implica innovar en la creación de nuevas armas, mejorar las existentes y mantenerlas en óptimo estado. Un
+            experto en armamentística puede modificar armas para propósitos específicos, como aumentar su precisión,
+            rango o poder destructivo.
+        </p>
+        <p class="parrafo">
+            <b class="text-success">Cacería</b>
+            La cacería va más allá de la simple persecución y captura de animales; incluye el rastreo, el camuflaje, el
+            conocimiento de las costumbres de las presas, y la habilidad para colocar trampas. Un cazador hábil conoce
+            los hábitats de diversas criaturas, puede prever su comportamiento y utiliza técnicas que minimizan el
+            riesgo tanto para el cazador como para el ecosistema. La cacería puede tener fines alimenticios, de control
+            de poblaciones o de recolección de materiales raros.
+        </p>
+        <p class="parrafo">
+            <b class="text-success">Carpintería</b>
+            Este conocimiento cubre la habilidad de trabajar la madera para crear desde utensilios domésticos y muebles
+            hasta estructuras complejas y artilugios mecánicos. Un carpintero diestro no solo debe ser capaz de
+            seleccionar el tipo adecuado de madera para cada proyecto, sino también dominar técnicas de corte, tallado,
+            ensamblaje y acabado. La carpintería puede incluir la creación de objetos mágicos o encantados si el
+            carpintero posee los conocimientos místicos necesarios.
+        </p>
+        <p class="parrafo">
+            <b class="text-success">Cocina</b>
+            La cocina es el arte de preparar y combinar alimentos para crear platos que no solo nutren el cuerpo, sino
+            que también pueden deleitar los sentidos o incluso proporcionar beneficios mágicos. Un cocinero experto
+            conoce una amplia variedad de recetas, técnicas de cocción, y cómo los diferentes ingredientes interactúan.
+            La cocina puede implicar el uso de ingredientes exóticos o mágicos para preparar platos con efectos
+            especiales.
+        </p>
+        <p class="parrafo">
+            <b class="text-success">Herbolaria</b>
+            La herbolaría implica el conocimiento de plantas, hierbas y hongos, incluyendo sus propiedades curativas,
+            tóxicas, y mágicas. Un herbolario sabe cómo identificar, recolectar y preparar estas plantas para crear
+            remedios, venenos y elixires. La herbolaría es esencial para la medicina, la alquimia y ciertas prácticas
+            mágicas.
+        </p>
+        <p class="parrafo">
+            <b class="text-success">Herrerìa</b>
+            La herrería abarca la forja y el moldeo de metales para crear herramientas, armas, armaduras y otros
+            artefactos. Un herrero debe conocer las propiedades de diversos metales y aleaciones, así como técnicas de
+            forja, templado y decoración. La herrería puede especializarse en ciertos tipos de objetos, como armas
+            específicas o armaduras mágicamente reforzadas.
+        </p>
+        <p class="parrafo">
+            <b class="text-success">Ingenieria</b>
+            La ingeniería en este contexto se refiere al diseño y construcción de mecanismos, desde simples herramientas
+            hasta complejas máquinas o artefactos mágico-tecnológicos. Esto incluye la creación de bombas, dispositivos
+            de asedio, mecanismos de relojería precisos, y cualquier otro dispositivo que requiera de una comprensión
+            avanzada de las leyes físicas y mágicas. Un ingeniero es capaz de analizar y solucionar problemas prácticos
+            a través de la innovación y el uso eficiente de recursos, haciendo posibles desde mejoras en la vida
+            cotidiana hasta el desarrollo de nuevas formas de defensa o exploración.
+        </p>
+        <p class="parrafo">
+            <b class="text-success">Joyería</b>
+            La joyería no se limita a la creación de objetos decorativos; es el arte de trabajar metales preciosos y
+            piedras, combinándolos no solo para crear belleza sino también para infundir propiedades mágicas en los
+            objetos. Un joyero con conocimientos avanzados puede elaborar amuletos, anillos y otros adornos que ofrecen
+            protección, mejoran habilidades o tienen efectos curativos. Requiere precisión, creatividad y, a menudo, un
+            conocimiento profundo de las artes mágicas para activar o potenciar los materiales usados.
+        </p>
+        <p class="parrafo">
+            <b class="text-success">Manualidades</b>
+            Este conocimiento encapsula la habilidad y destreza para manipular objetos pequeños, realizar trabajos que
+            requieren precisión y utilizar herramientas de manera efectiva. Implica una amplia gama de actividades,
+            desde forzar cerraduras y desactivar trampas hasta realizar tareas complejas de artesanía como la herrería y
+            la talabartería. La destreza en manualidades es esencial para aquellos que necesitan trabajar con sus manos
+            para crear o modificar objetos, realizar reparaciones intrincadas o ejecutar tareas que requieren un alto
+            grado de precisión y cuidado. Un personaje con altas habilidades en manualidades es capaz de solucionar
+            problemas prácticos, realizar ajustes finos en mecanismos o construcciones, y manipular objetos pequeños con
+            gran habilidad, lo que puede ser crucial en situaciones que van desde el combate hasta la exploración de
+            antiguas ruinas.
+        </p>
+        <p class="parrafo">
+            <b class="text-success">Medicina</b>
+            La medicina combina el conocimiento de la anatomía, la fisiología y la herbolaría para diagnosticar, tratar
+            y prevenir enfermedades y lesiones. Un médico experimentado puede realizar desde primeros auxilios hasta
+            intervenciones quirúrgicas complejas, preparar remedios a base de hierbas y manejar enfermedades crónicas o
+            mágicas. La medicina también incluye el estudio de las artes curativas mágicas, que pueden complementar o
+            superar los métodos convencionales.
+        </p>
+        <p class="parrafo">
+            <b class="text-success">Montura</b>
+            Este conocimiento implica la cría, cuidado, entrenamiento y manejo de animales montables. Va desde caballos
+            y camellos hasta criaturas mágicas o exóticas. Un experto en montura no solo sabe cómo cuidar de estas
+            criaturas para mantenerlas saludables y felices, sino también cómo entrenarlas para mejorar su velocidad,
+            resistencia y habilidades en batalla o en tareas específicas.
+        </p>
+        <p class="parrafo">
+            <b class="text-success">Música</b>
+            La música es tanto un arte como una técnica que implica la composición, interpretación y conocimiento de
+            instrumentos musicales. Un músico diestro puede emocionar, inspirar o incluso influir mágicamente en su
+            audiencia a través de su arte. La música tiene el poder de curar, calmar o potenciar emociones y, en algunos
+            casos, puede tener efectos mágicos concretos, como encantamientos o invocaciones.
+        </p>
+        <p class="parrafo">
+            <b class="text-success">Talabartería</b>
+            Esta disciplina engloba el trabajo con cuero y otros materiales similares para crear desde vestimenta,
+            armaduras, hasta accesorios y equipamiento para monturas. La talabartería requiere una combinación de
+            fuerza, precisión y creatividad para transformar el cuero crudo en objetos funcionales y artísticos. Además,
+            un talabartero con conocimientos mágicos puede crear objetos encantados o con propiedades especiales.
+        </p>
+        <p class="parrafo">
+            <b class="text-warning" id="p_magicos">Arcana</b>
+            Conocimiento básico. Es la magia en su estado mas puro, puede ser moldeada de muchas maneras diferentes. No
+            tiene una utilidad ofensiva o defensiva como tal, depende de su portador, no destaca en algo en particular.
+        </p>
+        <p class="parrafo">
+            <b class="text-warning">Fuego</b>
+            Conocimiento básico. Magia elemental. Utilizada por aquellos que buscan la destrucción, el daño constante y
+            el uso del efecto de quemadura como fuente principal de daño.
+        </p>
+        <p class="parrafo">
+            <b class="text-warning">Hielo</b>
+            Conocimiento básico. Magia elemental. Provee control en el combate, creando obstáculos o dificultando el
+            accionar enemigo.
+        </p>
+        <p class="parrafo">
+            <b class="text-warning">Trueno</b>
+            Conocimiento básico. Magia elemental. Busca castigar a aquellos que utilizan metal como protección o
+            armamento, mejorando sus efectos contra estos.
+        </p>
+        <p class="parrafo">
+            <b class="text-warning">Alma</b>
+            Conocimiento semi-avanzado. Los recolectores de almas de antaño, utilizaban su poder para preservar el
+            espiritu de seres queridos; poco a poco se fue corrompiendo hasta la actualidad, donde incluso cometen el
+            ruin acto de hacer arder un alma para usar su espíritu en combate, o como material para un arma
+        </p>
+        <p class="parrafo">
+            <b class="text-warning">Luz</b>
+            Conocimiento semi-avanzado. Los magos de la luz se especializan en dos ramas particulares, la curación y el
+            daño en área a seres considerados "no vivos".
+        </p>
+        <p class="parrafo">
+            <b class="text-warning">Oscuridad</b>
+            Conocimiento semi-avanzado. Siendo la contraparte de la luz, estos utilizan a los "no vivos" como
+            combustible de su poder, o corrompen la vida para causar daño.
+        </p>
+        <p class="parrafo">
+            <b class="text-warning">Veneno</b>
+            Conocimiento semi-avanzado. Una de las magias prohibidas en casi todo el mundo, debido a su capacidad de
+            causar dolor y miseria. Creada por un dios malvado, para darle a sus ciervos el poder de causar penurias por
+            el mundo.
+        </p>
+        <h3 class="p-4" id="p_profesiones">Profesiones</h3>
+        <p>Las profesiones, son el nivel de práctica que tienes en ciertas profesiones. Para poder hacer uso de sus
+            habilidades, debes de cumplir con los requerimientos de la misma, lo mismo para poder subirla mas allà del
+            nivel 2, el cuál es el limite, si no se tienen los requisitos.<br>
+            Para subir de un nivel en cada profesión, debes llegar a 30 de experiencia con la misma, mediante acciones
+            relacionadas a esa profesión</p>
+        <p class="parrafo">
+            <b class="text-danger">Alquimista</b>
+            Los alquimistas utilizan distintos materiales para crear pociones, viales de infusión; también realizan el
+            encantamiento de las armas, mediante los pergaminos correspondientes.
+            <p class="parrafo">
+                <b>Requerimientos para subir experiencia en la profesión</b>
+                <ul>
+                    <li>3 puntos en Inteligencia</li>
+                    <li>Conocimiento de Alquimia</li>
+                    <li>Conocimiento de Herbolaria</li>
+                </ul>
+                <b>Habilidades obtenidas al subir de nivel (Si se cumplen requisitos)</b>
+                <ul>
+                    <li><b>Nivel 0.</b> Puede crear pociones de Nivel 1.</li>
+                    <li><b>Nivel 2.</b> Puede apilar materiales de alquimia en la mochila, hasta un máximo de 2 por cada nivel en la profesión.</li>
+                    <li><b>Nivel 3.</b> Puede crear pociones de Nivel 2.</li>
+                    <li><b>Nivel 6.</b> Puede crear pociones de Nivel 3.</li>
+                    <li><b>Nivel 8.</b> Puede encantar armas y armaduras, mediante el uso de encantamientos.</li>
+                    <li><b>Nivel 10.</b> Pueden remover encantamientos que tengan las armas, y guardarlos en un pergamino, para crear un pergamino de encantamiento.</li>
+                </ul>
+            </p>
+        </p>
+    </div>
+</main>

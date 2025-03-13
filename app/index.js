@@ -5,11 +5,36 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 import express from 'express';
 import cookieParser from 'cookie-parser';
+import http from "http";
+import { Server } from "socket.io";
 import sqlite from 'sqlite3';
 import multer from 'multer';
+
 var app = express();
+const server = http.createServer(app);
+const io = new Server(server);
+
 var port = process.env.PORT || 3999;
-app.listen(port, () => {console.log("El servidor esta corriendo correctamente en el puerto "+port);});
+
+io.on('connection', (socket) => {
+    console.log('Un usuario se ha conectado');
+    
+    // Cuando un mensaje es enviado desde un cliente
+    socket.on('chatMessage', (data) => {
+      // Emitir el mensaje a todos los clientes
+      io.emit('chatMessage', data); 
+    });
+  
+    // Manejar desconexión
+    socket.on('disconnect', () => {
+      console.log('Un usuario se ha desconectado');
+    });
+  });
+
+server.listen(port, () => {
+    console.log("Servidor corriendo en http://localhost:"+port);
+});
+
 import {methods as authentication} from "./controllers/authentication.controller.js";
 import {methods as authorization} from "./middlewares/authorization.js";
 import {methods as personajes} from "./controllers/character.controller.js";
@@ -74,26 +99,14 @@ const db = new sqlite.Database(
         `, (error) => {if(error) return console.error(error)})
 
         db.run(`
-            CREATE TABLE IF NOT EXISTS Personajes (
+            CREATE TABLE IF NOT EXISTS Mensajes (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                imagen TEXT,
-                jugador TEXT,
-                name TEXT,
-                datos TEXT,
-                inventario TEXT,
-                idiomas TEXT,
-                conocimientos TEXT,
-                profesiones TEXT,
-                cofrerro TEXT,
-                carreta TEXT,
-                casas TEXT,
-                reputacion TEXT,
-                mascotas TEXT,
-                recetas TEXT,
-                habilidades TEXT,
-                hechizos TEXT
-            )
-        `, (error) => {if(error) return console.error(error)})
+                nombre TEXT,
+                color TEXT,
+                mensaje TEXT,
+                fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );    
+        `)
     }
 );
 
@@ -107,7 +120,9 @@ app.get('/staff/lore', authorization.onlyAdmin, (req, res) => res.status(200).se
 app.get('/staff/jugadores', authorization.onlyAdmin, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/jugadores.html'))
 app.get('/login', authorization.onlyUnlogged, (req, res) => res.status(200).sendFile(__dirname + '/pages/login.html'))
 app.get('/register', authorization.onlyUnlogged, (req, res) => res.status(200).sendFile(__dirname + '/pages/register.html'))
+app.get('/chat', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/chat.html') })
 app.get('/account', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/usuario.html') })
+/*
 app.get('/account/crearpersonaje', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/crearpersonaje.html') })
 app.get('/account/mis_personajes', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/mis_personajes.html') })
 app.get("/account/personaje", authorization.onlyLogged, (req, res) => {
@@ -119,11 +134,14 @@ app.get("/account/personaje", authorization.onlyLogged, (req, res) => {
 
     res.status(200).sendFile(__dirname + '/pages/personaje.html');
 });
-app.post('/api/register', authentication.register);
-app.post('/api/login', authentication.login);
-app.post('/api/upload', upload.single('file'), (req, res) => res.send("Successfully uploaded"));
-app.post('/api/datos', personajes.datos);
 app.post('/api/crearpersonaje', authorization.onlyLogged, async (req, res) => { await personajes.crearpersonaje(req,res) } );
 app.post('/api/cargarpersonaje', authorization.onlyLogged, async (req, res) => { await personajes.cargarpersonaje(req,res) } );
 app.post('/api/cargarpersonajes', authorization.onlyLogged, async (req, res) => { await personajes.cargarpersonajes(req,res) } );
+app.post('/api/datos', personajes.datos);
+*/
+app.post('/api/revisarjugador', authorization.devolverNombre);
+app.post('/api/register', authentication.register);
+app.post('/api/login', authentication.login);
+app.post('/api/guardarmensaje', authorization.guardarmensaje);
+app.post('/api/upload', upload.single('file'), (req, res) => res.send("Successfully uploaded"));
 app.get('*', (req, res) => res.status(404).sendFile(__dirname + '/pages/'));
