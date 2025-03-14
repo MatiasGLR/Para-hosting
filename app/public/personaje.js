@@ -2,7 +2,7 @@ async function cargarpersonaje() {
     const params = new URLSearchParams(window.location.search);
     const nombrePersonaje = ""+params.get("nombre");
     try {
-        const res = await fetch("http://localhost:3999/api/cargarpersonaje", {
+        const res = await fetch("https://turbo-bassoon-6756vq5wv5jh47w-3999.app.github.dev/api/cargarpersonaje", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"

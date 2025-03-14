@@ -50,7 +50,7 @@ document.querySelector("#personaje-form").addEventListener("submit", async (e) =
           arma = e.target.querySelector("#data_arma").value,
           medicina = e.target.querySelector("#data_medicina").value,
           dinero = e.target.querySelector("#data_dinero").value;*/
-    const res = await fetch("http://localhost:3999/api/crearpersonaje", {
+    const res = await fetch("https://turbo-bassoon-6756vq5wv5jh47w-3999.app.github.dev/api/crearpersonaje", {
         method: "POST",
         headers: {
             "Content-Type" : "application/json"

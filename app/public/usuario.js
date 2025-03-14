@@ -264,7 +264,7 @@ async function cargardones() {
     const dones_lista_existe = document.querySelector("#data_dones");
     if(!dones_lista_existe) return;
     try {
-        const res = await fetch("http://localhost:3999/api/datos", {
+        const res = await fetch("https://turbo-bassoon-6756vq5wv5jh47w-3999.app.github.dev/api/datos", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
@@ -293,7 +293,7 @@ async function cargararmas() {
     const armas_lista_existe = document.querySelector("#data_arma");
     if(!armas_lista_existe) return;
     try {
-        const res = await fetch("http://localhost:3999/api/datos", {
+        const res = await fetch("https://turbo-bassoon-6756vq5wv5jh47w-3999.app.github.dev/api/datos", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
@@ -325,7 +325,7 @@ async function cargarmedicinas() {
     const medicina_lista_existe = document.querySelector("#data_medicina");
     if(!medicina_lista_existe) return;
     try {
-        const res = await fetch("http://localhost:3999/api/datos", {
+        const res = await fetch("https://turbo-bassoon-6756vq5wv5jh47w-3999.app.github.dev/api/datos", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
@@ -355,7 +355,7 @@ async function cargarpociones() {
     const pocion_lista_existe = document.querySelector("#data_pocion");
     if(!pocion_lista_existe) return;
     try {
-        const res = await fetch("http://localhost:3999/api/datos", {
+        const res = await fetch("https://turbo-bassoon-6756vq5wv5jh47w-3999.app.github.dev/api/datos", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"

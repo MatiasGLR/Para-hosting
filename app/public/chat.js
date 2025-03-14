@@ -14,7 +14,7 @@ var username = "Desconocido"; // Si no hay cookie de usuario, usa "Usuario"
 
 async function Inicializar() {
     try {
-        const res = await fetch("http://localhost:3999/api/revisarjugador", {
+        const res = await fetch("https://turbo-bassoon-6756vq5wv5jh47w-3999.app.github.dev/api/revisarjugador", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
@@ -68,7 +68,7 @@ socket.on("chatMessage", async (data) => {
     displayMessage(data);
 
     try {
-        const res = await fetch("http://localhost:3999/api/guardarmensaje", {
+        const res = await fetch("https://turbo-bassoon-6756vq5wv5jh47w-3999.app.github.dev/api/guardarmensaje", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
