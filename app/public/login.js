@@ -4,7 +4,7 @@ document.querySelector("#register-form").addEventListener("submit", async (e) =>
     e.preventDefault();
     const user = e.target.children.name.value;
     const contra = e.target.children.contra.value;
-    const res = await fetch("https://turbo-bassoon-6756vq5wv5jh47w-3999.app.github.dev/api/login", {
+    const res = await fetch("https://cuentos-de-enforth.onrender.com/api/login", {
         method: "POST",
         headers: {
             "Content-Type" : "application/json"

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", cargarpersonajes);
 
 async function cargarpersonajes() {
     try {
-        const res = await fetch("https://turbo-bassoon-6756vq5wv5jh47w-3999.app.github.dev/api/cargarpersonajes", {
+        const res = await fetch("https://cuentos-de-enforth.onrender.com/api/cargarpersonajes", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
