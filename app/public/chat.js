@@ -46,6 +46,9 @@ Inicializar();
 // Enviar el mensaje
 sendButton.addEventListener("click", async () => {
     const message = messageInput.value;
+
+    if(message.trim() == "") return;
+
     const color = colorPicker.value;
 
     const newMessage = {
