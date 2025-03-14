@@ -5,6 +5,20 @@
         padding: 0;
     }
 
+    #main {
+        font-size: 110%;
+        width:90vw;
+        margin: auto;
+        text-align: justify;
+        min-width: 300px;
+        background-color: rgb(243, 243, 243);
+    }
+
+    .parrafo {
+        display:flex;
+        flex-direction: column;
+    }
+
     h1 {
         padding-top: 30px;
     }
@@ -38,6 +52,13 @@
     h6 {
         font-size: 200%;
     }
+
+    h3 {
+        text-align: center;
+        font-size: 30px;
+        width: 100%;
+        text-decoration:underline;
+    }
 </style>
 <main>
     <div class="header">
@@ -64,6 +85,27 @@
                 <li onclick="window.location.href='#p_magicos'">Mágicos</li>
             </ul>
             <li onclick="window.location.href='#p_profesiones'">Profesiones</li>
+            <ol>
+                <li onclick="window.location.href='#prof_alquimista'">Alquimista</li>
+                <li onclick="window.location.href='#prof_armero'">Armero</li>
+                <li onclick="window.location.href='#prof_bardo'">Bardo</li>
+                <li onclick="window.location.href='#prof_cantinero'">Cantinero</li>
+                <li onclick="window.location.href='#prof_carpintero'">Carpintero</li>
+                <li onclick="window.location.href='#prof_cazador'">Cazador</li>
+                <li onclick="window.location.href='#prof_domador'">Domador</li>
+                <li onclick="window.location.href='#prof_explorador'">Explorador</li>
+                <li onclick="window.location.href='#prof_granjero'">Granjero</li>
+                <li onclick="window.location.href='#prof_guardia'">Guardia</li>
+                <li onclick="window.location.href='#prof_herrero'">Herrero</li>
+                <li onclick="window.location.href='#prof_ingeniero'">Ingeniero</li>
+                <li onclick="window.location.href='#prof_joyero'">Joyero</li>
+                <li onclick="window.location.href='#prof_ladron'">Ladrón</li>
+                <li onclick="window.location.href='#prof_medico'">Medico</li>
+                <li onclick="window.location.href='#prof_mercader'">Mercader</li>
+                <li onclick="window.location.href='#prof_mercenario'">Mercenario</li>
+                <li onclick="window.location.href='#prof_minero'">Minero</li>
+                <li onclick="window.location.href='#prof_talabartero'">Talabartero</li>
+            </ol>
             <li>Razas</li>
             <li>Clases</li>
             <li>Dones</li>
@@ -130,28 +172,28 @@
     </div>
     <div id="datos">
         <h1>Bienvenidos a Enforth</h1>
-        <h3 class="p-4" id="w_disclaimer">Disclaimer</h3>
+        <h3 class="p-4" id="w_disclaimer titulo_categoria">Disclaimer</h3>
         &emsp;Sean bienvenidos todos al manual de Cuentos de Enforth, antes de comenzar, se deja en claro que hay
         probabilidades de que el tono del humor, violencia, uso de drogas, alcohol, y sexualidad sea explicita, el
         consumo de este material y la utilización del mismo, debe ser hecha bajo su propia responsabilidad, tratamos
         de mantener el contenido lo mas posible para todo público de todos modos. Agradecemos la discreción.
-        <h3 class="p-4" id="w_agradecimientos">Agradecimientos previos</h3>
+        <h3 class="p-4" id="w_agradecimientos titulo_categoria">Agradecimientos previos</h3>
         &emsp;Yo, Matias, creador del manual de Cuentos de Enforth, quiero agradecer a todos los jugadores que han
         acompañado desde nuestros inicios, hace ya 3 años, en todas nuestras versiones anteriores antes de llegar a lo
         que sería nuestra mejor versión hasta el momento, no tengo palabras para describir todo el soporte que han
         brindado, todos los dias de enfado, de alegría, y las horas de discusión en sistemas que podriamos implementar,
         a todos ustedes, muchas gracias.
-        <h3 class="p-4" id="w_modalidad">Modalidad de juego</h3>
+        <h3 class="p-4" id="w_modalidad titulo_categoria">Modalidad de juego</h3>
         El manual esta preparado para ser jugado como un RPG, basado en el farmeo, aunque las reglas son facilmente
         modificables para poder jugarse como cualquier otro sistema de rol. Recomendamos no mover los nùmeros ni agregar
         mas aumentos de dados.
-        <h3 class="p-4" id="w_progreso">Progreso de historia</h3>
+        <h3 class="p-4" id="w_progreso titulo_categoria">Progreso de historia</h3>
         Habràn publicadas distintas campañas jugables en este sistema, y se proveera en esta misma página, una sección
         para
         realizar diarios de campaña para la historia oficial, jugada por el grupo principal de Cuentos de Enforth
 
         <h1>Personaje</h1>
-        <h3 class="p-4" id="p_guia">Guía de creación de personaje</h3>
+        <h3 class="p-4" id="p_guia titulo_categoria">Guía de creación de personaje</h3>
         <p class="parrafo">
             <b>Ficha</b>
             Esta debe ser pedido al administrador. Para las fichas utilizamos Google Spreadsheets (Hojas de cálculo de
@@ -175,7 +217,7 @@
             <x><b class="text-primary">Reputación.</b> El nivel de reputación que tienes con los distintos NPC
                 principales o grupos de NPC de este mundo.</x>
         </p>
-        <h3 class="p-4" id="p_stats">Estadísticas</h3>
+        <h3 class="p-4" id="p_stats titulo_categoria">Estadísticas</h3>
         <p>Las estadísticas son las que aumentan tus capacidades en ciertos atributos especificos, los cuales se
             enlistan como <b>estadísticas</b>.</p>
         <p class="parrafo">Al momento de crear un personaje, se tienen dos opciones para establecer las estadísticas.
@@ -279,7 +321,7 @@
             máximo de
             vida que un jugador puede tener, son 50 puntos. Los puntos de vida iniciales son 20 puntos.
         </p>
-        <h3 class="p-4" id="p_conocimientos">Conocimientos</h3>
+        <h3 class="p-4" id="p_conocimientos titulo_categoria">Conocimientos</h3>
         <p>Son las bases de conocimientos que tiene un personaje para realizar acciones y usar profesiones
             correspondientes al conocimiento requerido.</p>
         <p class="parrafo">
@@ -447,7 +489,7 @@
             causar dolor y miseria. Creada por un dios malvado, para darle a sus ciervos el poder de causar penurias por
             el mundo.
         </p>
-        <h3 class="p-4" id="p_profesiones">Profesiones</h3>
+        <h3 class="p-4" id="p_profesiones titulo_categoria">Profesiones</h3>
         <p>Las profesiones, son el nivel de práctica que tienes en ciertas profesiones. Para poder hacer uso de sus
             habilidades, debes de cumplir con los requerimientos de la misma, lo mismo para poder subirla mas allà del
             nivel 2, el cuál es el limite, si no se tienen los requisitos.<br>
@@ -458,8 +500,8 @@
             y, si la tirada es superior a 20 (Con dado critico incluido), se suma otro punto adicional. Si no acurre ninguna,
             de las anteriores, solo ganarás el punto de experiencia base.
         </p>
-        <p class="parrafo">
-            <b class="text-danger">Alquimista</b>
+        <p class="parrafo" id="prof_alquimista">
+            <b class="text-danger" style="font-size: 150%;">Alquimista</b>
             Los alquimistas utilizan distintos materiales para crear pociones, viales de infusión; también realizan el
             encantamiento de las armas, mediante los pergaminos correspondientes.
             <p class="parrafo">
@@ -484,8 +526,8 @@
                 </ul>
             </p>
         </p>
-        <p class="parrafo">
-            <b class="text-danger">Armero</b>
+        <p class="parrafo" id="prof_armero">
+            <b class="text-danger" style="font-size: 150%;">Armero</b>
             Confección de armas de fuego y mecanismos bélicos
             <p class="parrafo">
                 <b>Requerimientos para subir experiencia en la profesión</b>
@@ -510,8 +552,8 @@
                 </ul>
             </p>
         </p>
-        <p class="parrafo">
-            <b class="text-danger">Bardo</b>
+        <p class="parrafo" id="prof_bardo">
+            <b class="text-danger" style="font-size: 150%;">Bardo</b>
             Crear buenos ambientes a base de melodias, y utilizar hechizos sonoros en combates, que buscan hacer 
             daño en area y utilidad a aliados
             <p class="parrafo">
@@ -539,8 +581,8 @@
                 </ul>
             </p>
         </p>
-        <p class="parrafo">
-            <b class="text-danger">Cantinero</b>
+        <p class="parrafo" id="prof_cantinero">
+            <b class="text-danger" style="font-size: 150%;">Cantinero</b>
             Confección de alimentos y bebidas
             <p class="parrafo">
                 <b>Requerimientos para subir experiencia en la profesión</b>
@@ -567,8 +609,8 @@
                 </ul>
             </p>
         </p>
-        <p class="parrafo">
-            <b class="text-danger">Carpintero</b>
+        <p class="parrafo" id="prof_carpintero">
+            <b class="text-danger" style="font-size: 150%;">Carpintero</b>
             Equipamiento de madera y mejoras en casas
             <p class="parrafo">
                 <b>Requerimientos para subir experiencia en la profesión</b>
@@ -596,37 +638,8 @@
                 </ul>
             </p>
         </p>
-        <p class="parrafo">
-            <b class="text-danger">Carpintero</b>
-            Equipamiento de madera y mejoras en casas
-            <p class="parrafo">
-                <b>Requerimientos para subir experiencia en la profesión</b>
-                <ul>
-                    <li>2 puntos en Agilidad</li>
-                    <li>2 puntos en Fuerza</li>
-                    <li>Conocimiento de Carpintería</li>
-                    <li>Conocimiento de Manualidades</li>
-                </ul>
-                <b>Acciones para subir puntos de experiencia en la profesión</b>
-                <ul>
-                    <li>Crear objetos con madera, se requiere un taller para las creaciones mayores a Nivel 1, a partir de Nivel 3, las mejoras darán experiencia en Carpintero, igual a su Nivel</li>
-                </ul>
-                <b>Habilidades obtenidas al subir de nivel (Si se cumplen requisitos)</b>
-                <ul>
-                    <li><b>Nivel 0.</b> Puedes fabricar "Escudo" con Madera como material, su defensa será de 1</li>
-                    <li><b>Nivel 1.</b> Puedes fabricar "Espada corta" con Madera como material, no tendrá modificadores</li>
-                    <li><b>Nivel 2.</b> Puedes agregar "Huertos" y "Taller de Carpintería" a casas</li>
-                    <li><b>Nivel 3.</b> Puedes agregar "Establos" a casas</li>
-                    <li><b>Nivel 5.</b> Puedes agregar "Habitaciones" a casas</li>
-                    <li><b>Nivel 6.</b> Puedes agregar "Cofre" a casas, se requiere 10 Lingotes, 10 Madera y 1 Llave</li>
-                    <li><b>Nivel 7.</b> Puedes agregar "Laboratorio de Alquimia" y "Taller de Ingenieria" a casas</li>
-                    <li><b>Nivel 8.</b> Puedes agregar "Forja" a casas</li>
-                    <li><b>Nivel 10.</b> Puedes crear casas, se requiere 200 troncos de madera</li>
-                </ul>
-            </p>
-        </p>
-        <p class="parrafo">
-            <b class="text-danger">Cazador</b>
+        <p class="parrafo" id="prof_cazador">
+            <b class="text-danger" style="font-size: 150%;">Cazador</b>
             Atrapar o acabar con animales salvajes
             <p class="parrafo">
                 <b>Requerimientos para subir experiencia en la profesión</b>
@@ -653,8 +666,8 @@
                 </ul>
             </p>
         </p>
-        <p class="parrafo">
-            <b class="text-danger">Domador</b>
+        <p class="parrafo" id="prof_domador">
+            <b class="text-danger" style="font-size: 150%;">Domador</b>
             Domesticar animales salvajes
             <p class="parrafo">
                 <b>Requerimientos para subir experiencia en la profesión</b>
@@ -679,8 +692,8 @@
                 </ul>
             </p>
         </p>
-        <p class="parrafo">
-            <b class="text-danger">Explorador</b>
+        <p class="parrafo" id="prof_explorador">
+            <b class="text-danger" style="font-size: 150%;">Explorador</b>
             Viajar por el mundo
             <p class="parrafo">
                 <b>Requerimientos para subir experiencia en la profesión</b>
@@ -708,8 +721,8 @@
                 </ul>
             </p>
         </p>
-        <p class="parrafo">
-            <b class="text-danger">Granjero</b>
+        <p class="parrafo" id="prof_granjero">
+            <b class="text-danger" style="font-size: 150%;">Granjero</b>
             Cultivar y cosechar
             <p class="parrafo">
                 <b>Requerimientos para subir experiencia en la profesión</b>
@@ -749,8 +762,8 @@
                 </ul>
             </p>
         </p>
-        <p class="parrafo">
-            <b class="text-danger">Guardia</b>
+        <p class="parrafo" id="prof_guardia">
+            <b class="text-danger" style="font-size: 150%;">Guardia</b>
             Cuidar las ciudades de los atacantes y posibles maldades que se presenten, también funcionando como personal de seguridad
             a ordenes de superiores, como los reyes.
             <p class="parrafo">
@@ -778,8 +791,8 @@
                 </ul>
             </p>
         </p>
-        <p class="parrafo">
-            <b class="text-danger">Herrero</b>
+        <p class="parrafo" id="prof_herrero">
+            <b class="text-danger" style="font-size: 150%;">Herrero</b>
             Creación de equipamiento y mejora del mismo
             <p class="parrafo">
                 <b>Requerimientos para subir experiencia en la profesión</b>
@@ -809,5 +822,227 @@
                 </ul>
             </p>
         </p>
+        <p class="parrafo" id="prof_ingeniero">
+            <b class="text-danger" style="font-size: 150%;">Ingeniero</b>
+            Creación de artefactos, bombas y trampas
+            <p class="parrafo">
+                <b>Requerimientos para subir experiencia en la profesión</b>
+                <ul>
+                    <li>4 puntos en Inteligencia</li>
+                    <li>4 puntos en Agilidad</li>
+                    <li>Conocimiento de Ingeniería</li>
+                    <li>Conocimiento de Manualidades</li>
+                </ul>
+                <b>Acciones para subir puntos de experiencia en la profesión</b>
+                <ul>
+                    <li>Crear artefactos, bombas y trampas correspondientes a la profesión.</li>
+                </ul>
+                <b>Habilidades obtenidas al subir de nivel (Si se cumplen requisitos)</b>
+                <ul>
+                    <li><b>Nivel 0.</b> Crear trampas para osos (2 lingotes de hierro, causa 1d4 de daño verdadero a quien la pise).</li>
+                    <li><b>Nivel 1.</b> Crear bombas explosivas y engranajes.</li>
+                    <li><b>Nivel 2.</b> Crear bombas de humo. Pueden apilar 2 bombas del mismo tipo por cada nivel en la profesión.</li>
+                    <li><b>Nivel 7.</b> Puede realizar herrería con almas (Requiere Magia de almas).</li>
+                    <li><b>Nivel 8.</b> Todo el armamento creado será Nivel 1 de base.</li>
+                    <li><b>Nivel 9.</b> Todo el armamento creado será Nivel 2 de base.</li>
+                    <li><b>Nivel 15.</b> Todo el armamento creado será Nivel 4 de base.</li>
+                    <li><b>Nivel 20.</b> Todo el armamento creado será Nivel 5 de base.</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="prof_joyero">
+            <b class="text-danger" style="font-size: 150%;">Joyero</b>
+            Creación de joyería y armazones para joyas
+            <p class="parrafo">
+                <b>Requerimientos para subir experiencia en la profesión</b>
+                <ul>
+                    <li>4 puntos en Agilidad</li>
+                    <li>3 puntos en Inteligencia</li>
+                    <li>Conocimiento de Joyería</li>
+                    <li>Conocimiento de Manualidades</li>
+                    <li>Libro de joyería</li>
+                    <li>Molde de joyas (Anillo, collar, o pendientes)</li>
+                </ul>
+                <b>Acciones para subir puntos de experiencia en la profesión</b>
+                <ul>
+                    <li>Crear joyería.</li>
+                    <li>Crear armazones para joyas.</li>
+                </ul>
+                <b>Habilidades obtenidas al subir de nivel (Si se cumplen requisitos)</b>
+                <ul>
+                    <li><b>Nivel 0.</b> Puede confeccionar joyas de Nivel 1.</li>
+                    <li><b>Nivel 2.</b> Puede apilar gemas, joyas y fragmentos hasta dos (tres para fragmentos) por nivel en la profesión.</li>
+                    <li><b>Nivel 4.</b> Puede mejorar las joyas hasta Nivel 2.</li>
+                    <li><b>Nivel 5.</b> Pueden unir 4 fragmentos de gema, para crear la gema nuevamente.</li>
+                    <li><b>Nivel 6.</b> Las joyas creadas serán de Nivel 2.</li>
+                    <li><b>Nivel 8.</b> Puede platinar joyas, para subirlas a Nivel 3.</li>
+                    <li><b>Nivel 12.</b> Las joyas creadas serán de Nivel 3.</li>
+                    <li><b>Nivel 15.</b> Puede crear Joyas de Dones.</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="prof_ladron">
+            <b class="text-danger" style="font-size: 150%;">Ladrón</b>
+            Especialista en abrir cerraduras y robar sin ser descubierto
+            <p class="parrafo">
+                <b>Requerimientos para subir experiencia en la profesión</b>
+                <ul>
+                    <li>4 puntos en Agilidad</li>
+                    <li>1 punto en Percepción</li>
+                    <li>Conocimiento de Manualidades</li>
+                </ul>
+                <b>Acciones para subir puntos de experiencia en la profesión</b>
+                <ul>
+                    <li>Abrir cofres cerrados (con herramientas).</li>
+                    <li>Abrir puertas cerradas (con herramientas).</li>
+                    <li>Robar a NPCs sin ser descubierto.</li>
+                </ul>
+                <b>Habilidades obtenidas al subir de nivel (Si se cumplen requisitos)</b>
+                <ul>
+                    <li><b>General.</b> Por cada nivel en esta profesión, la dificultad de abrir una puerta o cofre (15), bajará en un punto.</li>
+                    <li><b>Nivel 1.</b> Pueden llevar ganzúas en collares (Una por collar).</li>
+                    <li><b>Nivel 2.</b> Puede apilar ganzúas, hasta dos por nivel en la profesión.</li>
+                    <li><b>Nivel 4.</b> Pueden abrir cofres de madera con ganzúas, sin tirar dados.</li>
+                    <li><b>Nivel 5.</b> Pueden abrir cofres de hierro con ganzúas, sin tirar dados.</li>
+                    <li><b>Nivel 6.</b> Pueden abrir cofres de plata con ganzúas, sin tirar dados.</li>
+                    <li><b>Nivel 7.</b> Pueden abrir cofres de oro con ganzúas, sin tirar dados.</li>
+                    <li><b>Nivel 10.</b> Pueden abrir puertas, sin tirar dados, y sin ser descubiertos (A menos que sea muy obvio).</li>
+                    <li><b>Nivel 15.</b> Pueden abrir puertas de mazmorras con ganzúas.</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="prof_medico">
+            <b class="text-danger" style="font-size: 150%;">Médico</b>
+            Especialista en curación y fabricación de medicamentos
+            <p class="parrafo">
+                <b>Requerimientos para subir experiencia en la profesión</b>
+                <ul>
+                    <li>4 puntos en Agilidad</li>
+                    <li>4 puntos en Inteligencia</li>
+                    <li>Conocimiento de Medicina</li>
+                    <li>Conocimiento de Manualidades</li>
+                </ul>
+                <b>Acciones para subir puntos de experiencia en la profesión</b>
+                <ul>
+                    <li>Curar a personajes heridos con efectos.</li>
+                    <li>Confeccionar medicamentos.</li>
+                    <li>Levantar a jugadores caídos.</li>
+                </ul>
+                <b>Habilidades obtenidas al subir de nivel (Si se cumplen requisitos)</b>
+                <ul>
+                    <li><b>General.</b> Por cada dos niveles en esta profesión, se tendrá un reintento a levantar a un aliado abatido.</li>
+                    <li><b>Nivel 1.</b> Puedes fabricar "Adrenalina".</li>
+                    <li><b>Nivel 2.</b> Puedes fabricar "Relajante".</li>
+                    <li><b>Nivel 3.</b> Puedes fabricar "Antiofídico".</li>
+                    <li><b>Nivel 4.</b> Puedes fabricar "Coagulante".</li>
+                    <li><b>Nivel 5.</b> Puedes fabricar "Antipsicótico".</li>
+                    <li><b>Nivel 10.</b> Desbloqueas la táctica "Desfibrilación".</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="prof_mercader">
+            <b class="text-danger" style="font-size: 150%;">Mercader</b>
+            Experto en comercio y negociación
+            <p class="parrafo">
+                <b>Requerimientos para subir experiencia en la profesión</b>
+                <ul>
+                    <li>4 puntos en Carisma</li>
+                    <li>3 puntos en Percepción</li>
+                    <li>Tener 10 puntos de reputación con Mercaderes de al menos 2 ciudades (En cada uno)</li>
+                </ul>
+                <b>Acciones para subir puntos de experiencia en la profesión</b>
+                <ul>
+                    <li>Realizar ventas en tus propias tiendas (1 punto máximo por día).</li>
+                    <li>Compras mayores a 4000 monedas realizadas a mercaderes ambulantes.</li>
+                </ul>
+                <b>Habilidades obtenidas al subir de nivel (Si se cumplen requisitos)</b>
+                <ul>
+                    <li><b>General.</b> Tienes semanalmente, hasta 1000 por Nivel de descuento en productos, que no puede superar el 25% en una misma compra (A partir de Nivel 1).</li>
+                    <li><b>Nivel 2.</b> Los mercaderes ambulantes tendrán un objeto <b>poco común</b> adicional a la venta.</li>
+                    <li><b>Nivel 5.</b> Los mercaderes ambulantes tendrán un objeto <b>raro</b> adicional a la venta.</li>
+                    <li><b>Nivel 8.</b> Los mercaderes ambulantes tendrán un objeto <b>épico</b> adicional a la venta.</li>
+                    <li><b>Nivel 11.</b> Los mercaderes ambulantes tendrán un objeto <b>épico</b> y uno <b>raro</b> adicional a la venta.</li>
+                    <li><b>Nivel 14.</b> Los mercaderes ambulantes tendrán dos objetos <b>épicos</b> adicionales a la venta.</li>
+                    <li><b>Nivel 17.</b> Los mercaderes ambulantes tendrán un objeto <b>legendario</b> adicional a la venta.</li>
+                    <li><b>Nivel 20.</b> Los mercaderes ambulantes tendrán un objeto <b>legendario</b> y uno <b>épico</b> adicional a la venta.</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="prof_mercenario">
+            <b class="text-danger" style="font-size: 150%;">Mercenario</b>
+            Requerimientos para subir puntos en la profesión, y utilizar sus habilidades
+            <p class="parrafo">
+                <b>Requerimientos para subir experiencia en la profesión</b>
+                <ul>
+                    <li>Sin requisitos en estadísticas o conocimientos</li>
+                </ul>
+                <b>Acciones para subir puntos de experiencia en la profesión</b>
+                <ul>
+                    <li>Realizar misiones para NPCs.</li>
+                </ul>
+                <b>Habilidades obtenidas al subir de nivel (Si se cumplen requisitos)</b>
+                <ul>
+                    <li><b>General.</b> Obtienes un 5% de descuento en Mercenarios por cada Nivel.</li>
+                    <li><b>Nivel 3.</b> Puedes contratar gratuitamente a un Mercenario de Nivel 1 para una misión.</li>
+                    <li><b>Nivel 5.</b> Puedes contratar gratuitamente a un Mercenario de Nivel 2 para una misión.</li>
+                    <li><b>Nivel 7.</b> Puedes contratar gratuitamente a un Mercenario de Nivel 3 para una misión.</li>
+                    <li><b>Nivel 9.</b> Puedes contratar gratuitamente a un Mercenario de Nivel 4 para una misión.</li>
+                    <li><b>Nivel 10.</b> Las recompensas económicas de las misiones son duplicadas.</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="prof_minero">
+            <b class="text-danger" style="font-size: 150%;">Minero</b>
+            Requerimientos para subir puntos en la profesión, y utilizar sus habilidades
+            <p class="parrafo">
+                <b>Requerimientos para subir experiencia en la profesión</b>
+                <ul>
+                    <li>4 puntos en Fuerza</li>
+                </ul>
+                <b>Acciones para subir puntos de experiencia en la profesión</b>
+                <ul>
+                    <li>Romper menas de minerales con un pico</li>
+                </ul>
+                <b>Habilidades obtenidas al subir de nivel (Si se cumplen requisitos)</b>
+                <ul>
+                    <li><b>General.</b> Puedes picar las rocas, con un pico del mismo material, o mejor. En caso de no serlo, se deberá lanzar Fuerza; si llega a ser menor que 15, el pico se romperá.</li>
+                    <li><b>Nivel 2.</b> Puedes apilar minerales, hasta 3 por nivel en la profesión.</li>
+                    <li><b>Nivel 3.</b> Obtienes los 5 minerales de esa roca.</li>
+                    <li><b>Nivel 4.</b> Puedes picar cualquier mineral, con cualquier pico.</li>
+                    <li><b>Nivel 5.</b> Obtienes un 50% más de minerales de esa roca (Redondeado hacia abajo).</li>
+                    <li><b>Nivel 8.</b> Tienes un 5% (+5% por cada nivel posterior) de probabilidad de que la gema que está en la roca sea entera, y no un fragmento.</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="prof_talabartero">
+            <b class="text-danger" style="font-size: 150%;">Talabartero</b>
+            Requerimientos para subir puntos en la profesión, y utilizar sus habilidades
+            <p class="parrafo">
+                <b>Requerimientos para subir experiencia en la profesión</b>
+                <ul>
+                    <li>3 puntos en Agilidad</li>
+                    <li>Conocimiento de Talabartería</li>
+                    <li>Conocimiento de Manualidades</li>
+                </ul>
+                <b>Acciones para subir puntos de experiencia en la profesión</b>
+                <ul>
+                    <li>Romper objetos de cuero (Hasta nivel 5 inclusive).</li>
+                    <li>Crear objetos con cuero fresco.</li>
+                </ul>
+                <b>Habilidades obtenidas al subir de nivel (Si se cumplen requisitos)</b>
+                <ul>
+                    <li><b>Nivel 1.</b> Crear yelmos y guantes.</li>
+                    <li><b>Nivel 2.</b> Crear armaduras.</li>
+                    <li><b>Nivel 3.</b> Crear riñoneras y cinturones.</li>
+                    <li><b>Nivel 4.</b> Puedes apilar cueros comunes (hasta dos por nivel en la profesión) y cueros duros (Por separado, hasta uno por nivel en la profesión).</li>
+                    <li><b>Nivel 5.</b> Mejorar mochila hasta un nivel igual al de esta profesión.</li>
+                    <li><b>Nivel 6.</b> Puedes reciclar la mitad del cuero de los objetos hechos con el mismo.</li>
+                    <li><b>Nivel 8.</b> Puedes crear armaduras de cuero duro, que aumentan su protección en +2, en lugar de +1.</li>
+                    <li><b>Nivel 10.</b> Cualquier cuero se considerará Cuero Duro, y el Cuero fresco agregado a la pieza de armadura dará habilidades especiales en las armaduras.</li>
+                    <li><b>Nivel 14.</b> Puedes poner hasta dos cueros de animal por pieza de armadura.</li>
+                </ul>
+            </p>
+        </p>                    
+        <h3 class="p-4" id="p_profesiones titulo_categoria">Razas</h3>         
     </div>
 </main>
