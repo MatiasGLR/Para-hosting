@@ -14,7 +14,7 @@ var app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-var port = process.env.PORT || 3999;
+var port = process.env.PORT || 80;
 
 io.on('connection', (socket) => {
     console.log('Un usuario se ha conectado');
