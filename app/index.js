@@ -59,8 +59,7 @@ app.use(cookieParser());
 
 // Base de datos
 const db = new sqlite.Database(
-    //path.resolve(__dirname, './files/db/enforth.db'),
-    path.resolve('/home/codespace/sqlite-db/enforth.db'),
+    path.resolve(__dirname, './files/db/enforth.db'),
     (error) => {
         if(error) {
             return console.error(error);
