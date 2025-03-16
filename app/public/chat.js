@@ -33,7 +33,7 @@ async function Inicializar() {
                     color: mensaje.color,
                     isOwnMessage: mensaje.nombre == username ? true : false
                 }
-                displayMessageForPlayer(data)
+                displayMessage(data)
             })
         }
     } catch (e) {
@@ -76,9 +76,9 @@ sendButton.addEventListener("click", async () => {
             },
             credentials: "include",
             body: JSON.stringify({
-                user: data.user,
-                message: data.message,
-                color: data.color
+                user: newMessage.user,
+                message: newMessage.message,
+                color: newMessage.color
             })
         });
     } catch (e) {
