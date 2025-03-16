@@ -55,19 +55,22 @@ sendButton.addEventListener("click", async () => {
         user: username,
         message: message,
         color: color,
-        isOwnMessage: true // Esto indica si el mensaje fue enviado por el usuario actual
+        isOwnMessage: true
     };
+    
+    if(esTiradaValida(data.message)) {
+        data.user = data.user + " [Dados]"
+        const tirada = tirarDados(data.message);
+        data.message = "<b>"+data.message+"</b> ->" + tirada.mensaje + "" + " <b style='color:white; background-color:black;'>[ " + tirada.total + " ]</b>";
+    }
 
-    // Emitir el mensaje al servidor
     socket.emit("chatMessage", newMessage);
 
-    // Limpiar el campo de texto
     messageInput.value = "";
 });
 
-// Recibir mensajes de otros usuarios
 socket.on("chatMessage", async (data) => {
-    // Si el mensaje no es del usuario actual, se muestra en el lado derecho
+
     displayMessage(data);
 
     try {
@@ -98,13 +101,6 @@ function displayMessage(data) {
     } else {
         messageElement.classList.add("message", "received"); // Para los mensajes recibidos
     }
-
-    if(esTiradaValida(data.message)) {
-        data.user = data.user + " [Dados]"
-        const tirada = tirarDados(data.message);
-        data.message = "<b>"+data.message+"</b> ->" + tirada.mensaje + "" + " <b style='color:white; background-color:black;'>[ " + tirada.total + " ]</b>";
-    }
-
     // Configuración de color para el mensaje
     messageElement.innerHTML = `<strong style="color:${data.color};">${data.user}</strong><span style='display:inline-block'>${data.message}</span>`;
     chatBox.appendChild(messageElement);
