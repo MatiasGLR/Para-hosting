@@ -64,6 +64,8 @@ sendButton.addEventListener("click", async () => {
         newMessage.message = "<b>"+newMessage.message+"</b> ->" + tirada.mensaje + "" + " <b style='color:white; background-color:black;'>[ " + tirada.total + " ]</b>";
     }
 
+    if(newMessage.message.length > 300) newMessage.message = "String muy largo, no se puede realizar esa tirada" + messageInput.value; 
+
     socket.emit("chatMessage", newMessage);
 
     messageInput.value = "";
@@ -96,7 +98,7 @@ function displayMessage(data) {
     const messageElement = document.createElement("div");
 
     // Si el mensaje es del usuario actual, se muestra a la izquierda, de lo contrario a la derecha
-    if (data.user == username) {
+    if (data.user == username || data.user.replace(" [Dados]", "") == username) {
         messageElement.classList.add("message", "sent"); // Para los mensajes enviados
     } else {
         messageElement.classList.add("message", "received"); // Para los mensajes recibidos
