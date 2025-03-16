@@ -120,7 +120,7 @@ app.get('/staff/lore', authorization.onlyAdmin, (req, res) => res.status(200).se
 app.get('/staff/jugadores', authorization.onlyAdmin, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/jugadores.html'))
 app.get('/login', authorization.onlyUnlogged, (req, res) => res.status(200).sendFile(__dirname + '/pages/login.html'))
 app.get('/register', authorization.onlyUnlogged, (req, res) => res.status(200).sendFile(__dirname + '/pages/register.html'))
-app.get('/chat', (req, res) => { res.status(200).sendFile(__dirname + '/pages/chat.html') })
+app.get('/chat', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/chat.html') })
 app.get('/account', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/usuario.html') })
 /*
 app.get('/account/crearpersonaje', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/crearpersonaje.html') })
