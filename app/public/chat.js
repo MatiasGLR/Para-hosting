@@ -33,7 +33,7 @@ async function Inicializar() {
                     color: mensaje.color,
                     isOwnMessage: mensaje.nombre == username ? true : false
                 }
-                displayMessage(data)
+                displayMessageForPlayer(data)
             })
         }
     } catch (e) {
@@ -64,16 +64,9 @@ sendButton.addEventListener("click", async () => {
         newMessage.message = "<b>"+newMessage.message+"</b> ->" + tirada.mensaje + "" + " <b style='color:white; background-color:black;'>[ " + tirada.total + " ]</b>";
     }
 
-    if(newMessage.message.length > 300) newMessage.message = "String muy largo, no se puede realizar esa tirada" + messageInput.value; 
+    if(newMessage.message.length > 300) newMessage.message = "String muy largo, no se puede realizar esa tirada " + messageInput.value; 
 
     socket.emit("chatMessage", newMessage);
-
-    messageInput.value = "";
-});
-
-socket.on("chatMessage", async (data) => {
-
-    displayMessage(data);
 
     try {
         const res = await fetch("https://cuentos-de-enforth.onrender.com/api/guardarmensaje", {
@@ -91,6 +84,12 @@ socket.on("chatMessage", async (data) => {
     } catch (e) {
         console.error(e);
     }
+
+    messageInput.value = "";
+});
+
+socket.on("chatMessage", async (data) => {
+    displayMessage(data);
 });
 
 // Función para crear el HTML de cada mensaje
