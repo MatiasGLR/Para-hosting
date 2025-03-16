@@ -58,10 +58,10 @@ sendButton.addEventListener("click", async () => {
         isOwnMessage: true
     };
     
-    if(esTiradaValida(data.message)) {
-        data.user = data.user + " [Dados]"
-        const tirada = tirarDados(data.message);
-        data.message = "<b>"+data.message+"</b> ->" + tirada.mensaje + "" + " <b style='color:white; background-color:black;'>[ " + tirada.total + " ]</b>";
+    if(esTiradaValida(newMessage.message)) {
+        newMessage.user = newMessage.user + " [Dados]"
+        const tirada = tirarDados(newMessage.message);
+        newMessage.message = "<b>"+newMessage.message+"</b> ->" + tirada.mensaje + "" + " <b style='color:white; background-color:black;'>[ " + tirada.total + " ]</b>";
     }
 
     socket.emit("chatMessage", newMessage);
