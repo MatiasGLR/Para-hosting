@@ -68,6 +68,8 @@ sendButton.addEventListener("click", async () => {
 
     socket.emit("chatMessage", newMessage);
 
+    messageInput.value = "";
+
     try {
         const res = await fetch("https://cuentos-de-enforth.onrender.com/api/guardarmensaje", {
             method: "POST",
@@ -84,8 +86,6 @@ sendButton.addEventListener("click", async () => {
     } catch (e) {
         console.error(e);
     }
-
-    messageInput.value = "";
 });
 
 socket.on("chatMessage", async (data) => {
