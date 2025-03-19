@@ -53,11 +53,21 @@
         font-size: 200%;
     }
 
-    h3 {
+    .titulo_categoria {
         text-align: center;
         font-size: 30px;
         width: 100%;
         text-decoration:underline;
+    }
+
+    img {
+        width: 300px;
+        max-width: 300px;
+        margin:10px;
+    }
+
+    .costo {
+        color:rgb(187, 0, 0)
     }
 </style>
 <main>
@@ -106,8 +116,21 @@
                 <li onclick="window.location.href='#prof_minero'">Minero</li>
                 <li onclick="window.location.href='#prof_talabartero'">Talabartero</li>
             </ol>
-            <li>Razas</li>
-            <li>Clases</li>
+            <li onclick="window.location.href='#p_razas'">Razas</li>
+            <ol>
+                <li onclick="window.location.href='#raza_humano'">Humano</li>
+                <li onclick="window.location.href='#raza_orco'">Orco</li>
+                <li onclick="window.location.href='#raza_lhanie'">Lhanie</li>
+                <li onclick="window.location.href='#raza_shira'">Shira</li>
+                <li onclick="window.location.href='#raza_turbe'">Turbe</li>
+                <li onclick="window.location.href='#raza_fjereo'">Fjereo</li>
+                <li onclick="window.location.href='#raza_sarka'">Sarka</li>
+                <li onclick="window.location.href='#raza_demonio'">Demonio</li>
+                <li onclick="window.location.href='#raza_naturis'">Naturis</li>
+                <li onclick="window.location.href='#raza_benirie'">Benirie</li>
+                <li onclick="window.location.href='#raza_draieach'">Draieach</li>
+            </ol>
+            <li onclick="window.location.href='#p_clases'">Clases</li>
             <li>Dones</li>
             <li>Explicación de puntos de mejora</li>
             <li>Inventario de jugador</li>
@@ -172,28 +195,28 @@
     </div>
     <div id="datos">
         <h1>Bienvenidos a Enforth</h1>
-        <h3 class="p-4" id="w_disclaimer titulo_categoria">Disclaimer</h3>
+        <h3 class="p-4 titulo_categoria" id="w_disclaimer">Disclaimer</h3>
         &emsp;Sean bienvenidos todos al manual de Cuentos de Enforth, antes de comenzar, se deja en claro que hay
         probabilidades de que el tono del humor, violencia, uso de drogas, alcohol, y sexualidad sea explicita, el
         consumo de este material y la utilización del mismo, debe ser hecha bajo su propia responsabilidad, tratamos
         de mantener el contenido lo mas posible para todo público de todos modos. Agradecemos la discreción.
-        <h3 class="p-4" id="w_agradecimientos titulo_categoria">Agradecimientos previos</h3>
+        <h3 class="p-4 titulo_categoria" id="w_agradecimientos">Agradecimientos previos</h3>
         &emsp;Yo, Matias, creador del manual de Cuentos de Enforth, quiero agradecer a todos los jugadores que han
         acompañado desde nuestros inicios, hace ya 3 años, en todas nuestras versiones anteriores antes de llegar a lo
         que sería nuestra mejor versión hasta el momento, no tengo palabras para describir todo el soporte que han
         brindado, todos los dias de enfado, de alegría, y las horas de discusión en sistemas que podriamos implementar,
         a todos ustedes, muchas gracias.
-        <h3 class="p-4" id="w_modalidad titulo_categoria">Modalidad de juego</h3>
+        <h3 class="p-4 titulo_categoria" id="w_modalidad">Modalidad de juego</h3>
         El manual esta preparado para ser jugado como un RPG, basado en el farmeo, aunque las reglas son facilmente
         modificables para poder jugarse como cualquier otro sistema de rol. Recomendamos no mover los nùmeros ni agregar
         mas aumentos de dados.
-        <h3 class="p-4" id="w_progreso titulo_categoria">Progreso de historia</h3>
+        <h3 class="p-4 titulo_categoria" id="w_progreso">Progreso de historia</h3>
         Habràn publicadas distintas campañas jugables en este sistema, y se proveera en esta misma página, una sección
         para
         realizar diarios de campaña para la historia oficial, jugada por el grupo principal de Cuentos de Enforth
 
         <h1>Personaje</h1>
-        <h3 class="p-4" id="p_guia titulo_categoria">Guía de creación de personaje</h3>
+        <h3 class="p-4 titulo_categoria" id="p_guia">Guía de creación de personaje</h3>
         <p class="parrafo">
             <b>Ficha</b>
             Esta debe ser pedido al administrador. Para las fichas utilizamos Google Spreadsheets (Hojas de cálculo de
@@ -217,7 +240,7 @@
             <x><b class="text-primary">Reputación.</b> El nivel de reputación que tienes con los distintos NPC
                 principales o grupos de NPC de este mundo.</x>
         </p>
-        <h3 class="p-4" id="p_stats titulo_categoria">Estadísticas</h3>
+        <h3 class="p-4 titulo_categoria" id="p_stats">Estadísticas</h3>
         <p>Las estadísticas son las que aumentan tus capacidades en ciertos atributos especificos, los cuales se
             enlistan como <b>estadísticas</b>.</p>
         <p class="parrafo">Al momento de crear un personaje, se tienen dos opciones para establecer las estadísticas.
@@ -321,7 +344,7 @@
             máximo de
             vida que un jugador puede tener, son 50 puntos. Los puntos de vida iniciales son 20 puntos.
         </p>
-        <h3 class="p-4" id="p_conocimientos titulo_categoria">Conocimientos</h3>
+        <h3 class="p-4 titulo_categoria" id="p_conocimientos">Conocimientos</h3>
         <p>Son las bases de conocimientos que tiene un personaje para realizar acciones y usar profesiones
             correspondientes al conocimiento requerido.</p>
         <p class="parrafo">
@@ -489,7 +512,7 @@
             causar dolor y miseria. Creada por un dios malvado, para darle a sus ciervos el poder de causar penurias por
             el mundo.
         </p>
-        <h3 class="p-4" id="p_profesiones titulo_categoria">Profesiones</h3>
+        <h3 class="p-4 titulo_categoria" id="p_profesiones">Profesiones</h3>
         <p>Las profesiones, son el nivel de práctica que tienes en ciertas profesiones. Para poder hacer uso de sus
             habilidades, debes de cumplir con los requerimientos de la misma, lo mismo para poder subirla mas allà del
             nivel 2, el cuál es el limite, si no se tienen los requisitos.<br>
@@ -1042,11 +1065,874 @@
                     <li><b>Nivel 14.</b> Puedes poner hasta dos cueros de animal por pieza de armadura.</li>
                 </ul>
             </p>
-        </p>                    
-        <h3 class="p-4" id="p_profesiones titulo_categoria">Razas</h3>        
+        </p>
+        <h3 class="p-4 titulo_categoria" id="p_razas">Razas</h3>        
+        <p>
+            En este mundo existen multitud de individuos y razas, creados la mayoría desde la existencia misma de los individuos.
+            Antaño, los dioses querían gobernar, y crearon muchos seres de distintas apariencias, y al no poder decidir sobre cuál
+            podría ser mas apto, optaron por la variedad, liberando asi a muchas especies, tanto puras como hibridas, a ser libres
+            por el mundo. Estos seres con el tiempo, ya sea por mejoras momentaneas, uso de magia entre generaciones, u otros
+            motivos, fueron mutando, creando variantes de esas especies.
+        </p>
         <p>
             La raza determina la identidad en la aperiencia del personaje. Puedes tener dos razas, una considerada <b>raza principal
-            </b>, que otorgará <b>estadísticas</b>, <b>armadura natural</b>, y <b>profesiones</b>.
+            </b>, que otorgará <b>estadísticas</b>, <b>armadura natural</b>, y <b>profesiones</b>. La raza hibrida (o secundaria),
+            te dará las habilidades, al igual que la primera, del nivel correspondiente, aunque solo las habilidades "Obtenidas
+            por nivel".
         </p> 
+        <p>
+            En caso de que la raza sea pura de un solo tipo, obtendrá la <b>habilidad de pureza</b>. Esta habilidad se obtiene 
+            cuando se llega al Nivel 5 de raza.
+        </p>
+        <p class="parrafo" id="raza_humano">
+            <b class="text-danger" style="font-size: 150%;">Humano</b>
+            Como una de las razas más débiles en general, tanto física, como mágicamente, debieron de valerse de su ingenio, para 
+            poder construir la tecnología que les permitiera sobrevivir en este intrépido mundo.
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/personaje/humano.png" alt="">
+            <p class="parrafo">
+                <b>Estadísticas y conocimientos provistos por esta raza</b>
+                <ul>
+                    <li><b>Inteligencia.</b> 1</li>
+                    <li><b>Armadura natural.</b> 2</li>
+                    <li><b>Armero.</b> Nivel 2</li>
+                    <li><b>Cazador.</b> Nivel 2</li>
+                    <li>Conocimiento "Armamentistica"</li>
+                    <li>Conocimiento "Cacería"</li>
+                    <li>Conocimiento "Herrería"</li>
+                </ul>
+                <b>Apariencia de la raza</b>
+                <ul>
+                    <li><b>Estatura promedio.</b> Entre 150cm y 180cm</li>
+                    <li><b>Colores de cabello.</b> Tonos de negro, marron, rojo, o amarillo</li>
+                    <li><b>Colores de piel.</b> Variantes de beige y marrón</li>
+                </ul>
+                <b>Habilidad pasiva</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Historial de persecución.</b> Obtienen desventaja al resistirse al miedo, 
+                        y el doble de probabilidad de ser causado.</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Minimo para vivir.</b> Inmunidad a estadísticas negativas.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Rebusque.</b> Tienes el doble de probabilidad de encontrar plantas 
+                        medicinales al buscarlas activamente durante una exploración.</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Mal presagio.</b> Puedes tirar percepción para saber si hay criaturas 
+                        hostiles cerca (Máximo 3 por exploración).</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Hipersupervivencia.</b> Ante un peligro inmediato, se agregará un punto a 
+                        tu siguiente tirada.</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Venganza.</b> Si un aliado es abatido, obtienes +2 de daño contra el 
+                        enemigo que lo abatió, y +4 en su lugar, si tu aliado murió.</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Mùltiple especialidad.</b> Puede desbloquear un segundo don.</li>
+                    <b>Habilidad de pureza</b>
+                    <ul>
+                        <li><b style="color:rgb(33, 0, 151)">Versatilidad estratégica.</b> Obtienen aleatoriamente un Don
+                        al comenzar un combate, aunque este solo funcionará como una Activa que durará una ronda, solo usable
+                        una vez por combate.
+                    </li>
+                    </ul>
+                </ul>
+                
+            </p>
+        </p>
+        <p class="parrafo" id="raza_orco">
+            <b class="text-danger" style="font-size: 150%;">Orco</b>
+            Conquistadores casi desde sus inicios, debido a su fatal arrogancia, la sed de sangre, y de demostrar su fuerza, 
+            creyéndose las perfectas armas de combate, debido a que, en cuanto a ejército, ellos son el que mejor resiste a 
+            los ataques, y el hecho de que no pueden ser detenidos por cualquiera durante enfrentamientos directos.
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/personaje/orco.png" alt="">
+            <p class="parrafo">
+                <b>Estadísticas y conocimientos provistos por esta raza</b>
+                <ul>
+                    <li><b>Fuerza.</b> 1</li>
+                    <li><b>Armadura natural.</b> 3</li>
+                    <li><b>Cazador.</b> Nivel 2</li>
+                    <li><b>Herrero.</b> Nivel 2</li>
+                    <li>Conocimiento "Cacería"</li>
+                    <li>Conocimiento "Herrería"</li>
+                </ul>
+                <b>Apariencia de la raza</b>
+                <ul>
+                    <li><b>Estatura promedio.</b> Entre 170cm y 210cm</li>
+                    <li><b>Colores de cabello.</b> Variantes de gris, negro, o rojo</li>
+                    <li><b>Colores de piel.</b> Tonos de gris, beige claro, o casi blanco</li>
+                </ul>
+                <b>Habilidad pasiva</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Falta de tacto.</b> Su forma tosca y agresiva de ser también forma 
+                        parte de su habla, por lo que tienen desventaja en cualquier tirada de carisma, excepto en la intimidación. 
+                        El uso de armas a distancia tendrá desventaja en daño. No pueden utilizar ningún tipo de magia, pero el 
+                        slot de hechizo que viene de base, pasa a ser otro slot de táctica.</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Preferencia de contacto.</b> El ataque desarmado pega 1d6, y puede causar 
+                        crítico.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Contraataque feróz.</b> Al recibir un ataque que lo dejara fuera de 
+                        combate, recupera la mitad del daño recibido este turno y aparta al enemigo una casilla (Solo usable una 
+                        vez por turno enemigo).</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Furia interna.</b> Al tener 8 de vida o menos, obtienes 5% de probabilidad 
+                        de efecto y critico, y, al tener 3 de vida o menos, obtienes +2 en el daño cuerpo a cuerpo</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Rompecascos.</b> Duplica la ruptura de armadura de las armas a dos manos, 
+                        y las armas a una mano y ataques desarmado, aplican rompearmadura.</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Embestida titánica.</b> Pueden correr en una dirección, consumiendo una 
+                        acción de ataque y una de utilidad (por cada 3 casillas recorridas); si impacta contra un enemigo, lo lleva 
+                        con él (Si es del mismo tamaño o inferior al orco), y, si impacta contra un obstáculo o borde del mapa, 
+                        le causa 1 de daño verdadero por accion utilizada, y le aplica derribo.</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Ejecución sanguinaria.</b> Al abatir a un enemigo, puede ejecutarlo 
+                        en el momento, tras ello, recupera 10 puntos de vida.</li>
+                    <b>Habilidad de pureza</b>
+                    <ul>
+                        <li><b style="color:rgb(33, 0, 151)">Vestigios de guerra.</b> Al pelear en desventaja numérica, el daño de
+                            tus ataques desarmados pasa a 1d8, y tu probabilidad de critico a 20% (No aumentable).
+                    </li>
+                    </ul>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="raza_lhanie">
+            <b class="text-danger" style="font-size: 150%;">Lhanie</b>
+            Mitad hombre y mitad bestia, los Lhanies son los más conectados al mundo animal, entendiendo estos la manera de poder 
+            comunicarse de forma relativa con estos, y así, poder pedir su ayuda en este intrépido mundo.
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/personaje/lhanie.png" alt="">
+            <p class="parrafo">
+                <b>Estadísticas y conocimientos provistos por esta raza</b>
+                <ul>
+                    <li><b>Agilidad.</b> 1</li>
+                    <li><b>Armadura natural.</b> 2</li>
+                    <li><b>Cazador.</b> Nivel 2</li>
+                    <li><b>Talabartero.</b> Nivel 2</li>
+                    <li>Conocimiento "Cacería"</li>
+                    <li>Conocimiento "Herbolaria"</li>
+                    <li>Conocimiento "Talabartería"</li>
+                </ul>
+                <b>Apariencia de la raza</b>
+                <ul>
+                    <li><b>Estatura promedio.</b> Entre 170cm y 190cm</li>
+                    <li><b>Colores de cabello.</b> Variantes del animal que representan</li>
+                    <li><b>Colores de piel.</b> Variantes del animal que representan</li>
+                </ul>
+                <b>Habilidad pasiva</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Desomnivorismo.</b> No pueden comer otro alimento, que no sea el 
+                        preferente de su animal originario (Carnes, o frutas y vegetales); en caso de ser omnivoro, debe elegir
+                        uno de los dos como preferencia.</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Llamado de la naturaleza.</b> Consume una acción de utilidad, 
+                        para convocar a un animal salvaje básico durante una ronda. Mediante 1d20, tiene 10% de obtener un 
+                        animal medio, sino será básico. Solo se puede usar esta habilidad, una vez por ronda.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Fium.</b> Pueden moverse el doble de casillas por movimiento.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Rastreo.</b> Aumenta al doble la probabilidad de encontrar activamente 
+                        animales exactos durante una exploración. Durante un combate, puedes saber en que dirección está un enemigo, 
+                        superando percepción (10).</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Alimentación balanceada.</b> Al comer un alimento preferente, obtienen el 
+                        doble de beneficios. Los carnivoros pueden comer carne cruda, y los herviboros son inmunes a los venenos 
+                        naturales de las frutas y verduras.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Equipamiento natural.</b> Pueden hacer armas y equipamiento de hueso 
+                        (Misma cantidad de materiales que armadura, pero usa hueso), estos tendrán el efecto de armadura completa 
+                        si todas las piezas de armadura tienen una de estas acomplada: ''Inmunidad al derribo. Aumenta la armadura 
+                        en +3. Si un arma tiene hueso acoplada, aumenta su daño físico en +1.''.</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Impacto salvaje.</b> +10% Critico</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Adaptabilidad.</b> Al derrotar a un enemigo, obtienes +2 de daño contra 
+                        enemigos del mismo tipo, hasta el final del combate.</li>
+                    <b>Habilidad de pureza</b>
+                    <ul>
+                        <li><b style="color:rgb(33, 0, 151)">Heredero de la bestia.</b> Obtienes una mejora especial, proveniente
+                            de tu raza animal, discutible con el DM.
+                    </li>
+                    </ul>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="raza_shira">
+            <b class="text-danger" style="font-size: 150%;">Shira</b>
+            Provenientes de las heladas tierras de Glosbeheim, los Shira se han adecuado a los inhóspitos climas helados, en los 
+            cuales han aprendido a sobrevivir al frío, y a cazar la poca variedad de especies que hay en esas tierras, o al menos 
+            las que se les podía cazar.
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/personaje/shira.png" alt="">
+            <p class="parrafo">
+                <b>Estadísticas y conocimientos provistos por esta raza</b>
+                <ul>
+                    <li><b>Puntería.</b> 1</li>
+                    <li><b>Armadura natural.</b> 2</li>
+                    <li><b>Cazador.</b> Nivel 2</li>
+                    <li><b>Talabartero.</b> Nivel 2</li>
+                    <li>Conocimiento "Cacería"</li>
+                    <li>Conocimiento "Talabartería"</li>
+                    <li>Conocimiento "Magia de hielo"</li>
+                </ul>
+                <b>Apariencia de la raza</b>
+                <ul>
+                    <li><b>Estatura promedio.</b> Entre 160cm y 190cm</li>
+                    <li><b>Colores de cabello.</b> Blanco, rubio, rojo</li>
+                    <li><b>Colores de piel.</b> Beige claro, blanco</li>
+                </ul>
+                <b>Habilidad pasiva</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Criofilia.</b> Son inmunes al daño de hielo, y al efecto del 
+                        congelamiento. Al recibir una carga de quemadura, son abatidos al momento.</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Punto frío.</b> Al atacar a un enemigo que tenga cargas de congelamiento, 
+                        le causa 1d4 de daño por cada carga, y le elimina la mitad de las cargas.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Danza de hielo.</b> Moverse en climas helados, y en el hielo, les dará el 
+                        doble de casillas. Pueden moverse al estar estatizados, mientras pisen hielo, o nieve.</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Escarcha del gigante de hielo.</b> Por cada 4 de vida que le falte, y por 
+                        cada carga de congelamiento que tenga, obtienen un punto de armadura helada, la cual aumenta la armadura 
+                        natural por cada carga de armadura helada.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Golpe de témpano.</b> Al atinar un golpe a un enemigo que tenga diez cargas 
+                        de congelamiento, lo congela en un bloque de hielo, dejándolo fuera de combate (Si son del mismo tamaño o 
+                        inferior que el Shira).</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Tormenta helada.</b> Pueden crear una tormenta de nieve, la cual colocará 
+                        una carga de congelamiento a cada individuo en la zona de combate (Por cada acción 
+                        de utilidad usada para pagar esta habilidad, con un máximo de 3), al final de la ronda. 
+                        <b class="costo">Costo.</b> 1 Acción de ataque</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Forja helada.</b> Pueden hacer una aleación de Titanio (1) y Zafiro 
+                        desbloqueado (1), para hacer lingotes de Everfrost, los cuales tendrán el mismo daño que el Titanio, y 
+                        el efecto de quemadura helada. Si portan una armadura de Everfrost, obtienen +1 de daño fijo por cada pieza 
+                        de defensa de Everfrost (Armadura y escudo)</li>
+                    <b>Habilidad de pureza</b>
+                    <ul>
+                        <li><b style="color:rgb(33, 0, 151)">Toque helado.</b> Pueden imbuir sus manos hasta su antebrazo en fuego
+                            helado, incluidas las armas que estén portando. Cambia el efecto del arma a "Quemadura helada" y obten un
+                            10% de probabilidad de aplicar ese efecto; la cantidad de cargas escala también con "Quemadura"</li>
+                    </ul>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="raza_turbe">
+            <b class="text-danger" style="font-size: 150%;">Turbe</b>
+            Son por lo general confundidos con Lhanies enanos, aunque las razas de animales que conforman a ambos, no son las mismas,
+            y nunca concuerdan. Los Turbes tienden a ser más juguetones que otros animales, además de que los objetos brillantes se 
+            les hace muy atractivos, por lo que tienden a investigarlos.
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/personaje/turbe.png" alt="">
+            <p class="parrafo">
+                <b>Estadísticas y conocimientos provistos por esta raza</b>
+                <ul>
+                    <li><b>Inteligencia.</b> 1</li>
+                    <li><b>Armadura natural.</b> 0</li>
+                    <li><b>Carpintería.</b> Nivel 1</li>
+                    <li><b>Herrero.</b> Nivel 2</li>
+                    <li><b>Talabartero.</b> Nivel 2</li>
+                    <li>Conocimiento "Cacería"</li>
+                    <li>Conocimiento "Carpintería"</li>
+                    <li>Conocimiento "Talabartería"</li>
+                </ul>
+                <b>Apariencia de la raza</b>
+                <ul>
+                    <li><b>Estatura promedio.</b> Entre 100cm y 120cm</li>
+                    <li><b>Colores de cabello.</b> Variantes del animal que representan</li>
+                    <li><b>Colores de piel.</b> Variantes del animal que representan</li>
+                </ul>
+                <b>Habilidad pasiva</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Pequeñas travesuras.</b> Debido a su pequeño tamaño, no pueden utilizar 
+                        armas que se consideran pesadas. Al encontrarse con objetos brillantes no pueden resistirse a revisar que 
+                        son. No pueden subir puntos en suerte, de forma permanente, temporal, raza, etc.</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Lanzas brillantes.</b> Pueden apilar lanzas de madera, hasta dos por 
+                        nivel. El daño de estas lanzas al arrojarlas individualmente, será de 1d6 mágico, escalando con Inteligencia. 
+                        Las lanzas quedarán clavadas en el enemigo, y pueden ser retiradas con una acción de utilidad por lanza, 
+                        causando 2 de daño verdadero por lanza, y un punto de daño verdadero a los enemigos entre ti, y las lanzas, 
+                        por cada lanza (Max. 10ft).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Escurridizo.</b> Al esquivar, pueden pasar hacia detrás del enemigo, 
+                        siempre que a este se le pueda pasar por debajo, o entre medio.</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Bajo tierra.</b> Pueden crear túneles entre dos partes del mapa de 
+                        combate por tres acciones de utilidad, y cruzar entre estos, a cambio de dos acciones de utilidad. Cuando
+                        se lo crea, es gratis atravesarlo, y cuando se lo atraviesa, le consume todo el turno.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Refuerzo mágico.</b> Pueden cambiar el daño físico, por daño mágico 
+                        en sus armas, a voluntad.</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Espiritualidad.</b> Obtienen el conocimiento de magia de almas. 
+                        Conseguir almas tendrá el doble de probabilidad.</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Unión espiritual.</b> Pueden consumir un alma para invocar al animal 
+                        correspondiente, en forma de fantasma, como apoyo de combate, para obtener él, o un aliado, una de sus 
+                        estadísticas (A elección del jugador) durante un combate, o una acción narrativa. La estadística del
+                        afectado se convierte en la estadística elegida de la criatura.</li>
+                    <b>Habilidad de pureza</b>
+                    <ul>
+                        <li><b style="color:rgb(33, 0, 151)">Cleptomanía.</b> Obtienen 1d4*100 monedas en cada cofre, en
+                        recompensas por misiones o por fin de mesa.</li>
+                    </ul>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="raza_fjereo">
+            <b class="text-danger" style="font-size: 150%;">Fjereo</b>
+            Parientes lejanos de las aves, los Fjereos tienen una gran capacidad física cuando se trata de evitar peligros, 
+            debido a la capacidad de vuelo que tienen, que les permite evitar peligros cercanos, manteniéndose al margen de 
+            las adversidades.
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/personaje/fjereo.png" alt="">
+            <p class="parrafo">
+                <b>Estadísticas y conocimientos provistos por esta raza</b>
+                <ul>
+                    <li><b>Agilidad.</b> 1</li>
+                    <li><b>Armadura natural.</b> 0</li>
+                    <li><b>Explorador.</b> Nivel 2</li>
+                    <li><b>Ladrón.</b> Nivel 2</li>
+                    <li>Conocimiento "Manualidades"</li>
+                </ul>
+                <b>Apariencia de la raza</b>
+                <ul>
+                    <li><b>Estatura promedio.</b> Entre 140cm y 170cm</li>
+                    <li><b>Colores de cabello.</b> Variantes del animal que representan (Ave)</li>
+                    <li><b>Colores de piel.</b> Variantes del animal que representan (Ave)</li>
+                </ul>
+                <b>Habilidad pasiva</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Aviación Turbulenta.</b> Reciben 2 mas de daño por cada ataque que reciben,
+                        no pueden usar armaduras pesadas.</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Valentía.</b> Al luchar con aliados, se vuelve inmune al debufo de 
+                        miedo.</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Alza el vuelo.</b> Puede volar durante el resto de la ronda, a 5ft de 
+                        altura por cada nivel en la raza, teniendo que tomar una ronda de descanso antes de poder volver a volar. 
+                        Si te atacan volando, caerás y recibirás 1d4 por cada 5ft. Solo pueden volar con armaduras ligeras.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Alma de fénix.</b> Al morir, el cuerpo arde en llamas, destruyendo todo 
+                        el equipamiento, posteriormente, las llamas se unirán en un huevo de oro, el cual emerge en llamas nuevamente 
+                        en la forma antes de morir, sin heridas, al día siguiente de consumirse. Se debe esperar otro día para volver 
+                        a usar esta habilidad.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Caída en picada.</b> Requiere “Alza el vuelo”. Mientras vuelas, puedes 
+                        caer hacia un enemigo, atacándolo con el impulso de la caída, causando tantos dados de 4 de daño, por cada 
+                        15ft de distancia de vuelo, sumado a la distancia del enemigo (No puede sobrepasar la altura).
+                        <b class="costo">Costo.</b> 1 Acción de ataque y 2 de utilidad</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Plumas afiladas.</b> Cualquier ataque cuerpo a cuerpo que recibas, 
+                        devolverá el 1/4 del daño recibido al enemigo como daño verdadero (Redondeado hacia abajo). Los ataques 
+                        cuerpo a cuerpo que recibas tendrán 10% de probabilidad de causar sangrado.</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Tornado de plumas.</b> Requiere “Plumas afiladas”. Puede consumir 
+                        cualquier cantidad de acciones de utilidad, para lanzar plumas en dirección a un enemigo (Max. 15ft), 
+                        que causa tantos dados de 4 de daño, como acciones de utilidad se consumieron. En caso de consumir todos 
+                        los puntos de acción de utilidad con esta habilidad, se suma un 1d4 adicional, por cada Nivel en la raza.
+                        <b class="costo">Costo.</b> 1 Acción de ataque y 1 de utilidad.</li>
+                    <b>Habilidad de pureza</b>
+                    <ul>
+                        <li><b style="color:rgb(33, 0, 151)">Equilibrio aereo.</b> Deben impactarles dos veces dentro de la
+                        misma ronda para tirarlos mientras vuelan.</li>
+                    </ul>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="raza_sarka">
+            <b class="text-danger" style="font-size: 150%;">Sarka</b>
+            Son tratados como piratas sin moral, como unos demonios que solo llegan a querer quitarte todo, y que es mejor 
+            mantenerse apartado de ellos, pues no sabes cuándo te pueden llegar a traicionar. No todos son asi; por lo general suelen ser criaturas bastante amigables, que prefieren estar en soledad bajo el agua que en las multitudes.
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/personaje/sarka.png" alt="">
+            <p class="parrafo">
+                <b>Estadísticas y conocimientos provistos por esta raza</b>
+                <ul>
+                    <li><b>Agilidad.</b> 1</li>
+                    <li><b>Armadura natural.</b> 2</li>
+                    <li><b>Cacería.</b> Nivel 2</li>
+                    <li><b>Explorador.</b> Nivel 2</li>
+                    <li><b>Carpintería.</b> Nivel 1</li>
+                    <li><b>Ladrón.</b> Nivel 1</li>
+                    <li>Conocimiento "Cacería"</li>
+                    <li>Conocimiento "Carpintería"</li>
+                </ul>
+                <b>Apariencia de la raza</b>
+                <ul>
+                    <li><b>Estatura promedio.</b> Entre 160cm y 180cm</li>
+                    <li><b>Colores de cabello.</b> Variantes del animal que representan, si es que tiene (Marino)</li>
+                    <li><b>Colores de piel.</b> Variantes del animal que representan (Marino)</li>
+                </ul>
+                <b>Habilidad pasiva</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Hidratación.</b> En cada exploración en desiertos deberá beber agua, 
+                        o algún líquido sano, o tendrán desventaja en sus tiradas, hasta hidratarse. Tomar agua contaminada 
+                        (Estancada) no les afecta.</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Respiración acuática.</b> Puedes mantenerte debajo del agua, durante 
+                        tantos turnos, como nivel tengas en esta raza, más uno.</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Ventaja marina.</b> Obtienen 10% de probabilidad de critico al pelear 
+                        en una fuente de agua o bajo la lluvia.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Escamas reforzadas.</b> Al hidratarse, obtiene puntos de resistencia 
+                        natural por nivel en la raza, durante el resto de la ronda (No acumulable).</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Tramposo.</b> Luego de esquivar un ataque, pueden lanzar un chorro 
+                        de agua hacia el enemigo (esquivable), lo cual lo dejará derribado, y le causará 2 puntos de daño verdadero.
+                    </li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Negociación.</b> Obtienen ventaja en tiradas de negociación y de 
+                        convencimiento. En caso de fallar en este tipo de tiradas, el efecto negativo no será grave. Obtienen 
+                        5% más de oro en ventas.</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Ráfaga de anguila.</b> Requiere saber Magia de Electricidad. Al portar 
+                        una Turmalina, los ataques cuerpo a cuerpo, causarán Estatizado (mágico) con un 25% de probabilidad (No 
+                        cuenta como realizar un hechizo)</li>
+                    <b>Habilidad de pureza</b>
+                    <ul>
+                        <li><b style="color:rgb(33, 0, 151)">Danza de la lluvia.</b> Al iniciar un combate, pueden consumir
+                            su turno en la primera ronda, para invocar una lluvia ligera, que durará todo el combate, pero será
+                            suficiente para aplicar sus habilidades. Si no está hidratado, no puede usar esto en el desierto.</li>
+                    </ul>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="raza_demonio">
+            <b class="text-danger" style="font-size: 150%;">Demonio</b>
+            Siendo ya una raza impura, debido al pasar de tantos años, que los demonios ya se fueron extinguiendo en esta tierra, 
+            donde su inmortalidad desaparecía, solo quedaron los herederos de estos, quienes aún portan parte del poder de sus 
+            antepasados.
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/personaje/demon.png" alt="">
+            <p class="parrafo">
+                <b>Estadísticas y conocimientos provistos por esta raza</b>
+                <ul>
+                    <li><b>Puntería.</b> 1</li>
+                    <li><b>Armadura natural.</b> 2</li>
+                    <li><b>Herrero.</b> Nivel 2</li>
+                    <li><b>Joyero.</b> Nivel 1</li>
+                    <li>Conocimiento "Herrería"</li>
+                    <li>Conocimiento "Joyería"</li>
+                    <li>Conocimiento "Magia de fuego"</li>
+                    <li>Idioma "Selga"</li>
+                </ul>
+                <b>Apariencia de la raza</b>
+                <ul>
+                    <li><b>Estatura promedio.</b> Entre 170cm y 180cm</li>
+                    <li><b>Colores de cabello.</b> Blanco, rojo, azul o verde</li>
+                    <li><b>Colores de piel.</b> Negro, gris oscuro, tonos de naranja</li>
+                </ul>
+                <b>Habilidad pasiva</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Locura ancestral.</b> A partir de la cuarta ronda en un combate, 
+                        estos empiezan a ver a cualquier participante del combate como sus enemigos, atacando al objetivo más 
+                        cercano, obteniendo 1 de daño por nivel en raza. Son inmunes a la maldición. Pueden evitar atacar a 
+                        un aliado, si este los convence con una tirada de Carisma contra tu Combate.</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Preferencia por lo pesado.</b> Pueden utilizar un tridente a 
+                        una sola mano.</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Altas temperaturas.</b> Son inmunes al daño por el efecto de quemadura. 
+                        Recibir daño por fuego (fuente mágica), reducirá el daño a la mitad.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Herrería infernal.</b> Obtienen el conocimiento de Herrería con Infernita, 
+                        además, pueden agregar infernita como impureza a un arma, para agregarle el efecto de Quemadura. Aprenden 
+                        como hacer la espada larga, tridente, lanza y las dagas de infernita.
+                    </li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Infusión ignea.</b>Puedes imbuir un arma cuerpo a cuerpo en fuego (por 
+                        lo que aplica quemadura). En caso de que el arma estuviera hecha de Infernita, causa 1 de daño verdadero 
+                        al enemigo por cada carga de quemadura que tenga. Costo. 1 Acción de ataque y 1 Acción de utilidad.</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Cauterización.</b> Absorbes todas las cargas de quemadura (De todos los 
+                        participantes del combate), para curarte 1 punto por cada carga absorbida, y causando un punto de daño a 
+                        cada ser del que se absorbieron las quemaduras, aplicando el siguiente efecto, dependiendo de la cantidad 
+                        de cargas. <b class="costo">Costo.</b> 1 Acción de ataque y 3 de utilidad</li>
+                    <ul>
+                        <li><b>3 cargas.</b> Tu siguiente ataque causará quemadura de forma asegurada.</li>
+                        <li><b>5 cargas.</b> En caso de tener desbloqueada la clase de Mago, obtienes 2 Núcleos.</li>
+                        <li><b>7 cargas.</b> Tu siguiente ataque tiene efecto asegurado.</li>
+                        <li><b>10 cargas.</b> La zona actualmente a tu alrededor (10ft) se quema, todo ser que se encuentre 
+                            sobre la zona, obtiene dos cargas de quemadura al inicio de su turno</li>
+                        <li><b>15 cargas.</b> Tu arma se imbuye en Magia Infernal, por lo que todos los ataques hasta el final de 
+                            tu siguiente turno tendrán 100% de probabilidad de dar dos cargas mas de quemadura.</li>
+                        <li><b>25 cargas.</b> Puedes canalizar tus hechizos de Fuego sin consumir núcleos, por el resto de la ronda
+                            (Máximo 3 hechizos por turno).</li>
+                        <li><b>35 cargas.</b> Explotas una carga de quemadura y le agregas 2 cargas de quemadura a cada ser del 
+                            combate (Excepto tú y tus aliados), curando a tus aliados y a ti, 1d4 de vida por cada enemigo que 
+                            recibió daño, y causándoles desventaja en su siguiente esquive.</li>
+                    </ul>
+                    <li><b style="color:rgb(33, 0, 151)">Refuerzo de un universo paralelo.</b> Al utilizar una armadura de 
+                        Infernita completa, podrán conjurar magia de fuego, sin la necesidad de una gema.</li>
+                    <b>Habilidad de pureza</b>
+                    <ul>
+                        <li><b style="color:rgb(33, 0, 151)">Conexión ancestral.</b> Al asesinar a un enemigo en modo de locura,
+                        puedes invocar un diablillo desde su cadaver, el cuál actuará como tu aliado, teniendo su propio turno,
+                        todas sus estadísticas obtendrán +1, con respecto a un diablillo ordinario.</li>
+                    </ul>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="raza_naturis">
+            <b class="text-danger" style="font-size: 150%;">Naturis</b>
+            Creados por parte de la Diosa de la Naturaleza para servirle como sus heraldos, cuidando la tierra de las creaciones 
+            de sus hermanos, y de los propios seres, para preservarla en armonía lo mejor que se pueda.
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/personaje/naturis.png" alt="">
+            <p class="parrafo">
+                <b>Estadísticas y conocimientos provistos por esta raza</b>
+                <ul>
+                    <li><b>Inteligencia.</b> 1</li>
+                    <li><b>Armadura natural.</b> 4</li>
+                    <li><b>Alquimista.</b> Nivel 2</li>
+                    <li><b>Explorador.</b> Nivel 2</li>
+                    <li><b>Granjero.</b> Nivel 1</li>
+                    <li>Conocimiento "Agricultura"</li>
+                    <li>Conocimiento "Alquimia"</li>
+                    <li>Conocimiento "Herbolaria"</li>
+                </ul>
+                <b>Apariencia de la raza</b>
+                <ul>
+                    <li><b>Estatura promedio.</b> Entre 180cm y 200cm</li>
+                    <li><b>Colores de cabello.</b> Tonos de verde</li>
+                    <li><b>Colores de piel.</b> Tonos de verde y marrón</li>
+                </ul>
+                <b>Habilidad pasiva</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Forma natural.</b> Raza no hibridable, pueden tener hijos, pero estos 
+                        saldrán puros de la otra raza. No tienen una forma física como tal, sino que pueden replicar la de una 
+                        raza a voluntad, aunque manteniendo los rasgos de su raza. Cualquier fuente de daño de fuego les causa 
+                        el doble de daño. Comienzan con el Dios de la Naturaleza, y este no puede ser cambiado. La primera clase 
+                        que tengan, debe ser Curandero hasta Nivel 2, antes de desbloquear otra clase. Solo pueden alimentarse 
+                        de agua, frutas y verduras. Son inmunes a las maldiciones.</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Crecimiento afortunado.</b> Todas las frutas y verduras que sean 
+                        obtenidas de forma salvaje, tendrán ventaja en su cantidad (Excepto frutos de raza).</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Baile de la rosa.</b> Tu cuerpo se cubre con enredaderas de espinas 
+                        por tantos turnos como nivel en raza, por lo que un ataque cuerpo a cuerpo que recibas, causará sangrado 
+                        al enemigo con 50% de probabilidad (No aumentable). <b class="costo">Costo. </b>1 Acción de utilidad</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Regeneración.</b> Al inicio de cada ronda, o cuando reviven, regeneran 
+                        2 de vida por nivel en la raza. Las amputaciones que se les realicen, solo duran una ronda.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Enredaderas.</b> Puedes lanzar semillas a una zona hasta 20ft de 
+                        distancia, a la cual le crecerán enredaderas, que atraparán a quien sea que pase sobre ellas. Pueden 
+                        ser eliminadas con un golpe. <b class="costo">Costo. </b>1 Acción de utilidad</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Brotes.</b>Pueden plantar pequeños brotes en el suelo (Uno por cada 
+                        Nivel del jugador), que crecerán al final de la ronda, y correrán al enemigo más cercano, pegándose a 
+                        su armadura y debilitándola, por lo que perderá un punto de armadura por cada brote, a los 10 puntos 
+                        perdidos, romperá la armadura. <b class="costo">Costo. </b>3 Acciones de utilidad</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Lanzaespinas.</b> Requiere “Brotes”. Luego de que un brote explote, 
+                        lanzará una semilla de rosa a 10ft en tu dirección, creciendo al inicio de tu turno en una Rosa lanzadora, 
+                        la cual escupirá espinas al enemigo más cercano (Max. 15ft desde la planta) al invocador al inicio de cada 
+                        turno, causándole envenenamiento al impactar. Estas Rosas pueden ser destruidas con dos golpes, o con un 
+                        ataque de fuego. Al ser destruida una Enredadera, también crecerá una semilla de rosa en su ubicación.</li>
+                    <b>Habilidad de pureza</b>
+                    <ul>
+                        <li><b style="color:rgb(33, 0, 151)">Cuerpo de raices.</b> Una vez por turno, puedes aumentar tu
+                        resistencia natural en uno. Aumenta tu resistencia natural y tu daño en uno por cada brote o rosa 
+                        invocada por ti</li>
+                    </ul>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="raza_benirie">
+            <b class="text-danger" style="font-size: 150%;">Benirie</b>
+            Hibridos de hadas y humanos, quienes portan una maldición debido a que un Dios consideró esta unión como forma de 
+            manchar la pureza de las hadas, causando que todos ellos nacieran con marcas que les prohibirían mentir sin que alguien 
+            se diera cuenta.
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/personaje/benirie.png" alt="">
+            <p class="parrafo">
+                <b>Estadísticas y conocimientos provistos por esta raza</b>
+                <ul>
+                    <li><b>Carisma.</b> 1</li>
+                    <li><b>Armadura natural.</b> 1</li>
+                    <li><b>Alquimista.</b> Nivel 1</li>
+                    <li><b>Cazador.</b> Nivel 1</li>
+                    <li><b>Médico.</b> Nivel 1</li>
+                    <li><b>Mercader.</b> Nivel 1</li>
+                    <li>Conocimiento "Alquimia"</li>
+                    <li>Conocimiento "Cacería"</li>
+                    <li>Conocimiento "Medicina"</li>
+                    <li>Conocimiento "Magia Arcana"</li>
+                </ul>
+                <b>Apariencia de la raza</b>
+                <ul>
+                    <li><b>Estatura promedio.</b> Entre 180cm y 200cm</li>
+                    <li><b>Colores de cabello.</b> Tonos pálidos, pero puede ser casi cualquier color</li>
+                    <li><b>Colores de piel.</b> Blanco pálido o un muy leve celeste o verde, pero las marcas serán rojas, negras o doradas</li>
+                </ul>
+                <b>Habilidad pasiva</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Marcas de mentira.</b> Raza no hibridable, pueden tener hijos, pero estos 
+                        saldrán puros de la otra raza. Sus rostros y cuerpo tienen algun tipo de marca, ya sean lineas, puntos, 
+                        formas, etc. que cubren una parte del mismo, al mentir, estas marcas se iluminan y muestran, incluso si 
+                        se tiene ropa encima, demostrando que lo que se dijo es una mentira. A su vez, si este no miente, la otra 
+                        persona estará segura de que se dice una verdad, por lo que no dudará de su palabra.</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Arma vinculada.</b> Pueden crear un arma con su propio poder, la cuál 
+                        es generada aleatoriamente cada cambio de ronda e inicio de combate, o, pueden optar por un arco al crear 
+                        un personaje, que disparará flechas mágicas. Esta puede ser conjurada y eliminada a voluntad, y desaparecerá 
+                        por si misma al alejarse del conjurador. En caso de elegir el arco, obtendrán la clase Ranger con la subclase 
+                        Arquero.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Percepción mágica.</b> Pueden detectar fuentes de magia en el entorno.</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Terrenos fáciles.</b> No obtienen efectos negativos por los terrenos 
+                        dificiles, ya sea combatiendo sobre hielo, agua, lodo, etc.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Evasión acrobática.</b> Pueden saltar obstáculos durante el esquive, si 
+                        logran esquivar.</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Danza.</b>Te permite realizar lo siguiente, dependiendo de tipo de arma 
+                        que tengas, solo aplicará, si ambas manos tienen el mismo tipo:</li>
+                    <ul>
+                        <li><b>Arma a una mano ligera. </b>Te permite realizar un ataque de reacción, luego de esquivar; para
+                            esto, una de las dos armas debe ser tu arma vinculada.</li>
+                        <li><b>Arma a dos manos ligera. </b>Te permite esquivar dos casillas.</li>
+                        <li><b>Arma a una mano pesada. </b>Los golpes dados al enemigo, lo alejarán una casilla.</li>
+                        <li><b>Arma a dos manos pesada. </b>Aumenta el daño de impacto en +3, y la probabilidad de efecto en 5%</li>
+                        <li><b>A distancia. </b>Sus proyectiles seguirán al enemigo, evitando un obstáculo, pero no luego de 
+                            esquivar</li>
+                    </ul>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Vinculación completa.</b> Obtienen ventaja en el arma obtenida de forma 
+                        aleatoria con la habilidad 'Arma vinculada'. En caso de que en ambos casos, salga la misma arma, esta 
+                        obtendrá 5ft mas de rango, y critico.</li>
+                    <b>Habilidad de pureza</b>
+                    <ul>
+                        <li><b style="color:rgb(33, 0, 151)">Canalización definitiva.</b> Las armas vinculadas servirán para
+                        canalizar magia arcana, y un tipo de magia básica aleatoria al inicio de un combate. Cada ronda que pase, 
+                        aleatoriamente pueden canalizar un tipo de magia adicional (Si se repite, no hay efecto adicional)</li>
+                    </ul>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="raza_draieach">
+            <b class="text-danger" style="font-size: 150%;">Draieach</b>
+            Familiares ancestrales de una de las criaturas mas poderosas de este mundo, los Draieach nacieron en circunstancias 
+            sospechosas, su pasado no es certero, y posiblemente, los antiguos sabios de la magia del dragón ya no están para 
+            dar explicaciones sobre ello.
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/personaje/draconiano.png" alt="">
+            <p class="parrafo">
+                <b>Estadísticas y conocimientos provistos por esta raza</b>
+                <ul>
+                    <li><b>Resistencia.</b> 1</li>
+                    <li><b>Armadura natural.</b> 3</li>
+                    <li>Los conocimientos los dará la habilidad "Herencia del dragón"</li>
+                </ul>
+                <b>Apariencia de la raza</b>
+                <ul>
+                    <li><b>Estatura promedio.</b> Entre 160cm y 210cm</li>
+                    <li><b>Colores de cabello.</b> Blanco o negro (Si tienen)</li>
+                    <li><b>Colores de piel.</b> El mismo que el de sus escamas, ver la habilidad "Herencia del dragón"</li>
+                </ul>
+                <b>Habilidad pasiva</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Escamas ancestrales.</b>Pueden conjurar un tipo de magia, de su elección, 
+                        sin la necesidad de una gema, de la siguiente opción:
+                        <ul>
+                            <li><b>Arcana. </b>Las escamas serán rosadas o violetas.</li>
+                            <li><b>Fuego. </b>Las escamas serán naranjas o rojas.</li>
+                            <li><b>Hielo. </b>Las escamas serán celestes o azules.</li>
+                            <li><b>Electricidad. </b>Las escamas serán amarillas.</li>
+                            <li><b>Viento. </b>Las escamas serán verde claro.</li>
+                            <li><b>Veneno. </b>Las escamas serán verde oscuro.</li>
+                            <li><b>Luz. </b>Las escamas serán blancas.</li>
+                            <li><b>Oscuridad. </b>Las escamas serán negras.</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top:10px"><b>Aunque esto les dará la siguiente debilidad:</b>
+                        <ul>
+                            <li><b>Arcana. </b>Sus escamas son mas débiles, por lo que su armadura natural baja hasta 1, y los 
+                                ataques físicos les harán 1d6 de daño adicional.</li>
+                            <li><b>Fuego. </b>Al recibir agua, hielo, o frío sobre si, les quitará la capacidad de conjurar magia 
+                                propia, y les quitará su armadura natural y mágica.</li>
+                            <li><b>Hielo. </b>Al recibir fuego, o calor sobre si, les quitará la capacidad de conjurar magia propia, 
+                                y les quitará su armadura natural y mágica.</li>
+                            <li><b>Electricidad. </b>Si alguna parte de su cuerpo es cubierta por un mal conductor, como la madera 
+                                y las rocas, les quitará la capacidad de conjurar magia propia, y les quitará su armadura natural 
+                                y mágica.</li>
+                            <li><b>Viento. </b>Al estar encerrado en un interior, les quitará la capacidad de conjurar magia propia, 
+                                y les quitará su armadura natural y mágica.</li>
+                            <li><b>Veneno. </b>Si utilizan mucho su magia propia (3 veces por ronda), se envenenarán a si mismos, 
+                                tener cargas de veneno, les quitará la capacidad de conjurar magia propia, y les quitará su armadura 
+                                natural y mágica.</li>
+                            <li><b>Luz. </b>El no estar bajo una fuente de luz fuerte (Sol, ciudad o pueblo), les quitará la capacidad 
+                                de conjurar magia propia, y les quitará su armadura natural y mágica.</li>
+                            <li><b>Oscuridad. </b>El estar bajo una fuente de luz fuerte (Sol, ciudad o pueblo), les quitará la capacidad 
+                                de conjurar magia propia, y les quitará su armadura natural y mágica.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Herencia del dragón.</b> Raza no hibridable, pueden tener hijos, pero estos 
+                    saldrán puros de la otra raza. Obtienes las estadísticas de tu raza. Dependiendo el elemento elegido, 
+                    se desbloquea el siguiente conocimiento:</li>
+                    <ul>
+                        <li><b>Arcana.</b> Conocimiento 'Magia Arcana' y 'Alquimia'. Profesión 'Alquimista' Lv3.</li>
+                        <li><b>Fuego.</b> Conocimiento 'Magia de Fuego' y 'Herrería'. Profesión 'Herrero' Lv3.</li>
+                        <li><b>Hielo.</b> Conocimiento 'Magia de Hielo' y 'Cocina'. Profesión 'Cantinero' Lv2.</li>
+                        <li><b>Electricidad.</b> Conocimiento 'Magia de Electricidad' e 'Ingenieria'. Profesión 'Ingeniero' Lv2.</li>
+                        <li><b>Viento.</b> Conocimiento 'Magia de Viento' y 'Música'. Profesión 'Bardo' Lv2.</li>
+                        <li><b>Veneno.</b> Conocimiento 'Magia de Veneno' y 'Herbolaria'. Profesión 'Explorador' Lv2.</li>
+                        <li><b>Luz.</b> Conocimiento 'Magia de Luz' y 'Medicina'. Profesión 'Médico' Lv2.</li>
+                        <li><b>Oscuridad.</b> Conocimiento 'Magia de Oscuridad' y 'Ladrón'. Profesión 'Ladrón' Lv2.</li>
+                    </ul>
+                    <li><b style="color:rgb(33, 0, 151)">Magia del dragón.</b> Pueden conjurar cualquier tipo de hechizo de su 
+                        tipo con sus manos, pero el costo de maná será de 2 Núcleos mas (Excepto los hechizos y tácticas propios 
+                        de esta raza).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Garras infundidas.</b> Pueden imbuir sus garras con su magia propia 
+                        (Si ese tipo de magia no tiene efecto, solo cambia el daño por mágico), al atacar de forma desarmada o 
+                        mediante cestus, aplicará el efecto del tipo de magia. Consume 2 núcleos por ronda.
+                        <br><b class="costo">Costo.</b>  1 Acción de utilidad y 2 Núcleos (Activación)</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Desplegar alas.</b> Pueden desplegar alas de su cuerpo desde su interior, 
+                        estas serán muy finas, pero luego de dos rondas, le crecerán escamas rapidamente. Mientras sean finas, 
+                        consumen 1 acciones de utilidad por ronda para mantenerlas. Cuando les crezcan escamas, se obtiene 2 de 
+                        armadura natural por nivel en raza y consumen 2 acciones de utilidad por ronda para mantenerlas, o 1 
+                        acciones de utilidad y 1 núcleos, por ronda. Estas solo pueden ser usadas para volar mientras no tengan 
+                        escamas, pero cualquier ataque recibido le derribará, tomando 1d10 de daño verdadero por la caida.
+                        <br><b class="costo">Costo. </b>2 Acciones de utilidad (Activación)</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Visión de dragón</b> Puede invocar su poder ancestral, para obtener una 
+                        mejor posición de combate, esto evitará recibir ataques por la espalda, y el esquive tendrá ventaja, al 
+                        esquivar, se podrá dar un golpe desarmado, que causará un punto de daño verdadero, y aplicará el efecto 
+                        correspondiente (Incluido Garras infundidas). El efecto dura 5 turnos, +1 turno por nivel en raza.
+                        <br><b class="costo">Costo. </b>1 Acción de ataque y 2 Acciones de utilidad (Activación).</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Adaptación elemental.</b> Al recibir daño de un ataque mágico del mismo 
+                        tipo que el propio, puede recibir uno de los siguientes mediante 1d6:
+                    <ol>
+                        <li>Obtener un núcleo</li>
+                        <li>Ganar 5 puntos de vida</li>
+                        <li>Obtener 5% de probabilidad de efecto en el siguiente ataque (Acumulable, y se elimina la acumulación 
+                            al activarlo)</li>
+                        <li>Obtener perforación en el siguiente ataque</li>
+                        <li>Obtener 5 de armadura en el siguiente ataque recibido (Acumulable, y se elimina la acumulación al 
+                            activarlo)</li>
+                        <li>Eliges dos a tu gusto de las opciones anteriores</li>
+                    </ol>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Espíritu del dragón.</b> Pueden meditar durante una ronda, para realizar 
+                        una invocación, esto requerirá que se quede completamente quieto, el recibir un ataque hará que la meditación 
+                        se reinicie. Esto imbuirá una de tus armas con el Alma de Dragón ardiente, el cuál hará que tu arma ignore 
+                        1/4 de la armadura enemiga, y 75% de probabilidad de efecto del tipo propio de la raza (No aumentable). 
+                        Además, cada que se aplique una carga, se aplicará una carga de Maldición de dragón (Max. 10), lo que 
+                        causará un punto de daño verdadero cada inicio de turno del afectado. Cuesta tres núcleos por ronda mantener 
+                        el efecto. El efecto se pierde al final del turno si no se pagó el costo, y elimina todas las cargas de 
+                        Maldición de dragón.
+                        <br><b class="costo">Costo. </b> 1 Acción de ataque (Iniciar meditación), 2 Acciones de utilidad + 5 Núcleos 
+                        (Activación)
+                    </li>
+                    <b>Habilidad de pureza</b>
+                    <ul>
+                        <li><b style="color:rgb(33, 0, 151)">Aliento dracónico.</b> Puedes lanzar una ráfaga de tu propia magia
+                        desde tus fauces, causando 1d6 de daño (Aumenta 1 dado cada 2 niveles del personaje), escalando con tu 
+                        estadística mas alta entre Fuerza, Inteligencia y Carisma. Puedes elegir si lanzas en un cono de 5ft de distancia
+                        y 15ft de ancho, o una linea recta de 15ft de distancia y 5ft de ancho. Esta habilidad tendrá un 15% de probabilidad
+                        de efecto no aumentable, y 20% de probabilidad de critico. Solo puedes usar esta habilidad, una vez por ronda.
+                        A partir del nivel 6 de personaje, el dado pasa a ser 1d8, y a partir de nivel 12, pasa a ser 1d10.</li>
+                    </ul>
+                </ul>
+            </p>
+        </p>
     </div>
 </main>
