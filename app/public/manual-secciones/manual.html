@@ -132,6 +132,36 @@
                 <li onclick="window.location.href='#raza_automata'">Automata</li>
             </ol>
             <li onclick="window.location.href='#p_clases'">Clases</li>
+            <ol>
+                <li onclick="window.location.href='#clase_sinclase'">Sin clase</li>
+                <li onclick="window.location.href='#clase_guerrero'">Guerrero</li>
+                <ul>
+                    <li onclick="window.location.href='#clase_senescal'">Senescal</li>
+                    <li onclick="window.location.href='#clase_samurai'">Samurai</li>
+                </ul>
+                <li onclick="window.location.href='#clase_picaro'">Picaro</li>
+                <ul>
+                    <li onclick="window.location.href='#clase_asesino'">Asesino</li>
+                    <li onclick="window.location.href='#clase_asesinosombrio'">Asesino sombrío</li>
+                </ul>
+                <li onclick="window.location.href='#clase_clerigo'">Clérigo</li>
+                <ul>
+                    <li onclick="window.location.href='#clase_curandero'">Curandero</li>
+                    <li onclick="window.location.href='#clase_paladin'">Paladin</li>
+                </ul>
+                <li onclick="window.location.href='#clase_ranger'">Ranger</li>
+                <ul>
+                    <li onclick="window.location.href='#clase_pistolero'">Pistolero</li>
+                    <li onclick="window.location.href='#clase_arquero'">Arquero</li>
+                </ul>
+                <li onclick="window.location.href='#clase_luchador'">Luchador</li>
+                <ul>
+                    <li onclick="window.location.href='#clase_shaolin'">Shaolin</li>
+                    <li onclick="window.location.href='#clase_tortugamarcial'">Tortuga marcial</li>
+                </ul>
+                <li onclick="window.location.href='#clase_artificiero'">Artificiero</li>
+                <li onclick="window.location.href='#clase_mago'">Mago</li>
+            </ol>
             <li>Dones</li>
             <li>Explicación de puntos de mejora</li>
             <li>Inventario de jugador</li>
@@ -2026,6 +2056,80 @@
                             pueden utilizar un chip de su portachip para obtener esa mejora por el resto de la mesa; el chip
                             perderá función al final de la partida.
                         </li>
+                    </ul>
+                </ul>
+            </p>
+        </p>
+        <h3 class="p-4 titulo_categoria" id="p_clases">Clases</h3>        
+        <p>
+            Se denomina clase, al conjunto de habilidades que conforman a una especialidad en combate, y como esta se enfrenta
+            a los enemigos, ya sea mediante el tipo de daño, las armas que utiliza, o si de plano solo prefiere ayudar a sus 
+            compañeros.
+        </p>
+        <p>Cuando un jugador crea un personaje, comienza sin clases, lo que se denomina un "Jugador sin clase", lo que es una
+            pseudoclase en si mismo (Ver posteriormente las clases para verlo). Para desbloquear clases, debe:
+            <ul>
+                <li>Desbloquearla mediante 2 puntos de mejora (Solo las clases iniciales)</li>
+                <li>Aprender mediante un entrenador</li>
+                <li>Utilizar objetos o armaduras que te desbloqueen una clase</li>
+            </ul>
+        </p>
+        <p>Cada clase tiene algo llamado <b>requerimientos</b> y <b>especialización</b>, los requerimientos, son los conocimientos,
+        reputación, habilidad, estadísticas, etc. que son requeridas para poder tener esa subclase, y por tanto, obtener sus
+        habilidades; la especialización, son las armas que usa esa clase, y por tanto, las unicas armas que esta clase proveerá
+        daño, probabilidad de efecto, probabilidad de critico, o cualquier habilidad referente al combate.</p>
+        <p>Cuando en una clase buscas pasar a la subclase, debes cumplir los requisitos de la subclase, y los de la clase principal.
+            Al obtener esa subclase, si esta tenía un requerimiento de nivel, el nivel volverá a 0, pero, mantendrás las habilidades
+            de la clase principal, hasta el momento de haber vuelto a cero.
+        </p>
+        <p class="parrafo" id="clase_sinclase">
+            <b class="text-danger" style="font-size: 150%;">Sin clase</b>
+            De esta forma comienzan todos los personajes en este mundo, sin ninguna clase, y, en caso de no decidir desbloquear 
+            ninguna clase, se obtendrán las siguientes mejoras, para hacer un poco menos dificil, tu modo dificil dentro de este
+            loco universo.
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>No poseer clase, ni subclase de ningún tipo</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>No se especializa en nada en particular, pero evita las reglas de la especialización</li>
+                </ul>
+                <b>Nivel 0</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Modo facilitado.</b> No vamos a preguntar por que has elegido ir sin
+                    ninguna especialización por este mundo, pero vamos a ayudarte.</li>
+                    <ul>
+                        <li>Cuando exploras, obtienes +1 en las tiradas de profesión, y +1 en las tiradas de sigilo y percepción.</li>
+                        <li>Al combatir, obtienes un 5% de probabilidad de critico y probabilidad de efecto</li>
+                        <li>Mueres a los -8 de vida en lugar de al -5</li>
+                    </ul>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="clase_sinclase">
+            <b class="text-danger" style="font-size: 150%;">Guerrero</b>
+            <x class="text-danger" style="font-size: 120%;">Clase inicial</x>
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/personaje/automatas.png" alt="">
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>2 en Agilidad</li>
+                    <li>2 en Fuerza</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Espada larga, espada corta, escudos, armas pesadas a dos manos</li>
+                </ul>
+                <b>Nivel 0</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Modo facilitado.</b> No vamos a preguntar por que has elegido ir sin
+                    ninguna especialización por este mundo, pero vamos a ayudarte.</li>
+                    <ul>
+                        <li>Cuando exploras, obtienes +1 en las tiradas de profesión, y +1 en las tiradas de sigilo y percepción.</li>
+                        <li>Al combatir, obtienes un 5% de probabilidad de critico y probabilidad de efecto</li>
+                        <li>Mueres a los -8 de vida en lugar de al -5</li>
                     </ul>
                 </ul>
             </p>
