@@ -159,13 +159,18 @@
                     <li onclick="window.location.href='#clase_shaolin'">Shaolin</li>
                     <li onclick="window.location.href='#clase_tortugamarcial'">Tortuga marcial</li>
                 </ul>
-                <li onclick="window.location.href='#clase_artificiero'">Artificiero</li>
                 <li onclick="window.location.href='#clase_mago'">Mago</li>
+                <li onclick="window.location.href='#clase_artificiero'">Artificiero</li>
             </ol>
-            <li>Dones</li>
+            <li onclick="window.location.href='#p_maldiciones'">Maldiciones</li>
+            <ul>
+                <li onclick="window.location.href='#m_bestia'">Bestia</li>
+                <li onclick="window.location.href='#m_vampiro'">Vampiro</li>
+                <li onclick="window.location.href='#m_sinalma'">Sin alma</li>
+            </ul>
+            <li onclick="window.location.href='#p_dones'">Dones</li>
             <li>Explicación de puntos de mejora</li>
             <li>Inventario de jugador</li>
-            <li>Maldiciones</li>
             <li>Reputación</li>
             <li>Idiomas</li>
         </ul>
@@ -2096,6 +2101,7 @@
                 <ul>
                     <li>No se especializa en nada en particular, pero evita las reglas de la especialización</li>
                 </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
                 <b>Nivel 0</b>
                 <ul>
                     <li><b style="color:rgb(33, 0, 151)">Modo facilitado.</b> No vamos a preguntar por que has elegido ir sin
@@ -2108,31 +2114,1159 @@
                 </ul>
             </p>
         </p>
-        <p class="parrafo" id="clase_sinclase">
+        <p class="parrafo" id="clase_guerrero">
             <b class="text-danger" style="font-size: 150%;">Guerrero</b>
             <x class="text-danger" style="font-size: 120%;">Clase inicial</x>
-            <img src="https://matiasglr.github.io/Enforth_2.0/files/personaje/automatas.png" alt="">
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/clases/guerrero.png" alt="">
             <p class="parrafo">
                 <b>Requerimientos de clase</b>
                 <ul>
-                    <li>2 en Agilidad</li>
                     <li>2 en Fuerza</li>
+                    <li>2 en Puntería</li>
                 </ul>
                 <b>Especialización</b>
                 <ul>
                     <li>Espada larga, espada corta, escudos, armas pesadas a dos manos</li>
                 </ul>
+                <b>Stats otorgados por clase</b>
+                <ul>
+                    <li>+5 de Vida máxima</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
                 <b>Nivel 0</b>
                 <ul>
-                    <li><b style="color:rgb(33, 0, 151)">Modo facilitado.</b> No vamos a preguntar por que has elegido ir sin
-                    ninguna especialización por este mundo, pero vamos a ayudarte.</li>
-                    <ul>
-                        <li>Cuando exploras, obtienes +1 en las tiradas de profesión, y +1 en las tiradas de sigilo y percepción.</li>
-                        <li>Al combatir, obtienes un 5% de probabilidad de critico y probabilidad de efecto</li>
-                        <li>Mueres a los -8 de vida en lugar de al -5</li>
-                    </ul>
+                    <li><b style="color:rgb(33, 0, 151)">Alma de guerrero.</b> Por cada nivel en la clase, aumenta la 
+                        probabilidad de efecto de las armas cuerpo a cuerpo en 5% (Max. 30%).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Parry.</b> Puedes lanzar una tirada de punteria, contra un ataque 
+                        cuerpo a cuerpo enemigo, y, en caso de superarlo, puedes bloquear el ataque, y si la diferencia es de 
+                        4 o menor, o superada por el doble, de forma opcional, puedes atacar en el momento sin costo, y, si es 
+                        superada por el triple o mas, ganas un dado de daño adicional. En caso de perder en el Parry, el enemigo 
+                        tendrá un dado adicional de daño.<br><b class="costo">Costo. </b>1 Acción de utilidad</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Último aliento.</b> <b>Requiere:</b> "Parry" desbloqueado.
+                        Al recibir un daño que fuera a ser mortal, puedes realizar un Parry sin costo a último momento. Solo 
+                        puede ser utilizado una vez por ronda.</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Escudazo.</b> Al atinar un ataque, puedes realizar un ataque con el 
+                        escudo que tendrá atine asegurado, y causará un punto de daño. Pueden desviar proyectiles mientras posean 
+                        un escudo.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Defensa perfecta.</b> <b>Requiere:</b> "Parry" desbloqueado.
+                        Al realizar un Parry con máximo valor (20), y este sea efectivo, si se realiza un ataque, este tendrá +2 
+                        de daño adicional, y obtienes dos acciones de utilidad.</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Pose de defensa.</b> Puedes utilizar tu arma como un escudo (No 
+                        aplica Escudazo), protegiendo igual que su equivalente en material. Deberás gastar una acción de 
+                        utilidad para cambiar a pose de ataque a pose de defensa, pero no para volver a pose de ataque. No 
+                        se puede atacar durante poses de defensa.</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Defensa perfecta.</b> <b>Requiere:</b> "Parry" desbloqueado.
+                        Al realizar un ataque seguido del Parry, alejas al enemigo a 5ft de ti, y en caso de que este impacte 
+                        contra un objeto o pared, puedes volver a realizar un ataque sin costo contra este (Te acercas a este 
+                        sin gastar acciones de utilidad de igual modo).</li>
                 </ul>
             </p>
         </p>
+        <p class="parrafo" id="clase_senescal">
+            <b class="text-danger" style="font-size: 150%;">Senescal</b>
+            <x class="text-danger" style="font-size: 120%;">Subclase de Guerrero</x>
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>2 en Agilidad</li>
+                    <li>5 en Fuerza</li>
+                    <li>3 en Puntería</li>
+                    <li>30 puntos en la Guardia de Everland y Nivel 3 en su Guardia</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Lanza y Alabarda</li>
+                </ul>
+                <b>Stats otorgados por clase</b>
+                <ul>
+                    <li>Hereda de la clase principal</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Larga distancia.</b> Las armas especializadas de esta subclase pueden
+                    atacar a 15ft de distancia</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Táctica de alto rango.</b> Cada ataque acertado, tendrá una probabilidad 
+                        de 5% de causar desventaja al esquive del enemigo por el resto del combate.</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Momento exacto.</b> Los ataques de oportunidad no pueden ser
+                        esquivados</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="clase_samurai">
+            <b class="text-danger" style="font-size: 150%;">Samurai</b>
+            <x class="text-danger" style="font-size: 120%;">Subclase de Guerrero</x>
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>5 en Fuerza</li>
+                    <li>3 en Punterìa</li>
+                    <li>3 en Resistencia</li>
+                    <li>30 puntos de reputación en la Guardia de Raitosodo y Nivel 3 en su Guardia</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Katana a dos manos</li>
+                </ul>
+                <b>Stats otorgados por clase</b>
+                <ul>
+                    <li>Hereda de la clase principal</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Recobrar el honor.</b> Al ser abatido por un enemigo, obtendrás ventaja 
+                        en la puntería contra el enemigo que te derribó por el resto del combate.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Enfrentar el temor.</b> Obtienes un dado adicional de daño si tienes 
+                        alguna carga de miedo, y obtienes inmunidad a su efecto.</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Momento exacto.</b> Obtienes +1 de daño por nivel en la clase al usar 
+                        Katanas, y obtienes +3 adicional si lo usas a dos manos.</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="clase_picaro">
+            <b class="text-danger" style="font-size: 150%;">Picaro</b>
+            <x class="text-danger" style="font-size: 120%;">Clase inicial</x>
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/clases/picaro.png" alt="">
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>2 en Agilidad</li>
+                    <li>2 en Puntería</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Dagas y espadas cortas, y otras armas cuerpo a cuerpo ligeras (Excepto cestus) usadas en dual.</li>
+                </ul>
+                <b>Stats otorgados por clase</b>
+                <ul>
+                    <li>-5 de Vida máxima</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
+                <b>Nivel 0</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Peso ligero.</b> Obtiene ventaja en las tiradas de sigilo.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Gran robo.</b> Obtienen ventaja en las tiradas de recompensa tras una 
+                        misión (Solo en el dinero).</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Movimientos ocultos.</b> Puede moverse sin utilizar acciones de utilidad 
+                        dentro de bombas de humo y en la oscuridad.</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Adenada.</b> Al realizar critico en el daño, obtienes una acción de 
+                        utilidad.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Emboscada sigilosa.</b> <b>Requiere:</b> "Paso ligero" desbloqueado.
+                    Al atacar por la espalda, tienes una probabilidad del 5% de ejecutar al enemigo (Solo durante su primer turno, 
+                    si son de tamaño igual o inferior).</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Golpe a la tráquea.</b> Al atacar por la espalda, tienes un 5% por nivel 
+                        en la clase de aplicar critico</li>
+                    <li><b style="color:rgb(33, 0, 151)">Mentiroso.</b> Obtienes +1 por cada 2 niveles en clase en Carisma al 
+                        engañar o estafar</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Espejo oscuro.</b> Al tener dos armas del mismo escalado, mejora, y 
+                        material, obtienen 10% de probabilidad de critico</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="clase_asesino">
+            <b class="text-danger" style="font-size: 150%;">Asesino</b>
+            <x class="text-danger" style="font-size: 120%;">Subclase de Picaro</x>
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>4 en Agilidad</li>
+                    <li>5 en Puntería</li>
+                    <li>30 puntos de reputación con los Bandidos</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Dagas y espadas cortas, y otras armas cuerpo a cuerpo ligeras (Excepto cestus) usadas en dual.</li>
+                </ul>
+                <b>Stats otorgados por clase</b>
+                <ul>
+                    <li>Hereda de la clase principal</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Despiadado.</b> Al aplicar efecto, además, aplica una carga de sangrado. 
+                        Si este ya tiene una carga de sangrado, te curas 2 por carga.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Ejecución.</b> Al abatir a un enemigo, obtienes un ataque contra este, 
+                        sin consumir acciones de ataque.</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Búsqueda de muerte.</b> Al acertar un crítico, el critico tendrá dado 
+                        máximo.</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="clase_asesinosombrio">
+            <b class="text-danger" style="font-size: 150%;">Asesino sombrío</b>
+            <x class="text-danger" style="font-size: 120%;">Subclase de Picaro</x>
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>4 en Agilidad</li>
+                    <li>5 en Punterìa</li>
+                    <li>Conocimiento de Magia de Oscuridad</li>
+                    <li>30 puntos de reputación con los Asesinos sombrios</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Armas duales del mismo tipo y material, con un Ónix desbloqueado utilizable (Que el arma no se rompa) colocado en ellas.</li>
+                </ul>
+                <b>Stats otorgados por clase</b>
+                <ul>
+                    <li>Hereda de la clase principal</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Camuflaje oscuro.</b> No será detectable visualmente en la oscuridad, 
+                        aunque esta sea tenue.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Desangramiento espeso.</b> Al asesinar a alguien, su sangre se convertirá 
+                        en “Sangre negra”, la cual puede usarse para crear Viales de sombras, que imbuirán las armas en penumbra 
+                        durante un ataque; este efecto disminuye la vida máxima del atacado en 10% cada que es aplicado, por el 
+                        resto del combate, en lugar de causar daño.</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Salto de sombras.</b> Puedes teletransportarte entre sombras hasta 40ft.
+                    </li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Golpe mimético.</b> Puedes crear un clon de ti mismo de sombras, para 
+                        atacar a un enemigo, teniendo cada uno, una tirada independiente. Tu ataque obtendrá crítico, y el de tu 
+                        clon, efecto asegurado. El clon desaparecerá luego de atacar. <b class="costo">Costo. </b>1 Acción de ataque 
+                        y 2 Acción de utilidad.</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="clase_clerigo">
+            <b class="text-danger" style="font-size: 150%;">Clérigo</b>
+            <x class="text-danger" style="font-size: 120%;">Clase inicial</x>
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/clases/clerigo.png" alt="">
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>3 en Inteligencia</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Báculo, varita, instrumento o cualquier objeto mágico que pueda conjurar.</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
+                <b>Nivel 0</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Protección.</b> El efecto cambia según el nivel en la clase (Subir por 
+                        encima del 5, solo dará el efecto del 5).
+                    <ul>
+                        <li><b>Nivel 0.</b> Tienes una probabilidad del 10% de evitar efectos físicos (Excepto perforación).</li>
+                        <li><b>Nivel 1.</b> Tienes una probabilidad del 20% de evitar efectos físicos (Excepto perforación).</li>
+                        <li><b>Nivel 2.</b> Tienes una probabilidad del 25% de evitar efectos físicos (Excepto perforación).</li>
+                        <li><b>Nivel 3.</b> Tienes una probabilidad del 25% de evitar efectos físicos (Excepto perforación), 
+                        y 5% de evitar efectos mágicos</li>
+                        <li><b>Nivel 4.</b> Tienes una probabilidad del 25% de evitar efectos físicos (Excepto perforación), 
+                        y 10% de evitar efectos mágicos</li>
+                        <li><b>Nivel 5.</b> Tienes una probabilidad del 25% de evitar efectos físicos (Excepto perforación), 
+                        y 15% de evitar efectos mágicos</li>
+                    </ul>
+                    </li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="clase_curandero">
+            <b class="text-danger" style="font-size: 150%;">Curandero</b>
+            <x class="text-danger" style="font-size: 120%;">Subclase de Clérigo</x>
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>3 en Inteligencia</li>
+                    <li>Conocimiento de medicina desbloqueado</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Báculo, varita, instrumento o cualquier objeto mágico que pueda conjurar.</li>
+                </ul>
+                <b>Stats otorgados por clase</b>
+                <ul>
+                    <li>-5 de Vida máxima</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Medicina mágica.</b> Puedes curar una parte con ventaja de las cargas 
+                        de un efecto físico que sufras, o que sufra un participante del combate, a 15ft de ti o menos. Aumenta 
+                        las curaciones en 1d4 por nivel en clase (Max. 5). <br><b class="costo">Costo. </b>2 Acciones de utilidad.</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Restauración.</b> Curas 1d4 a un participante del combate a 15ft de ti 
+                        o menos, por cada Nivel en esta clase, y sumando ademas:
+                        <ul>
+                            <li><b>Hierro o Madera. </b>1 dado</li>
+                            <li><b>Plata u Oro. </b>2 dados</li>
+                            <li><b>Basalto o Cuarzo. </b>3 dados</li>
+                            <li><b>Cobalto o Titanio. </b>1 dados</li>
+                            <li><b>Oricalco o Luminita. </b>1 dados</li>
+                            <li><b>Infernita. </b>1 dados</li>
+                            <li><b>Druvix. </b>1 dados</li>
+                            <li><b>Platinado. </b>1 dado adicional</li>
+                        </ul>
+                        <b class="costo">Costo. </b>1 Acción de ataque y 1 Acción de utilidad
+                    </li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Aura de curación.</b> Creas un aura de 10ft alrededor de ti, todo aliado 
+                        que se encuentre dentro de ella al inicio de su turno, se cura 1d6. Solo puedes tener un aura al mismo 
+                        tiempo. Si se desequipa el báculo, se desactiva el aura. <br><b class="costo">Costo. </b>1 Acción de ataque</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Aura de protección.</b> Creas un aura de 10ft alrededor de ti, todo aliado 
+                        que se encuentre dentro de ella, se vuelve inmune a recibir efectos mágicos (Pero no elimina los efectos que 
+                        ya tienen). Solo puedes tener un aura al mismo tiempo.  Si se desequipa el báculo, se desactiva el aura. 
+                        <br><b class="costo">Costo. </b>1 Acción de ataque</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Orbe de vida.</b> Cada que cures a un participante del combate hasta su 
+                        vida máxima (si tenía menos de la mitad de su vida), o al sacar el máximo valor en un dado de curación, obtienes 
+                        un Núcleo de vida, el cuál puede ser consumido para agregar un dado más a una curación. En caso de curar 
+                        toda la vida a un aliado utilizando tres o más núcleos de vida, también le remueves todos los efectos negativos.
+                    <li><b style="color:rgb(33, 0, 151)">Aura debilitante.</b> Creas un aura de 15ft alrededor de ti, todo enemigo 
+                        que se encuentre dentro de ella, no puede ganar dados de daño (Excepto por magia externa al aura).  Si se 
+                        desequipa el báculo, se desactiva el aura.  
+                        <br><b class="costo">Costo. </b>1 Acción de ataque</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="clase_paladin">
+            <b class="text-danger" style="font-size: 150%;">Paladin</b>
+            <x class="text-danger" style="font-size: 120%;">Subclase de Clérigo</x>
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>3 en Carisma</li>
+                    <li>50 de Karma</li>
+                    <li>Requiere usar un escudo con el emblema del Dios</li>
+                    <li>clérigo Nivel 5 sin subclase</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Escudo, armas pesadas a una mano</li>
+                </ul>
+                <b>Stats otorgados por clase</b>
+                <ul>
+                    <li>+5 de Vida Máxima</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
+                <b>Nivel 0</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Lanzamiento.</b> Puedes usar el escudo como arma arrojadiza, que
+                        puede causar derribo, con un 40% de probabilidad.</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Poder divino.</b> Desbloquea una habilidad de paladín de tu dios. 
+                        Al subir de nivel en esta clase (mayor a 1), además de obtener una habilidad de la clase, también obtienes 
+                        una habilidad de tu dios.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Prueba de fé.</b> Obtienes +2 de daño fijo, por cada 20 puntos de Karma 
+                        (Max 6), y 1 de Armadura mágica cada 10 puntos (Max 10).</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Rebote.</b> Al bloquear un proyectil, puedes redirigirlo en una dirección, 
+                        causando 2 puntos de daño verdadero al golpear otro objetivo.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Reflejo.</b> <b>Requiere:</b> "Protección" desbloqueado.
+                        Al evitar un efecto por la habilidad de Protección, puedes causarle este efecto al mismo enemigo que lo 
+                        provocó, a cambio de 1 de Karma.
+                    </li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Teología terrenal.</b> Obtienes daño fijo y protección en tu escudo, si 
+                        tu arma y escudo comparten el mismo material:
+                    <ul>
+                        <li><b>Hierro o Madera. </b>0 puntos.</li>
+                        <li><b>Plata u Oro. </b>1 punto.</li>
+                        <li><b>Basalto o Cuarzo. </b>1 punto.</li>
+                        <li><b>Cobalto o Titanio. </b>1 punto.</li>
+                        <li><b>Oricalco o Luminita. </b>1 punto.</li>
+                    </ul>
+                    </li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="clase_ranger">
+            <b class="text-danger" style="font-size: 150%;">Ranger</b>
+            <x class="text-danger" style="font-size: 120%;">Clase principal</x>
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/clases/ranger.png" alt="">
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>1 punto en Agilidad</li>
+                    <li>3 puntos en Puntería</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Arcos, ballestas y armas de fuego.</li>
+                </ul>
+                <b>Stats otorgados por clase</b>
+                <ul>
+                    <li>-5 de Vida Máxima</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
+                <b>Nivel 0</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Apilamiento.</b> Puedes tener balas y flechas ilimitadas en tu inventario 
+                        (a partir de las 150 unidades) y apilarlas sin límite, siempre que estas sean del mismo tipo.</li>
+                </ul>
+        
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Distancia prudencial.</b> Al estar a menos de 15ft de distancia de un 
+                        enemigo, tu armadura se disminuye a la mitad y al atacar obtienes daño fijo igual a tu nivel en esta clase.
+                    </li>
+                </ul>
+        
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Sin escapatoria.</b> Tu siguiente ataque tendrá máxima puntería y efecto 
+                        asegurado.<br><b class="costo">Costo.</b> Dos acciones de utilidad.
+                    </li>
+                </ul>
+        
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Tiro a la cabeza.</b> Al sacar 20 en puntería de forma natural (No aplica 
+                        "Sin escapatoria"), puedes sustituir el efecto por "Tiro a la cabeza", lo que te dará un dado adicional.</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="clase_pistolero">
+            <b class="text-danger" style="font-size: 150%;">Pistolero</b>
+            <x class="text-danger" style="font-size: 120%;">Subclase de Ranger</x>
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>3 puntos en Agilidad</li>
+                    <li>4 puntos en Puntería</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Armas de fuego.</li>
+                </ul>
+                <b>Stats otorgados por clase</b>
+                <ul>
+                    <li>Hereda de la clase principal</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
+                <b>Nivel 0</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Sin retroceso.</b> Las armas de fuego ya no tendrán desventaja en 
+                        puntería.</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Cambio de pólvora.</b> Cambiar la munición de tu arma no te costará 
+                        acciones de utilidad.</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Doble recarga.</b> <b>Requiere:</b> "Cambio de pólvora" desbloqueado.
+                        Al cambiar la munición por otro tipo, obtienes un 10% adicional de probabilidad de efecto +5% adicional 
+                        por cada acción de utilidad que desees consumir.
+                    </li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Quemarropa.</b> Al atacar a un enemigo a 5ft de ti, obtienes +3 en 
+                        daño fijo y en puntería.</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Bayoneta.</b> <b>Requiere:</b> Herrería del nivel correspondiente al 
+                        material. Puedes crear una cuchilla acoplable a un arma de fuego a dos manos, que hará daño en d6. Al 
+                        atinar un ataque con esta arma, tendrá un 25% de probabilidad de aplicar "Empalamiento", que, al aplicarlo, 
+                        te otorgará un ataque adicional por una acción de utilidad con el arma de fuego que no puede ser esquivado. 
+                        Este efecto se quitará al realizar el disparo.
+                    </li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Puntería rápida.</b> Al atinar un ataque a un enemigo, puedes inmediatamente 
+                        realizar un disparo a un enemigo que se encuentre a 5ft o menos de él, sin costo, pero no hará más de 1 dado 
+                        de daño (y el daño fijo) y no aplica efecto.</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="clase_arquero">
+            <b class="text-danger" style="font-size: 150%;">Arquero</b>
+            <x class="text-danger" style="font-size: 120%;">Subclase de Ranger</x>
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>4 puntos en Puntería</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Arcos y ballestas.</li>
+                </ul>
+                <b>Stats otorgados por clase</b>
+                <ul>
+                    <li>Hereda de la clase principal</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
+                <b>Nivel 0</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Carcaj rápido.</b> Puedes cambiar de flechas sin gastar acciones de 
+                        utilidad.</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Acoplado.</b> Puedes crear puntas de flechas con las bombas arrojadizas, 
+                        aplicando sus efectos, y sumando su daño. Estas flechas llegarán a la mitad de distancia.</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Tiro triple.</b> Lanzas tres flechas, en cono frente a ti, causando daño 
+                        al impactar. <br><b class="costo">Costo. </b> 1 Acción de ataque.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Ojo de halcón.</b> Al atacar con el arco a máxima distancia, obtienes 
+                        ventaja en puntería.</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Caja de infusores.</b> <b>Requiere:</b> Alquimia Lv3. Puedes crear un 
+                        accesorio para el carcaj, el cual puede acoplar hasta 4 gemas (Arcana, Fuego, Hielo, Electricidad, Luz, 
+                        Veneno), las cuales pueden usarse para imbuir las puntas de las flechas, y aplicar el efecto correspondiente.
+                    </li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Empalamiento ligero.</b> Las flechas impactadas quedarán clavadas en el 
+                        enemigo. Este podrá quitárselas con una acción de utilidad, causándose 2 puntos de daño. Luego de las cinco 
+                        flechas clavadas, todas las flechas impactadas aplicarán crítico.</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="clase_luchador">
+            <b class="text-danger" style="font-size: 150%;">Luchador</b>
+            <x class="text-danger" style="font-size: 120%;">Clase principal</x>
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/clases/luchador.png" alt="">
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>2 puntos en Agilidad</li>
+                    <li>3 puntos en Fuerza</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Cestus y desarmado.</li>
+                </ul>
+                <b>Stats otorgados por clase</b>
+                <ul>
+                    <li>+5 de Vida Máxima</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
+                <b>Nivel 0</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Golpe pesado.</b> Tus ataques desarmados tendrán el efecto de derribo, y 
+                        además, si tu tirada de puntería es de 20 natural, aplicas una carga de rompearmadura.</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Combo.</b> Por cada ataque acertado, obtienes 5% de probabilidad de 
+                        efecto con un máximo de 50%. Al llegar a 50% puedes anular este aumento, para ganar +1 de daño fijo.</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Manos reforzadas.</b> Obtienes +2 de daño al atacar con cestus o 
+                        desarmado. En caso de tener guantes de cuarzo, o de un material platinado, puedes golpear con una gema 
+                        desbloqueada en la mano, y aplicar el efecto de la misma.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Contraesquive.</b> Una vez por turno, al esquivar un ataque con el 
+                        mismo valor que la precisión del enemigo (con una diferencia de hasta 2), puedes realizar un contraataque, 
+                        que aplique efecto asegurado.</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Espíritu de lucha.</b> Cada vez que se pierde un 10% de la vida, vas 
+                        ganando cargas de "Coraje", las cuales pueden ser consumidas para aplicar los siguientes efectos:
+                        <ul>
+                            <li><b>2 cargas.</b> Táctica. Me toca. Gana 5% de probabilidad de efecto.</li>
+                            <li><b>3 cargas.</b> Táctica. ¿Es todo lo que tienes?. Tu siguiente ataque tiene +2 de daño.</li>
+                            <li><b>5 cargas.</b> Táctica. 200% Lucha. Puedes realizar algún tipo de llave de lucha, la cual puede 
+                                aplicar Derribo, Rompearmadura o Cegado, depende la narrativa.</li>
+                            <li><b>8 cargas.</b> Táctica. Más fuerte que tú. Elimina todas las cargas de un solo tipo que tengas.</li>
+                            <li><b>10 cargas.</b> Táctica. Knockout. Los ataques que apliquen Derribo, le harán 3 de daño 
+                                verdadero al enemigo.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Golpe duro.</b> Por cada 10% de probabilidad de efecto, obtienes +1 de 
+                        daño fijo. Si tienes 50% de efecto, tus ataques hacen 1 de daño verdadero.</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="clase_shaolin">
+            <b class="text-danger" style="font-size: 150%;">Shaolin</b>
+            <x class="text-danger" style="font-size: 120%;">Subclase de Luchador</x>
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>3 puntos en Inteligencia</li>
+                    <li>3 puntos en Puntería</li>
+                    <li>30 puntos de reputación con la Guardia de Pandleins</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Desarmado.</li>
+                </ul>
+                <b>Stats otorgados por clase</b>
+                <ul>
+                    <li>-5 de Vida Máxima (Reemplaza el de la principal)</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Núcleos Zen.</b> Al atinar un ataque a un enemigo, obtienes un núcleo 
+                        zen.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Golpe diamante.</b> <b>Requiere:</b> "Núcleos Zen" desbloqueado. Puedes 
+                        consumir cualquier cantidad de núcleos zen (Min. 4), para obtener +1 de daño por cada núcleo consumido, que 
+                        se contarán como daño mágico.</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Contraefecto.</b> <b>Requiere:</b> "Núcleos Zen" desbloqueado. Al recibir 
+                        un efecto mágico, si tienes cinco o más núcleos Zen, anula el efecto, y tienes 25% de probabilidad de causar 
+                        este a tu oponente. Aumenta en 5% por cada núcleo que desees consumir.</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Tornado de cristal.</b> <b>Requiere:</b> "Núcleos Zen" desbloqueado. Puedes 
+                        consumir veinticinco núcleos zen, para que todos tus siguientes ataques sean criticos, y en caso de sacar
+                        20 natural en la puntería, el daño será verdadero.</li>
+                </ul>
+            </p>
+        </p>        
+        <p class="parrafo" id="clase_tortugamarcial">
+            <b class="text-danger" style="font-size: 150%;">Tortuga marcial</b>
+            <x class="text-danger" style="font-size: 120%;">Subclase de Luchador</x>
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>4 puntos en Resistencia</li>
+                    <li>4 puntos en Fuerza</li>
+                    <li>30 puntos de reputación con la Guardia de Raitosodo</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Cestus y desarmado.</li>
+                </ul>
+                <b>Stats otorgados por clase</b>
+                <ul>
+                    <li>+5 de Vida (No acumulable con subclases de esta clase, esta incluida y la reemplaza)</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Espalda impenetrable.</b> No pueden recibir ataques por la espalda.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Estilo acorazado.</b> Obtienes +3 de daño, por cada punto que consume 
+                        tu armadura para moverte. Además, obtienes los efectos siguientes:
+                        <ul>
+                            <li>2 puntos. El atinar un ataque, te dará una acción de utilidad.</li>
+                            <li>3 puntos. El resistir un ataque, te dará 2 puntos de armadura mágica por el resto de la ronda.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Distribución de peso.</b> Sustituye la mitad del daño fijo que tengas, 
+                        por una cantidad igual a la mitad de armadura, además, tus armaduras pueden consumir un punto menos para 
+                        moverte (No afecta a Estilo Acorazado).</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Estilo tortuga.</b> Te vuelves una pelota acorazada, no recibes daño en 
+                        los siguientes 3 ataques. <br><b class="costo">Costo.</b> 1 Acción de ataque.</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="clase_mago">
+            <b class="text-danger" style="font-size: 150%;">Mago</b>
+            <x class="text-danger" style="font-size: 120%;">Clase principal</x>
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/clases/mago.png" alt="">
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>4 puntos en Inteligencia</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Báculo o instrumentos.</li>
+                </ul>
+                <b>Stats otorgados por clase</b>
+                <ul>
+                    <li>-10 de Vida Máxima</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
+                <b>Nivel 0</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Especialización.</b> Pueden elegir un tipo de magia en el que se 
+                        "Especializan", esto mejorará ese tipo de magia (Además, que la podrán desbloquear, pudiendo solo elegir 
+                        magias que ya están desbloqueadas, o de nivel semi-avanzado o inferior).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Amplificación rúnica.</b> Obtienes 1 de daño adicional en tus hechizos, 
+                        por cada nivel en esta clase más uno. Gana (3 + 1 por nivel)dF núcleos de maná cada inicio de su turno (en 
+                        valor absoluto, con ventaja), y, por cada núcleo que supere el límite de 10, te curas 1d4 de vida.</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Desaparición de costos.</b> Tienes un 20% de probabilidad de que tu hechizo 
+                        consuma 1 núcleo menos.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Códice expandido.</b> Obtiene 4 slots de hechizos, basados en su 
+                        especialización, y uno adicional cada nivel además de este.</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Barrera de maná.</b> Pueden consumir núcleos, para reducir el daño en 
+                        un 10% por núcleo consumido.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Maestría concentrada.</b> Los hechizos creados que se relacionen con 
+                        la especialización, tendrán un núcleo menos de costo, y verán su probabilidad de efecto duplicada, en caso 
+                        de no tener efecto, aumenta el daño en 1d6 adicional.</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Transmutación arcana.</b> Puede cambiar el efecto que cause un hechizo, 
+                        al cambiar su naturaleza por el de tu especialización. En caso de no tener efecto, aplica perforación de 
+                        armadura con 5% de probabilidad por cada núcleo consumido en el hechizo.</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Sortilegio anular.</b> Pueden conjurar la magia en la que se especializan, 
+                        de forma natural, sin la gema.</li>
+                </ul>
+            </p>
+        </p>
+        <p class="parrafo" id="clase_artificiero">
+            <b class="text-danger" style="font-size: 150%;">Artificiero</b>
+            <x class="text-danger" style="font-size: 120%;">Clase principal</x>
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/clases/artificiero.png" alt="">
+            <p class="parrafo">
+                <b>Requerimientos de clase</b>
+                <ul>
+                    <li>3 puntos en Puntería</li>
+                    <li>2 puntos en Agilidad</li>
+                </ul>
+                <b>Especialización</b>
+                <ul>
+                    <li>Arrojadizos, o armas arrojadas.</li>
+                </ul>
+                <b>Stats otorgados por clase</b>
+                <ul>
+                    <li>-5 de Vida Máxima</li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la clase</h3>
+                <b>Nivel 0</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Refinamiento progresivo.</b> Por cada nivel en esta clase, el objeto 
+                        arrojado realiza +1 de daño.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Alquimia Explosiva.</b> Una vez por turno, el Artificiero puede alterar 
+                        una bomba para que explote en un radio mayor, duplicando su área de efecto.</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Lanzamiento Múltiple.</b> El Artificiero puede lanzar dos objetos 
+                        arrojadizos (armas, bombas, pociones, etc) en una sola acción, pero con un -2 en las tiradas de puntería.</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Bomba magnética.</b> Cuando el Artificiero arroja y activa esta bomba, 
+                        crea un campo magnético en una zona de 10 pies; arrojable hasta 60 pies, durante 3 turnos. Dentro de este 
+                        campo, todos los ataques a distancia que utilicen proyectiles metálicos (como balas o flechas) son 
+                        automáticamente repelidos o su trayectoria se desvía, reduciendo considerablemente las posibilidades de 
+                        acertar a los aliados dentro del área de efecto. Este dispositivo no afecta a proyectiles no metálicos o 
+                        ataques mágicos. <br><b class="costo">Creación del mecanismo: </b>1 Bomba vacía + 1 mecanismo + 
+                        Fragmento de berilio.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Bomba melosa.</b> Pueden crear una bomba, que al estallar, cubre de una 
+                        sustancia melosa el suelo, en un radio de 10ft; arrojable hasta 40ft. Todos los que pasen por esa zona, 
+                        deberán superar un 15 en Fuerza para moverse, desaparece naturalmente luego de 3 turnos, o si es quemada 
+                        o mojada.<br><b class="costo">Creación del mecanismo: </b>1 Bomba vacía + Miel + Fragmento de zafiro.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Precisión Mecánica.</b> Obtiene +1 por nivel en Artificiero en puntería 
+                        al utilizar arrojadizas.</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Bombardeo preciso.</b> Una vez por ronda, el Artificiero puede designar 
+                        un área de 6x6 hasta 60 pies de distancia. Todas las armas, bombas, y pociones lanzadas hacia esa área durante 
+                        el turno del Artificiero aterrizan exactamente donde él quiere, sin necesidad de hacer tiradas de puntería. 
+                        Ideal para maximizar la eficacia de las bombas y pociones de área o asegurar el impacto de armas arrojadizas 
+                        contra múltiples objetivos.</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Mecanismo de vacío mágico.</b> Pueden crear un mecanismo arcano, que al 
+                        activarse, estallará, y creará una zona de vacío mágico, en un área de 15ft de radio, desde hasta 40ft. Todos 
+                        los hechizos lanzados en esa zona, o que atraviesen esa zona son eliminados, o pierden su efecto. El efecto 
+                        desaparece luego de 3 turnos, reduciendo en un turno su durabilidad, por cada hechizo que haya anulado. 
+                        <br><b class="costo">Creación del mecanismo: </b>2 mecanismos + 4 Fragmentos de amatista + 2 Polvo de oro.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Mecanismo anulador.</b> Pueden crear bombas anuladoras, que pueden ser 
+                        arrojadas, afectando a 20ft de radio; arrojable hasta 50ft. Todas las bombas, mecanismos mecánicos, arcano-
+                        mecánicos o mecanomágicos, que sean utilizadas en esa zona, pierden su utilidad, y no pueden ser activadas 
+                        nuevamente. No afecta a mecanismos o bombas que ya hayan sido activadas antes de la utilización de esta. 
+                        <br><b class="costo">Creación del mecanismo: </b>3 mecanismos + 6 Fragmentos de diferentes gemas (Mínimo 4 gemas 
+                        diferentes) + 4 Polvos de diferentes metales (Mínimo 3 metales diferentes).</li>
+                </ul>
+            </p>
+        </p> 
+        <h3 class="p-4 titulo_categoria" id="p_maldiciones">Maldiciones</h3>
+        <p>
+            Las maldiciones, son afecciones que azotan a un individuo, dificiles de eliminar o manejar, que pueden aparecer como forma
+            de castigo por parte de un dios, una alteración externa, una plaga o infección, etc. 
+        </p>
+        <p>
+            Aquellas maldiciones que tengan el estado de <b>"Pérdida de cordura"</b> requerirán que la persona se destransforme antes de la
+            3ra mesa que participe estando transformado, o su personaje perderá la cordura, y caerá en locura, perdiendo su personaje.
+        </p>
+        <p>
+            Aquellas maldiciones que tengan el estado de <b>"Infección"</b> pueden propagar su maldición mediante la transformación 
+            voluntaria de alguien que haya sido atacado por el maldito, en ese momento, el animal a transformarse será aleatorio, 
+            transformandose siempre en el mismo luego de la primera vez.
+        </p>
+        <p class="parrafo" id="m_bestia">
+            <b class="text-danger" style="font-size: 150%;">Bestia</b>
+            <x class="text-danger" style="font-size: 120%;">Maldición elegible al inicio</x>
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/maldiciones/bestia.png" alt="">
+            <p class="parrafo">
+                <b>Historia</b>
+                <ul>
+                    <li>Las bestias aparecieron como resultado de un castigo, otorgada por la Diosa de la Luna, hacia sus ciervos, debido
+                        a prácticas que ella determinó como impuras y horribles; ya no queda registro de estas, todo fue destruido luego
+                        del resultado de este castigo; las personas poco a poco empezaron a mutar durante las lunas llenas, cada vez mas
+                        salvajes, hasta terminar uniendose a una forma animal, que sentía enojo todo el tiempo, y solo buscaba destrucción.
+                    </li>
+                </ul>
+                <b>Stats otorgados al transformarse</b>
+                <ul>
+                    <li>+1 en Percepción, Fuerza y Agilidad</li>
+                    <li>-2 en Carisma, Puntería e Inteligencia</li>
+                    <li>+1 Tamaño (Solo las armaduras de cuero se mantienen)</li>
+                    <li>+1 velocidad (El orden de turnos adelanta en uno)</li>
+                    <li><b>Perdida de cordura</b></li>
+                    <li><b>Infección</b></li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la maldición</h3>
+                <b>Nivel 0</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Instinto Feral.</b> Al entrar en este modo, obtienes 2 de Percepción 
+                        durante el resto de la ronda, y tus ataques desarmado aplican sangrado. El primer ataque en este estado 
+                        tiene crítico asegurado. <br><b class="costo">Costo. </b>2 Acciones de utilidad</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Rugido atemorizante.</b> Al comenzar un combate, realizas un fuerte rugido. 
+                        Los participantes deben superar una tirada de tu Carisma en Resistencia o reciben el debufo de "Miedo".</li>
+                </ul>
+                <b>Nivel 2</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Garras infecciosas.</b> Mientras estés en Instinto Feral, puedes causar 
+                        el efecto de veneno, además del sangrado.</li>
+                </ul>
+                <b>Nivel 3</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Embestida salvaje.</b> Carga contra un enemigo, causando 1d4 de daño por 
+                        cada 10ft de distancia, y empujándolo 10ft hacia atrás. Si el enemigo choca contra una pared o un obstáculo, 
+                        recibe 1d8 de daño verdadero. <br><b class="costo">Costo. </b>1 Acción de ataque y 1 Acción de utilidad</li>
+                </ul>
+                <b>Nivel 4</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Aullido de manada.</b> Obtienes 2 puntos en Carisma, y motivas a tus aliados 
+                        en combate. Si superas un 15 en una tirada de Carisma, tus aliados obtienen +2 de daño adicional en sus 
+                        ataques (No acumulable). <br><b class="costo">Costo. </b>1 Acción de ataque y 1 Acción de utilidad</li>
+                </ul>
+                <b>Nivel 5</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Frenesi salvaje.</b> Entra en un estado de frenesí, otorgando 1 Acción 
+                        de ataque, durante este turno. Si dos ataques fueron acertados, el frenesí se extiende hasta la siguiente
+                        ronda. <br><b class="costo">Costo. </b>50% de la vida máxima</li>
+                </ul>
+            </p>
+        </p> 
+        <p class="parrafo" id="m_vampiro">
+            <b class="text-danger" style="font-size: 150%;">Vampiro</b>
+            <x class="text-danger" style="font-size: 120%;">Maldición elegible al inicio</x>
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/maldiciones/vampiro.png" alt="">
+            <p class="parrafo">
+                <b>Historia</b>
+                <ul>
+                    <li>Durante la guerra civil de Fostade, los hechiceros oscuros no podían enfrentarse a la ferocidad de las bestias;
+                        su poder físico podía tolerar la tortura física que suponían sus maleficios, por lo que tuvieron que arriesgarse,
+                        y crear a su propio ejercito de malditos. Mediante la experimentación con bestias y algunos prisioneros, lograron
+                        crear a algo igual de malo, o incluso peor, unas criaturas delgadas, de piel similar a la porcelana, y unos
+                        grandes colmillos, que obtenían su poder de la sangre, debido a que fueron infundidos en la magia de la sangre de
+                        los antiguos hechiceros, teniendo toda una nueva generación de hemomantes; entonces, la guerra ya tenía un nuevo
+                        participante, los Vampiros.
+                    </li>
+                </ul>
+                <b>Stats otorgados al transformarse</b>
+                <ul>
+                    <li>+1 en Agilidad y Fuerza</li>
+                    <li>-2 en Carisma (Lo opuesto para aterrar) y Percepción</li>
+                    <li>+1 velocidad (El orden de turnos adelanta en uno)</li>
+                    <li><b>Perdida de cordura</b></li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la maldición</h3>
+                <b>Nivel 0</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Forma terrorifica.</b> Al iniciar un combate, todos los participantes deben 
+                        lanzar resistencia, y superar tu carisma con ventaja para no tener miedo del ser transformado. En caso de que 
+                        el vampiro busque aterrorizar intencionalmente, se duplica el modificador de carisma.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Sabor a sangre.</b> Obtienen la Magia de sangre. Recuperan 1d8 de vida al 
+                        alimentarse de un ser vivo de su misma especie. Solo pueden beber sangre, comer carne, y brevajes que tengan 
+                        sangre (No aplica para pociones). No usan núcleos de maná. Las pociones de maná no les darán núcleos, pero 
+                        curarse con pociones de vida "por encima de la vida máxima" (No la pasan), les dará 1 núcleo de sangre por 
+                        cada 3 puntos curados por encima de la vida máxima (Solo una vez por ronda de esta manera).</li>
+                </ul>
+                <b>Nivel 1</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Códice diabólico.</b> Por cada nivel (Este incluido), pueden desbloquear 
+                        un hechizo de Magia de Sangre (Si tienen slots disponibles); si en el momento no tienen slots, pueden aprender
+                        la magia apenas tengan un slot disponible.</li>
+                </ul>
+            </p>
+        </p> 
+        <p class="parrafo" id="m_sinalma">
+            <b class="text-danger" style="font-size: 150%;">Sin alma</b>
+            <x class="text-danger" style="font-size: 120%;">Maldición elegible al inicio</x>
+            <img src="https://matiasglr.github.io/Enforth_2.0/files/maldiciones/alma.png" alt="">
+            <p class="parrafo">
+                <b>Historia</b>
+                <ul>
+                    <li>La pureza del alma es algo que la población en general considera como la característica mas bondadosa del ser,
+                        el poder ver que tan buena es una persona mediante su alma, es una táctica que hechiceros usaban en antaño
+                        para juzgar a las personas, e incluso las cortes utilizaban esto como pruebas a favor o en contra. Mediante
+                        la lectura del alma, también, se puede ver que Dios es quien la ha reclamado, todos tienen un Dios, todos...
+                        Un día, durante una sesión de la corte marcial de Suredozo, se trato de revelar el alma de un individuo, quien
+                        había sido acusado de matar a un oficial de la guardia; pero cuando su alma fue a ser mostrada, solo se vio un
+                        hueco infinito, una muestra del vacío que una persona puede tener, con esos ojos blancos y marcas visibles en 
+                        su cuerpo producto de la extirpación del alma, solo causó terror en la sesión, el hecho de que una persona, 
+                        pudiera vivir asi, solamente podía ser seña de pura maldad, que no podía ser simplemente ejecutada, sino, 
+                        eternamente encerrada.
+                    </li>
+                </ul>
+                <b>Stats otorgados al transformarse</b>
+                <ul>
+                    <li>+1 en Agilidad y Fuerza</li>
+                    <li>-2 en Carisma (Lo opuesto para aterrar) y Percepción</li>
+                    <li>+1 velocidad (El orden de turnos adelanta en uno)</li>
+                    <li><b>Perdida de cordura</b></li>
+                </ul>
+                <h3>Habilidades desbloqueadas por nivel en la maldición</h3>
+                <b>Nivel 0</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Espiritu presente.</b> No tienen transformación, pero los sin alma tienen 
+                        ojos levemente luminicos (brillantes blancos, azules o verdes) y tienen alguna cicatriz roja en el rostro.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Inmunidad de alma.</b> No reciben daño por ataques al alma, ni daño por 
+                        armas creadas a base de almas.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Acumulación de favor.</b> Pueden absorber el alma de seres muertos, y así aumentar la acumulación en esta maldición. Al obtener un alma, aun se mantendrá la pasiva de inmunidad de alma. </li>
+                </ul>
+            </p>
+        </p> 
+        <h3 class="p-4 titulo_categoria" id="p_dones">Dones</h3>
+        <p class="parrafo" id="dones">
+            <p>
+                Los dones representan habilidades únicas, bendiciones o poderes innatos que un personaje posee, distinguiéndolos no 
+                solo por sus habilidades o su entrenamiento, sino por características excepcionales que definen su destino o su 
+                esencia misma. Estos dones pueden manifestarse de innumerables formas, influenciando tanto el desarrollo del personaje 
+                como la narrativa del juego. A continuación, se describe con más detalle la naturaleza y el impacto de estos dones:
+
+                <p><b>Origen de los Dones</b></p>
+                Los dones pueden tener diversas fuentes, tales como:
+
+                <ul>
+                    <li><b>Herencia:</b> Algunos dones son el resultado de la línea de sangre de un personaje, transmitidos a través 
+                        de generaciones. Estos pueden vincularse con antiguos pactos, sangre de criaturas mágicas o ascendencia divina.
+                    </li>
+                    <li><b>Eventos Cósmicos o Mágicos:</b> La exposición a fenómenos sobrenaturales, como cometas mágicos, conjuros 
+                        antiguos o artefactos legendarios, puede otorgar dones inesperados o impredecibles.
+                    </li>
+                    <li><b>Bendiciones o Maldiciones:</b> Las deidades, espíritus o entidades poderosas pueden otorgar dones como 
+                        recompensas, o imponerlos como pruebas o maldiciones, a menudo con intenciones ocultas o pruebas adjuntas.
+                    </li>
+                    <li><b>Experiencias Vitales:</b> Algunos dones emergen de experiencias traumáticas, revelaciones personales o 
+                        el logro de una comprensión profunda de los misterios del mundo.                     
+                    </li>
+                </ul>
+                
+            </p>
+            <p class="parrafo">
+                <b>Dones basados en mejoras a mecánicas</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Sangre de Cuarzo.</b> No podrá conjurar magia, pero también será inmune a ella.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Mano Dura.</b> Un arma a dos manos puede ser utilizada a una mano.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Carga.</b> Aumenta el máximo de la mochila hasta 14, y empiezas con una mochila de 14 espacios. Puedes apilar cualquier objeto hasta dos; y, por cada tres puntos en fuerza, apilas uno más.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Casualidad.</b> El personaje puede ser híbrido de una raza no hibridable.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Glotón.</b> Podrás comer hasta tres alimentos distintos, y obtener sus efectos.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Longevidad.</b> Tu personaje no podrá morir por edad o causas naturales, aunque esto no evitará que envejezca.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Perdón.</b> Divide a la mitad todas las pérdidas de karma.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Renacimiento.</b> Cuando tu personaje muera, nacerá un árbol, del que saldrá el personaje nuevamente, en forma de un Naturis, perdiendo todas las habilidades de raza, y siendo reemplazadas por las de esta nueva.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Iniciante.</b> Obtienes 3 puntos de mejora adicionales al comenzar un personaje, y sacarás el máximo en todo lo que requiera una tirada durante una mejora.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Fanático.</b> Todos los aumentos de Karma son duplicados.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Avance.</b> Obtienes tres puntos de mejora al subir de nivel, a partir del nivel 5 (No incluido).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Afinidad Animal.</b> Permite entender a animales comunes, y estos te entiendan.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Guerrero Eterno.</b> Al pelear sin armadura, obtienes un dado adicional de daño en ataques cuerpo a cuerpo, y, además, cambia todos tus efectos por aumento físico, lo que te dará +1 de daño físico adicional por el resto del combate, por cada carga de aumento (Máximo 10). En caso de que la vida baje hasta cero, pueden consumir una carga de aumento, para recuperar una parte de su vida máxima (Hasta dos veces por ronda).</li>
+                </ul>
+                <b>Dones basados en la magia y maldiciones</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Magia.</b> Iniciará el combate con un núcleo mágico por nivel (En caso de ser vampiro, iniciará con núcleos de sangre).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Absorción.</b> Al recibir o bloquear un ataque mágico, recibes un núcleo (En caso de los vampiros, obtienen un Núcleo de Sangre). En caso de tener al menos 5 núcleos guardados, obtienes dos núcleos en lugar de uno.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Afinidad.</b> Puede utilizar hasta una joya adicional en una mano, a cambio de perder el 5% de tu resistencia total, por cada joya adicional que pase las cuatro.</li>
+                </ul>
+                <b>Dones basados en el combate</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Sanguinario.</b> Al asesinar a un enemigo, se obtiene un dado adicional de daño por el resto de la ronda (No acumulable), si la criatura abatida vuelve al combate, se pierde el dado ganado.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Velocidad.</b> Siempre tendrás el primer turno durante un combate.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Recolector.</b> Aumenta la probabilidad de drop del alma de una criatura asesinada al 25%.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Cowboy.</b> Al impactar balas en un enemigo, donde la puntería superó el esquive del adversario por el doble o más, inmediatamente puedes impactarle nuevamente, sin consumir acciones de ataque.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Pelea.</b> Duplica todas las probabilidades de efecto durante un combate.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Especialista.</b> Podrás cambiar armas y utilizar objetos de la mochila de forma rápida, como si se tratara de la riñonera o el cinturón.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Completista.</b> Al tener Yelmo, Guantes, Pecho, Pantalones, arma (y proyectiles, en caso de usar) y escudo del mismo material, aumenta el daño en un dado, y la armadura en uno por nivel (Max. 5).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Incompletista.</b> Al utilizar armas y piezas de armadura todas de diferente material, ganas un dado de daño.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Ninja.</b> Al usar armas como arrojadiza, pueden obtener escalado y mejoras en sus dados. Por cada nivel en Pícaro, aumenta en 1 la puntería al usar arrojadizas.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Ejecutor.</b> Al bajar el aguante de un enemigo hasta cero, este se considerará muerto en lugar de fuera de combate.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Respuesta.</b> Al esquivar un ataque, puedes inmediatamente realizar un ataque no esquivable con un arma cuerpo a cuerpo contra el enemigo atacante. Solo utilizable una vez por turno.</li>
+                </ul>
+                <b>Dones basados en mejoras a tiradas</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Protagonista.</b> Hasta una vez por partida, una tirada puede tener el valor máximo, sin la necesidad de tirar.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Guionista.</b> En caso de sacar un veinte en tirada natural de suerte, la situación se volcará totalmente a tu favor.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Liderazgo.</b> Cuando un aliado cercano a ti (10ft) requiera realizar una tirada de estadística, podrá utilizar tu tirada, si esta es más alta.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Fortuna.</b> Los unos en tiradas de estadística, se contarán como veintes en el valor total de la tirada. Se seguirán aplicando los efectos negativos de haber sacado 1.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Imitador.</b> Hasta cinco veces, cuando debas realizar una tirada enfrentada que no puedas superar, puedes empatar la tirada, causando que se repita la tirada enfrentada (o quede como empate).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Desafortunado.</b> Al obtener dos unos seguidos en un tipo de tirada durante un combate, hará que todas las tiradas del mismo tipo sean de veinte durante el resto del combate.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Fuerza.</b> Obtienes ventaja en tiradas de Fuerza, y dos puntos en esta estadística.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Agilidad.</b> Obtienes ventaja en tiradas de Agilidad, y dos puntos en esta estadística.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Carisma.</b> Obtienes ventaja en tiradas de Carisma, y dos puntos en esta estadística.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Resistencia.</b> Obtienes ventaja en tiradas de Resistencia, y dos puntos en esta estadística.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Percepción.</b> Obtienes ventaja en tiradas de Percepción, y dos puntos en esta estadística.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Inteligencia.</b> Obtienes ventaja en tiradas de Inteligencia, y dos puntos en esta estadística.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Suerte.</b> Obtienes ventaja en tiradas de Suerte, y dos puntos en esta estadística.</li>
+                </ul>
+                <b>Dones basados en armas legendarias</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Martillo.</b> Empiezas la partida en posesión del <b>“Mjolnir”</b>, un martillo de guerra de plata a dos manos cuyo daño siempre será el del material equivalente al nivel del jugador en material (Ver forja). Esta arma causará el efecto de Estatizado, y volverá a tu mano a voluntad tras ser lanzada.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Protector.</b> Empiezas la partida en posesión del <b>“Escudo de Aquiles”</b>, un accesorio de plata que tiene una probabilidad del 10% de anular un daño, su protección será de un punto por cada nivel del jugador, sumado a la protección base de cualquier escudo.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Espada Real.</b> Empiezas la partida en posesión de la <b>“Excalibur”</b>, un espadón de oro a dos manos (1d8). Esta arma tendrá el efecto único de Cegado, que da doble desventaja al esquivar y atacar al afectado, durante el resto de la ronda.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Espadachín Místico.</b> Empiezas la partida en posesión de la <b>“Mystica”</b>, un espadón de cobalto a dos manos (1d8), cuyo daño siempre será el de un arma de Cobalto. Esta arma puede conjurar cualquier magia básica (Arcana, Fuego, Hielo y Electricidad).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Arquero.</b> Empiezas la partida en posesión del <b>“Arco de Apolo”</b>, un arco largo de madera, que usará flechas mágicas, cuyo daño será de 1d8. Al causar daño a un enemigo, el aliado más cercano a este, recuperará una parte del daño causado.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Cosechador.</b> Empiezas la partida en posesión de la <b>“Ratzor”</b>, una guadaña de hierro a dos manos. Al asesinar a un enemigo con esta arma, tienes un 20% de probabilidad de obtener su alma, y en caso de no obtenerla, el arma obtiene un dado de daño, hasta la próxima recolección de alma con este efecto (No acumulable).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Gatillo.</b> Empiezas la partida en posesión de la <b>“Castigadora”</b>, un arma de fuego de titanio a una mano, con munición ilimitada. Al causar efecto con esta arma, aplicará una carga de quemadura y una de veneno en el enemigo, que explotan en el momento, causando el daño. En caso de asesinar o dejar fuera de combate por el efecto de esta arma, te curas tanto como daño haya realizado con este efecto durante esta ronda.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Artillería Mágica.</b> Empiezas la partida en posesión del <b>“Cañón Arcano”</b>, una escopeta de cuarzo a dos manos, que tiene la forma de un cañón de cintura pesado. Este usa gemas y fragmentos de gemas como munición, causando daño en dados de 10 si la munición es una gema, y causando efecto con 100% de probabilidad. En caso de ser un fragmento, hará daño en dados de 6, y causará efecto con 25% de probabilidad. Ningún efecto es escalable, y tiene un rango de disparo máximo de 50ft.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Cazadora de la Selva.</b> Empiezas la partida en posesión del <b>“Aguijón”</b>, una alabarda de hierro a dos manos, que aplica veneno al causar el daño máximo con el dado crítico. Cada que causa sangrado, puede explotar las cargas de veneno, eliminándolas y causando daño por sangrado en tantos dados como los venenos eliminados. Si el daño por sangrado causado por este efecto baja la vida del enemigo hasta cero, lo ejecuta.</li>
+                </ul>
+                <b>Dones basados en clases</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Guerrero.</b> Obtiene un nivel en la Clase de Guerrero (y la clase, si no la tiene).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Picaro.</b> Obtiene un nivel en la Clase de Picaro (y la clase, si no la tiene).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Clérigo.</b> Obtiene un nivel en la Clase de Clérigo (y la clase, si no la tiene).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Fé.</b> Reemplaza la clase de Clérigo por <b>“Paladín”</b>, aunque no se cumplan las condiciones iniciales. El jugador debe tratar de cumplir las condiciones antes del Nivel 5, o este Don se anulará, ocupando el espacio de Don. Cualquier pérdida de Karma llevará al jugador a ser castigado, perdiendo las habilidades dadas por el Dios durante 1d6 días.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Luchador.</b> Obtiene un nivel en la Clase de Luchador (y la clase, si no la tiene).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Mago.</b> Obtiene un nivel en la Clase de Mago (y la clase, si no la tiene).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Ranger.</b> Obtiene un nivel en la Clase de Ranger (y la clase, si no la tiene).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Artificiero.</b> Obtiene un nivel en la Clase de Artificiero (y la clase, si no la tiene).</li>
+                </ul>
+                <b>Dones basados en profesiones y conocimientos</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Trabajador.</b> Ganas el doble de puntos de profesión.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Cazador.</b> Aumenta el daño contra animales en 1 dado por ronda. Conoce su debilidad luego de la 2da ronda.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Minero.</b> Se duplica la obtención de minerales, y duplica la ratio de aparición del Platino.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Maestro.</b> Puede enseñar los conocimientos generales y mágicos que sepa, a otros, sin requerir tiradas.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Profesional.</b> Comienzas con una profesión a Nivel 10 (Excepto <b>“Herrero”</b>, <b>“Alquimista”</b>, <b>“Armero”</b>, <b>“Bardo”</b>, <b>“Guardia”</b>, <b>“Joyero”</b>, <b>“Domador”</b> o <b>“Mercenario”</b>).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Guía.</b> Sabrás la ubicación de cofres y entradas ocultas en Mazmorras.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Fundidor.</b> Podrás obtener todos los lingotes al reciclar un objeto que use los mismos, en lugar de la mitad.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Traductor.</b> Comienzas sabiendo todos los idiomas.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Conocedor.</b> Comienzas con todos los conocimientos básicos.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Ahorrista.</b> Al crear un objeto, tienes 50% de probabilidad de gastar un material menos (No aplica para el Platino).</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Platinado.</b> Tienes probabilidad del 10% de encontrar un mineral de platino dentro de las rocas de mineral.</li>
+                </ul>
+                <b>Dones basados en la economía</b>
+                <ul>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Falsificador.</b> Puedes utilizar cualquier moneda al realizar compras.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Ricachón.</b> Toda obtención de ganancia, tendrá un 10% más, y los bancos no te cobrarán comisión por cambios de moneda.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don del Contratista.</b> El pagarle a <b>“Mercenarios”</b> para realizar trabajos, te saldrá 50% más barato.</li>
+                    <li><b style="color:rgb(33, 0, 151)">Don de la Negociación.</b> Los productos pueden comprarse hasta un 10% más barato, o vender hasta un 10% más caro, dependiendo de la tirada de Carisma al regatear.</li>
+                </ul>
+            </p>
+        </p>
+        
     </div>
 </main>
