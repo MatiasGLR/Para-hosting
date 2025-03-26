@@ -64,6 +64,8 @@
         width: 300px;
         max-width: 300px;
         margin:10px;
+        max-height: 350px;
+        object-fit: cover;
     }
 
     .costo {
@@ -85,6 +87,7 @@
             <li onclick="window.location.href='#w_modalidad'">Modalidad de juego</li>
             <li onclick="window.location.href='#w_progreso'">Progresos de historia</li>
         </ul>
+        <h1>Capitulo 1. Personaje</h1>
         <h4><b>Personaje</b></h4>
         <ul class="search">
             <li onclick="window.location.href='#p_guia'">Guía de creación de personaje</li>
@@ -169,10 +172,11 @@
                 <li onclick="window.location.href='#m_sinalma'">Sin alma</li>
             </ul>
             <li onclick="window.location.href='#p_dones'">Dones</li>
-            <li>Explicación de puntos de mejora</li>
-            <li>Inventario de jugador</li>
-            <li>Reputación</li>
-            <li>Idiomas</li>
+            <li onclick="window.location.href='#p_niveles'">Niveles y experiencia</li>
+            <li onclick="window.location.href='#p_mejoras'">Explicación de puntos de mejora</li>
+            <li onclick="window.location.href='#p_reputacion'">Reputación</li>
+            <li onclick="window.location.href='#p_inventario'">Inventario de jugador</li>
+            <li onclick="window.location.href='#p_idiomas'">Idiomas</li>
         </ul>
         <h4><b>Divinidades</b></h4>
         <ul class="search">
@@ -3267,6 +3271,404 @@
                 </ul>
             </p>
         </p>
-        
+        <h3 class="p-4 titulo_categoria" id="p_niveles">Niveles y experiencia</h3>
+        <p class="parrafo"> 
+            <b>Nivel de personaje.</b> Es el nivel general del personaje, que se obtiene mediante puntos de experiencia. El límite 
+            del mismo es de 20.
+            <b>Nivel de raza.</b> Recién descubiertas o recién aceptadas, las habilidades raciales son incipientes. Los personajes 
+            apenas comienzan a explorar el potencial que yace dentro de su herencia. A medida que los niveles van avanzando, pueden 
+            ir mejorando y desbloqueando habilidades, asi como conocimientos o tácticas relacionadas a la raza y su historia.
+            <b>Nivel de clase.</b> Acabas de embarcarte en tu camino, con conocimientos básicos y una gran ambición. Tus habilidades 
+            son rudimentarias, pero tu potencial es ilimitado. La aventura te espera, y cada desafío superado te forjará en el guerrero, 
+            mago, pícaro, o lo que hayas elegido ser. A medida que vayas subiendo de nivel en tu clase, podrás ir desbloqueando 
+            habilidades de la misma, que potenciaran las armas y estrategias que se vean relacionadas a la misma.
+            <b>Nivel de maldición.</b> Ha sido afectado por la maldición, probablemente desde su nacimiento, mostrando signos de su 
+            influencia. Puede que aún no entienda completamente lo que le ha ocurrido, pero a nota cambios sutiles en su ser, algunos 
+            días sintiéndose diferente sin saber por qué, pero nota que mientras mas evoluciona la maldición, mas poderosa se hace.
+            <b>Puntos de experiencia.</b> Permiten subir de nivel al alcanzar el limite establecido por nivel.
+            <ul>
+                <li><b>Nivel 0.</b> El personaje comienza aqui.</li>
+                <li><b>Nivel 1.</b> 15 puntos de experiencia.</li>
+                <li><b>Nivel 2.</b> 50 puntos de experiencia.</li>
+                <li><b>Nivel 3.</b> 100 puntos de experiencia.</li>
+                <li><b>Nivel 4.</b> 250 puntos de experiencia.</li>
+                <li><b>Nivel 5.</b> 400 puntos de experiencia.</li>
+                <li><b>Nivel 6 y superiores.</b> Cada 200 puntos de experiencia.</li>
+            </ul>    
+        </p>
+        <h3 class="p-4 titulo_categoria" id="p_mejoras">Explicación de puntos de mejora</h3>
+        <p class="parrafo">
+            Los puntos de mejora permiten a un jugador avanzar en su personaje. Los puntos de mejora se obtienen al subir de nivel,
+            obteniendo <b>2 puntos de mejora</b> de esta forma (Pueden ser modificados mediante habilidades u otros). Cuando un
+            personaje es creado, comienza con 8 puntos de mejora, los cuáles pueden ser consumidos, para realizar alguna de las 
+            siguientes mejoras correspondientes, solo se puede tomar una opción de la lista al pagar los puntos.
+            <h3>Mejoras de un punto</h3>
+            <ul>
+                <li>Subir de nivel en la raza, lo que te dará las habilidades de la raza principal e hibridada de ese nivel.</li>
+                <li>Subir de nivel en la clase, lo que te dará las habilidades de ese nivel de la clase.</li>
+                <li>Subir de nivel en la maldición, lo que te dará las habilidades de ese nivel de la maldición.</li>
+                <li>Desbloquear un slot de hechizo o táctica.</li>
+                <li>Subir de nivel en una profesión que ya sea de Nivel 1 (Excepto herrero, alquimista, guardia, mercenario, armero, 
+                    joyero o bardo.)</li>
+                <li>Obtienes 25d200 monedas (Qurs, Kalis o Sarix).</li>
+                <li>Aprendes un conocimiento básico.</li>
+                <li>Aprendes un conocimiento magico básico.</li>
+                <li>Reiniciar los usos de un don (Si los tiene) o recuperar un arma obtenida por el Don, si la perdiste.</li>
+                <li>Obtienes 20 Tickets de viaje gratis.</li>
+            </ul>
+            <h3>Mejoras de dos puntos</h3>
+            <ul>
+                <li>Desbloquear una clase (Si tienes slots disponibles), o cambiar una clase de Nivel 5 con requerimientos de reputación 
+                    por su subclase.</li>
+                <li>Aumenta tu Karma en 3d10.</li>
+                <li>Aprendes una magia semi-avanzada.</li>
+            </ul>
+            <h3>Mejoras de tres puntos</h3>
+            <ul>
+                <li>Aprendes un idioma.</li>
+            </ul>
+        </p>
+        <h3 class="p-4 titulo_categoria" id="p_reputacion">Reputación</h3>
+        <p>En el mundo en el que te encuentras, la reputación es una faceta vital de la vida de cualquier aventurero, mercader, artesano 
+        o noble. No se trata solo de la percepción de los demás hacia ti, sino de un sistema intrincado que abre puertas a nuevas 
+        oportunidades y riquezas, moldeando tu camino y tus relaciones en este vasto mundo. Imagina por un momento que tus hazañas y 
+        tus esfuerzos van tejiendo una red de conexiones invisibles, cada acción que realizas, cada decisión que tomas, resuena entre 
+        las comunidades, los gremios y hasta entre los mismos dioses. Comenzando con la manera en que interactúas en el mercado, tu 
+        reputación puede ser el viento a favor que necesitas para negociar. Los comerciantes, reconociendo tu estatus y buena voluntad, 
+        te ofrecen precios que el común de los mortales no podría ni soñar. Esta ventaja no es trivial, ya que adquirir equipos, 
+        pociones y artefactos a menor costo puede ser la diferencia entre la victoria y la derrota en tus futuras aventuras.</p>
+
+        <p>Pero el poder de la reputación no se detiene en meros descuentos. A medida que te adentras más en el corazón de las 
+            profesiones, descubres que una reputación elevada es la llave maestra para trabajos que no solo ponen a prueba tus 
+            habilidades sino que también llenan tus bolsillos con oro. Estos encargos, encomendados solo a aquellos en los que 
+            se confía y se respeta profundamente, te permiten no solo crecer en riqueza sino también en experiencia, otorgándote 
+            una visión más profunda de tu arte o oficio, y quizás, uno de los regalos más preciados de una reputación inmaculada 
+            sea el acceso a los secretos largamente guardados de tu profesión. En este mundo, el conocimiento es tan valioso como 
+            el oro, si no más. Ser iniciado en las técnicas ocultas, aprender recetas de alquimia que pueden torcer el destino o 
+            descubrir los misteriosos encantamientos de antiguos artefactos, es un honor reservado para aquellos que han demostrado 
+            su valía y dedicación. Este conocimiento no solo amplía tus horizontes sino que también te empodera para enfrentar 
+            desafíos aún mayores, fortaleciendo tu leyenda y tu legado en este mundo.
+        </p>
+
+        <p>Así, la reputación se convierte en tu compañera silenciosa, una fuerza que moldea tu destino en el tejido de este mundo. 
+            No es simplemente un número o un nivel, sino el reflejo de tu viaje, de las vidas que has tocado y de las historias que 
+            te has entrelazado. Con cada paso que das hacia la grandeza, la reputación te precede, abriendo caminos y tejiendo la 
+            leyenda de tu nombre.
+        </p>
+        <b>Al tener una cierta cantidad de puntos, obtienes los siguientes beneficios:</b>
+        <ul>
+            <li><b>5.</b> El personaje empieza a recordarte.</li>
+            <li><b>15.</b> El personaje te tiene algo de confianza.</li>
+            <li><b>25.</b> El personaje confia en ti.</li>
+            <li><b>50.</b> El personaje es tu amigo.</li>
+            <li><b>75.</b> El personaje, si es comerciante, te hace 10% de descuento.</li>
+            <li><b>100.</b> El personaje, si es comerciante, te hace 20% de descuento.</li>
+        </ul>
+        <b>Al tener una cierta cantidad de puntos negativos, obtienes lo siguiente:</b>
+        <ul>
+            <li><b>-5.</b> El personaje empieza a recordarte.</li>
+            <li><b>-15.</b> El personaje te tiene mucha desconfianza.</li>
+            <li><b>-25.</b> El personaje te resiente, y puede llamar a la guardia.</li>
+            <li><b>-50.</b> El personaje te atacará, o llamará a la guardia.</li>
+        </ul>
+        <h3 class="p-4 titulo_categoria" id="p_reputacion">Inventario</h3>
+        <p class="parrafo">
+            Se denomina inventario, a todo lo que sirva para transportar los objetos o recursos encontrados durante una exploración,
+            o comprados por el jugador para su supervivencia.
+            <h2>Tipos de inventario</h2>
+            <b>Mochila</b>
+            <ul>
+                <li><b>Capacidad inicial.</b> 1</li>
+                <li><b>Capacidad máxima.</b> 9 (14 con el Don de la Carga)</li>
+                <li><b>Método de mejora.</b>  Usar cueros duros con un kit de taller y conocimiento de talabartería, cada cuero duro 
+                    le aumentará en 1 su espacio.</li>
+                <li><b>Utilidad.</b>  Pueden usarse objetos desde aquí, pero en caso de un combate, si se está cerca de un
+                    enemigo, le dará un ataque de oportunidad.</li>
+            </ul>
+            <b>Riñonera</b>
+            <ul>
+                <li><b>Capacidad inicial.</b> 0</li>
+                <li><b>Capacidad máxima.</b> 4</li>
+                <li><b>Utilidad.</b> Pueden usar rapidamente objetos de aquí, por lo que no darán ataque de oportunidad, y
+                    pueden usar objetos antes de comenzar un combate desde aquí</li>
+            </ul>
+            <b>Cinturón</b>
+            <ul>
+                <li><b>Capacidad inicial.</b> 0</li>
+                <li><b>Capacidad máxima.</b> 3</li>
+                <li><b>Utilidad.</b> Pueden usar rapidamente objetos de aquí, por lo que no darán ataque de oportunidad, y
+                    pueden usar objetos antes de comenzar un combate desde aquí</li>
+            </ul>
+            <b>Fundas extras</b>
+            <ul>
+                <li><b>Capacidad inicial.</b> 0</li>
+                <li><b>Capacidad máxima.</b> 5</li>
+                <li><b>Utilidad.</b> Solo puede colocarse una categoría de objeto dentro de estas fundas, elegible durante
+                    la creación del mismo. Puede usarse rapidamente, sin gastar acciones de utilidad.</li>
+            </ul>
+            <h2>Objetos equipados</h2>
+            <ul>
+                <li><b>Manos. </b>Puedes llevar cualquier tipo de objeto que pueda ser llevado en los otros espacios, estos 
+                    pueden ser usados inmediatamente, como si del cinturón o riñonera se tratase. Aqui se equipan las armas.
+                    Solo tienes un slot por mano (Máximo 2).</li>
+                <li><b>Joyas. </b>Pueden ser utilizadas en el cuello, manos, orejas, etc. dependiendo del tipo de joya que 
+                    sea. Un personaje tiene 6 slots de este tipo.</li>
+                <li><b>Extras. Son adicionales a la armadura, como la cota de malla, o los trajes. Hay 2 slots de este tipo, 
+                    pero solo se puede usar objetos defensivos en solo uno.</b></li>
+                <li><b>Armadura. </b>Puedes llevar 4 piezas de armadura equipadas, las cuales son el yelmo, peto, pantalones 
+                    y guantes, estos últimos aplicarán su efecto al atacar desarmado.</li>
+            </ul>
+            <h2>Reglamento de inventario</h2>
+            <ul>
+                <li><b>Apilado de objetos. </b>Solo pueden apilarse objetos que tiendan a tener una cantidad alta, como las 
+                    municiones, las monedas, y los polvos de los lingotes. La forma de apilar mas objetos, sería mediante las 
+                    habilidades de las profesiones, o con el Don de la Carga, que aumenta en 1 el máximo que un objeto puede 
+                    ser apilado, siempre que sea del mismo tipo, y en caso de armas y equipamiento modificable, tiene que 
+                    contener el mismo encantamiento, nivel, etc.</li>
+                <li><b>Uso de objetos en narrativo. </b>Durante los momentos narrativos, se pueden hacer uso rápido sin problema 
+                    de objetos dentro de la riñonera, funda extra o el cinturón, pero los objetos de la mochila, requerirán 
+                    superar una tirada de Agilidad.</li>
+                <li><b>Uso de objetos en combate. </b>Durante los momentos de combate, utilizar objetos de la funda extra no 
+                    constará ningun tipo de acción; la riñonera y el cinturón consumirán una Acción de utilidad, y la mochila
+                    consumirá dos acciones de utilidad.
+                    Si se utiliza un objeto para atacar, siempre consumirá sus correspondientes acciones de ataque.
+                    Si se usa un objeto para curar, o cualquier acción que requiera una adicional, no consumirá acciones 
+                    adicionales (excepto atacar), la Acción de utilidad contará como "Sacar objeto para curar", por ejemplo</li>
+            </ul>
+            <h2>Otros inventarios</h2>
+            <ul>
+                <li><b>Cofrerro.</b> Durante tu aventura, quizá encuentres un objeto mágico, llamado "Cofrerro" que es un pequeño 
+                    cofre viviente que te sigue, mientras tu tengas su llave en tu inventario. El cofrerro tragará todos los items 
+                    que le des, siempre y cuando este tenga espacio, y funcionará como un cofre móvil. Los slots que el cofrerro 
+                    tiene para llevar items, son los siguientes, dependiendo de su material.
+                    <ul>
+                        <li><b>Madera. </b>2</li>
+                        <li><b>Hierro. </b>3</li>
+                        <li><b>Plata. </b>4</li>
+                        <li><b>Oro. </b>5</li>
+                        <li><b>Infernita. </b>6</li>
+                    </ul>
+                    Es importante tomar en cuenta, que si un objeto muy caliente, como la infernita, es dejada en un cofre de madera, 
+                    este puede resultar dañado o muerto, y no será recuperable.</li>
+                <li><b>Carreta. </b>Esta puede ser comprada a un Carpintero (Ver tienda), y puede ser usada para cargar objetos en la aventura. La 
+                    carreta te permitirá avanzar dos casillas en lugar de una, pero solo se podrá transitar por caminos (Lineas 
+                    negras en el mapa). La carreta tendrá tantos slots, como su nivel de mejora, que son los siguientes:
+                    <ul>
+                        <li><b>Madera. </b>2</li>
+                        <li><b>Cobre. </b>4</li>
+                        <li><b>Hierro. </b>6</li>
+                        <li><b>Plata. </b>8</li>
+                        <li><b>Oro. </b>10</li>
+                    </ul>
+                    Las mejoras pueden hacerse en un herrero, con 30 lingotes del material correspondiente (Las mejoras deben 
+                    hacerse en orden, ejemplo, para mejorarla a hierro, primero hay que pasar por cobre), sumado a un 20% por su 
+                    mano de obra, y 500 monedas. La cantidad de objetos que se pueden apilar, será de 5 por cada slot</li>
+                <li><b>Cofres de casas.</b> Los cofres de las casas pueden apilar cualquier objeto de forma ilimitada, aunque
+                    la cantidad de slots que estos tienen, dependerá de la mejora realizada a la casa</li>
+            </ul>
+        </p>
+        <h3 class="p-4 titulo_categoria" id="p_reputacion">Idiomas</h3>
+        <p>Para comunicarte con otro ser de este mundo, debes compartir su idioma, en caso de no hacerlo, no podrás entender,
+            y este no podrá entenderte a ti. Puedes aprender idioma mediante puntos de mejora.
+        </p>
+        <ul>
+            <li>
+            <b>Revent. </b>
+            El Revent es el idioma más extendido y comúnmente hablado en casi todo el mundo, comparable al inglés en nuestra realidad. Funciona como la lengua franca entre diferentes razas y culturas, facilitando la comunicación, el comercio y las relaciones diplomáticas a través de vastos territorios.
+            </li>
+            <li>
+            <b>Ledusval. </b>
+            El Ledusval es el idioma nativo del gélido continente de Loux. Su estructura y vocabulario están adaptados para describir con precisión la fría y dura vida en estas tierras. Los sonidos del Ledusval a menudo imitan el crujir de la nieve y el silbido del viento helado.
+            </li>
+            <li>
+            <b>Naturis. </b>
+            El Naturis es un idioma exclusivo de la raza Naturis, entrelazado profundamente con la magia natural y la vida forestal. Este idioma permite una comunicación única con la naturaleza, siendo capaz de expresar conceptos que otras lenguas no pueden.      
+            </li>
+            <li>
+            <b>Esder. </b>
+            El Esder es el antiguo idioma de los dragones y también es hablado por los humanos y otras razas que habitan Foreign Frontier, una montaña llena de nidos de dragón. Es un idioma lleno de matices y tonalidades que reflejan el poder y la majestuosidad de estos seres milenarios.
+            </li>
+            <li>
+            <b>Liven. </b>
+            El Liven es una variante del Revent, hablado en el continente de Fostade. Aunque comparte algunas palabras y estructuras con el Revent, el Liven ha desarrollado sus propias peculiaridades y giros lingüísticos que lo distinguen claramente.
+            </li>
+            <li>
+            <b>Selga. </b>
+            El Selga es un idioma único hablado por los demonios, caracterizado por la inclusión de chirridos y chillidos junto a palabras convencionales. Este idioma es conocido por su capacidad para expresar conceptos y emociones oscuras con gran precisión.
+            </li>
+            <li>
+            <b>Terak. </b>
+            El Terak es el idioma exclusivo de los Orcos nativos de la gran urbe de Rukakhlan. Este idioma es particularmente desafiante de hablar para aquellos que no son nativos, ya que su pronunciación implica el riesgo de rupturas dentales y produce sonidos que pueden resultar molestos para los no acostumbrados. Los colmillos de los Orcos nativos de Rukakhlan están adaptados para hablar Terak sin dañarse, lo que hace que este idioma sea un marcador cultural distintivo de los Orcos de esta ciudad. Los Orcos que no son nativos de Rukakhlan generalmente no hablan Terak debido a estas dificultades físicas y sonoridades peculiares.
+            </li>
+            <li>
+            <b>Koi. </b>
+            El Koi es un idioma único que se habla en Suredozo. Es una combinación de elementos de los idiomas japonés y coreano, reflejando una mezcla cultural profunda y rica. Se caracteriza por su belleza fonética, un sistema de escritura que combina caracteres ideográficos con un alfabeto fonético, y una gramática que enfatiza la cortesía y el respeto. A través del Koi, se transmiten tradiciones, filosofías, y artes, sirviendo como un nexo que une a las comunidades de Suredozo con una identidad común. Se habla principalmente en las ciudades de Raitosodo y Pandleins, siendo un vehículo para la expresión literaria, artística y espiritual única de la región.
+            </li>
+            <li>    
+            <b>Emión. </b>
+            El Emión es el idioma celestial hablado por los dioses y arcángeles, un idioma de poder divino que trasciende el entendimiento mortal. Su conocimiento y uso están generalmente fuera del alcance de los seres terrenales, reservado para aquellos que tienen un vínculo directo con lo divino.
+            </li>
+        </ul>
+        <h1>Capitulo 2. Divinidades</h1>
+        <p>
+            Los dioses son seres de inmenso poder, quienes fueron los responsables de que exista la realidad y todo lo que esta 
+            conlleva, antes del espacio, solo había vacío, donde estos existían, en su estado mas etéreo. El Creador, creyendo 
+            que sus hijos eran muy conflictivos entre si, decidió, que crear vida inferior a ellos, y hacerlos prosperar, sería 
+            una buena forma de moldear su carácter, lo que terminó siendo muy efectivo.
+        </p>
+        <p>
+            Los dioses controlaron los destinos de sus ciervos, interfiriendo cuando querían, por lo que, luego de una gran catastrofe, 
+            debido a que muchos querían tener a la mayoría, en especial uno de los hermanos, quien atacó a los demás para reclamar 
+            las almas mortales; el mayor de los hermanos, en ese momento, tuvo que tomar la decisión mas dificil, y asesinar a su 
+            hermano, en defensa de los demás, enviandolo a una dimensión alternativa.
+        </p>
+        <p>
+            Desde entonces, han sido mas benevolentes con sus esbirros, dandoles a algunos de los mas fieles a ellos, algunos poderes 
+            para poder actuar en su nombre, estas son las habilidades que obtienen los Paladines, y que se describirán en las 
+            siguientes secciones.
+        </p>
+        <p>
+            Los dioses tienen lo llamado "Karma", que es la Fé hacia tu dios, y la fidelidad de tu alma, mientras mejor sea, mas
+            fé tendrás hacia tu dios. Tendrás ademas las <b>habilidades comunes</b>, y las <b style="color:#0caaca">habilidades de
+            paladin</b>, las habilidades de Paladin solo se podrán desbloquear cuando se sea Paladín, las habilidades comunes
+            no lo requieren.
+        </p>
+        <p>
+            Hay 2 tipos de costos para las habilidades:
+            <ul>
+                <li><b>Requerimiento. </b>Significa que tienes que tener esa cantidad de Karma para usar la habilidad.</li>
+                <li><b>Costo de adquisición. </b>Debe ser pagado al menos una vez, para tener la habilidad disponible.</li>
+                <li><b>Costo. </b>El costo de utilización común, para aplicarla en el momento.</li>
+            </ul>
+        </p>
+        <h3>Dios del Sol, Aureon</h3>
+        <img src="https://i.pinimg.com/736x/b8/f5/f8/b8f5f83add8935a4d3be532ee82d9790.jpg" alt="dios del sol">
+        <p>Es uno de los dioses más viejos entre sus hermanos, siendo uno de los más serios, que no admite las bromas y el jugueteo 
+            con los seres del mundo, aunque estos no les pertenezcan. Este creó a los vampiros, como parte de un experimento con las 
+            maldiciones que se salió de control, prometiendo que no iba a dejar que los demás volvieran a cometer su error, aunque en 
+            un descuido con su hermana gemela, esta copió los resultados de su experimento como castigo a sus ciervos, pero con una 
+            maldición diferente.</p>
+        <b>Habilidades provistas por este, para seres comunes</b>
+        <ul>
+            <li><b>Karma. </b>La subida y disminución de Karma de este Dios es arbitraria, por lo que no hay una forma fija de subir 
+                o bajar</li>
+            <li><b>Iluminanos. </b>Las habilidades que tengan daño de fuego, causarán una carga extra de quemadura.</li>
+        </ul>
+        <b>Habilidades provistas por este, para paladines</b>
+        <ul>
+            <li><b style="color:#0caaca">Lanza solar. </b>Puedes conjurar una lanza hecha de fuego, utilizable a una mano junto 
+                con el escudo, que tendrá el mismo daño y efecto que un arma de Oricalco. Por cada carga de quemadura que tengan 
+                tus enemigos, ganarás un punto de daño fijo.
+                <br><b class="costo">Costo. </b>Una acción de ataque y una acción de utilidad.</li>
+            <li><b style="color:#0caaca">Escudo solar. </b>Puedes conjurar un escudo hecho de fuego, cuya protección y efecto 
+                será el mismo que un escudo de Oricalco. Eres inmune a la quemadura mientras portes este escudo.
+                <br><b class="costo">Costo. </b>Una acción de ataque y una acción de utilidad.</li>
+        </ul>
+        <h3>Diosa de la Luna, Sylithra</h3>
+        <img src="https://i.pinimg.com/736x/96/f4/dc/96f4dce14562a65ecbdb3ee01660ca79.jpg" alt="diosa de la luna">
+        <p>Al igual que el Dios del Sol, fueron creados en el mismo momento, siendo gemelos, por decirlo de un modo, aunque esta, 
+            a diferencia de él, siempre ha sido más pasional y bromista, por lo que, cuando una comunidad de sus seguidores empezó 
+            a burlarse de ella y a hacer rituales en su contra, esta los castigó de una manera brutal, lanzándoles una maldición en 
+            la que estos se convertirían en bestias salvajes, pudiendo estos con el tiempo, controlar esta maldición con el perdon 
+            de su diosa.</p>
+        <b>Habilidades provistas por este, para seres comunes</b>
+        <ul>
+            <li><b>Karma. </b>La subida y disminución de Karma de este Dios es arbitraria, por lo que no hay una forma fija de subir 
+                o bajar</li>
+            <li><b>Maldición heredada. </b>Si tienes una maldición, esta comienza en Nivel 1.</li>
+        </ul>
+        <b>Habilidades provistas por este, para paladines</b>
+        <ul>
+            <li><b style="color:#0caaca">Control de Maldición Parcial. </b>Pueden controlar cuando convertirse en su forma maldita, 
+                mas no pueden elegir cuando volver a su forma normal
+                <br><b class="costo">Costo. </b>Maldición Nivel 3 y 50 Karma.</li>
+            <li><b style="color:#0caaca">Control de Maldición Total. </b>Pueden cambiar voluntariamente entre forma maldita y normal, 
+                y no reciben los efectos negativos de las maldiciones.
+                <br><b class="costo">Costo. </b>Maldición Nivel 10 y 100 Karma.</li>
+        </ul>
+        <h3>Diosa de la Batalla, Drakhaia</h3>
+        <img src="https://i.pinimg.com/736x/be/dd/a4/bedda4281eb890f9195ee54ce9ee5ba6.jpg" alt="diosa de la batalla">
+        <p>Se le prohibió durante un tiempo el tener cualquier alma a su merced, debido a que siempre ponía a sus ciervos en un estado 
+            de locura por la pelea, causando varios desastres. Todo se rompió el día que causó una guerra civil, donde murieron muchas 
+            personas, pertenecientes a tus hermanos, por lo que se le prohibió el reclamar almas durante un tiempo, aunque actualmente 
+            ya puede tener ciervos nuevamente.</p>
+        <b>Habilidades provistas por este, para seres comunes</b>
+        <ul>
+            <li><b>Karma. </b>Obtienes 3 de Karma al ganar un combate, y pierdes 3 de Karma al perder, o huir de un combate.</li>
+            <li><b>Furia desenfrenada. </b>Al recibir daño, van ganando furia igual al daño recibido.
+            <br><b class="costo">Costo de adquisición. </b>30 de Karma</li>
+            <li><b>Golpe furioso. </b>Al tener 30 de Furia, tus ataques tendrán un dado adicional de daño.
+            <br><b class="costo">Costo de adquisición. </b>30 de Karma</li>
+        </ul>
+        <b>Habilidades provistas por este, para paladines</b>
+        <ul>
+            <li><b style="color:#0caaca">Grito de batalla. </b>Eliminas todas las cargas de un efecto que tengas.
+                <br><b class="costo">Costo. </b>15 de Furia y una Acción de utilidad</li>
+            <li><b style="color:#0caaca">Entrado en combate. </b>Al tener 50 de Furia, la probabilidad de aplicar el efecto de tus 
+                armas (No el del material, magia, imbuición, etc.), tendrá 50% de probabilidad.
+                <br><b class="costo">Costo. </b>Maldición Nivel 10 y 100 Karma.</li>
+            <li><b style="color:#0caaca">Espejo en rabia. </b>No necesitas utilizar un escudo para aplicar las habilidades de Paladín, 
+                en cambio deberás usar dos Espadas largas en dual.
+                <br><b>Requiere. </b>60 de Karma.
+            <li><b style="color:#0caaca">Negando el dolor. </b>No recibes daño hasta el final de la ronda.
+                <br><b>Requiere. </b>50 de Karma.
+                <br><b class="costo">Costo. </b>30 de Furia y 1 Acción de ataque</li>
+        </ul>
+        <h3>Dios de la Miseria, Vyssar</h3>
+        <img src="https://i.pinimg.com/736x/e9/0d/ff/e90dff16cb20e565c7b6210c68efe3c1.jpg" alt="dios de la miseria">
+        <p>El padre Dios lo creó con el fin de que nivelara un poco el estado de los mortales, creyó que había demasiada paz y 
+            felicidad en el mundo, por lo que su objetivo principal, era causar destrucción entre las propias personas, propagando 
+            enfermedades, odio, tiranía, cualquier cosa que pudiera dar algo de infelicidad a los que poblaban el mundo.</p>
+        <b>Habilidades provistas por este, para seres comunes</b>
+        <ul>
+            <li><b>Karma. </b>Obtienes Karma cada que seas miserable, o causes miseria a alguien, también podrías perderlo por 
+                evitar la miseria, aunque no siempre es el caso.</li>
+            <li><b>Búsqueda de miseria. </b>Tienes ventaja en tiradas de Carisma que busquen hacer miserable o triste a alguien.</li>
+            <li><b>Emanación de plaga. </b>Cualquier ser a 5ft de ti, al inicio de su turno, obtendrá una carga de veneno.</li>
+        </ul>
+        <b>Habilidades provistas por este, para paladines</b>
+        <ul>
+            <li><b style="color:#0caaca">Disolución de esperanza. </b>Cualquier enemigo a 10ft de ti o menos, no podrá curarse, 
+                y los efectos de curación realizados por sí mismo o sus aliados, le pondrán 1 carga de veneno.
+                <br><b>Requiere. </b>40 de Karma.</li>
+            <li><b style="color:#0caaca">Destrucción Interna. </b>Todas las tiradas de daño por veneno, realizadas por un enemigo, 
+                debido a un veneno dado por ti, tendrá ventaja.
+                <br><b>Requiere. </b>60 de Karma.</li>
+        </ul>
+        <h3>Dios de la Muerte, Khoros</h3>
+        <img src="https://i.pinimg.com/736x/f8/c1/d3/f8c1d3b438625d9a21b88f2ae3801510.jpg" alt="dios de la muerte">
+        <p>La sobrepoblación se estaba volviendo un problema para los inmortales seres que vivían en la tierra, por lo que el padre 
+            Dios creó a este, con el fin de bajar la cantidad de seres en el mundo, volviéndolos mortales. Tras un tiempo, el trabajo 
+            empezó a agotar a este, por lo que creó unos seres nombrados como “Parcas”, cuya labor era asesinar a cualquier persona 
+            que haya vivido mucho, o que haya hecho algo por lo que mereciera morir, pero luego de que este dios abandonara el mundo, 
+            las Parcas se dieron a sí mismos nuevas órdenes, asesinar a cualquiera que se les cruce.</p>
+        <b>Habilidades provistas por este, para seres comunes</b>
+        <ul>
+            <li><b>Karma. </b>Obtienes una cantidad variable de Karma al asesinar a alguien, o al ayudar en el asesinato.</li>
+            <li><b>Acopio de torturas. </b>Tu siguiente ataque tendrá perforación de armadura, imbuyendo el filo con sombras
+            <br><b class="costo">Costo. </b>15 de Karma y una Acción de utilidad</li>
+            <li><b>Masacre. </b>Todos los seres abatidos en el combate, son asesinados.
+            <br><b class="costo">Costo de adquisición.</b> 20 de Karma.
+            <br><b class="costo">Costo.</b> 10 de Karma y 1 Acción de ataque.</li>
+        </ul>
+        <b>Habilidades provistas por este, para paladines</b>
+        <ul>
+            <li><b style="color:#0caaca">Guillotina. </b>Puedes crear una Guadaña de Parca, la cual tendrá el doble de probabilidad 
+                de arrebatar un alma al asesinar con ella, el daño será el igual que un arma a dos manos pesada promedio, y el efecto 
+                de Sangrado, el cual, al aplicarlo, explotará en el momento. Esta arma desaparecerá al terminar el combate.
+                <br><b class="costo">Costo. </b>2 Acciones de utilidad, y 1 Acción de ataque.</li>
+        </ul>
+        <h3>Diosa de la Naturaleza, Fylara</h3>
+        <img src="https://i.pinimg.com/736x/3e/08/df/3e08df3c31d044dc26c19802b31bae33.jpg" alt="diosa de la naturaleza">
+        <p>Encargada de crear toda la vegetación y los animales del mundo, siendo además uno de los dioses más permisivos, entiende 
+            que el accionar de todos es algo natural, y no algo que debe ser penalizado. Esta creó a los Naturis, a fin de que 
+            cuidaran el mundo, pues, aunque permitiera esas acciones, no le gustaba que fuera destruido solo por la avaricia y 
+            maldad.</p>
+        <b>Habilidades provistas por este, para seres comunes</b>
+        <ul>
+            <li><b>Karma. </b>La subida y disminución de Karma de este Dios es arbitraria, por lo que no hay una 
+                forma fija de subir o bajar.</li>
+            <li><b>Naturaleza. </b>Obtienes la magia de la naturaleza, y puedes crear habilidades en base a la misma.</li>
+        </ul>
     </div>
 </main>
