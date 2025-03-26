@@ -87,7 +87,6 @@
             <li onclick="window.location.href='#w_modalidad'">Modalidad de juego</li>
             <li onclick="window.location.href='#w_progreso'">Progresos de historia</li>
         </ul>
-        <h1>Capitulo 1. Personaje</h1>
         <h4><b>Personaje</b></h4>
         <ul class="search">
             <li onclick="window.location.href='#p_guia'">Guía de creación de personaje</li>
@@ -180,24 +179,25 @@
         </ul>
         <h4><b>Divinidades</b></h4>
         <ul class="search">
-            <li>Dios del Sol</li>
-            <li>Diosa de la Luna</li>
-            <li>Diosa de la Batalla</li>
-            <li>Dios de la Miseria</li>
-            <li>Dios de la Muerte</li>
-            <li>Diosa de la Naturaleza</li>
-            <li>Dios de la Justicia</li>
-            <li>Barlghon, el Dragòn Ancestral</li>
+            <li onclick="window.location.href='#p_divinidades'">Explicación de las divinidades</li>
+            <li onclick="window.location.href='#d_sol'">Dios del Sol, Aureon</li>
+            <li onclick="window.location.href='#d_luna'">Diosa de la Luna, Sylithra</li>
+            <li onclick="window.location.href='#d_batalla'">Diosa de la Batalla, Drakhaia</li>
+            <li onclick="window.location.href='#d_miseria'">Dios de la Miseria, Vyssar</li>
+            <li onclick="window.location.href='#d_muerte'">Dios de la Muerte, Khoros</li>
+            <li onclick="window.location.href='#d_naturaleza'">Diosa de la Naturaleza, Fylara</li>
+            <!--<li>Dios de la Justicia</li>
+            <li>Barlghon, el Dragòn Ancestral</li>-->
         </ul>
         <h4><b>Sistema de combate</b></h4>
         <ul class="search">
-            <li>¿Que es el combate?</li>
-            <li>Funcionamiento del combate</li>
-            <li>Declaración, acción y reacción</li>
-            <li>Funcionamiento del daño</li>
-            <li>Tipos de daño</li>
-            <li>Funcionamiento de los efectos</li>
-            <li>Listado de efectos</li>
+            <li onclick="window.location.href='#p_quecombate'">¿Que es el combate?</li>
+            <li onclick="window.location.href='#p_combate'">Funcionamiento del combate</li>
+            <li onclick="window.location.href='#p_deacre'">Declaración, acción y reacción</li>
+            <li onclick="window.location.href='#p_fdaños'">Funcionamiento del daño</li>
+            <li onclick="window.location.href='#p_daños'">Tipos de daño</li>
+            <li onclick="window.location.href='#p_fefectos'">Funcionamiento de los efectos</li>
+            <li onclick="window.location.href='#p_efectos'">Listado de efectos</li>
             <li>Tipos de armas cuerpo a cuerpo</li>
             <li>Tipos de armas a distancia</li>
             <li>Proyectiles de armas a distancia</li>
@@ -255,7 +255,7 @@
         para
         realizar diarios de campaña para la historia oficial, jugada por el grupo principal de Cuentos de Enforth
 
-        <h1>Personaje</h1>
+        <h1>Capitulo 1. Personaje</h1>
         <h3 class="p-4 titulo_categoria" id="p_guia">Guía de creación de personaje</h3>
         <p class="parrafo">
             <b>Ficha</b>
@@ -3509,7 +3509,7 @@
             El Emión es el idioma celestial hablado por los dioses y arcángeles, un idioma de poder divino que trasciende el entendimiento mortal. Su conocimiento y uso están generalmente fuera del alcance de los seres terrenales, reservado para aquellos que tienen un vínculo directo con lo divino.
             </li>
         </ul>
-        <h1>Capitulo 2. Divinidades</h1>
+        <h1 id="p_divinidades">Capitulo 2. Divinidades</h1>
         <p>
             Los dioses son seres de inmenso poder, quienes fueron los responsables de que exista la realidad y todo lo que esta 
             conlleva, antes del espacio, solo había vacío, donde estos existían, en su estado mas etéreo. El Creador, creyendo 
@@ -3528,6 +3528,10 @@
             siguientes secciones.
         </p>
         <p>
+            Todos los jugadores (a excepción de quien no tenga alma) tendrán a un dios que sea dueño de su alma, y esta será su
+            divinidad
+        </p>
+        <p>
             Los dioses tienen lo llamado "Karma", que es la Fé hacia tu dios, y la fidelidad de tu alma, mientras mejor sea, mas
             fé tendrás hacia tu dios. Tendrás ademas las <b>habilidades comunes</b>, y las <b style="color:#0caaca">habilidades de
             paladin</b>, las habilidades de Paladin solo se podrán desbloquear cuando se sea Paladín, las habilidades comunes
@@ -3541,7 +3545,7 @@
                 <li><b>Costo. </b>El costo de utilización común, para aplicarla en el momento.</li>
             </ul>
         </p>
-        <h3>Dios del Sol, Aureon</h3>
+        <h3 id="d_sol">Dios del Sol, Aureon</h3>
         <img src="https://i.pinimg.com/736x/b8/f5/f8/b8f5f83add8935a4d3be532ee82d9790.jpg" alt="dios del sol">
         <p>Es uno de los dioses más viejos entre sus hermanos, siendo uno de los más serios, que no admite las bromas y el jugueteo 
             con los seres del mundo, aunque estos no les pertenezcan. Este creó a los vampiros, como parte de un experimento con las 
@@ -3564,7 +3568,7 @@
                 será el mismo que un escudo de Oricalco. Eres inmune a la quemadura mientras portes este escudo.
                 <br><b class="costo">Costo. </b>Una acción de ataque y una acción de utilidad.</li>
         </ul>
-        <h3>Diosa de la Luna, Sylithra</h3>
+        <h3 id="d_luna">Diosa de la Luna, Sylithra</h3>
         <img src="https://i.pinimg.com/736x/96/f4/dc/96f4dce14562a65ecbdb3ee01660ca79.jpg" alt="diosa de la luna">
         <p>Al igual que el Dios del Sol, fueron creados en el mismo momento, siendo gemelos, por decirlo de un modo, aunque esta, 
             a diferencia de él, siempre ha sido más pasional y bromista, por lo que, cuando una comunidad de sus seguidores empezó 
@@ -3586,7 +3590,7 @@
                 y no reciben los efectos negativos de las maldiciones.
                 <br><b class="costo">Costo. </b>Maldición Nivel 10 y 100 Karma.</li>
         </ul>
-        <h3>Diosa de la Batalla, Drakhaia</h3>
+        <h3 id="d_batalla">Diosa de la Batalla, Drakhaia</h3>
         <img src="https://i.pinimg.com/736x/be/dd/a4/bedda4281eb890f9195ee54ce9ee5ba6.jpg" alt="diosa de la batalla">
         <p>Se le prohibió durante un tiempo el tener cualquier alma a su merced, debido a que siempre ponía a sus ciervos en un estado 
             de locura por la pelea, causando varios desastres. Todo se rompió el día que causó una guerra civil, donde murieron muchas 
@@ -3614,7 +3618,7 @@
                 <br><b>Requiere. </b>50 de Karma.
                 <br><b class="costo">Costo. </b>30 de Furia y 1 Acción de ataque</li>
         </ul>
-        <h3>Dios de la Miseria, Vyssar</h3>
+        <h3 id="d_miseria">Dios de la Miseria, Vyssar</h3>
         <img src="https://i.pinimg.com/736x/e9/0d/ff/e90dff16cb20e565c7b6210c68efe3c1.jpg" alt="dios de la miseria">
         <p>El padre Dios lo creó con el fin de que nivelara un poco el estado de los mortales, creyó que había demasiada paz y 
             felicidad en el mundo, por lo que su objetivo principal, era causar destrucción entre las propias personas, propagando 
@@ -3635,7 +3639,7 @@
                 debido a un veneno dado por ti, tendrá ventaja.
                 <br><b>Requiere. </b>60 de Karma.</li>
         </ul>
-        <h3>Dios de la Muerte, Khoros</h3>
+        <h3 id="d_muerte">Dios de la Muerte, Khoros</h3>
         <img src="https://i.pinimg.com/736x/f8/c1/d3/f8c1d3b438625d9a21b88f2ae3801510.jpg" alt="dios de la muerte">
         <p>La sobrepoblación se estaba volviendo un problema para los inmortales seres que vivían en la tierra, por lo que el padre 
             Dios creó a este, con el fin de bajar la cantidad de seres en el mundo, volviéndolos mortales. Tras un tiempo, el trabajo 
@@ -3658,7 +3662,7 @@
                 de Sangrado, el cual, al aplicarlo, explotará en el momento. Esta arma desaparecerá al terminar el combate.
                 <br><b class="costo">Costo. </b>2 Acciones de utilidad, y 1 Acción de ataque.</li>
         </ul>
-        <h3>Diosa de la Naturaleza, Fylara</h3>
+        <h3 id="d_naturaleza">Diosa de la Naturaleza, Fylara</h3>
         <img src="https://i.pinimg.com/736x/3e/08/df/3e08df3c31d044dc26c19802b31bae33.jpg" alt="diosa de la naturaleza">
         <p>Encargada de crear toda la vegetación y los animales del mundo, siendo además uno de los dioses más permisivos, entiende 
             que el accionar de todos es algo natural, y no algo que debe ser penalizado. Esta creó a los Naturis, a fin de que 
@@ -3670,5 +3674,198 @@
                 forma fija de subir o bajar.</li>
             <li><b>Naturaleza. </b>Obtienes la magia de la naturaleza, y puedes crear habilidades en base a la misma.</li>
         </ul>
+        <h1>Capitulo 3. Combate</h1>
+        <h3 id="p_quecombate">¿Que es el combate?</h3>
+        <p>El combate es la forma en que jugadores, NPCs, bestias, criaturas, jefes y enemigos en general, resuelven una disputa
+            física, ya sea con el fin de obtener un botín por la fuerza, detener una emboscada, cazar animales, etc. Para ello
+            se utiliza el llamado <b>sistema de combate</b> el cuál plantea las normativas a seguir, para que el combate se mantenga
+            fluido, con la menor cantidad de demoras y problemas entre jugadores.
+        </p>
+        <h3 id="p_combate">Las bases del combate</h3>
+        <p class="parrafo">
+            <b style="margin-top:20px">Comenzando el combate</b>
+            Puedes posicionarte en cualquier lugar del tablero (A menos que un evento especifique que te encuentres en una posición, 
+            como, por ejemplo, entrar por una puerta). A partir de aqui, se lanzan las iniciativas de todos los participantes del 
+            combate (Realizadas mediante una tirada de Agilidad). Se pasan a ordenar los turnos de mayor a menor en base a los valores; 
+            si dos participantes son parte del mismo equipo, pueden intercambiar sus turnos, siempre y cuando no haya un enemigo entre
+            ambos.
+            
+            <b style="margin-top:20px">Iniciando tu turno</b>
+            Cuando tu turno comienza, tus acciones se restablecen, y puedes hacer lo que creas conveniente, con los objetos y acciones 
+            disponibles. Cada que realices un ataque, perderás una acción de ataque, y cuando realices otro tipo de acción (Utilizar 
+            objetos, mirar tu mochila, levantar o curar a un aliado, moverte, etc) consumirás una acción de utilidad. En caso de que 
+            te encuentres abatido en el inicio de tu turno, otro jugador puede realizar una tirada de salvación, mediante un d20 base, 
+            superando un 10, y, en caso de superarlo, te levantarás con 1 de vida; si la tirada de salvación fue critica (20 natural), te 
+            levantarás con 1d12 de vida (No puede pasar tu limite de vida máxima), en caso de que el salvador sea un médico, puede
+            lanzar Primeros Auxilios (Escala con inteligencia), y aplicará lo del 20, para cualquier valor superior a 20.
+    
+            <b id="p_daño" style="margin-top:20px">Atacando a un enemigo</b>
+            Si te encuentras a una distancia posible de ataque (Dependiendo de tu arma, como los arcos, que tienen un rango mayor, o 
+            las armas cuerpo a cuerpo largas, que atacan a 10ft) puedes realizar una tirada de puntería, donde el oponente puede 
+            decidir si esquivar (Agilidad*3, maximo 15) o simplemente resistir el ataque (Puntería vs Protección total, armadura / 2). 
+            En caso de lograr impactar el ataque contra el enemigo, se restará la armadura, escudo, protecciones y resistencia del 
+            enemigo de ese daño, y el restante lo restará de su vida.
+    
+            <b style="margin-top:20px">Moviendose en el campo de batalla</b>
+            Un participante puede moverse una cantidad de casillas, consumiendo una acción de utilidad en el proceso, no se pueden 
+            atravesar paredes, muros u obstaculos, sino que contará como una acción adicional, en este caso, escalar un muro, árbol, 
+            roca, etc. y costará una acción de utilidad adicional, requiriendo además, la tirada de agilidad correspondiente.
+    
+            <b style="margin-top:20px">Ganando un combate</b>
+            Cuando todos los enemigos sean derrotados (Están abatidos o muertos) el combate se contará como ganado. En caso de que 
+            los abatidos sean jugadores, estos tendrán una última tirada de salvación, con un 20 natural, y superando 10; en caso de 
+            superarlo, se levantarán con 1 punto de vida, cada jugador solo tendrá una oportunidad de este tipo.
+    
+            <b style="margin-top:20px">Muerte del personaje</b>
+            Cuando tu vida baje hasta cero, serás abatido, y si recibes un ataque en este estado, tu personaje será asesinado; en 
+            caso de no volver a la vida (Mediante resucitación mágica, médica, o cualquier otro medio establecido) antes de terminado 
+            el combate, o inmediatamente después que el combate termina, el personaje será irrecuperable, y el jugador puede proceder 
+            a crearse un personaje nuevo.
+    
+            <b style="margin-top:20px">Uso de consumibles</b>
+            Durante un combate puedes utilizar consumibles que pueden aumentar tus características, curarte, o incluso atacar. Los 
+            consumibles que ataquen, consumirán acciones de ataque, y el resto de consumibles, consumirán acciones de utilidad. Si 
+            un consumible fue utilizado desde un lugar externo a riñoneras, fundas extra y cinturones, consumirá una acción de 
+            utilidad adicional (Ejemplo, agarrar algo del suelo, un cofre, la mochila, etc.)
+    
+            <b style="margin-top:20px">Acciones narrativas</b>
+            Las acciones narrativas se pueden realizar mediante el uso de acciones de utilidad, y una tirada relacionada a la acción 
+            que se busque realizar. Un ejemplo de acción narrativa, sería agarrar a un enemigo por detrás, para que un aliado le 
+            ataque sin que pueda esquivar, en ese caso, deberán de lanzar Fuerza por detrás del enemigo, contra la Fuerza de este 
+            para comprobar si se libera.
+    
+            <b style="margin-top:20px">Ataque con armas a distancia</b>
+            Hay dos tipos de armas a distancia (Si no contamos arrojadizas); arcos y ballestas, y las armas de fuego. Los arcos y 
+            ballestas se recargan con una acción de utilidad tras cada uso, mientras que las armas de fuego tienen desventaja en 
+            su puntería.
+    
+            <b style="margin-top:20px">Ataque de oportunidad</b>
+            Es un ataque realizable de forma gratuita (Sin costo) hacia un enemigo que se quiere alejar de ti (Excepto si esquivó), 
+            o si está realizando un acción lenta (Ej. Revisar mochila, cofre, levantar un objeto del piso, etc) que tenga un coste 
+            de utilidad mayor a uno, en ese caso podrán realizar un ataque sin costo contra este (Requiere tirar puntería).
+    
+            <p class="parrafo">
+                <b>Ataque critico</b>
+                Si tu dado de ataque sale con el máximo valor (Ej. tienes 1d6 en tu daño, si ese dado sale 6); el ataque será critico, y agregará un dado mas al daño (En caso de tener varios dados, será el dado de menor valor).
+                También se aplicará un critico adicional, si sale 20 (Natural) en el dado de puntería, restando 1 al 20 por cada 5% de probabilidad de critico.
+            </p>
+            <p class="parrafo">
+                <b>Limite de daños</b>
+                Un jugador puede tener daño fijo igual a su dado de daño como máximo al iniciar un combate, aunque puede ganar mas dados y daños en el transcurso del combate, pero no puede duplicar el valor del dado.
+            </p>
+            <h3 id="p_deacre">Declaración, Acción y Reacción</h3>
+            <p class="parrafo">
+                <p>Para guiarnos en como fluye un combate, se toma todo con la regla de la "Declaración, Acción y Reacción", los cuales
+                    ponen las bases para un correcto orden, y aquí se procede a explicar cada una.
+                </p>
+                <p class="parrafo">
+                    <b>Declaración</b>
+                    La declaración, es cuando tu dices que acción vas a realizar en un combate, como por ejemplo, atacar, moverte, usar
+                    un objeto, realizar un hechizo, etc; en este momento, la acción aun no se realiza, sino que se espera a la declaración
+                    del oponente, o de los dados a realizar, en caso de ser necesario, (por ejemplo, una respuesta para el ataque, sería
+                    la necesidad de una tirada de puntería, y la respuesta del oponente, sería si decide esquivar o resistir).
+                </p>
+                <p class="parrafo">
+                    <b>Acción</b>
+                    Este es el momento en el que ocurren las acciones declaradas, en el orden que fueron declaradas (A menos que haya
+                    algo en el orden que lo altere, como inmovilizar a un enemigo, que puede evitar que ataque). En este paso, es 
+                    cuando se realizan las tiradas correspondientes, como la puntería, daño, etc.
+                </p>
+                <p class="parrafo">
+                    <b>Reacción</b>
+                    Luego de que se realizaron las tiradas para determinar los daños y los ataques en las acciones, se pueden realizar 
+                    las reacciones, ya sea de los participantes de ese duelo, o de sus compañeros, que busquen apoyar o defender. Es
+                    importante tener en cuenta, que las acciones de reacción de los duelistas, no puede ser contradictoria a su acción 
+                    declarada, es decir, si su decisión fue esquivar, o resistir, esta no podrá ser cambiada por otra de igual tipo, 
+                    como por ejemplo, el Parry, pero si, para utilizar algun hechizo defensivo rápido.
+                </p>
+            </p>
+            <h3 id="p_fdaños">Funcionamiento de los daños</h3>
+            <p class="parrafo">
+
+            </p>
+            <h3 id="p_daños">Tipos de daños</h3>
+            <ul>
+                <li><b>Daño físico. </b>Es causado por cualquier fuente directa, que no esté provista de magia, como un impacto
+                directo con un puño.</li>
+                <li><b>Daño mágico. </b>Cualquier fuente de daño mágico, como hechizos, armas inbuidas, o cualquier habilidad
+                que transmute el daño de un arma</li>
+                <li><b>Daño verdadero. </b>Es aquel que ignora cualquier tipo de armadura, y causa el daño directo a la vida</li>
+            </ul>
+            <h3 id="p_fefectos">Funcionamiento de los efectos</h3>
+            <p class="parrafo">
+                <b id="p_efecto">Aplicar efecto</b>
+                Los efectos son aplicados cuando la tirada de puntería (Sin modificador) fue igual o superior a 20 (Disminuido en 1 por 
+                cada 5% de probabilidad de efecto). Se aplican todos los efectos que sean
+                del mismo tipo, desde abajo hacia arriba, es decir, si tienes Infusión y Material de quemadura, y el arma tiene sangrado, 
+                aplicas las 2 quemaduras, ya que tiene mas prioridad (Ver justo abajo).
+        
+                <b style="margin-top:20px">Prioridad de efectos</b>
+                Un arma puede llegar a tener varios efectos sobre ella, debido a varias condiciones; como por ejemplo, estar imbuida 
+                durante un combate, o tener un cierto material, por ello es importante saber, que efecto de los que esta arma tiene 
+                vas a aplicar, y es tan sencillo como seguir este orden:
+                <ol>
+                    <li><b>Infusión. </b>Es la primera, debido a que su efecto es temporal, y se activa manualmente mediante algun 
+                        hechizo u objeto</li>
+                    <li><b>Encantamiento. </b>Es provisto por un hechizo que el arma tenga, y que mantenga permanentemente el filo 
+                        inbuido en algun tipo de magia</li>
+                    <li><b>Material. </b>Ciertos materiales proveen de características especiales al arma, como el Titanio, que le 
+                        da veneno.</li>
+                    <li><b>Arma. </b>El arma por si misma posee un efecto, el cuál puede ser usado, si no posees ninguno de los efectos 
+                        anteriores.</li>
+                </ol>
+                <p class="parrafo">
+                    <b>Escalera de efectos</b>
+                    Si tienes en tu prioridad de efectos, varios efectos repetidos (Ejemplo, Inbuida en fuego, y el encantamiento es de fuego), los efectos se sumarán, causando una carga adicional de efecto.
+                </p>
+            </p>
+            <h3 id="p_efectos">Tipos de efectos</h3>
+            <p class="parrafo">
+                <b>Inmunidad a efectos</b>
+                Cuando un personaje tiene una inmunidad a un efecto, significa que no recibe daño o alteraciones por el mismo, pero aun puede recibir las cargas.
+            </p>
+            <p class="parrafo">
+                <ul>
+                    <li><b>Absorción </b>(Mágico). Te curas el daño que causes al enemigo (No puedes curarte por encima de tu vida 
+                        máxima).</li>
+                    <li><b>Ceguera </b>(Fisico o Mágico). Impide la visión del afectado, por lo que le elimina su modificador de 
+                        puntería. Si la fuente es física, puede eliminarse mediante una acción de utilidad (De ser fisicamente posible).
+                    </li>
+                    <li><b>Congelamiento </b>(Mágico). Los ataques tendrán -1 de daño por carga. A las 10 cargas, el jugador no podrá 
+                        realizar acciones. El recibir una carga de quemadura, eliminará todas las cargas de congelamiento. Pierdes una 
+                        parte de las cargas al final de tu turno (Excepto durante climas frios).
+                    </li>
+                    <li><b>Encantado </b>(Fisico). El enemigo se quedará atontado con quien lo encantó, y solo le prestará atención
+                    a este, sin poder atacarlo, puede liberarse con un enfrentado de Carismas</li>
+                    <li><b>Envenenado </b>(Fisico o Mágico). Recibe 1d4 de daño, al final del turno del afectado. A partir de las 5 
+                        cargas, obtiene además, desventaja en Agilidad y Puntería.
+                    </li>
+                    <li><b>Estatizado </b>(Mágico). El afectado no puede moverse si tiene una pieza de armadura o arma de metal.</li>
+                    <li><b>Derribo </b>(Fisico). El afectado cae al suelo, puede levantarse con una acción de utilidad, si no se 
+                        levanta, sus esquives tendrán desventaja (-1), y no podrá atacar cuerpo a cuerpo.</li>
+                    <li><b>Desarme </b>(Fisico). Arroja el arma del afectado en 1d4 cuadros de distancia en dirección opuesta a quien 
+                        aplicó el efecto. Si el afectado tenía un escudo, se prioriza el escudo.</li>
+                    <li><b>Miedo </b>(Fisico o Mágico). El afectado no puede atacar o moverse en dirección al causante de su miedo. 
+                        Se vuelve inmune a esto durante una ronda, mediante una tirada de Valentía (Resistencia mayor a 15 en la 
+                        tirada)</li>
+                    <li><b>Oscuridad </b>(Mágico). No causas daño. Al causar 10 cargas, el enemigo es asesinado.</li>
+                    <li><b>Perforación </b>(Físico). Ignora la armadura (Yelmo, Peto, Pantalones, Guantes y Extras de defensa) al 
+                        momento de atacar.</li>
+                    <li><b>Provocado </b>(Físico). El enemigo atacará a quien lo provocó, puede salvarse en un enfrentado de
+                    su Resistencia contra el Carisma del causante</li>
+                    <li><b>Quemadura </b>(Físico o Mágico). Causa 1d4 de daño, al final del turno del afectado, al llegar a 4 cargas, 
+                        el daño pasa a ser 1d6, y las 8 cargas, 1d8. Las cargas pueden ser eliminadas mediante una fuente de agua.</li>
+                    <li><b>Quemadura helada </b>(Mágico). Si el afectado ataca fisicamente a quien le colocó estas cargas, estas 
+                        explotan y le causan 1d6 de daño + 1 por carga. Pueden ser removidas con altas temperaturas.</li>
+                    <li><b>Roñoso </b>(Físico). Este efecto solo afecta a armas. Pierde su valor y efecto de arma y material.</li>
+                    <li><b>Rompearmadura </b>(Físico). Desgasta la armadura del oponente, al llegar a 10 cargas, rompe una pieza 
+                        aleatoria de su armadura (Yelmo, Peto, Pantalones, Guantes o Extras de defensa).</li>
+                    <li><b>Sangrado </b>(Físico). Causa 1d4 de daño, al inicio del turno del afectado, al llegar a 10 cargas, el 
+                        afectado es abatido.</li>
+                    <li><b>Saqueo </b>(Mágico). Causa 1d6 de daño al alma, y roba una pequeña parte de la misma, aumentando en +1 tu 
+                        daño. El aumento de daño solo aplica 1 vez por enemigo diferente.</li>
+                </ul>
+            </p>
+        </p>
     </div>
 </main>
