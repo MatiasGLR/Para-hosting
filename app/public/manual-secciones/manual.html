@@ -98,8 +98,31 @@
         width: 100%;
         text-align: left;
     }
+    .botonarriba {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: red;
+        width: 50px; /* Ajusta el tamaño según lo que necesites */
+        height: 50px; /* Mismo tamaño para hacer el fondo redondo */
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        border-radius: 50%;
+        color: white; /* Color del texto */
+        font-size: 28px; /* Ajusta el tamaño del símbolo ^ */
+        cursor: pointer;
+    }
+
+    .botonarriba h1 {
+        margin: 0; /* Elimina el margen predeterminado del h1 */
+        padding-bottom: 10px;
+    }
 </style>
 <main>
+    <div class="botonarriba">
+        <h1  onclick="window.location.href='#indice'">^</h1>
+    </div>
     <div class="header">
         <h1 class="text-center p-4 pb-0">Cuentos de Enforth</h1>
         <h5 class="text-center">Manual de rol</h5>
@@ -225,10 +248,10 @@
             <li onclick="window.location.href='#p_daños'">Tipos de daño</li>
             <li onclick="window.location.href='#p_fefectos'">Funcionamiento de los efectos</li>
             <li onclick="window.location.href='#p_efectos'">Listado de efectos</li>
-            <li>Tipos de armas cuerpo a cuerpo</li>
-            <li>Tipos de armas a distancia</li>
+            <li onclick="window.location.href='#p_armascc'">Listado de armas cuerpo a cuerpo</li>
+            <li>Listado de armas a distancia</li>
             <li>Proyectiles de armas a distancia</li>
-            <li>Tipos de armas de fuego</li>
+            <li>Listado de armas de fuego</li>
             <li>Proyectiles de armas de fuego</li>
             <li>Armas arrojadizas</li>
             <li>Daño fijo otorgado por el material del proyectil o del arma</li>
@@ -3909,8 +3932,9 @@
                         daño. El aumento de daño solo aplica 1 vez por enemigo diferente.</li>
                 </ul>
             </p>
-            <h3 id="p_fefectos">Listado de armas</h3>
-            El arma provee el daño base en los ataques, proviendo el <b>daño variable</b>.
+            <h3 id="p_armascc">Listado de armas cuerpo a cuerpo</h3>
+            El arma provee el daño base en los ataques, proviendo el <b>daño variable</b>. Las armas tendrán un efecto adicional cuando 
+            están mejoradas a +5, esa habilidad es la que está justo debajo del nombre.
             <h4>Otros tipos de armamento</h4>
             <table class="tabla3">
                 <thead>
@@ -3926,9 +3950,65 @@
                     <tr><td><b>Arma</b></td><td><b>Efecto</b></td><td><b>Dado</b></td></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Daga</td><td>Sin efecto</td><td>1d4</td></tr>
+                    <tr><td>Daga</td><td>Sangrado</td><td>1d4</td></tr>
                     <tr><td><b>Backstab.</b> Al atacar por la espalda, siempre causa una carga de sangrado al enemigo.</td></tr>
-                    <tr><td>Espada corta</td><td>Sin efecto</td><td>1d4</td></tr>
+                    <tr><td>Espada corta</td><td>Sangrado</td><td>1d4</td></tr>
+                    <tr><td><b>Backstab.</b> Al atacar por la espalda, siempre causa una carga de sangrado al enemigo.</td></tr>
+                    <tr><td>Estoque</td><td>Desarme</td><td>1d6</td></tr>
+                    <tr><td><b>Parry distintivo.</b> Al aplicar Parry mediante la habilidad de Guerrero, puedes aplicar desarme, en lugar
+                        de causar daño, por una acción de utilidad.</td></tr>
+                    <tr><td>Cestus</td><td>Derribo</td><td>1d6</td></tr>
+                    <tr><td><b>Knockout.</b> Si causas critico en 5 ataques seguidos contra el mismo enemigo, este será abatido.</td></tr>
+                    <tr><td>Látigo dentado</td><td>Sangrado</td><td>1d6</td></tr>
+                    <tr><td><b>Desprotegido.</b> Si el enemigo resiste tu ataque y tiene un escudo, puedes realizar desarme en su escudo.</td></tr>
+                </tbody>
+            </table>
+            <h4>Armas ligeras a dos manos</h4>
+            <table class="tabla3">
+                <thead>
+                    <tr><td><b>Arma</b></td><td><b>Efecto</b></td><td><b>Dado</b></td></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Lanza</td><td>Perforación</td><td>1d8</td></tr>
+                    <tr><td><b>Distancia.</b> Ataca a 10ft de distancia.</td></tr>
+                    <tr><td>Jabalina</td><td>Perforación</td><td>1d8</td></tr>
+                    <tr><td><b>Distancia.</b> Ataca a 10ft de distancia.</td></tr>
+                    <tr><td>Tridente</td><td>Sangrado</td><td>1d8</td></tr>
+                    <tr><td><b>Distancia.</b> Ataca a 10ft de distancia.</td></tr>
+                </tbody>
+            </table>
+            <h4>Armas pesadas a una mano</h4>
+            <table class="tabla3">
+                <thead>
+                    <tr><td><b>Arma</b></td><td><b>Efecto</b></td><td><b>Dado</b></td></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Cimitarra</td><td>Sangrado</td><td>1d6</td></tr>
+                    <tr><td><b>Abriendo heridas.</b> Tus ataques criticos aplican sangrado.</td></tr>
+                    <tr><td>Katana</td><td>Sangrado</td><td>1d6</td></tr>
+                    <tr><td><b>Desviación.</b> Puedes realizar parry a proyectiles si tienes al menos 5 en puntería.<br>
+                    <x style="color:#0c38ca">Si el arma fue hecha por un herrero de Suredozo, gana además, la capacidad 
+                    de desviar hechizos, con al menos 6 en puntería.</x></td></tr>
+                    <tr><td>Hacha</td><td>Sangrado</td><td>1d6</td></tr>
+                    <tr><td><b>Mutilación.</b> Los animales atacados morirán, si se les causa daño y quedan con el 10% de su vida o 
+                    menos.</td></tr>
+                    <tr><td>Maza</td><td>Derribo</td><td>1d6</td></tr>
+                    <tr><td><b>Golpe pesado.</b> Al atacar a un enemigo, o realizar un parry, lo aleja a 5ft de distancia, y, si impacta 
+                    contra un obstáculo, les aplica derribo.</td></tr>
+                    <tr><td>Martillo</td><td>Derribo</td><td>1d6</td></tr>
+                    <tr><td><b>Golpe pesado.</b> Al atacar a un enemigo, o realizar un parry, lo aleja a 5ft de distancia, y, si impacta 
+                    contra un obstáculo, les aplica derribo.</td></tr>
+                    <tr><td>Espada larga</td><td>Sangrado</td><td>1d6</td></tr>
+                    <tr><td><b>Caballero.</b> Si tienes un escudo en tu otra mano, te vuelves inmune al desarme.</td></tr>
+                    <tr><td>Schiavona</td><td>Desarme</td><td>1d6</td></tr>
+                    <tr><td><b>Parry distintivo.</b> Al aplicar Parry mediante la habilidad de Guerrero, puedes aplicar desarme, 
+                    en lugar de causar daño, por una acción de utilidad.<br>
+                    <x style="color:#0c38ca">Si el arma fue hecha por un herrero de Endricci, gana además, el efecto de Rompearmadura</x></td></tr>
+                    <tr><td>Morningstar</td><td>Sangrado</td><td>1d6</td></tr>
+                    <tr><td><b>Picos afilados.</b> Ignora 3 puntos de la armadura enemiga, +1 adicional por cada golpe efectuado contra ese enemigo,
+                    incluso si el ataque no impactó</td></tr>
+                    <tr><td>Pico</td><td>Sin efecto</td><td>1d6</td></tr>
+                    <tr><td><b>Creado para la ocasión.</b> Si atacas a un ser creado de minerales, ignoras 5 de la resistencia del enemigo.</td></tr>
                 </tbody>
             </table>
         </p>
