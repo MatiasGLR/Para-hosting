@@ -71,6 +71,33 @@
     .costo {
         color:rgb(187, 0, 0)
     }
+
+    table {
+        width: 100%;
+        border-collapse: collapse; /* Une los bordes */
+    }
+    
+    th, td {
+        /*border-right: 1px solid black;*/
+        padding: 8px;
+    }
+    th:last-child, td:last-child {
+        border-right: none;
+    }
+    
+    tbody tr:nth-child(2n) {
+        border-bottom: 2px solid black; /* Borde inferior cada dos filas */
+    }
+    thead {
+        background-color: #eee;
+        text-align: center;
+        border-bottom: 2px solid black; /* Borde inferior para el encabezado */
+    }
+    .full-row td {
+        border-right: none; /* Sin bordes entre columnas */
+        width: 100%;
+        text-align: left;
+    }
 </style>
 <main>
     <div class="header">
@@ -3782,7 +3809,23 @@
             </p>
             <h3 id="p_fdaños">Funcionamiento de los daños</h3>
             <p class="parrafo">
-
+                El daño se conforma por 2 partes principales
+                <ul>
+                    <li><b>Daño variable. </b>Es aquel que está conformado con dados (Ej. 1d6)</li>
+                    <li><b>Daño fijo. </b>También llamado modificador, es el que no varía entre tiradas, mientras no se pierdan
+                    sus condiciones.</li>
+                </ul>
+                <p>
+                    Los dados variables son la base de cualquier tipo de daño. En el caso de los ataques desarmados, estos tienen
+                    una base de 1d4 de daño, por lo que casi siempre habrá daño variable en los ataques (Algunas habilidades
+                    pueden aplicar unicamente daño fijo, pero eso debe ser descrito especificamente).
+                </p>
+                <p>
+                    Cuando algo tiene el efecto de "Agregar dado", siempre se agregará al dado mas pequeño entre tus variables, por
+                    ejemplo, si tu daño es 1d6+1d4, se agregará el dado al 1d4, convirtiendolo en 2d4. En los ataques criticos, puedes
+                    acumular mas dados, debido a que, lo que agrega sacar critico en tu puntería, es un <b>critico adicional</b>,
+                    y el critico al sacar un dado máximo en tus armas (Sin sacar un 1) es un critico natural.
+                </p>
             </p>
             <h3 id="p_daños">Tipos de daños</h3>
             <ul>
@@ -3866,6 +3909,28 @@
                         daño. El aumento de daño solo aplica 1 vez por enemigo diferente.</li>
                 </ul>
             </p>
+            <h3 id="p_fefectos">Listado de armas</h3>
+            El arma provee el daño base en los ataques, proviendo el <b>daño variable</b>.
+            <h4>Otros tipos de armamento</h4>
+            <table class="tabla3">
+                <thead>
+                    <tr><td><b>Arma</b></td><td><b>Efecto</b></td><td><b>Dado</b></td></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Desarmado</td><td>Sin efecto</td><td>1d4</td></tr>
+                </tbody>
+            </table>
+            <h4>Armas ligeras a una mano</h4>
+            <table class="tabla3">
+                <thead>
+                    <tr><td><b>Arma</b></td><td><b>Efecto</b></td><td><b>Dado</b></td></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Daga</td><td>Sin efecto</td><td>1d4</td></tr>
+                    <tr><td><b>Backstab.</b> Al atacar por la espalda, siempre causa una carga de sangrado al enemigo.</td></tr>
+                    <tr><td>Espada corta</td><td>Sin efecto</td><td>1d4</td></tr>
+                </tbody>
+            </table>
         </p>
     </div>
 </main>
