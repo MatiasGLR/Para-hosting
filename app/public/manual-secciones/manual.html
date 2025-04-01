@@ -1,4 +1,8 @@
 <style>
+    *, html, body, p {
+        font-size: 16px;
+    }
+
     h1,
     h5 {
         margin: 0;
@@ -6,7 +10,6 @@
     }
 
     #main {
-        font-size: 110%;
         width:90vw;
         margin: auto;
         text-align: justify;
@@ -21,6 +24,10 @@
 
     h1 {
         padding-top: 30px;
+    }
+
+    h3 {
+        color:rgb(173, 92, 16)
     }
 
     h5 {
@@ -81,22 +88,23 @@
         /*border-right: 1px solid black;*/
         padding: 8px;
     }
+
     th:last-child, td:last-child {
         border-right: none;
     }
     
-    tbody tr:nth-child(2n) {
-        border-bottom: 2px solid black; /* Borde inferior cada dos filas */
+    tbody:not(.singled) tr:nth-child(2n) {
+        border-bottom: 1px solid black; /* Borde inferior cada dos filas */
     }
+
+    .singled tr {
+        border-bottom: 1px solid black;
+    }
+
     thead {
         background-color: #eee;
         text-align: center;
         border-bottom: 2px solid black; /* Borde inferior para el encabezado */
-    }
-    .full-row td {
-        border-right: none; /* Sin bordes entre columnas */
-        width: 100%;
-        text-align: left;
     }
     .botonarriba {
         position: fixed;
@@ -110,12 +118,12 @@
         justify-content: center;
         border-radius: 50%;
         color: white; /* Color del texto */
-        font-size: 28px; /* Ajusta el tamaño del símbolo ^ */
         cursor: pointer;
     }
 
     .botonarriba h1 {
         margin: 0; /* Elimina el margen predeterminado del h1 */
+        font-size: 60px; /* Ajusta el tamaño del símbolo ^ */
         padding-bottom: 10px;
     }
 </style>
@@ -249,13 +257,11 @@
             <li onclick="window.location.href='#p_fefectos'">Funcionamiento de los efectos</li>
             <li onclick="window.location.href='#p_efectos'">Listado de efectos</li>
             <li onclick="window.location.href='#p_armascc'">Listado de armas cuerpo a cuerpo</li>
-            <li>Listado de armas a distancia</li>
-            <li>Proyectiles de armas a distancia</li>
-            <li>Listado de armas de fuego</li>
-            <li>Proyectiles de armas de fuego</li>
-            <li>Armas arrojadizas</li>
-            <li>Daño fijo otorgado por el material del proyectil o del arma</li>
-            <li>Efecto otorgado por material</li>
+            <li onclick="window.location.href='#p_armasad'">Listado de armas a distancia</li>
+            <li onclick="window.location.href='#p_armasdf'">Listado de armas de fuego</li>
+            <li onclick="window.location.href='#p_armaspdf'">Proyectiles de armas a distancia y de fuego</li>
+            <li onclick="window.location.href='#p_armasarr'">Armas arrojadizas</li>
+            <li onclick="window.location.href='#p_armasdep'">Daño, efecto y protección otorgado por material</li>
             <li>Protección y peso por material</li>
             <li>Bono por set completo de armadura</li>
             <ol>
@@ -353,7 +359,7 @@
             probabilidades de esquivar ataques, realizar acciones que requieren precisión física, y afecta el orden de
             actuación en combate. También puede influir en habilidades como el sigilo y la acrobacia.
             Aumenta la cantidad de acciones en utilidad en 1 por cada 2 puntos en esta estadística. <b>Tu esquive será
-                tu Agilidad x3, con máximo de 15.</b>
+                tu Agilidad+10, con máximo de 15.</b>
             <b class="text-danger">Puedes esquivar dos casillas en lugar de una, y tu esquive obtiene +3 (Que supera el
                 límite de 15).</b>
         </p>
@@ -3752,7 +3758,7 @@
             <b id="p_daño" style="margin-top:20px">Atacando a un enemigo</b>
             Si te encuentras a una distancia posible de ataque (Dependiendo de tu arma, como los arcos, que tienen un rango mayor, o 
             las armas cuerpo a cuerpo largas, que atacan a 10ft) puedes realizar una tirada de puntería, donde el oponente puede 
-            decidir si esquivar (Agilidad*3, maximo 15) o simplemente resistir el ataque (Puntería vs Protección total, armadura / 2). 
+            decidir si esquivar (10+Agilidad, pero se pierde la mitad de la protección) o simplemente resistir el ataque (Protección completa). 
             En caso de lograr impactar el ataque contra el enemigo, se restará la armadura, escudo, protecciones y resistencia del 
             enemigo de ese daño, y el restante lo restará de su vida.
     
@@ -3842,6 +3848,10 @@
                     Los dados variables son la base de cualquier tipo de daño. En el caso de los ataques desarmados, estos tienen
                     una base de 1d4 de daño, por lo que casi siempre habrá daño variable en los ataques (Algunas habilidades
                     pueden aplicar unicamente daño fijo, pero eso debe ser descrito especificamente).
+                </p>
+                <p>
+                    En el caso de las armas, el dado lo dará el tipo de arma, mientras que el daño fijo, lo proveerá su material,
+                    para las cuerpo a cuerpo, del material que están hechos,
                 </p>
                 <p>
                     Cuando algo tiene el efecto de "Agregar dado", siempre se agregará al dado mas pequeño entre tus variables, por
@@ -4009,6 +4019,150 @@
                     incluso si el ataque no impactó</td></tr>
                     <tr><td>Pico</td><td>Sin efecto</td><td>1d6</td></tr>
                     <tr><td><b>Creado para la ocasión.</b> Si atacas a un ser creado de minerales, ignoras 5 de la resistencia del enemigo.</td></tr>
+                </tbody>
+            </table>
+            <h4>Armas pesadas a dos manos</h4>
+            Todas las armas a dos manos pesadas, aplican además de su efecto, el efecto de <b>rompearmadura</b>
+            <table class="tabla3">
+                <thead>
+                    <tr><td><b>Arma</b></td><td><b>Efecto</b></td><td><b>Dado</b></td></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Espadón ultrapesado</td><td>Derribo</td><td>1d10</td></tr>
+                    <tr><td><b>Caida pesada.</b> Causa 1d10 de daño a los enemigos a 5ft del enemigo/zona atacada. Puede atacar a 
+                        10ft de distancia, pero su dado pasa a ser de 8. Moverte y atacar te cuesta 1 acción de utilidad adicional.</td></tr>
+                    <tr><td>Zweihander</td><td>Sangrado</td><td>1d8</td></tr>
+                    <tr><td><b>Filo evanescente.</b> Una vez por turno, si el ataque es critico, ignora 3 puntos de la protección 
+                        del enemigo en este ataque, y vuelve a atacarlo sin costo con la misma arma (manteniendo el ignorado de
+                        armadura anterior) en el momento (No se pueden usar otras mejoras en el transcurso de ambos ataques),
+                        en caso de que el nuevo ataque sea critico, causa 1d10 de daño eléctrico adicional</td></tr>
+                    <tr><td>Martillo de guerra</td><td>Derribo</td><td>1d8</td></tr>
+                    <tr><td><b>Golpe pesado.</b> Al atacar a un enemigo o hacerle parry, lo aleja 5ft, y, si este impacta
+                    contra un objetivo, le causa 3 de daño verdadero, y le aplica derribo</td></tr>
+                    <tr><td>Hacha gigante</td><td>Sangrado</td><td>1d8</td></tr>
+                    <tr><td><b>Golpe pesado.</b> Al atacar a un enemigo o hacerle parry, lo aleja 5ft, y, si este impacta
+                    contra un objetivo, le causa 3 de daño verdadero, y le aplica derribo</td></tr>
+                    <tr><td>Alabarda</td><td>Perforación</td><td>1d8</td></tr>
+                    <tr><td><b>Distancia.</b> Ataca a 10ft de distancia</td></tr>
+                    <tr><td>Hachamartillo</td><td>Sangrado</td><td>1d8</td></tr>
+                    <tr><td><b>Sangrado pesado.</b> Si el enemigo no tenía cargas de sangrado, le aplica una, que daña en el momento</td></tr>
+                </tbody>
+            </table>
+            <h3 id="p_armasad">Listado de armas a distancia</h3>
+            <table class="tabla3">
+                <thead>
+                    <tr><td><b>Arma</b></td><td><b>Distancia</b></td><td><b>Dado</b></td></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Arco corto</td><td>20ft</td><td>1d4</td></tr>
+                    <tr><td><b>Tiro preciso.</b> Puedes atacar animales comunes de forma sigilosa, siempre que estos no te hayan detectado, y ejecutarlos, superando un 12 en Puntería.</td></tr>
+                    <tr><td>Arco largo</td><td>20ft</td><td>1d6</td></tr>
+                    <tr><td><b>Tensión.</b> Por cada punto en Fuerza, aumenta en 5ft el rango de tiro.</td></tr>
+                    <tr><td>Ballesta</td><td>30ft</td><td>1d8</td></tr>
+                    <tr><td><b>Recarga.</b> Tras cada disparo, se debe consumir una acción de utilidad como recarga.</td></tr>
+                </tbody>
+            </table>
+            <h3 id="p_armasdf">Listado de armas de fuego</h3>
+            Las armas de fuego deben ser recargadas tras cada disparo, además, tienen desventaja en la puntería. Los efectos
+            de las armas de fuego no requieren que esta se encuentre a +5, ya que las armas de fuego no pueden ser mejoradas.
+            <table class="tabla3">
+                <thead>
+                    <tr><td><b>Arma</b></td><td><b>Distancia</b></td><td><b>Dado</b></td></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Revolver</td><td>15ft</td><td>1d4</td></tr>
+                    <tr><td><b>Cargador amplio.</b>No requieres recargar.</td></tr>
+                    <tr><td>Cañón de mano</td><td>10ft</td><td>1d6</td></tr>
+                    <tr><td><b>Dispersión.</b> Obtiene -3 de daño por cada 5ft de distancia del enemigo, a partir de los 10ft.</td></tr>
+                    <tr><td>Escopeta a dos manos</td><td>15ft</td><td>1d6</td></tr>
+                    <tr><td><b>Dispersión.</b> Obtiene -3 de daño por cada 5ft de distancia del enemigo, a partir de los 10ft.</td></tr>
+                    <tr><td>Rifle a dos manos</td><td>70ft</td><td>1d8</td></tr>
+                    <tr><td><b>Distancia.</b> Obtienes -1 en Puntería por cada 5ft que el objetivo esté lejos, a partir de los 5ft. Puedes evitar este negativo en el tiro, consumiendo una acción de utilidad para ponerte en "Modo Francotirador", no pudiendo moverte o esquivar en este modo, deberás consumir una acción de utilidad para salir de este modo, y no puedes reaccionar al acercamiento de un enemigo.</td></tr>
+                </tbody>
+            </table>
+            <h3 id="p_armaspdf">Proyectiles de armas a distancia y de fuego</h3>
+            Este es el daño que otorgará fijo, el proyectil de una de estas armas
+            <table class="tabla3">
+                <thead>
+                    <tr><td><b>Arma</b></td><td><b>Distancia</b></td><td><b>Dado</b></td></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Revolver</td><td>15ft</td><td>1d4</td></tr>
+                    <tr><td><b>Cargador amplio.</b>No requieres recargar.</td></tr>
+                    <tr><td>Cañón de mano</td><td>10ft</td><td>1d6</td></tr>
+                    <tr><td><b>Dispersión.</b> Obtiene -3 de daño por cada 5ft de distancia del enemigo, a partir de los 10ft.</td></tr>
+                    <tr><td>Escopeta a dos manos</td><td>15ft</td><td>1d6</td></tr>
+                    <tr><td><b>Dispersión.</b> Obtiene -3 de daño por cada 5ft de distancia del enemigo, a partir de los 10ft.</td></tr>
+                    <tr><td>Rifle a dos manos</td><td>70ft</td><td>1d8</td></tr>
+                    <tr><td><b>Distancia.</b> Obtienes -1 en Puntería por cada 5ft que el objetivo esté lejos, a partir de los 5ft. Puedes evitar este negativo en el tiro, consumiendo una acción de utilidad para ponerte en "Modo Francotirador", no pudiendo moverte o esquivar en este modo, deberás consumir una acción de utilidad para salir de este modo, y no puedes reaccionar al acercamiento de un enemigo.</td></tr>
+                </tbody>
+            </table>
+            <h3 id="p_armasarr">Armas arrojadizas</h3>
+            <p class="parrafo">
+                <b>Distancia de arrojado</b>
+                Las bombas pueden ser arrojadas a 5ft por cada 2 puntos en agilidad o fuerza (Cual sea mayor, Min. 10ft)
+                <b style="margin-top:10px">Rango de efecto</b>
+                Cuando una bomba tiene rango de efecto, significa que lo hará en un cuadro, usando como centro, el lugar donde la bomba fue arrojada
+            </p>
+            <table class="tabla3">
+                <thead>
+                    <tr><td><b>Arma</b></td><td><b>Daño</b></td><td><b>Efecto</b></td><td><b>Rango</b></td></tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>Bomba explosiva</b></td><td>1d8</td><td>Sin efecto</td><td>3x3</td></tr>
+                    <tr><td>Puede realizar destrucciones menores en acciones narrativas</td></tr>
+                    <tr><td><b>Bomba de humo</b></td><td>0</td><td>Sin efecto</td><td>5x5</td></tr>
+                    <tr><td>Los objetivos y atacantes dentro de la bomba de humo tienen desventaja en puntería. Durante 
+                        exploraciones, lanzar una bomba de humo, puede servir para escapar de un ente hostil. Dura 1 ronda desde
+                        su utilización.
+                    </td></tr>
+                    <tr><td><b>Bomba incendiaria</b></td><td>1d6</td><td>Quemadura</td><td>3x3</td></tr>
+                    <tr><td></td>No funciona en lluvia o fuentes de agua. Si el atacado no tiene quemadura, le aplica una asegurada.</tr>
+                    <tr><td><b>Bomba criogénica</b></td><td>1d6</td><td>Congelamiento</td><td>3x3</td></tr>
+                    <tr><td>No funciona en fuentes de calor o desiertos. Si el atacado no tiene congelamiento, le aplica uno asegurado.</td></tr>
+                    <tr><td><b>Bomba ponzoñosa</b></td><td>1d6</td><td>Veneno</td><td>3x3</td></tr>
+                    <tr><td>Si el atacado no tiene veneno, le aplica uno asegurado.</td></tr>
+                    <tr><td><b>Bomba acida</b></td><td>1d6</td><td>Rompearmadura</td><td>1x1</td></tr>
+                    <tr><td>Si impacta, aplica 1 carga de rompearmadura asegurada</td></tr>
+                    <tr><td><b>Bomba eléctrica</b></td><td>1d6</td><td>Veneno</td><td>3x3</td></tr>
+                    <tr><td>Si el atacado no está estatizado, le aplica una carga asegurada.</td></tr>
+                </tbody>
+            </table>
+            <h3 id="p_armasdep">Daño, efecto y protección otorgado por material</h3>
+            <p class="parrafo">
+                La calidad del material agregará este valor como daño fijo en la tirada de daño en las armas cuerpo a cuerpo.
+            </p>
+            <p>
+                Las calidades son las siguientes:
+                <ul>
+                    <li><b>Básico. </b>Otorga +0</li>
+                    <li><b>Bajo. </b>Otorga +1</li>
+                    <li><b>Medio. </b>Otorga +2</li>
+                    <li><b>Alto. </b>Otorga +3</li>
+                    <li><b>Épico. </b>Otorga +4</li>
+                    <li><b>Legendario. </b>Otorga +5</li>
+                    <li><b>Platinado. </b>Otorga +1 adicional</li>
+                </ul>
+            </p>
+            <p>En el caso de las armas, aplicarán ese efecto, y en las armaduras, tendrán resistencia a ese efecto. La resistencia
+                divide a la mitad el daño recibido del mismo tipo de la armadura.
+            </p>
+            <h4>Armaduras</h4>
+            <table class="tabla3">
+                <thead>
+                    <tr><td><b>Material</b></td><td><b>Calidad</b></td><td><b>Efecto</b></tr>
+                </thead>
+                <tbody class="singled">
+                    <tr><td><b>Bomba explosiva</b></td><td>1d8</td><td>Sin efecto</td></tr>
+                </tbody>
+            </table>
+            <h4>Armas</h4>
+            <table class="tabla3">
+                <thead>
+                    <tr><td><b>Material</b></td><td><b>Calidad</b></td><td><b>Efecto</b></tr>
+                </thead>
+                <tbody class="singled">
+                    <tr><td><b>Bomba explosiva</b></td><td>1d8</td><td>Sin efecto</td></tr>
                 </tbody>
             </table>
         </p>
