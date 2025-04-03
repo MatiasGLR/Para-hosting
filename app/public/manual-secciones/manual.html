@@ -105,7 +105,7 @@
             border-bottom: 1px solid black; /* Borde inferior cada dos filas */
         }
 
-        .singled tr {
+        .singled tr:not(.singled) {
             border-bottom: 1px solid black;
         }
 
@@ -319,7 +319,7 @@
             para
             realizar diarios de campaña para la historia oficial, jugada por el grupo principal de Cuentos de Enforth
 
-            <h1>Capitulo 1. Personaje</h1>
+            <h1 style="font-size: 220%;">Capitulo 1. Personaje</h1>
             <h3 class="p-4 titulo_categoria" id="p_guia">Guía de creación de personaje</h3>
             <p class="parrafo">
                 <b>Ficha</b>
@@ -1180,10 +1180,13 @@
             </p>
             <p>
                 La raza determina la identidad en la aperiencia del personaje. Puedes tener dos razas, una considerada <b>raza principal
-                </b>, que otorgará <b>estadísticas</b>, <b>armadura natural</b>, y <b>profesiones</b>. La raza hibrida (o secundaria),
-                te dará las habilidades, al igual que la primera, del nivel correspondiente, aunque solo las habilidades "Obtenidas
-                por nivel", a excepción de las habilidades de Nivel 5 o superior.
+                </b>, que otorgará <b>estadísticas</b>, <b>armadura natural</b>, y <b>profesiones</b>.
             </p> 
+            <p>
+                La raza hibrida (o secundaria),
+                te dará las habilidades, al igual que la primera, del nivel correspondiente, <b>con un máximo</b> de las habilidades de nivel 2,
+                para obtener las habilidades de niveles mayores al 2 de la raza hibrida, se debe consumir el objeto <b>"Fruto de Raza"</b>, 
+            </p>
             <p>
                 En caso de que la raza sea pura de un solo tipo, obtendrá la <b>habilidad de pureza</b>. Esta habilidad se obtiene 
                 cuando se llega al Nivel 5 de raza.
@@ -2518,7 +2521,7 @@
                         <li><b style="color:rgb(33, 0, 151)">Restauración.</b> Curas 1d4 a un participante del combate a 15ft de ti 
                             o menos, por cada Nivel en esta clase, y sumando ademas:
                             <ul>
-                                <li><b>Hierro o Madera. </b>1 dado</li>
+                                <li><b>Hierro, Cobre o Madera. </b>1 dado</li>
                                 <li><b>Plata u Oro. </b>2 dados</li>
                                 <li><b>Basalto o Cuarzo. </b>3 dados</li>
                                 <li><b>Cobalto o Titanio. </b>1 dados</li>
@@ -2606,7 +2609,7 @@
                         <li><b style="color:rgb(33, 0, 151)">Teología terrenal.</b> Obtienes daño fijo y protección en tu escudo, si 
                             tu arma y escudo comparten el mismo material:
                         <ul>
-                            <li><b>Hierro o Madera. </b>0 puntos.</li>
+                            <li><b>Hierro, Cobre o Madera. </b>0 puntos.</li>
                             <li><b>Plata u Oro. </b>1 punto.</li>
                             <li><b>Basalto o Cuarzo. </b>1 punto.</li>
                             <li><b>Cobalto o Titanio. </b>1 punto.</li>
@@ -3573,7 +3576,7 @@
                 El Emión es el idioma celestial hablado por los dioses y arcángeles, un idioma de poder divino que trasciende el entendimiento mortal. Su conocimiento y uso están generalmente fuera del alcance de los seres terrenales, reservado para aquellos que tienen un vínculo directo con lo divino.
                 </li>
             </ul>
-            <h1 id="p_divinidades">Capitulo 2. Divinidades</h1>
+            <h1 style="font-size: 220%;" id="p_divinidades">Capitulo 2. Divinidades</h1>
             <p>
                 Los dioses son seres de inmenso poder, quienes fueron los responsables de que exista la realidad y todo lo que esta 
                 conlleva, antes del espacio, solo había vacío, donde estos existían, en su estado mas etéreo. El Creador, creyendo 
@@ -3702,6 +3705,9 @@
                 <li><b style="color:#0caaca">Destrucción Interna. </b>Todas las tiradas de daño por veneno, realizadas por un enemigo, 
                     debido a un veneno dado por ti, tendrá ventaja.
                     <br><b>Requiere. </b>60 de Karma.</li>
+                <li><b style="color:#0caaca">Absorción de Miseria. </b>Al inicio de tu turno, te curas 1 por cada carga de veneno en el
+                    combate.
+                    <br><b>Requiere. </b>50 de Karma.</li>
             </ul>
             <h3 id="d_muerte">Dios de la Muerte, Khoros</h3>
             <img src="https://i.pinimg.com/736x/f8/c1/d3/f8c1d3b438625d9a21b88f2ae3801510.jpg" alt="dios de la muerte">
@@ -3738,7 +3744,7 @@
                     forma fija de subir o bajar.</li>
                 <li><b>Naturaleza. </b>Obtienes la magia de la naturaleza, y puedes crear habilidades en base a la misma.</li>
             </ul>
-            <h1>Capitulo 3. Combate</h1>
+            <h1 style="font-size: 220%;">Capitulo 3. Combate</h1>
             <h3 id="p_quecombate">¿Que es el combate?</h3>
             <p>El combate es la forma en que jugadores, NPCs, bestias, criaturas, jefes y enemigos en general, resuelven una disputa
                 física, ya sea con el fin de obtener un botín por la fuerza, detener una emboscada, cazar animales, etc. Para ello
@@ -4037,8 +4043,9 @@
                     </thead>
                     <tbody>
                         <tr><td>Espadón ultrapesado</td><td>Derribo</td><td>1d10</td></tr>
-                        <tr><td><b>Caida pesada.</b> Causa 1d10 de daño a los enemigos a 5ft del enemigo/zona atacada. Puede atacar a 
-                            10ft de distancia, pero su dado pasa a ser de 8. Moverte y atacar te cuesta 1 acción de utilidad adicional.</td></tr>
+                        <tr><td><b>Caida pesada.</b> Aplica todo este efecto, con el arma a +0. Causa 1d10 de daño a los enemigos a 5ft del enemigo/zona atacada. Puede atacar a 
+                            10ft de distancia, pero su dado pasa a ser de 8. Moverte y atacar te cuesta 1 acción de utilidad adicional. Los jugadores
+                        no pueden usarlo a dual de ninguna forma.</td></tr>
                         <tr><td>Zweihander</td><td>Sangrado</td><td>1d8</td></tr>
                         <tr><td><b>Filo evanescente.</b> Una vez por turno, si el ataque es critico, ignora 3 puntos de la protección 
                             del enemigo en este ataque, y vuelve a atacarlo sin costo con la misma arma (manteniendo el ignorado de
@@ -4092,17 +4099,32 @@
                 Este es el daño que otorgará fijo, el proyectil de una de estas armas
                 <table class="tabla3">
                     <thead>
-                        <tr><td><b>Arma</b></td><td><b>Distancia</b></td><td><b>Dado</b></td></tr>
+                        <tr><td><b>Arma</b></td><td><b>Daño fijo</b></td><td><b>Efecto</b></td></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Revolver</td><td>15ft</td><td>1d4</td></tr>
-                        <tr><td><b>Cargador amplio.</b>No requieres recargar.</td></tr>
-                        <tr><td>Cañón de mano</td><td>10ft</td><td>1d6</td></tr>
-                        <tr><td><b>Dispersión.</b> Obtiene -3 de daño por cada 5ft de distancia del enemigo, a partir de los 10ft.</td></tr>
-                        <tr><td>Escopeta a dos manos</td><td>15ft</td><td>1d6</td></tr>
-                        <tr><td><b>Dispersión.</b> Obtiene -3 de daño por cada 5ft de distancia del enemigo, a partir de los 10ft.</td></tr>
-                        <tr><td>Rifle a dos manos</td><td>70ft</td><td>1d8</td></tr>
-                        <tr><td><b>Distancia.</b> Obtienes -1 en Puntería por cada 5ft que el objetivo esté lejos, a partir de los 5ft. Puedes evitar este negativo en el tiro, consumiendo una acción de utilidad para ponerte en "Modo Francotirador", no pudiendo moverte o esquivar en este modo, deberás consumir una acción de utilidad para salir de este modo, y no puedes reaccionar al acercamiento de un enemigo.</td></tr>
+                        <tr><td><b>Madera</b></td><td>0</td><td>Sin efecto</td></tr>
+                        <tr><td><b>Piedra</b></td><td>0</td><td>Derribo</td></tr>
+                        <tr><td><b>Cobre</b></td><td>0</td><td>Sin efecto</td></tr>
+                        <tr><td><b>Hierro</b></td><td>0</td><td>Sangrado</td></tr>
+                        <tr class="singled"><td><b>0</b></td><td>Bajo</td><td>...</td></tr>
+                        <tr><td>1d6 de daño adicional contra malditos</td></tr>
+                        <tr><td><b>Oro</b></td><td>0</td><td>Sin efecto</td></tr>
+                        <tr class="singled"><td><b>+1</b></td><td>Bajo</td><td>...</td></tr>
+                        <tr><td>5% de probabilidad de critico adicional</td></tr>
+                        <tr><td><b>Titanio</b></td><td>1</td><td>Veneno</td></tr>
+                        <tr class="singled"><td><b>Basalto</b></td><td>2</td><td>...</td></tr>
+                        <tr><td>25% de probabilidad de romperse, y si se rompe, aplica critico en esta bala</td></tr>
+                        <tr class="singled"><td><b>Cuarzo</b></td><td>1</td><td>...</td></tr>
+                        <tr><td>1d6 de daño adicional contra invocaciones</td></tr>
+                        <tr><td><b>Cobalto</b></td><td>2</td><td>Estatizado</td></tr>
+                        <tr><td><b>Everfrost</b></td><td>2</td><td>Congelamiento</td></tr>
+                        <tr><td><b>Oricalco</b></td><td>3</td><td>Quemadura</td></tr>
+                        <tr class="singled"><td><b>Luminita</b></td><td>3</td><td>...</td></tr>
+                        <tr><td>Los malditos que usen estas balas obtienen 1d6 de daño adicional</td></tr>
+                        <tr class="singled"><td><b>Infernita</b></td><td>3</td><td>...</td></tr>
+                        <tr><td>Aplican dos cargas de quemadura en lugar de una</td></tr>
+                        <tr class="singled"><td><b>Druvix</b></td><td>4</td><td>...</td></tr>
+                        <tr><td>Aplica aleatoriamente, quemadura, congelamiento, estatizado o envenenado</td></tr>
                     </tbody>
                 </table>
                 <h3 id="p_armasarr">Armas arrojadizas</h3>
@@ -4125,7 +4147,7 @@
                             su utilización.
                         </td></tr>
                         <tr><td><b>Bomba incendiaria</b></td><td>1d6</td><td>Quemadura</td><td>3x3</td></tr>
-                        <tr><td></td>No funciona en lluvia o fuentes de agua. Si el atacado no tiene quemadura, le aplica una asegurada.</tr>
+                        <tr><td>No funciona en lluvia o fuentes de agua. Si el atacado no tiene quemadura, le aplica una asegurada.</td></tr>
                         <tr><td><b>Bomba criogénica</b></td><td>1d6</td><td>Congelamiento</td><td>3x3</td></tr>
                         <tr><td>No funciona en fuentes de calor o desiertos. Si el atacado no tiene congelamiento, le aplica uno asegurado.</td></tr>
                         <tr><td><b>Bomba ponzoñosa</b></td><td>1d6</td><td>Veneno</td><td>3x3</td></tr>
@@ -4136,7 +4158,7 @@
                         <tr><td>Si el atacado no está estatizado, le aplica una carga asegurada.</td></tr>
                     </tbody>
                 </table>
-                <h3 id="p_armasdep">Daño, efecto y protección otorgado por material</h3>
+                <h3 id="p_armasdep">Daño, efecto, peso y protección otorgado por material</h3>
                 <p class="parrafo">
                     La calidad del material agregará este valor como daño fijo en la tirada de daño en las armas cuerpo a cuerpo.
                 </p>
@@ -4155,13 +4177,29 @@
                 <p>En el caso de las armas, aplicarán ese efecto, y en las armaduras, tendrán resistencia a ese efecto. La resistencia
                     divide a la mitad el daño recibido del mismo tipo de la armadura.
                 </p>
+                <p>El peso en las armaduras, es el valor que agrega en acciones de utilidad al moverte</p>
                 <h4>Armaduras</h4>
                 <table class="tabla3">
                     <thead>
-                        <tr><td><b>Material</b></td><td><b>Calidad</b></td><td><b>Efecto</b></tr>
+                        <tr><td><b>Material</b></td><td><b>Calidad</b></td><td><b>Peso</b></tr>
                     </thead>
                     <tbody class="singled">
-                        <tr><td><b>Bomba explosiva</b></td><td>1d8</td><td>Sin efecto</td></tr>
+                        <tr><td><b>Tela (Sin armadura)</b></td><td>Básico</td><td>0</td></tr>
+                        <tr><td><b>Cuero</b></td><td>Básico</td><td>0</td></tr>
+                        <tr><td><b>Cobre</b></td><td>Bajo</td><td>0</td></tr>
+                        <tr><td><b>Hierro</b></td><td>Bajo</td><td>0</td></tr>
+                        <tr><td><b>Plata</b></td><td>Bajo</td><td>0</td></tr>
+                        <tr><td><b>Oro</b></td><td>Bajo</td><td>0</td></tr>
+                        <tr><td><b>Platinado</b></td><td>Bajo</td><td>0</td></tr>
+                        <tr><td><b>Titanio</b></td><td>Medio</td><td>1</td></tr>
+                        <tr><td><b>Basalto</b></td><td>Medio</td><td>1</td></tr>
+                        <tr><td><b>Cuarzo</b></td><td>Medio</td><td>1</td></tr>
+                        <tr><td><b>Cobalto</b></td><td>Medio</td><td>1</td></tr>
+                        <tr><td><b>Everfrost</b></td><td>Medio</td><td>1</td></tr>
+                        <tr><td><b>Oricalco</b></td><td>Alto</td><td>2</td></tr>
+                        <tr><td><b>Luminita</b></td><td>Alto</td><td>2</td></tr>
+                        <tr><td><b>Infernita</b></td><td>Alto</td><td>2</td></tr>
+                        <tr><td><b>Druvix</b></td><td>Épico</td><td>2</td></tr>
                     </tbody>
                 </table>
                 <h4>Armas</h4>
@@ -4170,11 +4208,105 @@
                         <tr><td><b>Material</b></td><td><b>Calidad</b></td><td><b>Efecto</b></tr>
                     </thead>
                     <tbody class="singled">
-                        <tr><td><b>Bomba explosiva</b></td><td>1d8</td><td>Sin efecto</td></tr>
+                        <tr><td><b>Madera</b></td><td>Básico</td><td>Sin efecto</td></tr>
+                        <tr><td><b>Cobre</b></td><td>Bajo</td><td>Sin efecto</td></tr>
+                        <tr><td><b>Hierro</b></td><td>Bajo</td><td>Sangrado</td></tr>
+                        <tr class="singled"><td><b>Plata</b></td><td>Bajo</td><td>...</td></tr>
+                        <tr><td>1d6 de daño adicional contra malditos</td></tr>
+                        <tr><td><b>Oro</b></td><td>Bajo</td><td>Sin efecto</td></tr>
+                        <tr class="singled"><td><b>Platinado</b></td><td>Bajo</td><td>...</td></tr>
+                        <tr><td>5% de probabilidad de critico adicional</td></tr>
+                        <tr><td><b>Titanio</b></td><td>Medio</td><td>Veneno</td></tr>
+                        <tr class="singled"><td><b>Basalto</b></td><td>Medio</td><td>...</td></tr>
+                        <tr><td>25% de probabilidad de romperse, y si se rompe, aplica critico en esta arma</td></tr>
+                        <tr class="singled"><td><b>Cuarzo</b></td><td>Medio</td><td>...</td></tr>
+                        <tr><td>1d6 de daño adicional contra invocaciones</td></tr>
+                        <tr><td><b>Cobalto</b></td><td>Medio</td><td>Estatizado</td></tr>
+                        <tr><td><b>Everfrost</b></td><td>Medio</td><td>Congelamiento</td></tr>
+                        <tr><td><b>Oricalco</b></td><td>Alto</td><td>Quemadura</td></tr>
+                        <tr class="singled"><td><b>Luminita</b></td><td>Alto</td><td>...</td></tr>
+                        <tr><td>Los malditos que usen estas armas obtienen 1d6 de daño adicional</td></tr>
+                        <tr class="singled"><td><b>Infernita</b></td><td>Alto</td><td>...</td></tr>
+                        <tr><td>Aplican dos cargas de quemadura en lugar de una</td></tr>
+                        <tr class="singled"><td><b>Druvix</b></td><td>Épico</td><td>...</td></tr>
+                        <tr><td>Cambia los dados del arma de 1d4 a 1d6, 1d6 a 1d8, 1d8 a 1d10, o 1d10 a 1d12</td></tr>
+                    </tbody>
+                </table>
+                <h3 id="p_armaduracomp">Bono por armadura completa</h3>
+                <p>
+                    Para aplicar este bono, debes tener Yelmo, Guantes, Peto y Pantalones del mismo material (La cota y el escudo no cuentan)
+                </p>
+                <h4>Bono por armadura completa sin platinar</h4>
+                <table class="tabla3">
+                    <thead>
+                        <tr><td><b>Material</b></td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><b>Tela (Sin armadura)</b></td></tr>
+                        <tr><td>Puedes moverte el doble por cada acción de utilidad</td></tr>
+                        <tr><td><b>Cuero</b></tr>
+                        <tr><td>Inmunidad al efecto de derribo y +1 en tiradas de agilidad y sus derivados</td></tr>
+                        <tr><td><b>Cobre</b></tr>
+                        <tr><td>Las armas ligeras, obtienen +2 al daño</td></tr>
+                        <tr><td><b>Hierro</b></tr>
+                        <tr><td>Inmunidad a la perforación</td></tr>
+                        <tr><td><b>Oro</b></tr>
+                        <tr><td>Inmunidad a la congelación</td></tr>
+                        <tr><td><b>Basalto</b></tr>
+                        <tr><td>Obtienes +3 a la protección</td></tr>
+                        <tr><td><b>Titanio</b></tr>
+                        <tr><td>Inmunidad al veneno. Tus ataques desarmados aplican veneno.</td></tr>
+                        <tr><td><b>Everfrost</b></tr>
+                        <tr><td>Inmunidad al congelamiento. Tus ataques desarmados aplican congelamiento.</td></tr>
+                        <tr><td><b>Cuarzo</b></tr>
+                        <tr><td>Inmunidad al daño mágico.</td></tr>
+                        <tr><td><b>Cobalto</b></tr>
+                        <tr><td>Inmunidad al estatizado. Tus ataques desarmados aplican estatizado.</td></tr>
+                        <tr><td><b>Oricalco</b></tr>
+                        <tr><td>Inmunidad a la quemadura. Tus ataques desarmados aplican quemadura.</td></tr>
+                        <tr><td><b>Luminita</b></tr>
+                        <tr><td>Un ser maldito que porte esta armadura, obtiene +5 de protección.</td></tr>
+                        <tr><td><b>Infernita</b></tr>
+                        <tr><td>Inmunidad a la quemadura. Tus ataques desarmados aplican doble quemadura.</td></tr>
+                        <tr><td><b>Druvix</b></tr>
+                        <tr><td>Inmunidad a rompearmadura y perforación.</td></tr>
+                    </tbody>
+                </table>
+                <h4>Bono por armadura completa platinada</h4>
+                <table class="tabla3">
+                    <thead>
+                        <tr><td><b>Material</b></td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><b>Cobre</b></tr>
+                        <tr><td>Las armas ligeras, obtienen +4 al daño</td></tr>
+                        <tr><td><b>Hierro</b></tr>
+                        <tr><td>Inmunidad a la perforación y al sangrado</td></tr>
+                        <tr><td><b>Oro</b></tr>
+                        <tr><td>Inmunidad a la congelación, y +2 al daño a las armas pesadas</td></tr>
+                        <tr><td><b>Basalto</b></tr>
+                        <tr><td>Obtienes +5 a la protección. La armadura no se rompe.</td></tr>
+                        <tr><td><b>Titanio</b></tr>
+                        <tr><td>Inmunidad al veneno. Tus ataques desarmados aplican veneno. Tus ataques de daño de veneno obtienen +3.</td></tr>
+                        <tr><td><b>Everfrost</b></tr>
+                        <tr><td>Inmunidad al congelamiento. Tus ataques desarmados aplican congelamiento. Tus ataques de daño de hielo obtienen +3.</td></tr>
+                        <tr><td><b>Cuarzo</b></tr>
+                        <tr><td>Inmunidad al daño mágico. Obtienes 1d10 de daño contra invocaciones.</td></tr>
+                        <tr><td><b>Cobalto</b></tr>
+                        <tr><td>Inmunidad al estatizado. Tus ataques desarmados aplican estatizado. Tus ataques de daño eléctrico obtienen +3.</td></tr>
+                        <tr><td><b>Oricalco</b></tr>
+                        <tr><td>Inmunidad a la quemadura. Tus ataques desarmados aplican quemadura. Tus ataques de daño de fuego obtienen +3.</td></tr>
+                        <tr><td><b>Luminita</b></tr>
+                        <tr><td>Un ser maldito que porte esta armadura, obtiene +5 de protección.</td></tr>
+                        <tr><td><b>Infernita</b></tr>
+                        <tr><td>Inmunidad a la quemadura. Tus ataques desarmados aplican doble quemadura. Si un Demonio puro la porta, obtiene +5 en sus ataques.</td></tr>
+                        <tr><td><b>Druvix</b></tr>
+                        <tr><td>Inmunidad a los efectos de fuente física.</td></tr>
                     </tbody>
                 </table>
             </p>
         </div>
     </main>
+    <tr><td><b>Cuero</b></td><td>Básico</td><td></td></tr>
 </body>
 </html>
