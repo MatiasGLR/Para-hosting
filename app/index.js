@@ -36,6 +36,7 @@ server.listen(port, '0.0.0.0', () => {
 });
 
 import {methods as authentication} from "./controllers/authentication.controller.js";
+import {methods as staff} from "./controllers/admin.controller.js";
 import {methods as authorization} from "./middlewares/authorization.js";
 import {methods as personajes} from "./controllers/character.controller.js";
 
@@ -70,7 +71,8 @@ const db = new sqlite.Database(
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 name VARCHAR(30) NOT NULL,
                 email TEXT NOT NULL,
-                pass TEXT NOT NULL
+                pass TEXT NOT NULL,
+                isadmin INTEGER NOT NULL DEFAULT 0
             )
         `, (error) => {if(error) return console.error(error)})
 
@@ -111,17 +113,37 @@ const db = new sqlite.Database(
 );
 
 app.get('/', (req, res) => res.status(200).sendFile(__dirname + '/pages/index.html'))
-app.get('/staff', authorization.onlyAdmin, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/admin.html'))
-app.get('/staff/bestiario', authorization.onlyAdmin, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/add_bestiario.html'))
-app.get('/staff/habilidades', authorization.onlyAdmin, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/add_habilidades.html'))
-app.get('/staff/npc', authorization.onlyAdmin, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/add_npc.html'))
-app.get('/staff/objetos', authorization.onlyAdmin, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/add_objeto.html'))
-app.get('/staff/lore', authorization.onlyAdmin, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/add_lore.html'))
-app.get('/staff/jugadores', authorization.onlyAdmin, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/jugadores.html'))
-app.get('/login', authorization.onlyUnlogged, (req, res) => res.status(200).sendFile(__dirname + '/pages/login.html'))
-app.get('/register', authorization.onlyUnlogged, (req, res) => res.status(200).sendFile(__dirname + '/pages/register.html'))
-app.get('/chat', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/chat.html') })
-app.get('/account', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/usuario.html') })
+app.get('/staff'/*, authorization.onlyAdmin*/, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/admin.html'))
+app.get('/staff/bestiario'/*, authorization.onlyAdmin*/, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/add_bestiario.html'))
+app.get('/staff/habilidades'/*, authorization.onlyAdmin*/, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/add_habilidades.html'))
+app.get('/staff/npc'/*, authorization.onlyAdmin*/, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/add_npc.html'))
+app.get('/staff/objetos'/*, authorization.onlyAdmin*/, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/add_objeto.html'))
+app.get('/staff/lore'/*, authorization.onlyAdmin*/, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/add_lore.html'))
+app.get('/staff/jugadores'/*, authorization.onlyAdmin*/, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/jugadores.html'))
+app.get('/login'/*, authorization.onlyUnlogged*/, (req, res) => res.status(200).sendFile(__dirname + '/pages/login.html'))
+app.get('/register'/*, authorization.onlyUnlogged*/, (req, res) => res.status(200).sendFile(__dirname + '/pages/register.html'))
+app.get('/chat'/*, authorization.onlyLogged*/, (req, res) => { res.status(200).sendFile(__dirname + '/pages/chat.html') })
+app.post('/api/revisarjugador', authorization.devolverNombre);
+app.post('/api/cargarjugadores', staff.listaJugadores);
+app.post('/api/cambiarrango', staff.cambiarRango);
+app.post('/api/register', authentication.register);
+app.post('/api/login', authentication.login);
+app.post('/api/guardarmensaje', authorization.guardarmensaje);
+app.post('/api/upload', upload.single('file'), (req, res) => res.send("Successfully uploaded"));
+app.get('*', (req, res) => res.status(404).sendFile(__dirname + '/pages/'));
+app.get('/account'/*, authorization.onlyLogged*/, (req, res) => { res.status(200).sendFile(__dirname + '/pages/usuario.html') })
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 app.get('/account/crearpersonaje', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/crearpersonaje.html') })
 app.get('/account/mis_personajes', authorization.onlyLogged, (req, res) => { res.status(200).sendFile(__dirname + '/pages/mis_personajes.html') })
@@ -139,9 +161,3 @@ app.post('/api/cargarpersonaje', authorization.onlyLogged, async (req, res) => {
 app.post('/api/cargarpersonajes', authorization.onlyLogged, async (req, res) => { await personajes.cargarpersonajes(req,res) } );
 app.post('/api/datos', personajes.datos);
 */
-app.post('/api/revisarjugador', authorization.devolverNombre);
-app.post('/api/register', authentication.register);
-app.post('/api/login', authentication.login);
-app.post('/api/guardarmensaje', authorization.guardarmensaje);
-app.post('/api/upload', upload.single('file'), (req, res) => res.send("Successfully uploaded"));
-app.get('*', (req, res) => res.status(404).sendFile(__dirname + '/pages/'));

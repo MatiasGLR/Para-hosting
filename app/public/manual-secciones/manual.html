@@ -275,6 +275,15 @@
                     <li onclick="window.location.href='#p_setcompleto_plat'">Bono platinada</li>
                 </ol>
             </ul>
+            <h4><b>Exploraciones</b></h4>
+            <ul class="search">
+                <li onclick="window.location.href='#p_exploraciones'">¿Cómo funcionan las exploraciones?</li>
+                <li onclick="window.location.href='#e_lhc'">Luna, hora y climas</li>
+                <li onclick="window.location.href='#e_een'">Encuentros con enemigos</li>
+                <li onclick="window.location.href='#e_loot'">Looteando</li>
+                <li onclick="window.location.href='#e_cofres'">Apertura de cofres</li>
+                <li onclick="window.location.href='#e_dungeon'">Mazmorras</li>
+            </ul>
             <h4><b>Creación, ventas y otros</b></h4>
             <ul class="search">
                 <li>Recetas y pergaminos de aprendizaje</li>
@@ -2130,6 +2139,16 @@
                                 pueden utilizar un chip de su portachip para obtener esa mejora por el resto de la mesa; el chip
                                 perderá función al final de la partida.
                             </li>
+                            <b>Listado de chips</b>
+                            <li>
+                                <ul>
+                                    <li><b>Chip de lenguaje.</b> Te permite hablar en ese lenguaje correspondiente.</li>
+                                    <li><b>Chip de fuerza.</b> Aumenta tu fuerza a +1 (No supera el limite).</li>
+                                    <li><b>Chip de agilidad.</b> Aumenta tu agilidad a +1 (No supera el limite).</li>
+                                    <li><b>Chip de incineración.</b> Tus ataques desarmados o con cestus aplicarán quemadura y su daño se considerará de fuego.</li>
+                                    <li><b>Chip de titán.</b> Recibe el 50% del daño del primer ataque recibido en cada ronda.</li>
+                                </ul>
+                            </li>
                         </ul>
                     </ul>
                 </p>
@@ -2564,9 +2583,9 @@
                     <b>Requerimientos de clase</b>
                     <ul>
                         <li>3 en Carisma</li>
-                        <li>50 de Karma</li>
-                        <li>Requiere usar un escudo con el emblema del Dios</li>
-                        <li>clérigo Nivel 5 sin subclase</li>
+                        <li>30 de Karma</li>
+                        <li>Requiere tener el inventario un escudo con el emblema del Dios</li>
+                        <li>Clérigo Nivel 5 sin subclase</li>
                     </ul>
                     <b>Especialización</b>
                     <ul>
@@ -4099,15 +4118,15 @@
                     <thead>
                         <tr><td><b>Arma</b></td><td><b>Daño fijo</b></td><td><b>Efecto</b></td></tr>
                     </thead>
-                    <tbody>
+                    <tbody class="singled">
                         <tr><td><b>Madera</b></td><td>0</td><td>Sin efecto</td></tr>
                         <tr><td><b>Piedra</b></td><td>0</td><td>Derribo</td></tr>
                         <tr><td><b>Cobre</b></td><td>0</td><td>Sin efecto</td></tr>
                         <tr><td><b>Hierro</b></td><td>0</td><td>Sangrado</td></tr>
-                        <tr class="singled"><td><b>0</b></td><td>Bajo</td><td>...</td></tr>
+                        <tr class="singled"><td><b>Plata</b></td><td>Bajo</td><td>...</td></tr>
                         <tr><td>1d6 de daño adicional contra malditos</td></tr>
                         <tr><td><b>Oro</b></td><td>0</td><td>Sin efecto</td></tr>
-                        <tr class="singled"><td><b>+1</b></td><td>Bajo</td><td>...</td></tr>
+                        <tr class="singled"><td><b>Platinado</b></td><td>Bajo</td><td>...</td></tr>
                         <tr><td>5% de probabilidad de critico adicional</td></tr>
                         <tr><td><b>Titanio</b></td><td>1</td><td>Veneno</td></tr>
                         <tr class="singled"><td><b>Basalto</b></td><td>2</td><td>...</td></tr>
@@ -4302,6 +4321,23 @@
                         <tr><td>Inmunidad a los efectos de fuente física.</td></tr>
                     </tbody>
                 </table>
+                <h3 id="p_exploraciones">Exploraciones</h3>
+                <p>Las exploraciones son la principal fuente de obtención de recursos y aprendizaje para los personajes, aqui pueden obtener distintos tipos de materiales,
+                    ya sea de la vegetación, los animales cazados, o los tesoros saqueados a bandidos. Aunque esto también puede ser un arma de doble filo, todos los peligros
+                    que allá afuera existen, pueden ser la perdición para todo aquel que no esté preparado.
+                </p>
+                <h4 id="e_lhc">Luna, hora y climas</h4>
+                <p>Al inicio de cada exploración, se puede dar una hora aleatoria, mediante una tirada ficticia de 24, o de 1d20+1d6-2, durante el día, no habrán cambios, pero
+                    durante las noches:
+                </p>
+                <ul>
+                    <li>Se tiene desventaja en la percepción</li>
+                    <li>Usar una fuente de luz eliminará lo anterior, pero habrá doble probabilidad de encontrar monstruos</li>
+                    <li>Aparecen mas criaturas durantes las noches</li>
+                </ul>
+                <p>
+                    
+                </p>
             </p>
         </div>
     </main>
