@@ -286,7 +286,7 @@
             </ul>
             <h4><b>Creación, ventas y otros</b></h4>
             <ul class="search">
-                <li>Recetas y pergaminos de aprendizaje</li>
+                <li onclick="window.location.href='#c_recetas'">Recetas y pergaminos de aprendizaje</li>
                 <li>Materiales trabajados en forja</li>
                 <li>Herrería</li>
                 <li>Creación de medicamentos</li>
@@ -4374,7 +4374,38 @@
                     superando una tirada de dificultad (1d20)</li>
                 </ul>
                 <h4 id="e_cofres">Cofres</h4>
-                <p>Al abrir un cofre, </p>
+                <p>Al abrir un cofre, este dará objetos aleatorios a los jugadores que lo abrieron. En base a la probabilidad
+                    de aparición de cofres, estos pueden dar entre 1 y 3 items (La probabilidad promedio es baja, y da 3 items).
+                    Se deberá realizar una tirada de 3d100 para determinar los items, y, si la tirada total es de 100 o menor,
+                    se puede decidir combinarla, para obtener 1 solo item mas fuerte. Para estas tiradas, no afecta ninguna
+                    estadística o habilidad, será la suerte natural de los dados la que lo dicte.
+                </p>
+                <h4 id="e_dungeon">Mazmorras</h4>
+                <p>Las mazmorras en este mundo son un desafío mágico, para todos los que quieran un camino fácil para obtener
+                    objetos útiles, y a la vez la posibilidad alta de morir ante cualquier peligro.
+                </p>
+                <p>Tendrán un nivel de +5 sobre el jugador con mas nivel dentro de la party, y todos los enemigos videntes dentro
+                    de la mazmorra obtendrán la habilidad de <b>Visión total en la oscuridad</b>. Las puertas podrán requerir
+                    llaves (que suelen poseer las criaturas), o un acertijo (Si, de esos para niños de 6 años).
+                </p>
+                <p>El loot obtenido dentro de la mazmorra, será de rareza Raro o superior de manera asegurada (Por lo que la tirada
+                    de objeto, cambiará de 1d100, a 70+1d20+1d10, o 1d30 si se tiene generador de dados virtual, o un raro dado de 30).
+                </p>
+                <h3>Creación, Ventas y Otros</h3>
+                <p>Para obtener objetos y recursos, requieres de dinero, o la capacidad de crearlos, y cualquiera de estas
+                    debe ser obtenida mediante la perseverancia de los jugadores, ya sea realizando trabajos que permitan
+                    obtener dinero, o robandolo a los seres que se encuentran durante exploraciones; formas, hay muchas.
+                </p>
+                <h4 id="c_recetas">Recetas y pergaminos de aprendizaje</h4>
+                <p>Cuando se encuentra un pergamino de conocimiento o receta, este es un conjuro, que
+                    hará a quien lo abra, aprender estos inmediatamente sin estudiarlos, pero se consumirá luego de su uso.
+                    No tendrá efecto sobre personas que ya conozcan esto, y solo verán un pergamino con simbolos.
+                </p>
+                <p>Comenzaré dando esta explicación para mas a futuro, muchos objetos requieren de recetas para ser creados. 
+                    Todos los objetos que requieran de un material alto (A excepción del oricalco) o superior, requieren de 
+                    la receta correspondiente para ser creados, por ejemplo, una espada larga de luminita, requerirá de su
+                    receta correspondiente para ser creado.
+                </p>
             </p>
         </div>
     </main>
