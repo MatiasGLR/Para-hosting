@@ -289,18 +289,16 @@
                 <li onclick="window.location.href='#c_recetas'">Recetas y pergaminos de aprendizaje</li>
                 <li onclick="window.location.href='#c_forja'">Materiales trabajados en forja</li>
                 <li onclick="window.location.href='#c_herreria'">Herrería</li>
-                <li>Creación de medicamentos</li>
-                <li>Talabartería</li>
-                <li>Alquimia</li>
-                <li>Negocio propio</li>
-                <li>Vendedores</li>
+                <li onclick="window.location.href='#c_medicamentos'">Creación de medicamentos</li>
+                <li onclick="window.location.href='#c_talabarteria'">Talabartería</li>
+                <li onclick="window.location.href='#c_alquimia'">Alquimia</li>
+                <li onclick="window.location.href='#c_negociopropio'">Negocio propio</li>
+                <li onclick="window.location.href='#c_vendedores'">Vendedores</li>
             </ul>
             <h4><b>Tienda</b></h4>
             <ul class="search">
                 <li>Generales del mundo</li>
                 <li>Exclusivos de Vaikne</li>
-                <li>Costos de hechizos</li>
-                <li>Uso de hechizos</li>
             </ul>
             <h4><b>Hechizos y técnicas</b></h4>
             <ul class="search">
@@ -4548,6 +4546,62 @@
                         </ul>
                     </p>
                 </p>
+                <h4 id="c_medicamentos">Medicamentos</h4>
+                <p>
+                    Para crear medicamentos, requieres tener la receta (Obtenida principalmente de niveles de médico), y un
+                    kit de alquimia portatil, o un laboratorio en una casa.
+                </p>
+                <h4 id="c_talabarteria">Talabarteria</h4>
+                <p>
+                    Para crear objetos con cuero, debes utilizar un equipo portatil de taller, o establecer un taller en tu casa. 
+                    Puedes obtener cueros frescos al matar animales y remover sus cueros, luego de acabada esa exploración, pasará a 
+                    ser un cuero común. 
+                </p>
+                <p>
+                    A partir del Nivel 10, el talabartero puede agregar cueros de animales a las armaduras, para proveerlo de habilidades 
+                    mágicas, y, a partir del Nivel 12, puede agregarle dos cueros.
+                </p>
+                <h4 id="c_alquimia">Alquimia</h4>
+                <p>
+                    Para realizar pociones y viales, requieres de tener un kit portatil de alquimia, o un laboratorio en una casa.
+                    Debes utilizar los ingredientes correspondientes, para confeccionar el objeto buscado. Debes tener el libro de alquimia
+                    del nivel correspondiente a la poción por su receta.
+                </p>
+                <h4 id="c_negociopropio">Negocio propio</h4>
+                <p>
+                    Un jugador puede tener un negocio, al colocar una mejora de habitación de su casa correspondiente (Tienda), teniendo una 
+                    probabilidad del 20% diario de poder vender un producto que tenga colocado, o 5%, si hay otro negocio en el pueblo que se 
+                    dedique a ello. Al vender, podrán usar, en lugar del precio de venta, el 50% del precio de compra. Solo se podrá vender un 
+                    tipo de objeto dependiendo de la profesión, establecido en la tienda (Descritos en Vendedores).
+                </p>
+                <h4 id="c_vendedores">Vendedores</h4>
+                <p>
+                    Un jugador puede tener un negocio, al colocar una mejora de habitación de su casa correspondiente (Tienda), teniendo una 
+                    probabilidad del 20% diario de poder vender un producto que tenga colocado, o 5%, si hay otro negocio en el pueblo que se 
+                    dedique a ello. Al vender, podrán usar, en lugar del precio de venta, el 50% del precio de compra. Solo se podrá vender un 
+                    tipo de objeto dependiendo de la profesión, establecido en la tienda (Descritos en Vendedores).
+                </p>
+                <div style="display: flex; flex-direction: column;">
+                    <p><b>Armero</b><br><b>Vende:</b> Armas de fuego y municiones.<br><b>Compra:</b> Ninguno.</p>
+                    <p><b>Bibliotecario</b><br><b>Vende:</b> Libros de herrería, encantamientos y bestiarios (Solo en Abbasel).<br><b>Compra:</b> Encantamientos.</p>
+                    <p><b>Cantinero</b><br><b>Vende:</b> Comida y bebida (No pociones).<br><b>Compra:</b> Comida y bebida (No pociones).</p>
+                    <p><b>Carpintero</b><br><b>Vende:</b> Servicios de mejora de casas, objetos de madera, y vende, mejora y repara carretas.<br><b>Compra:</b> Objetos de madera.</p>
+                    <p><b>Cazador</b><br><b>Vende:</b> Carnes, pieles y bestiarios (Estos últimos, solo en Abbasel).<br><b>Compra:</b> Carnes, pieles, y partes de animales.</p>
+                    <p><b>Domador</b><br><b>Vende:</b> Monturas y animales domesticados.<br><b>Compra:</b> Animales.</p>
+                    <p><b>Explorador</b><br><b>Vende:</b> Mapa y brújula.<br><b>Compra:</b> Mapas del tesoro.</p>
+                    <p><b>Granjero</b><br><b>Vende:</b> Frutas y verduras, y materiales de cocina en general.<br><b>Compra:</b> Frutas y verduras.</p>
+                    <p><b>Guardia</b><br><b>Vende:</b> Ninguno.<br><b>Compra:</b> Misiones para los guardias y mercenarios. Además, arresta bandidos entregados y recompensa por los mismos.</p>
+                    <p><b>Herrero</b><br><b>Vende:</b> Objetos, armamento y equipamiento hechos de metales y rocas, mejora de equipamiento y lingotes.<br><b>Compra:</b> Armas y equipamiento, lingotes y menas de minerales.</p>
+                    <p><b>Ingeniero</b><br><b>Vende:</b> Explosivos, piezas de explosivos o ingeniería, como engranajes y mecanismos.<br><b>Compra:</b> Explosivos.</p>
+                    <p><b>Mercader general</b><br><b>Vende:</b> Objetos de la categoría "General", y otros aleatorios.<br><b>Compra:</b> Todo tipo de objetos.</p>
+                    <p><b>Joyero</b><br><b>Vende:</b> Distintos tipos de joyería.<br><b>Compra:</b> Gemas y joyas.</p>
+                    <p><b>Ladrón</b><br><b>Vende:</b> Servicio de apertura de cofres.<br><b>Compra:</b> Cambio de monedas y objetos robados.</p>
+                    <p><b>Médico</b><br><b>Vende:</b> Medicamentos y servicios de medicina.<br><b>Compra:</b> Materiales para medicamentos.</p>
+                    <p><b>Mercenario</b><br><b>Vende:</b> Servicio de contratación de mercenarios.<br><b>Compra:</b> Ninguno.</p>
+                    <p><b>Minero</b><br><b>Vende:</b> Picos.<br><b>Compra:</b> Menas de minerales, al triple de precio.</p>
+                    <p><b>Talabartero</b><br><b>Vende:</b> Equipamiento de cuero, y mejoras a objetos de cuero.<br><b>Compra:</b> Cuero y objetos de cuero.</p>
+                </div>
+
             </p>
         </div>
     </main>
