@@ -292,13 +292,14 @@
                 <li onclick="window.location.href='#c_medicamentos'">Creación de medicamentos</li>
                 <li onclick="window.location.href='#c_talabarteria'">Talabartería</li>
                 <li onclick="window.location.href='#c_alquimia'">Alquimia</li>
-                <li onclick="window.location.href='#c_negociopropio'">Negocio propio</li>
-                <li onclick="window.location.href='#c_vendedores'">Vendedores</li>
             </ul>
             <h4><b>Tienda</b></h4>
             <ul class="search">
-                <li>Generales del mundo</li>
-                <li>Exclusivos de Vaikne</li>
+                <li onclick="window.location.href='#t_explicacion'">¿Cómo funcionan las tiendas?</li>
+                <li onclick="window.location.href='#c_negociopropio'">Negocio propio</li>
+                <li onclick="window.location.href='#c_vendedores'">Vendedores</li>
+                <li onclick="window.location.href='#t_general'">Generales del mundo</li>
+                <li onclick="window.location.href='#t_vaikne'">Exclusivos de Vaikne</li>
             </ul>
             <h4><b>Hechizos y técnicas</b></h4>
             <ul class="search">
@@ -4567,12 +4568,11 @@
                     Debes utilizar los ingredientes correspondientes, para confeccionar el objeto buscado. Debes tener el libro de alquimia
                     del nivel correspondiente a la poción por su receta.
                 </p>
-                <h4 id="c_negociopropio">Negocio propio</h4>
+                <h3 id="p_tienda">Tienda</h3>
+                <h4 id="t_explicacion">¿Cómo funciona?</h4>
                 <p>
-                    Un jugador puede tener un negocio, al colocar una mejora de habitación de su casa correspondiente (Tienda), teniendo una 
-                    probabilidad del 20% diario de poder vender un producto que tenga colocado, o 5%, si hay otro negocio en el pueblo que se 
-                    dedique a ello. Al vender, podrán usar, en lugar del precio de venta, el 50% del precio de compra. Solo se podrá vender un 
-                    tipo de objeto dependiendo de la profesión, establecido en la tienda (Descritos en Vendedores).
+                    Las tiendas sirven para comprar objetos y mejorar tu equipamiento. Tienes diferentes tipos de cosas que puedes comprar, desde objetos,
+                    hasta servicios, como la mejora de tus armas por parte de un herrero.
                 </p>
                 <h4 id="c_vendedores">Vendedores</h4>
                 <p>
@@ -4601,7 +4601,31 @@
                     <p><b>Minero</b><br><b>Vende:</b> Picos.<br><b>Compra:</b> Menas de minerales, al triple de precio.</p>
                     <p><b>Talabartero</b><br><b>Vende:</b> Equipamiento de cuero, y mejoras a objetos de cuero.<br><b>Compra:</b> Cuero y objetos de cuero.</p>
                 </div>
-
+                <h4 id="c_negociopropio">Negocio propio</h4>
+                <p>
+                    Un jugador puede tener un negocio, al colocar una mejora de habitación de su casa correspondiente (Tienda), teniendo una 
+                    probabilidad del 20% diario de poder vender un producto que tenga colocado, o 5%, si hay otro negocio en el pueblo que se 
+                    dedique a ello. Al vender, podrán usar, en lugar del precio de venta, el 50% del precio de compra. Solo se podrá vender un 
+                    tipo de objeto dependiendo de la profesión, establecido en la tienda (Descritos en Vendedores).
+                </p>
+                <h4 id="t_general">Tienda general (Objetos vendidos en cualquier continente)</h4>
+                <p class="parrafo">
+                    <u style="font-size:24px"><h4>Joyas</h4></u>
+                    <div class="row">
+                        <div class="col-md-3 d-flex flex-column">
+                            <b>Armazón</b>
+                            <x><b>Costo de compra.</b> 200</x>
+                            <x><b>Costo de venta.</b> 50</x>
+                            <x><b>Material.</b> Lingote de Basalto + Otro lingote</x>
+                            <x><b>Creada en.</b> Forja</x>
+                            <x><b>Descripción.</b> Son requeridos como base para cualquier joya. Crear armazones solo te dará puntos de joyería 
+                            hasta nivel 4, y solo dará puntos en herrería, si el material es del correspondiente al nivel trabajable. Requiere 
+                            nivel de herrero, y el manual del material si corresponde. Los armazones pueden ser pendientes, collares, anillos, 
+                            etc. Para crear joyas, y armazones, requieres un Libro de Joyería, y un molde de la joya correspondiente.</x>
+                        </div>
+                    </div>
+                </p>
+            </p>
             </p>
         </div>
     </main>
