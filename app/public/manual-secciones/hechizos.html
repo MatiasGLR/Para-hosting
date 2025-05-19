@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuentos de Enforth</title>
+</head>
+<body>
+   <style>
+        *, html, body, p {
+            font-size: 16px;
+        }
+
+        h1,
+        h5 {
+            margin: 0;
+            padding: 0;
+        }
+
+        #main {
+            width:90vw;
+            margin: auto;
+            text-align: justify;
+            min-width: 300px;
+            background-color: rgb(243, 243, 243);
+        }
+
+        .parrafo {
+            display:flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            padding-top: 30px;
+        }
+
+        h3 {
+            color:rgb(173, 92, 16)
+        }
+
+        h5 {
+            padding-bottom: 30px;
+        }
+
+        main {
+            font-family: sans-serif;
+            padding: 10px;
+            width: 80vw;
+            min-width: 300px;
+            margin: auto;
+        }
+
+        main h4 {
+            text-align: center;
+        }
+
+        .search li {
+            margin: 10px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .search li:hover {
+            text-decoration: underline;
+        }
+
+        h6 {
+            font-size: 200%;
+        }
+
+        .titulo_categoria {
+            text-align: center;
+            font-size: 30px;
+            width: 100%;
+            text-decoration:underline;
+        }
+
+        img {
+            width: 300px;
+            max-width: 300px;
+            margin:10px;
+            max-height: 350px;
+            object-fit: cover;
+        }
+
+        .costo {
+            color:rgb(187, 0, 0)
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Une los bordes */
+        }
+        
+        th, td {
+            /*border-right: 1px solid black;*/
+            padding: 8px;
+        }
+
+        th:last-child, td:last-child {
+            border-right: none;
+        }
+        
+        tbody:not(.singled) tr:nth-child(2n) {
+            border-bottom: 1px solid black; /* Borde inferior cada dos filas */
+        }
+
+        .singled tr:not(.singled) {
+            border-bottom: 1px solid black;
+        }
+
+        thead {
+            background-color: #eee;
+            text-align: center;
+            border-bottom: 2px solid black; /* Borde inferior para el encabezado */
+        }
+        .botonarriba {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: red;
+            width: 50px; /* Ajusta el tamaño según lo que necesites */
+            height: 50px; /* Mismo tamaño para hacer el fondo redondo */
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white; /* Color del texto */
+            cursor: pointer;
+        }
+
+        .botonarriba h1 {
+            margin: 0; /* Elimina el margen predeterminado del h1 */
+            font-size: 60px; /* Ajusta el tamaño del símbolo ^ */
+            padding-bottom: 10px;
+        }
+    </style>
+    <main>
+        <div class="botonarriba">
+            <h1  onclick="window.location.href='#indice'">^</h1>
+        </div>
+        <div class="header">
+            <h1 class="text-center p-4 pb-0">Cuentos de Enforth</h1>
+            <h5 class="text-center">Manual de rol</h5>
+        </div>
+        <div class="indice" id="indice">
+            <h1>Indice</h1>
+            <h4><b>Hechizos y técnicas</b></h4>
+            <ul class="search">
+                <li>Funcionamiento de la magia</li>
+                <li>Tipos de magia</li> <!--Innata, con gema, maldita, etc-->
+                <li>Costos de hechizos</li>
+                <li>Uso de hechizos</li> <!--En turno y fuera de turno-->
+            </ul>
+            <hr>
+        </div>
+        <div id="datos">
+            <h1>Bienvenidos a Enforth</h1>
+            
+        </div>
+    </main>
+</body>
+</html>

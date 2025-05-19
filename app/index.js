@@ -113,6 +113,8 @@ const db = new sqlite.Database(
 );
 
 app.get('/', (req, res) => res.status(200).sendFile(__dirname + '/pages/index.html'))
+app.get('/objetos', (req, res) => res.status(200).sendFile(__dirname + '/pages/objetos.html'))
+app.get('/habilidades', (req, res) => res.status(200).sendFile(__dirname + '/pages/hechizos.html'))
 app.get('/staff'/*, authorization.onlyAdmin*/, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/admin.html'))
 app.get('/staff/bestiario'/*, authorization.onlyAdmin*/, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/add_bestiario.html'))
 app.get('/staff/habilidades'/*, authorization.onlyAdmin*/, (req, res) => res.status(200).sendFile(__dirname + '/pages/admin/add_habilidades.html'))
