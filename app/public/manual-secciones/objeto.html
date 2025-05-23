@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuentos de Enforth</title>
 </head>
+
 <body>
-   <style>
-        *, html, body, p {
+    <style>
+        *,
+        html,
+        body,
+        p {
             font-size: 16px;
         }
 
@@ -18,7 +23,7 @@
         }
 
         #main {
-            width:90vw;
+            width: 90vw;
             margin: auto;
             text-align: justify;
             min-width: 300px;
@@ -26,7 +31,7 @@
         }
 
         .parrafo {
-            display:flex;
+            display: flex;
             flex-direction: column;
         }
 
@@ -35,7 +40,7 @@
         }
 
         h3 {
-            color:rgb(173, 92, 16)
+            color: rgb(173, 92, 16)
         }
 
         h5 {
@@ -72,37 +77,41 @@
             text-align: center;
             font-size: 30px;
             width: 100%;
-            text-decoration:underline;
+            text-decoration: underline;
         }
 
         img {
             width: 300px;
             max-width: 300px;
-            margin:10px;
+            margin: 10px;
             max-height: 350px;
             object-fit: cover;
         }
 
         .costo {
-            color:rgb(187, 0, 0)
+            color: rgb(187, 0, 0)
         }
 
         table {
             width: 100%;
-            border-collapse: collapse; /* Une los bordes */
+            border-collapse: collapse;
+            /* Une los bordes */
         }
-        
-        th, td {
+
+        th,
+        td {
             /*border-right: 1px solid black;*/
             padding: 8px;
         }
 
-        th:last-child, td:last-child {
+        th:last-child,
+        td:last-child {
             border-right: none;
         }
-        
+
         tbody:not(.singled) tr:nth-child(2n) {
-            border-bottom: 1px solid black; /* Borde inferior cada dos filas */
+            border-bottom: 1px solid black;
+            /* Borde inferior cada dos filas */
         }
 
         .singled tr:not(.singled) {
@@ -112,37 +121,44 @@
         thead {
             background-color: #eee;
             text-align: center;
-            border-bottom: 2px solid black; /* Borde inferior para el encabezado */
+            border-bottom: 2px solid black;
+            /* Borde inferior para el encabezado */
         }
+
         .botonarriba {
             position: fixed;
             bottom: 30px;
             right: 30px;
             background-color: red;
-            width: 50px; /* Ajusta el tamaño según lo que necesites */
-            height: 50px; /* Mismo tamaño para hacer el fondo redondo */
+            width: 50px;
+            /* Ajusta el tamaño según lo que necesites */
+            height: 50px;
+            /* Mismo tamaño para hacer el fondo redondo */
             display: flex;
-            align-items:center;
+            align-items: center;
             justify-content: center;
             border-radius: 50%;
-            color: white; /* Color del texto */
+            color: white;
+            /* Color del texto */
             cursor: pointer;
         }
 
         .botonarriba h1 {
-            margin: 0; /* Elimina el margen predeterminado del h1 */
-            font-size: 60px; /* Ajusta el tamaño del símbolo ^ */
+            margin: 0;
+            /* Elimina el margen predeterminado del h1 */
+            font-size: 60px;
+            /* Ajusta el tamaño del símbolo ^ */
             padding-bottom: 10px;
         }
 
         .datos {
-            width:100%;
+            width: 100%;
         }
     </style>
     <main style="width:100%; margin:0; padding: 0;">
         <div style="padding:20px;">
             <div class="botonarriba">
-                <h1  onclick="window.location.href='#indice'">^</h1>
+                <h1 onclick="window.location.href='#indice'">^</h1>
             </div>
             <div class="header">
                 <h1 class="text-center p-4 pb-0">Cuentos de Enforth</h1>
@@ -164,316 +180,567 @@
                 <h4 id="t_general">Tienda general (Objetos vendidos en cualquier continente)</h4>
             </div>
             <p class="parrafo">
-                <u style="font-size:24px"><h4>Joyas</h4></u>
+                <u style="font-size:24px">
+                    <h4>Joyas</h4>
+                </u>
                 <style>
                     * {
                         box-sizing: border-box;
                     }
+
                     .text {
                         border-left: 3px solid gray;
-                        padding-left:10px;
+                        padding-left: 10px;
                         margin: 0;
                     }
+
                     .masonry {
-                        columns: 4; /* o usa columns: 1 300px; para responsive */
+                        columns: 4;
+                        /* o usa columns: 1 300px; para responsive */
                         column-gap: 1rem;
                     }
+
                     .my-col-lg-3 {
                         box-sizing: border-box;
-                        padding:10px;
-                        padding-bottom:0;
+                        padding: 10px;
+                        padding-bottom: 0;
                         display: inline-block;
                         width: 100%;
                         margin-bottom: 1rem;
                     }
+
                     @media (max-width: 992px) {
                         .masonry {
                             display: flex;
                             flex-direction: column;
-                            column-count: 4;
-                            column-gap: 1rem;
                         }
 
-                        .masonry > .my-col-lg-3 {
+                        .masonry>.my-col-lg-3 {
                             display: inline-block;
                             width: 100%;
                             break-inside: avoid;
-                            padding:0;
+                            padding: 0;
                             padding: 0 10px 0 5px;
-                            margin:0;
+                            margin: 0;
                             margin-bottom: 1rem;
                         }
                     }
                 </style>
-                <div class="m-0 masonry">
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Armazón</b>
-                            <x><b>Costo de compra.</b> 200</x>
-                            <x><b>Costo de venta.</b> 50</x>
-                            <x><b>Material.</b> Lingote de Basalto + Otro lingote</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Son requeridos como base para cualquier joya. Crear armazones solo te dará puntos de joyería 
-                            hasta nivel 4, y solo dará puntos en herrería, si el material es del correspondiente al nivel trabajable. Requiere 
-                            nivel de herrero, y el manual del material si corresponde. Los armazones pueden ser pendientes, collares, anillos, 
-                            etc. Para crear joyas, y armazones, requieres un Libro de Joyería, y un molde de la joya correspondiente.</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Armazón de Platino</b>
-                            <x><b>Material.</b> Lingote de basalto platinado + Lingote de platino</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Son requeridos como base para crear joyas de Nivel 3.</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de Filo Lv1</b>
-                            <x><b>Costo de compra.</b> 1200</x>
-                            <x><b>Costo de venta.</b> 200</x>
-                            <x><b>Material.</b> Armazón de cobre + Fragmento de rubí (4)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Obtienes 1 de daño fijo en ataques cuerpo a cuerpo (No acumulable).</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de Filo Lv2</b>
-                            <x><b>Costo de compra.</b> 2500</x>
-                            <x><b>Costo de venta.</b> 700</x>
-                            <x><b>Material.</b> Joya de filo Lv1 + Polvo de oro (2) + Afilador de arma</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Obtienes 2 de daño fijo en ataques cuerpo a cuerpo (No acumulable).</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de Filo Lv3</b>
-                            <x><b>Costo de compra.</b> 4000</x>
-                            <x><b>Costo de venta.</b> 1100</x>
-                            <x><b>Material.</b> Joya de filo Lv2 (1) + Armazón de platino (1)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Obtienes 3 de daño fijo en ataques cuerpo a cuerpo (No acumulable).</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de Vitalidad Lv1</b>
-                            <x><b>Costo de compra.</b> 1500</x>
-                            <x><b>Costo de venta.</b> 200</x>
-                            <x><b>Material.</b> Armazón de oro (1) + Fragmento de zafiro (1) + Fragmento de hematita (4)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Aumenta la vida en 2 puntos (No acumulable). Si se entrega la joya del nivel anterior, se resta el precio de la misma.</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de Vitalidad Lv2</b>
-                            <x><b>Costo de compra.</b> 3500</x>
-                            <x><b>Costo de venta.</b> 700</x>
-                            <x><b>Material.</b> Joya de vitalidad Lv1 (1) + Fragmento de onix (2) + Fragmento de amatista (2)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Aumenta la vida en 5 puntos (No acumulable). Si se entrega la joya del nivel anterior, se resta el precio de la misma.</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de Vitalidad Lv3</b>
-                            <x><b>Costo de compra.</b> 9000</x>
-                            <x><b>Costo de venta.</b> 3100</x>
-                            <x><b>Material.</b> Joya de vitalidad Lv2 (1) + Armazón de platino (1)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Aumenta la vida en 8 puntos (No acumulable). Si se entrega la joya del nivel anterior, se resta el precio de la misma.</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de Lucha Lv1</b>
-                            <x><b>Costo de compra.</b> 3500</x>
-                            <x><b>Costo de venta.</b> 1200</x>
-                            <x><b>Material.</b> Armazón de oro (1) + Fragmento de zafiro (1) + Fragmento de hematita (4)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Aumenta tus acciones de ataque en 1</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de Lucha Lv2</b>
-                            <x><b>Costo de compra.</b> 8900</x>
-                            <x><b>Costo de venta.</b> 3000</x>
-                            <x><b>Material.</b> Joya de lucha Lv1 (1) + Armazón de platino (1)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Aumenta tus acciones de ataque en 2</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de Sabiduria Lv1</b>
-                            <x><b>Costo de compra.</b> 1000</x>
-                            <x><b>Costo de venta.</b> 200</x>
-                            <x><b>Material.</b> Armazón de plata (1) + Fragmento de zafiro (2)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Aumenta la inteligencia en 1 punto (No acumulable). Si se entrega la joya del nivel anterior, se resta el precio de la misma.</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de Sabiduria Lv2</b>
-                            <x><b>Costo de compra.</b> 2200</x>
-                            <x><b>Costo de venta.</b> 700</x>
-                            <x><b>Material.</b> Joya de sabiduría Lv1 (1) + Polvo de oro (2) + Fragmento de amatista (2)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Aumenta la inteligencia en 2 puntos (No acumulable). Si se entrega la joya del nivel anterior, se resta el precio de la misma.</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de Sabiduria Lv3</b>
-                            <x><b>Costo de compra.</b> 3500</x>
-                            <x><b>Costo de venta.</b> 900</x>
-                            <x><b>Material.</b> Joya de sabiduría Lv2 (1) + Armazón de platino (1)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Aumenta la inteligencia en 3 puntos (No acumulable). Si se entrega la joya del nivel anterior, se resta el precio de la misma.</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de Incineración Lv1</b>
-                            <x><b>Costo de compra.</b> 1200</x>
-                            <x><b>Costo de venta.</b> 200</x>
-                            <x><b>Material.</b> Armazón de cuarzo (1) + Fragmento de rubí (4)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Aumenta el daño de los ataques de fuego en 2 (No acumulable). Si se entrega la joya del nivel anterior, se resta el precio de la misma.</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de Incineración Lv2</b>
-                            <x><b>Costo de compra.</b> 3000</x>
-                            <x><b>Costo de venta.</b> 900</x>
-                            <x><b>Material.</b> Joya de incineración Lv1 (1) + Polvo de oricalco (2) + Polvo de basalto (2)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Aumenta el daño de los ataques de fuego en 4 (No acumulable). Si se entrega la joya del nivel anterior, se resta el precio de la misma.</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de Incineración Lv3</b>
-                            <x><b>Costo de compra.</b> 7000</x>
-                            <x><b>Costo de venta.</b> 1500</x>
-                            <x><b>Material.</b> Joya de incineración Lv2 (1) + Armazón de platino (1)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Aumenta el daño de los ataques de fuego en 6 (No acumulable). Si se entrega la joya del nivel anterior, se resta el precio de la misma.</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de impulso mágico Lv1</b>
-                            <x><b>Costo de compra.</b> 1200</x>
-                            <x><b>Costo de venta.</b> 200</x>
-                            <x><b>Material.</b> Armazón de titanio (1) + Fragmento de rubí (2) + Fragmento de zafiro (2) + Fragmento de turmalina (2) + Fragmento de amatista (2)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Inicias el combate con 1 núcleo de maná (No acumulable). Si se entrega la joya del nivel anterior, se resta el precio de la misma.</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de impulso mágico Lv2</b>
-                            <x><b>Costo de compra.</b> 4000</x>
-                            <x><b>Costo de venta.</b> 900</x>
-                            <x><b>Material.</b> Joya de impulso mágico Lv1 (1) + Polvo de oro (2) + Hoja de sauce dorada (2)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Inicias el combate con 2 núcleo de maná (No acumulable). Si se entrega la joya del nivel anterior, se resta el precio de la misma.</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de impulso mágico Lv3</b>
-                            <x><b>Costo de compra.</b> 8000</x>
-                            <x><b>Costo de venta.</b> 1500</x>
-                            <x><b>Material.</b> Joya de impulso mágico Lv2 (1) + Armazón de platino (1)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Inicias el combate con 3 núcleo de maná (No acumulable). Si se entrega la joya del nivel anterior, se resta el precio de la misma.</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de Profesión</b>
-                            <x><b>Costo de compra.</b> 4500</x>
-                            <x><b>Costo de venta.</b> 1200</x>
-                            <x><b>Material.</b> Armazón de titanio (1) + Fragmento de jade (4) + Fragmento de ónix (4) + Fragmento de hematita (4)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Mientras esté siendo portada, la profesión cuenta como un nivel arriba para las creaciones, pero 
-                                no para la subida de puntos de experiencia en la profesión (No acumulable). La palabra "Profesión" en la joya, 
-                                cambia para la profesión hacia la que fue creada (Ej. Joya de Cazador).</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Anillo del Conjurador</b>
-                            <x><b>Costo de compra.</b> 6500</x>
-                            <x><b>Costo de venta.</b> 2200</x>
-                            <x><b>Material.</b> Armazón platinado (1) + Gema</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Permite realizar hechizos desde esta gema</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de estadística Lv1</b>
-                            <x><b>Costo de compra.</b> 3500</x>
-                            <x><b>Costo de venta.</b> 1200</x>
-                            <x><b>Material.</b> Armazón de oro (1) + Fragmento de zafiro (1) + Fragmento de hematita (4)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Aumenta la estadística referida en la joya en 1 punto. El nombre de la joya pasará a ser el de la 
-                                estadística (Ej. Anillo de Puntería Lv1)</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya de estadística Lv2</b>
-                            <x><b>Costo de compra.</b> 10500</x>
-                            <x><b>Costo de venta.</b> 3200</x>
-                            <x><b>Material.</b> Joya de estadística Lv1 (1) + Armazón de platino (1)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Aumenta la estadística referida en la joya en 2 puntos. El nombre de la joya pasará a ser el de la 
-                                estadística (Ej. Anillo de Puntería Lv2). Si se entrega la joya del nivel anterior, se resta el precio de la misma.</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya detectora de metales Lv1</b>
-                            <x><b>Costo de compra.</b> 4000</x>
-                            <x><b>Costo de venta.</b> No se vende</x>
-                            <x><b>Material.</b> Armazón de oro (2) + Polvo de hierro (2) + Fragmento de perla (1) + Fragmento de ónix (1) + Polvo de oro (3) + Fragmento de rubí (1)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Permite encontrar tesoros ocultos (5 usos).</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya detectora de metales Lv2</b>
-                            <x><b>Costo de compra.</b> 9000</x>
-                            <x><b>Costo de venta.</b> No se vende</x>
-                            <x><b>Material.</b> Joya detectora de metales Lv1 (1) + Fragmento de esmeralda (4) + Fragmento de amatista (2)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Permite encontrar tesoros ocultos (10 usos).</x>
-                        </div>
-                    </div>
-                    <div class="my-col-lg-3">
-                        <div class="text d-flex flex-column">
-                            <b>Joya detectora de metales Lv3</b>
-                            <x><b>Costo de compra.</b> 18000</x>
-                            <x><b>Costo de venta.</b> No se vende</x>
-                            <x><b>Material.</b> Joya detectora de metales Lv2 (1) + Armazón de platino (1)</x>
-                            <x><b>Creada en.</b> Forja</x>
-                            <x><b>Descripción.</b> Permite encontrar tesoros ocultos (Ilimitados usos).</x>
-                        </div>
+            <div class="m-0 masonry">
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Armazón</b>
+                        <x><b>Costo de compra.</b> 200</x>
+                        <x><b>Costo de venta.</b> 50</x>
+                        <x><b>Material.</b> Lingote de Basalto + Otro lingote</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Son requeridos como base para cualquier joya. Crear armazones solo te
+                            dará puntos de joyería
+                            hasta nivel 4, y solo dará puntos en herrería, si el material es del correspondiente al
+                            nivel trabajable. Requiere
+                            nivel de herrero, y el manual del material si corresponde. Los armazones pueden ser
+                            pendientes, collares, anillos,
+                            etc. Para crear joyas, y armazones, requieres un Libro de Joyería, y un molde de la joya
+                            correspondiente.</x>
                     </div>
                 </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Armazón de Platino</b>
+                        <x><b>Material.</b> Lingote de basalto platinado + Lingote de platino</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Son requeridos como base para crear joyas de Nivel 3.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de Filo Lv1</b>
+                        <x><b>Costo de compra.</b> 1200</x>
+                        <x><b>Costo de venta.</b> 300</x>
+                        <x><b>Material.</b> Armazón de cobre + Fragmento de rubí (4)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Obtienes 1 de daño fijo en ataques cuerpo a cuerpo (No acumulable).</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de Filo Lv2</b>
+                        <x><b>Costo de compra.</b> 4500</x>
+                        <x><b>Costo de venta.</b> 1400</x>
+                        <x><b>Material.</b> Joya de filo Lv1 + Polvo de oro (2) + Afilador de arma</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Obtienes 2 de daño fijo en ataques cuerpo a cuerpo (No acumulable). Si se
+                            entrega la
+                            joya del nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de Filo Lv3</b>
+                        <x><b>Costo de compra.</b> 8000</x>
+                        <x><b>Costo de venta.</b> 2100</x>
+                        <x><b>Material.</b> Joya de filo Lv2 (1) + Armazón de platino (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Obtienes 3 de daño fijo en ataques cuerpo a cuerpo (No acumulable). Si se
+                            entrega la
+                            joya del nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de Vitalidad Lv1</b>
+                        <x><b>Costo de compra.</b> 1500</x>
+                        <x><b>Costo de venta.</b> 200</x>
+                        <x><b>Material.</b> Armazón de oro (1) + Fragmento de zafiro (1) + Fragmento de hematita (4)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Aumenta la vida en 2 puntos (No acumulable).</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de Vitalidad Lv2</b>
+                        <x><b>Costo de compra.</b> 3500</x>
+                        <x><b>Costo de venta.</b> 700</x>
+                        <x><b>Material.</b> Joya de vitalidad Lv1 (1) + Fragmento de onix (2) + Fragmento de amatista
+                            (2)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Aumenta la vida en 5 puntos (No acumulable). Si se entrega la joya del
+                            nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de Vitalidad Lv3</b>
+                        <x><b>Costo de compra.</b> 9000</x>
+                        <x><b>Costo de venta.</b> 3100</x>
+                        <x><b>Material.</b> Joya de vitalidad Lv2 (1) + Armazón de platino (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Aumenta la vida en 8 puntos (No acumulable). Si se entrega la joya del
+                            nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de Lucha Lv1</b>
+                        <x><b>Costo de compra.</b> 3500</x>
+                        <x><b>Costo de venta.</b> 1200</x>
+                        <x><b>Material.</b> Armazón de oro (1) + Fragmento de zafiro (1) + Fragmento de hematita (4)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Aumenta tus acciones de ataque en 1</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de Lucha Lv2</b>
+                        <x><b>Costo de compra.</b> 8900</x>
+                        <x><b>Costo de venta.</b> 3000</x>
+                        <x><b>Material.</b> Joya de lucha Lv1 (1) + Armazón de platino (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Aumenta tus acciones de ataque en 2</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de Sabiduria Lv1</b>
+                        <x><b>Costo de compra.</b> 1000</x>
+                        <x><b>Costo de venta.</b> 200</x>
+                        <x><b>Material.</b> Armazón de plata (1) + Fragmento de zafiro (2)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Aumenta la inteligencia en 1 punto (No acumulable).</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de Sabiduria Lv2</b>
+                        <x><b>Costo de compra.</b> 2200</x>
+                        <x><b>Costo de venta.</b> 700</x>
+                        <x><b>Material.</b> Joya de sabiduría Lv1 (1) + Polvo de oro (2) + Fragmento de amatista (2)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Aumenta la inteligencia en 2 puntos (No acumulable). Si se entrega la
+                            joya del nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de Sabiduria Lv3</b>
+                        <x><b>Costo de compra.</b> 3500</x>
+                        <x><b>Costo de venta.</b> 900</x>
+                        <x><b>Material.</b> Joya de sabiduría Lv2 (1) + Armazón de platino (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Aumenta la inteligencia en 3 puntos (No acumulable). Si se entrega la
+                            joya del nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de Incineración Lv1</b>
+                        <x><b>Costo de compra.</b> 1200</x>
+                        <x><b>Costo de venta.</b> 200</x>
+                        <x><b>Material.</b> Armazón de cuarzo (1) + Fragmento de rubí (4)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Aumenta el daño de los ataques de fuego en 2 (No acumulable).</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de Incineración Lv2</b>
+                        <x><b>Costo de compra.</b> 3000</x>
+                        <x><b>Costo de venta.</b> 900</x>
+                        <x><b>Material.</b> Joya de incineración Lv1 (1) + Polvo de oricalco (2) + Polvo de basalto (2)
+                        </x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Aumenta el daño de los ataques de fuego en 4 (No acumulable). Si se
+                            entrega la joya del nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de Incineración Lv3</b>
+                        <x><b>Costo de compra.</b> 7000</x>
+                        <x><b>Costo de venta.</b> 1500</x>
+                        <x><b>Material.</b> Joya de incineración Lv2 (1) + Armazón de platino (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Aumenta el daño de los ataques de fuego en 6 (No acumulable). Si se
+                            entrega la joya del nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de impulso mágico Lv1</b>
+                        <x><b>Costo de compra.</b> 1200</x>
+                        <x><b>Costo de venta.</b> 200</x>
+                        <x><b>Material.</b> Armazón de titanio (1) + Fragmento de rubí (2) + Fragmento de zafiro (2) +
+                            Fragmento de turmalina (2) + Fragmento de amatista (2)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Inicias el combate con 1 núcleo de maná (No acumulable).</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de impulso mágico Lv2</b>
+                        <x><b>Costo de compra.</b> 4000</x>
+                        <x><b>Costo de venta.</b> 900</x>
+                        <x><b>Material.</b> Joya de impulso mágico Lv1 (1) + Polvo de oro (2) + Hoja de sauce dorada (2)
+                        </x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Inicias el combate con 2 núcleo de maná (No acumulable). Si se entrega la
+                            joya del nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de impulso mágico Lv3</b>
+                        <x><b>Costo de compra.</b> 8000</x>
+                        <x><b>Costo de venta.</b> 1500</x>
+                        <x><b>Material.</b> Joya de impulso mágico Lv2 (1) + Armazón de platino (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Inicias el combate con 3 núcleo de maná (No acumulable). Si se entrega la
+                            joya del nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de Profesión</b>
+                        <x><b>Costo de compra.</b> 4500</x>
+                        <x><b>Costo de venta.</b> 1200</x>
+                        <x><b>Material.</b> Armazón de titanio (1) + Fragmento de jade (4) + Fragmento de ónix (4) +
+                            Fragmento de hematita (4)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Mientras esté siendo portada, la profesión cuenta como un nivel arriba
+                            para las creaciones, pero
+                            no para la subida de puntos de experiencia en la profesión (No acumulable). La palabra
+                            "Profesión" en la joya,
+                            cambia para la profesión hacia la que fue creada (Ej. Joya de Cazador).</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Anillo del Conjurador</b>
+                        <x><b>Costo de compra.</b> 6500</x>
+                        <x><b>Costo de venta.</b> 2200</x>
+                        <x><b>Material.</b> Armazón platinado (1) + Gema</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Permite realizar hechizos desde esta gema</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de estadística Lv1</b>
+                        <x><b>Costo de compra.</b> 3500</x>
+                        <x><b>Costo de venta.</b> 1200</x>
+                        <x><b>Material.</b> Armazón de oro (1) + Fragmento de zafiro (1) + Fragmento de hematita (4)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Aumenta la estadística referida en la joya en 1 punto. El nombre de la
+                            joya pasará a ser el de la
+                            estadística (Ej. Anillo de Puntería Lv1)</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya de estadística Lv2</b>
+                        <x><b>Costo de compra.</b> 10500</x>
+                        <x><b>Costo de venta.</b> 3200</x>
+                        <x><b>Material.</b> Joya de estadística Lv1 (1) + Armazón de platino (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Aumenta la estadística referida en la joya en 2 puntos. El nombre de la
+                            joya pasará a ser el de la
+                            estadística (Ej. Anillo de Puntería Lv2). Si se entrega la joya del nivel anterior, se resta
+                            el precio de la misma.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya detectora de metales Lv1</b>
+                        <x><b>Costo de compra.</b> 4000</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Armazón de oro (2) + Polvo de hierro (2) + Fragmento de perla (1) +
+                            Fragmento de ónix (1) + Polvo de oro (3) + Fragmento de rubí (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Permite encontrar tesoros ocultos (5 usos).</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya detectora de metales Lv2</b>
+                        <x><b>Costo de compra.</b> 9000</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Joya detectora de metales Lv1 (1) + Fragmento de esmeralda (4) + Fragmento
+                            de amatista (2)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Permite encontrar tesoros ocultos (10 usos). Si se entrega la
+                            joya del nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya detectora de metales Lv3</b>
+                        <x><b>Costo de compra.</b> 18000</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Joya detectora de metales Lv2 (1) + Armazón de platino (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Descripción.</b> Permite encontrar tesoros ocultos (Ilimitados usos). Si se entrega la
+                            joya del nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Joya Reflectante</b>
+                        <x><b>Costo de compra.</b> 7000</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Armazón de basalto (1) + Polvo de titanio (2) + Polvo de oro (2) + Fragmento
+                            de ónix (2) + Fragmento de diamante (2)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Obtenida en.</b> Cofres y tiendas de joyería</x>
+                        <x><b>Descripción.</b> Evita el daño de un ataque enemigo, y le devuelve parte del daño (Se
+                            rompe tras el uso).</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Anillo de Sombras Turbulentas Lv1</b>
+                        <x><b>Costo de compra.</b> 1200</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Armazón de oro (1) + Fragmento de ónix (2) + Fragmento de perla (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Obtenida en.</b> Cofres y tiendas de joyería</x>
+                        <x><b>Descripción.</b> Agrega 1 de Resistencia contra ataques de oscuridad. Agrega 1 de
+                            precisión a hechizos de luz.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Anillo de sombras turbulentas Lv2</b>
+                        <x><b>Costo de compra.</b> 3000</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Anillo de sombras turbulentas Lv1 (1) + Hoja de sauce azul (2) + Polvo de
+                            cobalto (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Obtenida en.</b> Cofres y tiendas de joyería</x>
+                        <x><b>Descripción.</b> Agrega 3 de Resistencia contra ataques de oscuridad. Agrega 1 de
+                            precisión a hechizos de luz. Si se entrega la
+                            joya del nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Anillo de sombras turbulentas Lv3</b>
+                        <x><b>Costo de compra.</b> 6000</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Anillo de sombras turbulentas Lv2 (1) + Armazón de platino (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Obtenida en.</b> Cofres y tiendas de joyería</x>
+                        <x><b>Descripción.</b> Agrega 5 de Resistencia contra ataques de oscuridad. Agrega 2 de
+                            precisión a hechizos de luz. Si se entrega la
+                            joya del nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Collar de aliento gélido Lv1</b>
+                        <x><b>Costo de compra.</b> 1200</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Armazón de plata (2) + Fragmento de zafiro (6) + Fragmento de amatista (4)
+                        </x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Obtenida en.</b> Cofres y tiendas de joyería</x>
+                        <x><b>Descripción.</b> Agrega 1 de Resistencia contra ataques de hielo. Te remueves 1 carga de
+                            congelamiento adicional al final de tu turno. Efectos no acumulables.</x>
+                    </div>
+                </div>
+
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Collar de aliento gélido Lv2</b>
+                        <x><b>Costo de compra.</b> 3500</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Collar de aliento gélido Lv1 (1) + Hoja de sauce azul (3) + Polvo de plata
+                            (4) + Fragmento de perla (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Obtenida en.</b> Cofres y tiendas de joyería</x>
+                        <x><b>Descripción.</b> Agrega 3 de Resistencia contra ataques de hielo. Te remueves 2 cargas de
+                            congelamiento adicional al final de tu turno. Efectos no acumulables. Si se entrega la
+                            joya del nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Collar de aliento gélido Lv3</b>
+                        <x><b>Costo de compra.</b> 6500</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Collar de aliento gélido Lv2 (1) + Armazón de platino (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Obtenida en.</b> Cofres y tiendas de joyería</x>
+                        <x><b>Descripción.</b> Agrega 5 de Resistencia contra ataques de hielo. Te remueves 3 cargas de
+                            congelamiento adicional al final de tu turno. Efectos no acumulables. Si se entrega la
+                            joya del nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Collar de poder de trueno Lv1</b>
+                        <x><b>Costo de compra.</b> 1200</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Armazón de cobalto (1) + Fragmento de turmalina (6) + Fragmento de diamante
+                            (2)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Obtenida en.</b> Cofres y tiendas de joyería</x>
+                        <x><b>Descripción.</b> Aumenta la probabilidad de causar estatizado en 5% para todas las fuentes
+                            y el daño eléctrico en 1. Inmune al estatizado. No acumulable.</x>
+                    </div>
+                </div>
+
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Collar de poder de trueno Lv2</b>
+                        <x><b>Costo de compra.</b> 3500</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Collar de poder de trueno Lv1 (1) + Hoja de sauce verde (2) + Polvo de
+                            cobalto (2) + Fragmento de ónix (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Obtenida en.</b> Cofres y tiendas de joyería</x>
+                        <x><b>Descripción.</b> Aumenta la probabilidad de causar estatizado en 10% para todas las
+                            fuentes y el daño eléctrico en 2. Inmune al estatizado. No acumulable. Si se entrega la
+                            joya del nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Collar de poder de trueno Lv3</b>
+                        <x><b>Costo de compra.</b> 6500</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Collar de poder de trueno Lv2 (1) + Armazón de platino (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Obtenida en.</b> Cofres y tiendas de joyería</x>
+                        <x><b>Descripción.</b> Aumenta la probabilidad de causar estatizado en 15% para todas las
+                            fuentes y el daño eléctrico en 3. Inmune al estatizado. No acumulable. Si se entrega la
+                            joya del nivel anterior, se resta el precio de la misma.</x>
+                    </div>
+                </div>
+
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Collar de cosecha oscura Lv1</b>
+                        <x><b>Costo de compra.</b> 1900</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Armazón de plata (2) + Fragemento de jade (3) + Fragmento de perla (3)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Obtenida en.</b> Cofres y tiendas de joyería</x>
+                        <x><b>Descripción.</b> Aumenta en 5% la probabilidad de recolección de almas.</x>
+                    </div>
+                </div>
+
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Collar de cosecha oscura Lv2</b>
+                        <x><b>Costo de compra.</b> 4000</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Collar de cosecha oscura Lv1 (1) + Vial de sangre verde (2) + Ojo +
+                            Fragmento de amatista (3)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Obtenida en.</b> Cofres y tiendas de joyería</x>
+                        <x><b>Descripción.</b> Aumenta en 10% la probabilidad de recolección de almas.</x>
+                    </div>
+                </div>
+
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Collar de cosecha oscura Lv3</b>
+                        <x><b>Costo de compra.</b> 9600</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Collar de cosecha oscura Lv2 (1) + Armazón de platino (1)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Obtenida en.</b> Cofres y tiendas de joyería</x>
+                        <x><b>Descripción.</b> Aumenta en 15% la probabilidad de recolección de almas.</x>
+                    </div>
+                </div>
+
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Anillo de Don</b>
+                        <x><b>Costo de compra.</b> 15000</x>
+                        <x><b>Costo de venta.</b> No se vende</x>
+                        <x><b>Material.</b> Armazón de platino (2) + Fragmento de cada tipo de gema (1) + Vial de Sangre
+                            de dragón (2)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Obtenida en.</b> Cofres y tiendas de joyería</x>
+                        <x><b>Descripción.</b> El jugador obtendrá el don correspondiente mientras se porte el anillo.
+                            Al crearlo, el Don será aleatorio.</x>
+                    </div>
+                </div>
+
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Collar del Espíritu Veloz</b>
+                        <x><b>Costo de compra.</b> 3500</x>
+                        <x><b>Costo de venta.</b> 500</x>
+                        <x><b>Material.</b> Armazón de cobalto (1) + Fragmento de esmeralda (2) + Fragmento de zafiro
+                            (2)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Obtenida en.</b> Cofres y tiendas de joyería</x>
+                        <x><b>Descripción.</b> Aumenta en 1 la velocidad y otorga 1 al esquive de ataques físicos cuerpo a cuerpo.</x>
+                    </div>
+                </div>
+
+                <div class="my-col-lg-3">
+                    <div class="text d-flex flex-column">
+                        <b>Collar del Comerciante Astuto</b>
+                        <x><b>Costo de compra.</b> 5500</x>
+                        <x><b>Costo de venta.</b> 1500</x>
+                        <x><b>Material.</b> Armazón de cobalto (1) + Fragmento de esmeralda (2) + Fragmento de zafiro
+                            (2)</x>
+                        <x><b>Creada en.</b> Forja</x>
+                        <x><b>Obtenida en.</b> Cofres y tiendas de joyería</x>
+                        <x><b>Descripción.</b> Una vez por día, puedes realizar una tirada de Carisma con un comerciante, para obtener un 40% de descuento (Se deben
+                        elegir los objetos primero, y la dificultad será de 20, en caso de no superar, no podrá comprar esos objetos durante 2 días).</x>
+                    </div>
+                </div>
+            </div>
             </p>
         </div>
     </main>
 </body>
+
 </html>
