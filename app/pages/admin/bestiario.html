@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestiario</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="unlog.js" defer></script>
+    <script src="nav.js" defer></script>
+    <script src="usuario.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark">
+    <div id="menuopciones" class="menuopciones hide">
+        <div class="menu">
+            <nav class="upper">
+                <h4><i class="bi bi-person"></i> Cuenta</h4>
+            </nav>
+            <nav class="medium">
+                <a href="/"><span><i class="bi bi-house-door"></i> Inicio</span></a>
+                <a href="#" onclick="cargarpestaña('/usuario/personajes.html')"><span><i class="bi bi-people"></i> Personajes</span></a>
+                <a href="#"><span><i class="bi bi-journal-bookmark-fill"></i> Ficha</span></a>
+                <a href="#"><span><i class="bi bi-dice-6"></i> Dados</span></a>
+                <a href="/staff"><span><i class="bi bi-award"></i> Staff</span></a>
+            </nav>
+            <nav class="bottom">
+                <button id="unlog"><i class="bi bi-power"></i> Cerrar sesión</button>
+            </nav>
+        </div>
+    </div>
+    <div id="flecha" class="flecha hide">
+        <span onclick="barra_lateral()">
+            <i id="abierto" class="bi bi-arrow-left-circle invisible"></i>
+            <i id="cerrado" class="bi bi-arrow-right-circle"></i>
+        </span>
+    </div>
+    <main id="main" style="min-height: 100vsh;">
+        <style>
+        *, html, body, p {
+            font-size: 16px;
+        }
+
+        h1,
+        h5 {
+            margin: 0;
+            padding: 0;
+        }
+
+        #main {
+            width:90vw;
+            margin: auto;
+            text-align: justify;
+            min-width: 300px;
+            background-color: rgb(243, 243, 243);
+        }
+
+        .parrafo {
+            display:flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            padding-top: 30px;
+        }
+
+        h3 {
+            color:rgb(173, 92, 16)
+        }
+
+        h5 {
+            padding-bottom: 30px;
+        }
+
+        main {
+            font-family: sans-serif;
+            padding: 10px;
+            width: 80vw;
+            min-width: 300px;
+            margin: auto;
+        }
+
+        main h4 {
+            text-align: center;
+        }
+
+        .search li {
+            margin: 10px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .search li:hover {
+            text-decoration: underline;
+        }
+
+        h6 {
+            font-size: 200%;
+        }
+
+        .titulo_categoria {
+            text-align: center;
+            font-size: 30px;
+            width: 100%;
+            text-decoration:underline;
+        }
+
+        img {
+            width: 300px;
+            max-width: 300px;
+            margin:10px;
+            max-height: 350px;
+            object-fit: cover;
+        }
+
+        .costo {
+            color:rgb(187, 0, 0)
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Une los bordes */
+        }
+        
+        th, td {
+            /*border-right: 1px solid black;*/
+            padding: 8px;
+        }
+
+        th:last-child, td:last-child {
+            border-right: none;
+        }
+        
+        tbody:not(.singled) tr:nth-child(2n) {
+            border-bottom: 1px solid black; /* Borde inferior cada dos filas */
+        }
+
+        .singled tr:not(.singled) {
+            border-bottom: 1px solid black;
+        }
+
+        thead {
+            background-color: #eee;
+            text-align: center;
+            border-bottom: 2px solid black; /* Borde inferior para el encabezado */
+        }
+        .botonarriba {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: red;
+            width: 50px; /* Ajusta el tamaño según lo que necesites */
+            height: 50px; /* Mismo tamaño para hacer el fondo redondo */
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white; /* Color del texto */
+            cursor: pointer;
+        }
+
+        .botonarriba h1 {
+            margin: 0; /* Elimina el margen predeterminado del h1 */
+            font-size: 60px; /* Ajusta el tamaño del símbolo ^ */
+            padding-bottom: 10px;
+        }
+
+        .criatura {
+            border: 1px solid black;
+            border-left: none;
+            border-right: none;
+            margin-bottom: 3px;
+        }
+
+        img {
+            width:150px;
+        }
+    </style>
+    <div class="botonarriba">
+        <h1  onclick="window.location.href='#indice'">^</h1>
+    </div>
+    <div class="header">
+        <h1 class="text-center p-4 pb-0">Cuentos de Enforth</h1>
+        <h5 class="text-center">Manual de rol</h5>
+    </div>
+    <div class="indice" id="indice">
+        <h1>Indice</h1>
+        <h4><b>Bestiario</b></h4>
+        <ul class="search">
+            <li>Explicación del bestiario</li>
+            <li>Habilidades generales</li>
+            <li>Comunes</li> <!--Innata, con gema, maldita, etc-->
+            <li>Poco comunes</li>
+            <li>Raras</li> <!--En turno y fuera de turno-->
+            <li>Épicas</li> <!--En turno y fuera de turno-->
+            <li>Exclusivos de mazmorra</li> <!--En turno y fuera de turno-->
+        </ul>
+        <hr>
+    </div>
+    <div id="datos">
+        <h1>Explicación del bestiario</h1>
+        <p>Aqui se procederán a detallar las criaturas que forman parte del mundo de Enforth. En caso de faltar
+            alguna, se puede utilizar la criatura mas similar en apariencia y habilidades.
+        </p>
+        <h3>Habilidades generales</h3>
+
+        <h3>Comunes</h3>
+        <div class="criatura row">
+            <div class="col-2 d-flex align-items-center">
+                <img src="/files/img/bestiario/lobo.png" alt="Imagen de criatura">
+            </div>
+            <div class="col-10 mt-2 row">
+                <h4 class="text-center">Lobo</h4>
+                <div class="col-3">
+                    <b class="text-center">Datos y estadísticas:</b>
+                    <ul>
+                        <li><b>Agilidad.</b> 4 (+1 cada 2 niveles)</li> 
+                        <li><b>Puntería.</b> 3 (+1 cada 2 niveles)</li> 
+                        <li><b>Resistencia.</b> 2 (+1 cada 2 niveles)</li> 
+                        <li><b>Fuerza.</b> 3 (+1 cada 2 niveles)</li> 
+                        <li><b>Otras.</b> 1 (+1 cada 2 niveles)</li> 
+                        <li><b>Zona de aparición.</b> Todo Enforth</li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <b class="text-center">Drop:</b>
+                    <ul>
+                        <li><b>Carne de lobo (100%). </b>1 (Requiere Cazador)</li>
+                        <li><b>Piel de lobo (100%). </b>Hasta 2 (Requiere Cazador)</li>
+                        <li><b>Alma de lobo. </b>Requiere Magia de Alma</li>
+                        <li><b>Alma de Lobo Alfa (1%). </b>Requiere Magia de Alma</li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <b class="text-center">Datos de domesticación:</b>
+                    <ul>
+                        <li><b>Domesticable.</b> Si</li>
+                        <li><b>Objeto de domesticación.</b> Carne</li>
+                        <li><b>Nivel requerido.</b> 1</li>
+                        <li><b>Dificultad.</b> +3</li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <b class="text-center">Combate:</b>
+                    <ul>
+                        <li><b>Efecto.</b> Sangrado</li>
+                        <li><b>Probabilidad base.</b> 10%</li>
+                        <li><b>Resistencia (50% daño recibido).</b> Contundente</li>
+                        <li><b>Inmunidad.</b> Ninguno</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12">
+                <h2>Habilidades</h2>
+            </div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>
