@@ -109,6 +109,32 @@ const db = new sqlite.Database(
                 fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );    
         `)
+
+        db.run(`CREATE TABLE IF NOT EXISTS Bestiario (
+                name TEXT,
+                image_link TEXT,
+                agilidad TEXT,
+                punteria TEXT,
+                resistencia TEXT,
+                fuerza TEXT,
+                carisma TEXT,
+                percepcion TEXT,
+                inteligencia TEXT,
+                suerte TEXT,
+                otras_stats TEXT,
+                zonadeaparicion TEXT,
+                drops TEXT,
+                domesticable TEXT,
+                objeto_domes TEXT,
+                nivel_domes NUMERIC,
+                dificultad_domes NUMERIC,
+                vida TEXT,
+                acciones TEXT,
+                efecto TEXT,
+                prob_base TEXT,
+                resistencia TEXT,
+                inmunidad TEXT
+            )`)
     }
 );
 
