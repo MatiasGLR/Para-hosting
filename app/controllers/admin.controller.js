@@ -17,8 +17,6 @@ async function listaJugadores(req, res) {
             });
         });
 
-        console.log(rows)
-
         // Responder con los jugadores encontrados
         res.status(200).json({ status: "Ok", data: rows });
 
@@ -37,8 +35,6 @@ async function listaBestias(req, res) {
                 else resolve(rows);
             });
         });
-
-        console.log(rows)
 
         // Responder con los jugadores encontrados
         res.status(200).json({ status: "Ok", data: rows });
@@ -70,8 +66,6 @@ async function cambiarRango(req, res) {
                     else res.status(200).json({ status: "Ok", message: "El rango fue cambiado a " + nombre_rango(rank) });
                 });
             });
-    
-            console.log(rows)
         } catch (err) {
             res.status(500).json({ status: "Error", message: "Error al recuperar jugadores." });
         }
