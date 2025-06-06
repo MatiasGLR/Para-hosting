@@ -132,7 +132,7 @@ const db = new sqlite.Database(
                 acciones TEXT,
                 efecto TEXT,
                 prob_base TEXT,
-                resistencia TEXT,
+                efec_resistencia TEXT,
                 inmunidad TEXT
             )`)
     }
@@ -151,6 +151,7 @@ app.get('/staff/jugadores'/*, authorization.onlyAdmin*/, (req, res) => res.statu
 app.get('/login'/*, authorization.onlyUnlogged*/, (req, res) => res.status(200).sendFile(__dirname + '/pages/login.html'))
 app.get('/register'/*, authorization.onlyUnlogged*/, (req, res) => res.status(200).sendFile(__dirname + '/pages/register.html'))
 app.get('/chat'/*, authorization.onlyLogged*/, (req, res) => { res.status(200).sendFile(__dirname + '/pages/chat.html') })
+app.post('/api/bestiario', staff.listaBestias);
 app.post('/api/revisarjugador', authorization.devolverNombre);
 app.post('/api/cargarjugadores', staff.listaJugadores);
 app.post('/api/cambiarrango', staff.cambiarRango);

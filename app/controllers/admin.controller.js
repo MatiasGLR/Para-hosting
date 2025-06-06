@@ -27,6 +27,28 @@ async function listaJugadores(req, res) {
     }
 }
 
+async function listaBestias(req, res) {
+    const name = req.body.name ? req.body.name : "";
+    const rareza = req.body.rareza ? req.body.rareza : "";
+    try {
+        const rows = await new Promise((resolve, reject) => {
+            db.all("SELECT * FROM Bestiario WHERE LOWER(name) LIKE LOWER(?) AND rareza LIKE ?", ['%' + name + '%', '%' + rareza + '%'], (err, rows) => {
+                if (err) reject({ status: "Error", message: err.message });
+                else resolve(rows);
+            });
+        });
+
+        console.log(rows)
+
+        // Responder con los jugadores encontrados
+        res.status(200).json({ status: "Ok", data: rows });
+
+    } catch (err) {
+        res.status(500).json({ status: "Error", message: "Error al recuperar bestias." });
+    }
+}
+
+
 function nombre_rango(rango) {
     switch(rango){
         case 0: return "Usuario";
@@ -78,5 +100,6 @@ async function comprobarAdmin(req, res) {
 export const methods = {
     listaJugadores,
     comprobarAdmin,
-    cambiarRango
+    cambiarRango,
+    listaBestias
 }
