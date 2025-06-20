@@ -47,10 +47,10 @@ async function cargarCriaturas() {
                             const izquierda = (partes[0] || '').trim();
                             const derecha = (partes[1] || '').trim();
 
-                            return `<li><b${estiloB}>${izquierda}</b><br>${derecha}</li>`;
+                            return `<li class="list-group-item"><b${estiloB}>${izquierda}</b><br>${derecha}</li>`;
                         } else {
                             // No válido o sin delimitador: devolver como texto simple
-                            return `<li>${item}</li>`;
+                            return `<li class="list-group-item">${item}</li>`;
                         }
                     }).join('\n');
 
@@ -91,74 +91,112 @@ async function cargarCriaturas() {
 
                                 if (partes.length === 1) {
                                     // Solo nombre
-                                    return `<li><b${estiloB}>${partes[0].trim()}</b></li>`;
+                                    return `<li class="list-group-item"><b${estiloB}>${partes[0].trim()}</b></li>`;
                                 } else {
                                     const [nombre, costo, descripcion] = partes;
-                                    return `<li><b${estiloB}>${(nombre || '').trim()}.</b> <i>${(costo || '').trim()}</i>. ${(descripcion || '').trim()}</li>`;
+                                    return `<li class="list-group-item"><b${estiloB}>${(nombre || '').trim()}.</b> <i>${(costo || '').trim()}</i>. ${(descripcion || '').trim()}</li>`;
                                 }
                             } else {
                                 // Si no tiene delimitadores, se puede omitir o tratar como nombre sin formato
-                                return `<li>${item}</li>`;
+                                return `<li class="list-group-item">${item}</li>`;
                             }
                         }).join('\n');
                     }
 
+                    var es_domesticable = `
+                        <div class="col-md-6">
+                            <h5 class="text-success">Domesticación</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Esta criatura no es domesticable o no forma parte de la lista de mascotas.</li>
+                            </ul>
+                        </div>`;
+                    if(row.domesticable == "Si") {
+                        es_domesticable = `
+                        <div class="col-md-6">
+                            <h5 class="text-success">Domesticación</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Objeto: <b>${row.objeto_domes}</b></li>
+                                <li class="list-group-item">Nivel requerido: <b>Domador Lv${row.nivel_domes}</b></li>
+                                <li class="list-group-item">Dificultad: <b>+${row.dificultad_domes}</b></li>
+                            </ul>
+                        </div>`
+                    }
+
                     str = str + `
-                    <div class="criatura row">
-                        <div class="col-2 d-flex align-items-center">
-                            <img src="/files/img/bestiario/${row.image_link}" alt="Imagen de criatura">
-                        </div>
-                        <div class="col-10 mt-2 row">
-                            <h4 class="text-center">${row.name}</h4>
-                            <div class="col-3">
-                                <b class="text-center">Datos y estadísticas:</b>
-                                <ul>
-                                    <li><b>Tamaño.</b> ${row.size} unidades</li>
-                                    ${row.agilidad != null && row.agilidad != undefined ? `<li><b>Agilidad.</b> ${row.agilidad}</li>` : ``}
-                                    ${row.punteria != null && row.punteria != undefined ? `<li><b>Puntería.</b> ${row.punteria}</li>` : ``}
-                                    ${row.resistencia != null && row.resistencia != undefined ? `<li><b>Resistencia.</b> ${row.resistencia}</li>` : ``}
-                                    ${row.fuerza != null && row.fuerza != undefined ? `<li><b>Fuerza.</b> ${row.fuerza}</li>` : ``}
-                                    ${row.carisma != null && row.carisma != undefined ? `<li><b>Carisma.</b> ${row.carisma}</li>` : ``}
-                                    ${row.percepcion != null && row.percepcion != undefined ? `<li><b>Percepción.</b> ${row.percepcion}</li>` : ``}
-                                    ${row.inteligencia != null && row.inteligencia != undefined ? `<li><b>Inteligencia.</b> ${row.inteligencia}</li>` : ``}
-                                    ${row.suerte != null && row.suerte != undefined ? `<li><b>Suerte.</b> ${row.suerte}</li>` : ``}
-                                    ${row.otras_stats != null && row.otras_stats != undefined ? `<li><b>Otros.</b> ${row.otras_stats}</li>` : ``}
-                                    <li><b>Zona de aparición.</b> ${row.zonadeaparicion}</li>
-                                </ul>
+                    <div class="container my-4 bestiario-entry w-100">
+                        <div class="card shadow-lg border-0">
+                            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                                <h2 class="m-0">${row.name}</h2>
+                                <span class="badge bg-danger">Rareza: ${row.rareza}</span>
                             </div>
-                            <div class="col-3">
-                                <b class="text-center">Drop:</b>
-                                <ul>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="/files/img/bestiario/${row.image_link}">
+                                    </div>
+                                </div>
+                                <hr>
+                                <!-- Estadísticas -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="text-primary">Estadísticas</h5>
+                                        <ul class="list-group list-group-flush">
+                                            ${row.agilidad != null && row.agilidad != undefined ? `<li class="list-group-item">Agilidad. <b>${row.agilidad}</b></li>` : ``}
+                                            ${row.punteria != null && row.punteria != undefined ? `<li class="list-group-item">Puntería. <b>${row.punteria}</b></li>` : ``}
+                                            ${row.resistencia != null && row.resistencia != undefined ? `<li class="list-group-item">Resistencia. <b>${row.resistencia}</b></li>` : ``}
+                                            ${row.fuerza != null && row.fuerza != undefined ? `<li class="list-group-item">Fuerza. <b>${row.fuerza}</b></li>` : ``}
+                                            ${row.carisma != null && row.carisma != undefined ? `<li class="list-group-item">Carisma. <b>${row.carisma}</b></li>` : ``}
+                                            ${row.percepcion != null && row.percepcion != undefined ? `<li class="list-group-item">Percepción. <b>${row.percepcion}</b></li>` : ``}
+                                            ${row.inteligencia != null && row.inteligencia != undefined ? `<li class="list-group-item">Inteligencia. <b>${row.inteligencia}</b></li>` : ``}
+                                            ${row.suerte != null && row.suerte != undefined ? `<li class="list-group-item">Suerte. <b>${row.suerte}</b></li>` : ``}
+                                            ${row.otras_stats != null && row.otras_stats != undefined ? `<li class="list-group-item">Otros. <b>${row.otras_stats}</b></li>` : ``}
+                                            <li class="list-group-item">Tamaño. <b>${row.size} unidades</b></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Domesticación -->
+                                    ${es_domesticable}
+                                </div>
+
+                                <!-- Combate -->
+                                <hr>
+                                <h5 class="text-danger mt-3">Combate</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Vida: <b>${row.vida}</b></li>
+                                            <li class="list-group-item">Acciones: <b>${row.acciones}</b></li>
+                                            <li class="list-group-item">Efecto: <b>${row.efecto}</b></li>
+                                            <li class="list-group-item">Probabilidad base: <b>${row.prob_base}</b></li>
+                                            <li class="list-group-item">Tamaño de ficha: <b>${row.size_field}</b></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Resiste: <b>${row.efec_resistencia}</b></li>
+                                            <li class="list-group-item">Inmune: <b>${row.inmunidad}</b></li>
+                                        </ul>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Zona de aparición: <b>${row.zonadeaparicion}</b></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Habilidades -->
+                                <hr>
+                                <h5 class="text-warning mt-3">Habilidades</h5>
+                                <ul class="list-group list-group-flush">
+                                    ${habilidades}
+                                </ul>
+
+                                <!-- Drop -->
+                                <hr>
+                                <h5 class="text-info mt-3">Objetos Obtenibles</h5>
+                                <ul class="list-group list-group-flush">
                                     ${drops}
                                 </ul>
                             </div>
-                            <div class="col-3">
-                                <b class="text-center">Datos de domesticación:</b>
-                                <ul>
-                                    <li><b>Domesticable.</b> ${row.domesticable}</li>
-                                    <li><b>Objeto de domesticación.</b> ${row.objeto_domes}</li>
-                                    <li><b>Nivel requerido.</b> Domador Lv${row.nivel_domes}</li>
-                                    <li><b>Dificultad.</b> +${row.dificultad_domes}</li>
-                                </ul>
-                            </div>
-                            <div class="col-3">
-                                <b class="text-center">Combate:</b>
-                                <ul>
-                                    <li><b>Vida.</b> ${row.vida}</li>
-                                    <li><b>Acciones.</b> ${row.acciones}</li>
-                                    <li><b>Efecto.</b> ${row.efecto}</li>
-                                    <li><b>Probabilidad base.</b> ${row.prob_base}</li>
-                                    <li><b>Resistencia a.</b> ${row.efec_resistencia}</li>
-                                    <li><b>Inmunidad.</b> ${row.inmunidad}</li>
-                                    <li><b>Tamaño de ficha.</b> ${row.size_field}</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <h2>Habilidades</h2>
-                            <ul>
-                                ${habilidades}
-                            </ul>
                         </div>
                     </div>
                     `;
