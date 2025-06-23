@@ -47,7 +47,7 @@ async function cargarCriaturas() {
                             const izquierda = (partes[0] || '').trim();
                             const derecha = (partes[1] || '').trim();
 
-                            return `<li class="list-group-item"><b${estiloB}>${izquierda}</b><br>${derecha}</li>`;
+                            return `<li class="list-group-item"><b${estiloB}>${izquierda}. </b>${derecha}</li>`;
                         } else {
                             // No válido o sin delimitador: devolver como texto simple
                             return `<li class="list-group-item">${item}</li>`;
