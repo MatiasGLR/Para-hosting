@@ -47,7 +47,7 @@ async function cargarCriaturas() {
                             const izquierda = (partes[0] || '').trim();
                             const derecha = (partes[1] || '').trim();
 
-                            return `<li class="list-group-item"><b${estiloB}>${izquierda}</b><br>${derecha}</li>`;
+                            return `<li class="list-group-item"><b${estiloB}>${izquierda}. </b>${derecha}</li>`;
                         } else {
                             // No válido o sin delimitador: devolver como texto simple
                             return `<li class="list-group-item">${item}</li>`;
@@ -94,7 +94,7 @@ async function cargarCriaturas() {
                                     return `<li class="list-group-item"><b${estiloB}>${partes[0].trim()}</b></li>`;
                                 } else {
                                     const [nombre, costo, descripcion] = partes;
-                                    return `<li class="list-group-item"><b${estiloB}>${(nombre || '').trim()}.</b> <i>${(costo || '').trim()}</i>. ${(descripcion || '').trim()}</li>`;
+                                    return `<li class="list-group-item"><b${estiloB}>${(nombre || '').trim()}.</b> <b style="color:blue">${(costo || '').trim()}</b> ${(descripcion || '').trim()}</li>`;
                                 }
                             } else {
                                 // Si no tiene delimitadores, se puede omitir o tratar como nombre sin formato
@@ -142,15 +142,15 @@ async function cargarCriaturas() {
                                     <div class="col-md-6">
                                         <h5 class="text-primary">Estadísticas</h5>
                                         <ul class="list-group list-group-flush">
-                                            ${row.agilidad != null && row.agilidad != undefined ? `<li class="list-group-item">Agilidad. <b>${row.agilidad}</b></li>` : ``}
-                                            ${row.punteria != null && row.punteria != undefined ? `<li class="list-group-item">Puntería. <b>${row.punteria}</b></li>` : ``}
-                                            ${row.resistencia != null && row.resistencia != undefined ? `<li class="list-group-item">Resistencia. <b>${row.resistencia}</b></li>` : ``}
-                                            ${row.fuerza != null && row.fuerza != undefined ? `<li class="list-group-item">Fuerza. <b>${row.fuerza}</b></li>` : ``}
-                                            ${row.carisma != null && row.carisma != undefined ? `<li class="list-group-item">Carisma. <b>${row.carisma}</b></li>` : ``}
-                                            ${row.percepcion != null && row.percepcion != undefined ? `<li class="list-group-item">Percepción. <b>${row.percepcion}</b></li>` : ``}
-                                            ${row.inteligencia != null && row.inteligencia != undefined ? `<li class="list-group-item">Inteligencia. <b>${row.inteligencia}</b></li>` : ``}
-                                            ${row.suerte != null && row.suerte != undefined ? `<li class="list-group-item">Suerte. <b>${row.suerte}</b></li>` : ``}
-                                            ${row.otras_stats != null && row.otras_stats != undefined ? `<li class="list-group-item">Otros. <b>${row.otras_stats}</b></li>` : ``}
+                                            ${row.agilidad != null && row.agilidad != undefined && row.agilidad != "" ? `<li class="list-group-item">Agilidad. <b>${row.agilidad}</b></li>` : ``}
+                                            ${row.punteria != null && row.punteria != undefined && row.punteria != "" ? `<li class="list-group-item">Puntería. <b>${row.punteria}</b></li>` : ``}
+                                            ${row.resistencia != null && row.resistencia != undefined && row.resistencia != "" ? `<li class="list-group-item">Resistencia. <b>${row.resistencia}</b></li>` : ``}
+                                            ${row.fuerza != null && row.fuerza != undefined && row.fuerza != "" ? `<li class="list-group-item">Fuerza. <b>${row.fuerza}</b></li>` : ``}
+                                            ${row.carisma != null && row.carisma != undefined && row.carisma != "" ? `<li class="list-group-item">Carisma. <b>${row.carisma}</b></li>` : ``}
+                                            ${row.percepcion != null && row.percepcion != undefined && row.percepcion != "" ? `<li class="list-group-item">Percepción. <b>${row.percepcion}</b></li>` : ``}
+                                            ${row.inteligencia != null && row.inteligencia != undefined && row.inteligencia != "" ? `<li class="list-group-item">Inteligencia. <b>${row.inteligencia}</b></li>` : ``}
+                                            ${row.suerte != null && row.suerte != undefined && row.suerte != "" ? `<li class="list-group-item">Suerte. <b>${row.suerte}</b></li>` : ``}
+                                            ${row.otras_stats != null && row.otras_stats != undefined && row.otras_stats != "" ? `<li class="list-group-item">Otros. <b>${row.otras_stats}</b></li>` : ``}
                                             <li class="list-group-item">Tamaño. <b>${row.size} unidades</b></li>
                                         </ul>
                                     </div>
@@ -166,6 +166,7 @@ async function cargarCriaturas() {
                                     <div class="col-md-6">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">Vida: <b>${row.vida}</b></li>
+                                            <li class="list-group-item">PE: <b>${row.pe}</b></li>
                                             <li class="list-group-item">Acciones: <b>${row.acciones}</b></li>
                                             <li class="list-group-item">Efecto: <b>${row.efecto}</b></li>
                                             <li class="list-group-item">Probabilidad base: <b>${row.prob_base}</b></li>
@@ -174,6 +175,7 @@ async function cargarCriaturas() {
                                     </div>
                                     <div class="col-md-6">
                                         <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Debilidad: <b>${row.debil}</b></li>
                                             <li class="list-group-item">Resiste: <b>${row.efec_resistencia}</b></li>
                                             <li class="list-group-item">Inmune: <b>${row.inmunidad}</b></li>
                                         </ul>

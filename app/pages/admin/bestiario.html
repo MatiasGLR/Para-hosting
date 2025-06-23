@@ -26,7 +26,6 @@
             <nav class="medium">
                 <a href="/login"><span><i class="bi bi-house-door"></i> Mi cuenta</span></a>
                 <a href="#indice"><span><i class="bi bi-award"></i> Indice</span></a>
-                <a href="/bestiario"><span><i class="bi bi-award"></i> Bestiario</span></a>
                 <a href="/"><span><i class="bi bi-award"></i> Manual</span></a>
                 <a href="/objetos"><span><i class="bi bi-award"></i> Tienda y objetos</span></a>
                 <a href="/habilidades"><span><i class="bi bi-award"></i> Hechizos y tácticas</span></a>
@@ -77,10 +76,6 @@
 
             h3 {
                 color: rgb(173, 92, 16)
-            }
-
-            h5 {
-                padding-bottom: 30px;
             }
 
             main {
@@ -197,6 +192,10 @@
             img {
                 width: 150px;
             }
+
+            ul {
+                line-height: 15px;
+            }
         </style>
         <div class="botonarriba">
             <h1 onclick="window.location.href='#indice'">^</h1>
@@ -223,12 +222,18 @@
             <p>Una criatura al entrar en su forma <b style="color:purple">caótica</b> o <b
                     style="color:red">infernal</b>, duplica todos sus datos y daños,
                 en caso de que toque ambos, solo triplicará sus datos y daños base.</p>
+            <p>Para las criaturas no existentes en el bestiario, se usa a la criatura nombrada como "General" para
+                sus drops. En caso de tener alguna otra utilidad lógica, seguramente ya fue enlistada con su nombre,
+                o se puede discutir con un master.
+            </p>
             <h3>Habilidades generales</h3>
-            <ul>
+            <ul style="line-height: 20px;">
                 <li><b>Ágil.</b> Moverse no le cuesta acciones de movimiento</li>
                 <li><b>Inmunidad absoluta.</b> No es afectado por ningun efecto físico o mágico, dentro de la
                     descripción pueden colocarse las excepciones</li>
                 <li><b>Rapidez.</b> Velocidad +1</li>
+                <li><b>Espectral.</b> Es intangible a todo, excepto al daño espectral</li>
+                <li><b>Inteligencia.</b> Tiene un nivel de consciencia tal, que puede razonar como un humano ordinario</li>
                 <li><b style="color:red">Canción Infernal.</b> Realiza un quejido correspondiente al animal, causando
                     2d10 de daño a todos los seres
                     a 5ft de la criatura, y aplicando <b>Quemadura Infernal</b> (2 cargas de quemadura) de forma
