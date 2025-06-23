@@ -166,6 +166,7 @@ async function cargarCriaturas() {
                                     <div class="col-md-6">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">Vida: <b>${row.vida}</b></li>
+                                            <li class="list-group-item">PE: <b>${row.pe}</b></li>
                                             <li class="list-group-item">Acciones: <b>${row.acciones}</b></li>
                                             <li class="list-group-item">Efecto: <b>${row.efecto}</b></li>
                                             <li class="list-group-item">Probabilidad base: <b>${row.prob_base}</b></li>
