@@ -94,7 +94,7 @@ async function cargarCriaturas() {
                                     return `<li class="list-group-item"><b${estiloB}>${partes[0].trim()}</b></li>`;
                                 } else {
                                     const [nombre, costo, descripcion] = partes;
-                                    return `<li class="list-group-item"><b${estiloB}>${(nombre || '').trim()}.</b> <i>${(costo || '').trim()}</i>. ${(descripcion || '').trim()}</li>`;
+                                    return `<li class="list-group-item"><b${estiloB}>${(nombre || '').trim()}</b> <i>${(costo || '').trim()}</i>. ${(descripcion || '').trim()}</li>`;
                                 }
                             } else {
                                 // Si no tiene delimitadores, se puede omitir o tratar como nombre sin formato
