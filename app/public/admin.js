@@ -142,15 +142,15 @@ async function cargarCriaturas() {
                                     <div class="col-md-6">
                                         <h5 class="text-primary">Estadísticas</h5>
                                         <ul class="list-group list-group-flush">
-                                            ${row.agilidad != null && row.agilidad != undefined ? `<li class="list-group-item">Agilidad. <b>${row.agilidad}</b></li>` : ``}
-                                            ${row.punteria != null && row.punteria != undefined ? `<li class="list-group-item">Puntería. <b>${row.punteria}</b></li>` : ``}
-                                            ${row.resistencia != null && row.resistencia != undefined ? `<li class="list-group-item">Resistencia. <b>${row.resistencia}</b></li>` : ``}
-                                            ${row.fuerza != null && row.fuerza != undefined ? `<li class="list-group-item">Fuerza. <b>${row.fuerza}</b></li>` : ``}
-                                            ${row.carisma != null && row.carisma != undefined ? `<li class="list-group-item">Carisma. <b>${row.carisma}</b></li>` : ``}
-                                            ${row.percepcion != null && row.percepcion != undefined ? `<li class="list-group-item">Percepción. <b>${row.percepcion}</b></li>` : ``}
-                                            ${row.inteligencia != null && row.inteligencia != undefined ? `<li class="list-group-item">Inteligencia. <b>${row.inteligencia}</b></li>` : ``}
-                                            ${row.suerte != null && row.suerte != undefined ? `<li class="list-group-item">Suerte. <b>${row.suerte}</b></li>` : ``}
-                                            ${row.otras_stats != null && row.otras_stats != undefined ? `<li class="list-group-item">Otros. <b>${row.otras_stats}</b></li>` : ``}
+                                            ${row.agilidad != null && row.agilidad != undefined && row.agilidad != "" ? `<li class="list-group-item">Agilidad. <b>${row.agilidad}</b></li>` : ``}
+                                            ${row.punteria != null && row.punteria != undefined && row.punteria != "" ? `<li class="list-group-item">Puntería. <b>${row.punteria}</b></li>` : ``}
+                                            ${row.resistencia != null && row.resistencia != undefined && row.resistencia != "" ? `<li class="list-group-item">Resistencia. <b>${row.resistencia}</b></li>` : ``}
+                                            ${row.fuerza != null && row.fuerza != undefined && row.fuerza != "" ? `<li class="list-group-item">Fuerza. <b>${row.fuerza}</b></li>` : ``}
+                                            ${row.carisma != null && row.carisma != undefined && row.carisma != "" ? `<li class="list-group-item">Carisma. <b>${row.carisma}</b></li>` : ``}
+                                            ${row.percepcion != null && row.percepcion != undefined && row.percepcion != "" ? `<li class="list-group-item">Percepción. <b>${row.percepcion}</b></li>` : ``}
+                                            ${row.inteligencia != null && row.inteligencia != undefined && row.inteligencia != "" ? `<li class="list-group-item">Inteligencia. <b>${row.inteligencia}</b></li>` : ``}
+                                            ${row.suerte != null && row.suerte != undefined && row.suerte != "" ? `<li class="list-group-item">Suerte. <b>${row.suerte}</b></li>` : ``}
+                                            ${row.otras_stats != null && row.otras_stats != undefined && row.otras_stats != "" ? `<li class="list-group-item">Otros. <b>${row.otras_stats}</b></li>` : ``}
                                             <li class="list-group-item">Tamaño. <b>${row.size} unidades</b></li>
                                         </ul>
                                     </div>
