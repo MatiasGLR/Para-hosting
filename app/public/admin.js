@@ -175,6 +175,7 @@ async function cargarCriaturas() {
                                     </div>
                                     <div class="col-md-6">
                                         <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Debilidad: <b>${row.debil}</b></li>
                                             <li class="list-group-item">Resiste: <b>${row.efec_resistencia}</b></li>
                                             <li class="list-group-item">Inmune: <b>${row.inmunidad}</b></li>
                                         </ul>
