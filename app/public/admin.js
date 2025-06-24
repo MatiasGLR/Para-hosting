@@ -142,6 +142,7 @@ async function cargarCriaturas() {
                                     <div class="col-md-6">
                                         <h5 class="text-primary">Estadísticas</h5>
                                         <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Categoría. <b>${row.categoria}</b></li>
                                             ${row.agilidad != null && row.agilidad != undefined && row.agilidad != "" ? `<li class="list-group-item">Agilidad. <b>${row.agilidad}</b></li>` : ``}
                                             ${row.punteria != null && row.punteria != undefined && row.punteria != "" ? `<li class="list-group-item">Puntería. <b>${row.punteria}</b></li>` : ``}
                                             ${row.resistencia != null && row.resistencia != undefined && row.resistencia != "" ? `<li class="list-group-item">Resistencia. <b>${row.resistencia}</b></li>` : ``}
