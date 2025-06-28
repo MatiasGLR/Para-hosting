@@ -212,6 +212,56 @@ async function cargarCriaturas() {
     }
 }
 
-document.querySelector("#criatura_select_btn").addEventListener("click", cargarCriaturas);
+//if ($("#lista_criaturas")) document.querySelector("#criatura_select_btn").addEventListener("click", cargarCriaturas);
 
+async function cargarHechizos() {
+    if ($("#lista_hechizos")) {
+        $("#lista_hechizos").html("")
+        try {
+            //const res = await fetch("https://cuentos-de-enforth.onrender.com/api/bestiario", {
+            const res = await fetch("/api/hechizos", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                credentials: "include",
+                body: JSON.stringify({
+                    categoria: document.querySelector("#hechizo_categoria").value
+                })
+            });
+            const resJson = await res.json();
+            if (resJson.status === "Ok") {
+                const rows = resJson.data;
+                let str = "", cat_act = "";
+                rows.forEach(row => {
+                    if(cat_act != row.categoria) {
+                        if(cat_act != "") str = str + `</div>`
+                        str = str + `
+                        <div class="separador">
+                            <h4>Categoria - ${row.categoria}</h4>
+                        </div>
+                        <div class="masonry">
+                        `;
+                        cat_act = row.categoria;
+                    } else {
+                        str = str + `
+                            <div class="my-col-lg-3">
+                                <div class="text">
+                                    <b>${row.name}</b>
+                                    <x><b>Descripción.</b> ${row.descripcion}</x>
+                                </div>
+                            </div>
+                        `
+                    }
+                });
+                if(cat_act != "") str = str + `</div>`;
+                console.log(str)
+                $("#lista_hechizos").html(str);
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
+}
 
+document.querySelector("#hechizos_select_btn").addEventListener("click", cargarHechizos);

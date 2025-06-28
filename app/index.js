@@ -152,6 +152,7 @@ app.get('/login'/*, authorization.onlyUnlogged*/, (req, res) => res.status(200).
 app.get('/register'/*, authorization.onlyUnlogged*/, (req, res) => res.status(200).sendFile(__dirname + '/pages/register.html'))
 app.get('/chat'/*, authorization.onlyLogged*/, (req, res) => { res.status(200).sendFile(__dirname + '/pages/chat.html') })
 app.post('/api/bestiario', staff.listaBestias);
+app.post('/api/hechizos', staff.listaHechizos);
 app.post('/api/revisarjugador', authorization.devolverNombre);
 app.post('/api/cargarjugadores', staff.listaJugadores);
 app.post('/api/cambiarrango', staff.cambiarRango);

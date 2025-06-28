@@ -44,6 +44,24 @@ async function listaBestias(req, res) {
     }
 }
 
+async function listaHechizos(req, res) {
+    const categoria = req.body.categoria ? req.body.categoria : "";
+    try {
+        const rows = await new Promise((resolve, reject) => {
+            db.all("SELECT * FROM Hechizos WHERE categoria LIKE ? ORDER BY (categoria, name)", ['%' + categoria + '%'], (err, rows) => {
+                if (err) reject({ status: "Error", message: err.message });
+                else resolve(rows);
+            });
+        });
+
+        // Responder con los jugadores encontrados
+        res.status(200).json({ status: "Ok", data: rows });
+
+    } catch (err) {
+        res.status(500).json({ status: "Error", message: "Error al recuperar hechizos." });
+    }
+}
+
 
 function nombre_rango(rango) {
     switch(rango){
@@ -95,5 +113,6 @@ export const methods = {
     listaJugadores,
     comprobarAdmin,
     cambiarRango,
-    listaBestias
+    listaBestias,
+    listaHechizos
 }
