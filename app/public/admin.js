@@ -263,5 +263,5 @@ async function cargarHechizos() {
         }
     }
 }
-
-document.querySelector("#hechizos_select_btn").addEventListener("click", cargarHechizos);
+console.log("a")
+//document.querySelector("#hechizos_select_btn").addEventListener("click", cargarHechizos);

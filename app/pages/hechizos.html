@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hechizos</title>
-    <link rel="stylesheet" href="/nav.css">
-    <link rel="stylesheet" href="/fonts.css">
-    <link rel="stylesheet" href="/index.css">
-    <script src="/nav.js" defer></script>
-    <script src="/hechizos.js" defer></script>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="unlog.js" defer></script>
+    <script src="nav.js" defer></script>
+    <script src="usuario.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="/admin.js" defer></script>
 </head>
 
 <body class="bg-dark">
@@ -31,6 +30,9 @@
                 <a href="/habilidades"><span><i class="bi bi-award"></i> Hechizos</span></a>
                 <a href="/lore"><span><i class="bi bi-award"></i> Lore</span></a>
             </nav>
+            <nav class="bottom">
+                <button id="unlog"><i class="bi bi-power"></i> Cerrar sesión</button>
+            </nav>
         </div>
     </div>
     <div id="flecha" class="flecha hide">
@@ -39,13 +41,307 @@
             <i id="cerrado" class="bi bi-arrow-right-circle"></i>
         </span>
     </div>
-    <div class="contenido">
-        <div id="main">
-            <div id="lista_hechizos">
+    <main id="main" style="min-height: 100vsh;">
+        <style>
+            *,
+            html,
+            body,
+            p {
+                font-size: 16px;
+            }
 
+            h1,
+            h5 {
+                margin: 0;
+                padding: 0;
+            }
+
+            #main {
+                width: 90vw;
+                margin: auto;
+                text-align: justify;
+                min-width: 300px;
+                background-color: rgb(243, 243, 243);
+            }
+
+            .parrafo {
+                display: flex;
+                flex-direction: column;
+            }
+
+            h1 {
+                padding-top: 30px;
+            }
+
+            h3 {
+                color: rgb(173, 92, 16)
+            }
+
+            main {
+                font-family: sans-serif;
+                padding: 10px;
+                width: 80vw;
+                min-width: 300px;
+                margin: auto;
+            }
+
+            main h4 {
+                text-align: center;
+            }
+
+            .search li {
+                margin: 10px;
+                padding: 5px;
+                cursor: pointer;
+            }
+
+            .search li:hover {
+                text-decoration: underline;
+            }
+
+            h6 {
+                font-size: 200%;
+            }
+
+            .titulo_categoria {
+                text-align: center;
+                font-size: 30px;
+                width: 100%;
+                text-decoration: underline;
+            }
+
+            img {
+                width: 300px;
+                max-width: 300px;
+                margin: 10px;
+                max-height: 350px;
+                object-fit: cover;
+            }
+
+            .costo {
+                color: rgb(187, 0, 0)
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                /* Une los bordes */
+            }
+
+            th,
+            td {
+                /*border-right: 1px solid black;*/
+                padding: 8px;
+            }
+
+            th:last-child,
+            td:last-child {
+                border-right: none;
+            }
+
+            tbody:not(.singled) tr:nth-child(2n) {
+                border-bottom: 1px solid black;
+                /* Borde inferior cada dos filas */
+            }
+
+            .singled tr:not(.singled) {
+                border-bottom: 1px solid black;
+            }
+
+            thead {
+                background-color: #eee;
+                text-align: center;
+                border-bottom: 2px solid black;
+                /* Borde inferior para el encabezado */
+            }
+
+            .botonarriba {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                background-color: red;
+                width: 50px;
+                /* Ajusta el tamaño según lo que necesites */
+                height: 50px;
+                /* Mismo tamaño para hacer el fondo redondo */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                color: white;
+                /* Color del texto */
+                cursor: pointer;
+            }
+
+            .botonarriba h1 {
+                margin: 0;
+                /* Elimina el margen predeterminado del h1 */
+                font-size: 60px;
+                /* Ajusta el tamaño del símbolo ^ */
+                padding-bottom: 10px;
+            }
+
+            .criatura {
+                border: 1px solid black;
+                border-left: none;
+                border-right: none;
+                margin-bottom: 3px;
+            }
+
+            img {
+                width: 150px;
+            }
+
+            ul {
+                line-height: 15px;
+            }
+        </style>
+        <div id="datos">
+            <div class="botonarriba">
+                <h1 onclick="window.location.href='#indice'">^</h1>
             </div>
+            <div class="header">
+                <h1 class="text-center p-4 pb-0">Cuentos de Enforth</h1>
+                <h5 class="text-center">Manual de rol</h5>
+            </div>
+            <div class="indice" id="indice">
+                <hr>
+                <label for="hechizo_categoria">Escuela:</label>
+                <select class="m-4" name="" id="hechizo_categoria">
+                    <option value="">...</option>
+                    <option value="Arcano">Arcano</option>
+                    <option value="Fuego">Fuego</option>
+                    <option value="Hielo">Hielo</option>
+                    <option value="Electricidad">Electricidad</option>
+                    <option value="Luz">Luz</option>
+                    <option value="Oscuridad">Oscuridad</option>
+                    <option value="Veneno">Veneno</option>
+                    <option value="Alma">Alma</option>
+                    <option value="Mental">Mental</option>
+                    <option value="Naturaleza">Naturaleza</option>
+                    <option value="Sangre">Sangre</option>
+                    <option value="Tiempo">Tiempo</option>
+                    <option value="Viento">Viento</option>
+                    <option value="Divina">Divina</option>
+                </select>
+                <button id="hechizos_select_btn">Buscar hechizos</button>
+            </div>
+            <style>
+                * {
+                    box-sizing: border-box;
+                }
+
+                .text {
+                    border-left: 3px solid gray;
+                    padding-left: 10px;
+                    margin: 0;
+                }
+
+                .masonry {
+                    columns: 4;
+                    /* o usa columns: 1 300px; para responsive */
+                    column-gap: 1rem;
+                }
+
+                .my-col-lg-3 {
+                    box-sizing: border-box;
+                    padding: 10px;
+                    padding-bottom: 0;
+                    display: inline-block;
+                    width: 100%;
+                    margin-bottom: 1rem;
+                }
+
+                .separador {
+                    background-color: gray;
+                    color: white;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    padding-top: 15px;
+                    padding-bottom: 5px;
+                }
+
+                @media (max-width: 992px) {
+                    .masonry {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .masonry>.my-col-lg-3 {
+                        display: inline-block;
+                        width: 100%;
+                        break-inside: avoid;
+                        padding: 0;
+                        padding: 0 10px 0 5px;
+                        margin: 0;
+                        margin-bottom: 1rem;
+                    }
+                }
+            </style>
         </div>
-    </div>
+        <div id="lista_hechizos" class="mt-4">
+
+        </div>
+        </div>
+    </main>
 </body>
+<script>
+    async function cargarHechizos() {
+        if ($("#lista_hechizos")) {
+            $("#lista_hechizos").html("")
+            try {
+                //const res = await fetch("https://cuentos-de-enforth.onrender.com/api/bestiario", {
+                const res = await fetch("/api/hechizos", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    credentials: "include",
+                    body: JSON.stringify({
+                        categoria: document.querySelector("#hechizo_categoria").value
+                    })
+                });
+                const resJson = await res.json();
+                console.log(resJson)
+                if (resJson.status === "Ok") {
+                    const rows = resJson.data;
+                    let str = "", cat_act = "";
+                    rows.forEach(row => {
+                        if (cat_act != row.categoria) {
+                            if (cat_act != "") str = str + `</div>`
+                            str = str + `
+                        <div class="separador">
+                            <h4>Categoria - ${row.categoria}</h4>
+                        </div>
+                        <div class="m-0 masonry">
+                        `;
+                            cat_act = row.categoria;
+                        }
+                        str = str + `
+                        <div class="my-col-lg-3">
+                            <div class="text d-flex flex-column">
+                                <x style="font-size:18px">${row.name}</x><br>
+                                <x><b>Tipo de Hechizo.</b> ${row.tipo_hechizo}</x>
+                                <x><b>Requisito.</b> ${row.requisito}</x>
+                                <x><b>Distancia.</b> ${row.distancia}</x>
+                                <x><b>Objetivo.</b> ${row.objetivo}</x>
+                                <x><b>Costo de uso.</b> ${row.costo}</x>
+                                <x><b>Nivel minimo de jugador.</b> ${row.nivel_jugador}</x>
+                                <x><b>Descripción.</b> ${row.descripcion}</x>
+                            </div>
+                        </div>
+                        `
+                    });
+                    if (cat_act != "") str = str + `</div>`;
+                    console.log(str)
+                    $("#lista_hechizos").html(str);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    }
+    document.querySelector("#hechizos_select_btn").addEventListener("click", cargarHechizos);
+</script>
 
 </html>
