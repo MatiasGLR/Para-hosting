@@ -212,7 +212,7 @@ async function cargarCriaturas() {
     }
 }
 
-//if ($("#lista_criaturas")) document.querySelector("#criatura_select_btn").addEventListener("click", cargarCriaturas);
+if ($("#lista_criaturas")) document.querySelector("#criatura_select_btn").addEventListener("click", cargarCriaturas);
 
 async function cargarHechizos() {
     if ($("#lista_hechizos")) {
