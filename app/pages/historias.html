@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hechizos</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="unlog.js" defer></script>
+    <script src="nav.js" defer></script>
+    <script src="usuario.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark">
+    <div id="menuopciones" class="menuopciones hide">
+        <div class="menu">
+            <nav class="upper">
+                <h4><i class="bi bi-person"></i> Cuenta</h4>
+            </nav>
+            <nav class="medium">
+                <a href="#indice"><span><i class="bi bi-award"></i> Indice</span></a>
+                <a href="/"><span><i class="bi bi-award"></i> Manual</span></a>
+                <a href="/lore"><span><i class="bi bi-award"></i> Lore</span></a>
+            </nav>
+            <nav class="bottom">
+                <button id="unlog"><i class="bi bi-power"></i> Cerrar sesión</button>
+            </nav>
+        </div>
+    </div>
+    <div id="flecha" class="flecha hide">
+        <span onclick="barra_lateral()">
+            <i id="abierto" class="bi bi-arrow-left-circle invisible"></i>
+            <i id="cerrado" class="bi bi-arrow-right-circle"></i>
+        </span>
+    </div>
+    <main id="main" style="min-height: 100vsh;">
+        <style>
+            *,
+            html,
+            body,
+            p {
+                font-size: 16px;
+            }
+
+            h1,
+            h5 {
+                margin: 0;
+                padding: 0;
+            }
+
+            #main {
+                width: 90vw;
+                margin: auto;
+                text-align: justify;
+                min-width: 300px;
+                background-color: rgb(243, 243, 243);
+            }
+
+            .parrafo {
+                display: flex;
+                flex-direction: column;
+            }
+
+            h1 {
+                padding-top: 30px;
+            }
+
+            h3 {
+                color: rgb(173, 92, 16)
+            }
+
+            main {
+                font-family: sans-serif;
+                padding: 10px;
+                width: 80vw;
+                min-width: 300px;
+                margin: auto;
+            }
+
+            main h4 {
+                text-align: center;
+            }
+
+            .search li {
+                margin: 10px;
+                padding: 5px;
+                cursor: pointer;
+            }
+
+            .search li:hover {
+                text-decoration: underline;
+            }
+
+            h6 {
+                font-size: 200%;
+            }
+
+            .titulo_categoria {
+                text-align: center;
+                font-size: 30px;
+                width: 100%;
+                text-decoration: underline;
+            }
+
+            img {
+                width: 300px;
+                max-width: 300px;
+                margin: 10px;
+                max-height: 350px;
+                object-fit: cover;
+            }
+
+            .costo {
+                color: rgb(187, 0, 0)
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                /* Une los bordes */
+            }
+
+            th,
+            td {
+                /*border-right: 1px solid black;*/
+                padding: 8px;
+            }
+
+            th:last-child,
+            td:last-child {
+                border-right: none;
+            }
+
+            tbody:not(.singled) tr:nth-child(2n) {
+                border-bottom: 1px solid black;
+                /* Borde inferior cada dos filas */
+            }
+
+            .singled tr:not(.singled) {
+                border-bottom: 1px solid black;
+            }
+
+            thead {
+                background-color: #eee;
+                text-align: center;
+                border-bottom: 2px solid black;
+                /* Borde inferior para el encabezado */
+            }
+
+            .botonarriba {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                background-color: red;
+                width: 50px;
+                /* Ajusta el tamaño según lo que necesites */
+                height: 50px;
+                /* Mismo tamaño para hacer el fondo redondo */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                color: white;
+                /* Color del texto */
+                cursor: pointer;
+            }
+
+            .botonarriba h1 {
+                margin: 0;
+                /* Elimina el margen predeterminado del h1 */
+                font-size: 60px;
+                /* Ajusta el tamaño del símbolo ^ */
+                padding-bottom: 10px;
+            }
+
+            .criatura {
+                border: 1px solid black;
+                border-left: none;
+                border-right: none;
+                margin-bottom: 3px;
+            }
+
+            img {
+                width: 150px;
+            }
+
+            ul {
+                line-height: 15px;
+            }
+        </style>
+        <div id="datos">
+            <div class="botonarriba">
+                <h1 onclick="window.location.href='#indice'">^</h1>
+            </div>
+            <div class="header">
+                <h1 class="text-center p-4 pb-0">Cuentos de Enforth</h1>
+                <h5 class="text-center">Manual de rol</h5>
+            </div>
+            <div class="indice" id="indice">
+                <h1>Indice</h1>
+                <ul class="search">
+                    <li onclick="window.location.href='#h_vaikne'">Vaikne</a></li>
+                    <ul>
+                        <li onclick="window.location.href='#h_v_1'">1. De reyes y coronas</a></li>
+                        <li onclick="window.location.href='#h_v_1'">2. </a></li>
+                    </ul>
+                </ul>
+            </div>
+            <style>
+                * {
+                    box-sizing: border-box;
+                }
+
+                .text {
+                    border-left: 3px solid gray;
+                    padding-left: 10px;
+                    margin: 0;
+                }
+
+                .masonry {
+                    columns: 3;
+                    /* o usa columns: 1 300px; para responsive */
+                    column-gap: 1rem;
+                }
+
+                .my-col-lg-3 {
+                    box-sizing: border-box;
+                    padding: 10px;
+                    padding-bottom: 0;
+                    break-inside: avoid;
+                    display: inline-block;
+                    width: 100%;
+                    margin-bottom: 1rem;
+                }
+
+                .separador {
+                    background-color: gray;
+                    color: white;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    padding-top: 15px;
+                    padding-bottom: 5px;
+                }
+
+                @media (max-width: 992px) {
+                    .masonry {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .masonry>.my-col-lg-3 {
+                        display: inline-block;
+                        width: 100%;
+                        break-inside: avoid;
+                        padding: 0;
+                        padding: 0 10px 0 5px;
+                        margin: 0;
+                        margin-bottom: 1rem;
+                    }
+                }
+            </style>
+            <div id="datos">
+                <h1 id="h_vaikne">Vaikne</h1>
+                <h3 class="p-4 titulo_categoria" id="h_v_1">1. Reyes y coronas</h3>
+                <p><b>Otorgada por:</b> Dominic Salvado<br>
+                    Los jugadores asisten a una reunión en la que participan todos los reinos del continente, y otros continentes que formaron parte.
+                    Se verá en esta reunión a:
+                    <ul>
+                        <li>Rey y princesas de Swordsqal</li>
+                        <li>Reina de Bamblat</li>
+                        <li>Congreso de Endricci y sus mosqueteros</li>
+                        <li>Rey y gremio de cazadores de Abbasel</li>
+                        <li>Rey de Sin Ammón y otros guardias</li>
+                        <li>Comandante de la Guardia de Avari y el gran Juez</li>
+                        <li>Nobles y otros guardias participantes de todas las ciudades</li>
+                        <li>Nobles y Caballeros de Suredozo, Everland y Nightland que participaron en la batalla</li>
+                    </ul>
+                    Se presentará a algunos de ellos por parte de la princesa Laetys Salvado, hija del Rey de Swordsqal, quién hará de 
+                    guía para los jugadores durante esta reunión. A mitad de la reunión, un noble de Swordsqal es encontrado muerto por
+                    envenenamiento por uno de los alimentos, siendo la única victima aparente.
+                </p>
+                <h3 class="p-4 titulo_categoria" id="h_v_2">2. Traidores</h3>
+                <p><b>Otorgada por:</b> George Fortware (Capitán de la Corte Real) y Comodoro Falldown (Tesorero y Consejero de la Corte Real)<br>
+                    Se descubre que el asesino utilizó un veneno sumamente raro, solo utilizado para matar a un congresista de Redain años
+                    antes, su asesino Thomas Lavy, sigue atrapado en una carcel de Abbasel, deben ir y pedir por su traslado a Swordsqal para un
+                    interrogatorio, el Tesorero les pide, con un tartamudeo, que se aseguren de traerlo con vida.<br>
+                    Durante el transcurso, son emboscados por mercenarios afectados por una maldición sombría, controlados mentalmente,
+                    quienes piden que entreguen a Thomas. Se debe derrotar a los mercenarios y llevar a Thomas a Swordsqal.<br>
+                    <b>Datos de enemigos.</b> 3 Mercenarios de Nivel 2, todos Guerreros de Nivel 4. 
+                </p>
+                <h3 class="p-4 titulo_categoria" id="h_v_3">3. Amistades pasadas</h3>
+                <p><b>Otorgada por:</b> George Fortware y Comodoro Falldown<br>
+                    Tras ser interrogado, dos dias despuñes, Thomas es encontrado muerto en su celda, con un sello en X hecho en su pecho, con sangre.
+                    El capitán sabe que esa marca pertenece a un grupo de antiguos guardias ya jubilados de Swordsqal, y cree que los están
+                    tratando de inculpar, al conocer a esos guardias, por lo que se pide que vayan a su hogar, en las afueras de Yajaraverey, y
+                    preguntarles por ese sello. Los acompañará un guardia.<br>
+                    Al llegar, se encontrarán con los antiguos guardias muertos, todos igualmente envenenados, y sentados frente a una mesa.<br>
+                    Si los jugadores deciden indagar, encontrarán una nota rota en la que uno de los guardias comenta que han sido acechados durante
+                    dias, que el lo sabe, y los demás lo tratan de paranoico. Al final anota "Mi Rey, he guardado lo que me pidió durante décadas,
+                    su secreto siempre oculto en-", esa parte de la nota estará rota, arrancada del pergamino con un corte limpio, que puede
+                    ser de un arma filosa. El guardia llevará la información a Swordsqal.
+                </p>
+                <h3 class="p-4 titulo_categoria" id="h_v_4">4. Asuntos pendientes</h3>
+                <p><b>Otorgada por:</b> George Fortware y Comodoro Falldown<br>
+                    El capitán habló con el Rey sobre el contenido de la carta, y pide a los jugadores ir al mundo de los muertos, a preguntar a esos
+                    hombres donde se encuentra oculto el paquete, por lo que realizan un ritual oscuro, colocandoles un tatuaje a los jugadores, 
+                    allí se desmayarán y llegarán a un desierto de arena
+                    negra, y un cielo gris con nubes estáticas, un hombre de capucha y pura oscuridad les preguntará a quien buscan, y tras mostrarle
+                    un tatuaje que les colocó el Rey, y deben pedir ver a Marcus, Jonah y Paul, quienes murieron hace aproximadamente una semana.<br>
+                    La figura encapuchada les dará un mapa antes de esfumarse, que los llevará a una versión alterna de Abbasel, llena de murallas
+                    de madera podrida, y calaveras por todos lados, allí, serán detenidos por Lhanies esqueleto, quienes tratarán de evitar que 
+                    accedan, deben derrotarlos y acceder.<br>
+                    <b>Datos de enemigos.</b> Lhanies Lv5 con las mismas habilidades de los esqueletos, y armamento con 1 dado aumentado de daño.
+                </p>
+                <h3 class="p-4 titulo_categoria" id="h_v_5">5. Aquellos que fueron traicionados</h3>
+                <p><b>Otorgada por:</b> Continuación de la misión anterior<br>
+                    Al encontrarse con esos hombres en un estado similar al no muerto en una taberna, estos pueden hablar con los jugadores, revelando que
+                    ninguno había escrito esa carta, y que ese día habían recibido a un sujeto de cabello rubio, que había llegado preguntando por
+                    ellos, como un cronista que quería escribir sobre los heroes de Swordsqal, y que tenía un ligero tartamudeo, aun asi, les revela donde
+                    esta la ubicación de aquello que buscan, un arma indestructible que es capaz de matar al Rey de Swordsqal. Tras saber esto, se
+                    les acaba su tiempo en ese mundo, y vuelven a despertar en las barracas de la Guardia, acostados en camas. El arma se encuentra en
+                    una cueva cerca de Hasshire, bajo una estatua de la Diosa Drakhaia, que se abrirá si colocan una espada de plata entre sus manos.
+                </p>
+                <h3 class="p-4 titulo_categoria" id="h_v_6">6. Gloria y poder</h3>
+                <p><b>Otorgada por:</b> George Fortware<br>
+                    Este les avisa que Comodoro acaba de ser secuestrado por unos sujetos encapuchados, dejando un rastro de sangre desde sus aposentos, les
+                    dice que fue llevado hacia el sur, y que la guardia los perdió de vista cerca de Hasshire. Si los jugadores van a la cueva anterior,
+                    encontrán que la estatua fue recientemente movida, por la tierra en el suelo. Al abrir la cueva, se encontrarán con varios de esos
+                    sujetos encapuchados, convertidos ya en esqueletos, pero no pareciendo cadaveres antiguos, al final de la cueva, encontrarán a 
+                    Comodoro, absorbiendo la vida de otro de ellos, y finalmente revelandose como un no muerto, que mantuvo juventud al absorber la vitalidad
+                    de los asesinos de las sombras, el clan que este habia fundado, demostrando que tenía la <b>Daga del Anochecer</b>, un arma que por su leyenda,
+                    es capaz de matar a seres inmortales, tras esto, una luz destellante los ciega, y este desaparece completamente, sin dejar pista.
+                </p>
+                <h3 class="p-4 titulo_categoria" id="h_v_7">7. Tiempos oscuros</h3>
+                <p><b>Otorgada por:</b> Laetys Salvado<br>
+                    Cuando los jugadores salen de la cueva, encuentran varios caballos, y a la princesa Laetys, quien trajo esos caballos para que vayan
+                    rapidamente a Swordsqal, debido a que el castillo fue asediado por no muertos, y su padre se encuentra en el reino de los muertos tratando
+                    de recabar información, y no puede ayudar a parar el asedio, debido a que su cuerpo está inmovil en su trono.<br>
+                    Al llegar a Swordsqal, se ve a los guardias peleando contra esqueletos y no muertos, y al llegar al castillo, se encontrarán con Comodoro,
+                    tratando de acceder a los aposentos del Rey mediante magia oscura, para hacerles tiempo, convierte todo en una arena oscura, y se encuentran
+                    con un Fortware controlado mentalmente, junto a dos caballeros no muertos de la Corte Real. Se los debe derrotar.<br>
+                    Cuando sean derrotados, verán como Comodoro entra a la habitación del trono, y con Daga en mano, trata de acabar con el Rey, apuñalandolo
+                    con la misma, y llenando de sombras a su alrededor, y, mientras este trataba de absorber la vitalidad de Salvado,
+                    salen unas manos desde las sombras del suelo, que lo atrapan, y unas voces se escuchan por la sala del trono, que comentan con un tono calmo, 
+                    "No perteneces aquí, no creíste que te dejaría llegar tan lejos. ¿Verdad?", justo entonces, una figura sale de allí, tomando a Comodoro
+                    por el cuello, todo alrededor se pudre y enfría, y ese ser, mostrando unas gigantescas alas negras, era el Dios de la Muerte, quien arrastra 
+                    a este a las tinieblas, devolviendolo al reino de los muertos, dejando un glifo de un circulo con espinas, la marca de la muerte. La daga, 
+                    sigue clavada en el pecho de Salvado, perdiendo su brillo, y quedando como una simple daga mas, y Salvado, trata de ser devuelto a este
+                    mundo por Laetys, notando que esto no es posible, pero, que seguía con vida.<br>
+                    <b>Notas. </b> Si alguien trata de acercarse a Khoros, parcas saldrán rapidamente y cortarán el paso de los jugadores.<br>
+                    <b>Datos de enemigos.</b> George Fortware y dos caballeros de la corte real, Guerrero Lv10 y con todos los hechizos oscuros.
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
