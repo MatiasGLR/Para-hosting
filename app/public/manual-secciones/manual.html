@@ -261,7 +261,6 @@
                 <li onclick="window.location.href='#p_inventario'">Inventario de jugador</li>
                 <li onclick="window.location.href='#p_idiomas'">Idiomas</li>
                 <li onclick="window.location.href='#p_descansos'">Descansos</li>
-                <li onclick="window.location.href='#p_profesion'">Tiradas de profesión</li>
             </ul>
             <h4><b>Divinidades</b></h4>
             <ul class="search">
@@ -754,20 +753,24 @@
             <h3 class="p-4 titulo_categoria" id="p_profesiones">Profesiones</h3>
             <p>Las profesiones, son el nivel de práctica que tienes en ciertas profesiones. Para poder hacer uso de sus
                 habilidades, debes de cumplir con los requerimientos de la misma, lo mismo para poder subirla mas allà
-                del
-                nivel 2, el cuál es el limite, si no se tienen los requisitos.<br>
-                Para subir de un nivel en cada profesión, debes llegar a 30 de experiencia con la misma, mediante
-                acciones
+                del nivel 2, el cuál es el limite, si no se tienen los requisitos.<br>
+                Para subir de un nivel en cada profesión, debes llegar a 30 de experiencia con la misma, mediante acciones
                 relacionadas a esa profesión, por lo que cada 30 puntos, se subirá un nivel (en caso de acumular
-                puntos),
-                el nivel inicial en profesión, es el 0.<br>
-                Al momento de trabajar, puedes realizar una tirada de la profesión correspondiente, sumandole como
-                modificador,
+                puntos), el nivel inicial en profesión, es el 0.<br>
+                Al momento de trabajar, puedes realizar una tirada de la profesión correspondiente, sumandole como modificador,
                 el nivel en la profesión; si el valor de la tirada es 20 (Con modificador incluido), ganas un punto
-                adicional,
-                y, si la tirada es superior a 20 (Con dado critico incluido), se suma otro punto adicional. Si no acurre
-                ninguna,
-                de las anteriores, solo ganarás el punto de experiencia base.
+                adicional, y, si la tirada es superior a 20 (Con dado critico incluido), se suma otro punto adicional. Si no acurre
+                ninguna, de las anteriores, solo ganarás el punto de experiencia base.
+            </p>
+            <p>Para hacer uso de una profesión, se realiza una tirada de profesión correspondiente, al realizarla, se ganarán puntos
+                en la misma, siguiendo la siguiente tabla.
+                <ul>
+                    <li>Menos de 20. </li> +1 Punto de experiencia en la profesión
+                    <li>20 o mas. </li> +2 Puntos de experiencia en la profesión
+                    <li>20 natural. </li> +1 Punto de experiencia en la profesión <b>adicional</b>
+                </ul>
+                La tirada de profesión, se realiza de la siguiente manera:
+                <code>1d20+Nivel en la profesión</code>
             </p>
             <p class="parrafo" id="prof_alquimista">
                 <b class="text-danger" style="font-size: 150%;">Alquimista</b>
@@ -4229,7 +4232,7 @@
             </ul>
             <b>Dones basados en profesiones y conocimientos</b>
             <ul>
-                <li><b style="color:rgb(33, 0, 151)">Don del Trabajador.</b> Ganas el doble de puntos de profesión.</li>
+                <li><b style="color:rgb(33, 0, 151)">Don del Trabajador.</b> Ganas un punto de profesión adicional al trabajar</li>
                 <li><b style="color:rgb(33, 0, 151)">Don del Cazador.</b> Aumenta el daño contra animales en 1 dado por
                     ronda. Conoce su debilidad luego de la 2da ronda.</li>
                 <li><b style="color:rgb(33, 0, 151)">Don del Minero.</b> Se duplica la obtención de minerales, y duplica
@@ -4740,7 +4743,7 @@
                     los seres terrenales, reservado para aquellos que tienen un vínculo directo con lo divino.
                 </li>
             </ul>
-            <h4 id="e_descansos">Descansos</h4>
+            <h4 id="p_descansos">Descansos</h4>
             <p>Para recuperar a un personaje se puede optar por los descansos, los cuales se separan en dos categorias:
                 <ul>
                     <b>Descanso corto. </b>Se puede realizar en un punto de descanso, utilizando el Kit de Supervivencia,
