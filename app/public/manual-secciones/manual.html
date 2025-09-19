@@ -4416,12 +4416,9 @@
             <h3 class="p-4 titulo_categoria" id="p_mejoras">Explicación de puntos de mejora</h3>
             <p class="parrafo">
                 Los puntos de mejora permiten a un jugador avanzar en su personaje. Los puntos de mejora se obtienen al
-                subir de nivel,
-                obteniendo <b>2 puntos de mejora</b> de esta forma (Pueden ser modificados mediante habilidades u
-                otros). Cuando un
-                personaje es creado, comienza con 8 puntos de mejora, los cuáles pueden ser consumidos, para realizar
-                alguna de las
-                siguientes mejoras correspondientes, solo se puede tomar una opción de la lista al pagar los puntos.
+                subir de nivel, obteniendo <b>2 puntos de mejora</b> de esta forma (Pueden ser modificados mediante habilidades u
+                otros). Cuando un personaje es creado, comienza con 8 puntos de mejora, los cuáles pueden ser consumidos, para realizar
+                alguna de las siguientes mejoras correspondientes, solo se puede tomar una opción de la lista al pagar los puntos.
             <h3>Mejoras de un punto</h3>
             <ul>
                 <li>Subir de nivel en la raza, lo que te dará las habilidades de la raza principal e hibridada de ese
@@ -6763,10 +6760,10 @@
             <ul class="ul_pericias">
                 <li><b>Busqueda de dinero.</b> Desbloquea la rama que mejora las recompensas.</li>
                 <ul>
-                    <li><b>Ganancias. </b><i>Nivel 3. </i>Obtienes 5% de dinero adicional</li>
-                    <li><b>Ganancias mejoradas. </b><i>"Ganancias". Nivel 4. </i>Obtienes 10% de dinero adicional</li>
-                    <li><b>Ganancias perfeccionadas. </b><i>Ganancias mejoradas". Nivel 5. </i>Obtienes 15% de dinero adicional</li>
-                    <li><b>Ganancias profesionales. </b><i>Ganancias perfeccionadas". Nivel 5. </i>Obtienes 20% de dinero adicional</li>
+                    <li><b>Ganancias. </b><i>Nivel 3. </i>Obtienes 5% de dinero adicional (excepto en ventas)</li>
+                    <li><b>Ganancias mejoradas. </b><i>"Ganancias". Nivel 4. </i>Obtienes 10% de dinero adicional (excepto en ventas)</li>
+                    <li><b>Ganancias perfeccionadas. </b><i>Ganancias mejoradas". Nivel 5. </i>Obtienes 15% de dinero adicional (excepto en ventas)</li>
+                    <li><b>Ganancias profesionales. </b><i>Ganancias perfeccionadas". Nivel 5. </i>Obtienes 20% de dinero adicional (excepto en ventas)</li>
                     <li><b>Cambio de divisa "Qurs". </b>Convierte cualquier divisa obtenida en Qurs.</li>
                     <li><b>Cambio de divisa "Kalis". </b>Convierte cualquier divisa obtenida en Kalis.</li>
                     <li><b>Cambio de divisa "Sarix". </b>Convierte cualquier divisa obtenida en Sarix.</li>
@@ -6802,15 +6799,16 @@
                     <li><b>Rompeescudos. </b><i>Guerrero Lv3, Paladín o Luchador.</i> Ignoras la defensa dada por un escudo.</li>
                     <li><b>Disparo oportuno. </b><i>Arquero. Arco o Ballesta.</i> <b>Táctica.</b> Disparar a máxima distancia te da +10 de daño.</li>
                     <li><b>Ataque giratorio. </b><i>Guerrero Lv3. Arma pesada a dos manos.</i> <b>Táctica.</b> Golpea a todos los seres a 5ft de ti, con -3 en Puntería.</li>
-                    <li><b>Contraataque instantaneo. </b><i>Arma ligera a una mano o dos manos. 3 Puntería.</i> <b>Táctica.</b> Cuando un enemigo falla un ataque contra ti, puedes atacarlo con 1d20-4 en tirada en Puntería</li>
+                    <li><b>Contraataque instantaneo. </b><i>Arma ligera a una mano o dos manos. 3 Puntería.</i> <b>Táctica.</b> Cuando un enemigo falla un ataque contra ti, puedes atacarlo gratuitamente con 1d20-2 en tirada en Puntería</li>
                     <li><b>Corte brutal. </b><i>Arma cortante. Picaro. 2 Puntería.</i> <b>Táctica.</b> Obtienes +1 de daño por cada carga de sangrado en el enemigo.</li>
                     <li><b>Pies firmes. </b><i>Armadura pesada. Escudo. 3 Resistencia.</i> <b>Táctica.</b> No puedes ser derribado o empujado.</li>
                     <li><b>Soldado de combate. </b><i>Armadura completa (Yelmo, Peto, Pantalones, Botas). </i> <b>Táctica.</b> +2 Armadura física</li>
                     <li><b>Veterano de combate. </b><i>"Soldado de Combate". Armadura completa (Yelmo, Peto, Pantalones, Botas). 3 Resistencia.</i> <b>Táctica.</b> +3 Armadura física. +2 Armadura mágica.</li>
-                    <li><b>Violencia de bajo decibel. </b> No requieres recargar las ballestas.</li>
+                    <li><b>Violencia de bajo decibel. </b> No requieres recargar una ballesta.</li>
                     <li><b>Necesidad de violencia. </b><i>"Violencia de bajo decibel". Ranger Lv1. </i> Puedes llevar una ballesta en cada mano.</li>
                     <li><b>Violencia extrema. </b><i>"Necesidad de violencia". Ranger Lv3. </i> Las ballestas hacen +1 de daño por nivel de jugador y de Ranger.</li>
-                    <li><b>Violencia adquirida. </b><i>"Violencia extrema". Ranger Lv5. </i> Al disparar con ballesta o arco, puedes lanzar 1d100, si sale 100, ejecutas al enemigo.</li>
+                    <li><b>Violencia adquirida. </b><i>"Violencia extrema". Ranger Lv5. </i> Al disparar por primera vez en un combate, con ballesta o arco, puedes lanzar 1d100, si sale 100, 
+                        ejecutas al enemigo. No aplica para criaturas raras.</li>
                 </ul>
                 <li><b>Búsqueda de recursos. </b> Desbloquea la rama que mejora la obtención de objetos.</li>
                 <ul>
